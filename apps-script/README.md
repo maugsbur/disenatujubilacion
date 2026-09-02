@@ -60,6 +60,14 @@ la primera vez que hace falta, dentro del archivo de Personas.
    clasp push
    ```
 
+   *Nota sobre versiones:* clasp 3.x renombró varios comandos. `create`,
+   `push` y `status` siguen funcionando igual (son alias), pero **`clasp
+   open` ya no existe** — ahora es `clasp open-script` (abre el editor del
+   proyecto en el navegador; útil para confirmar que el push llegó a donde
+   correspondía, sobre todo si entrar por Extensions → Apps Script desde la
+   planilla no muestra los archivos — a veces es solo la pestaña vieja del
+   editor, sin recargar).
+
 ## 3. Configurar las propiedades (el token y los IDs de los dos archivos)
 
 El ID de cada planilla es la parte larga de su URL:
