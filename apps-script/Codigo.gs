@@ -55,31 +55,44 @@ function doPost(e) {
   var versionTexto = String(body.versionTexto || '').slice(0, 100);
   var ahora = new Date();
 
-  var persona = upsertPersona_({
-    email: email,
-    origen: origen,
-    consentGuardado: consentGuardado,
-    consentMarketing: consentMarketing,
-    versionTexto: versionTexto,
-    fecha: ahora
-  });
+  // Todo lo que sigue toca las planillas (SpreadsheetApp.openById) y puede
+  // fallar por una razón de configuración (un ID mal copiado, una pestaña
+  // que no se llama exactamente "personas"/"respuestas"...). Sin este
+  // try/catch, esa excepción tumba toda la respuesta y Apps Script termina
+  // devolviendo una página de error de Google Drive genérica en vez del
+  // error real — pasó exactamente eso la primera vez que se probó esto en
+  // producción. Con el catch, el error queda legible en el cuerpo JSON y,
+  // sobre todo, en el registro de ejecuciones del editor.
+  try {
+    var persona = upsertPersona_({
+      email: email,
+      origen: origen,
+      consentGuardado: consentGuardado,
+      consentMarketing: consentMarketing,
+      versionTexto: versionTexto,
+      fecha: ahora
+    });
 
-  var respuestasGuardadas = 0;
-  if (consentGuardado && Array.isArray(body.respuestas) && body.respuestas.length) {
-    respuestasGuardadas = escribirRespuestas_(persona.id, guia, body.respuestas, body.totales || {}, ahora);
+    var respuestasGuardadas = 0;
+    if (consentGuardado && Array.isArray(body.respuestas) && body.respuestas.length) {
+      respuestasGuardadas = escribirRespuestas_(persona.id, guia, body.respuestas, body.totales || {}, ahora);
+    }
+
+    var correoEnviado = body.correoEnviado !== false; // por defecto true: no todo llamador informa este campo
+    if (!correoEnviado && body.correoPendiente) {
+      registrarCorreoPendiente_(email, guia, body.correoPendiente.cuerpoBrevo, body.correoPendiente.motivo);
+    }
+
+    return jsonResponse_({
+      ok: true,
+      uuid: persona.id,
+      personaNueva: persona.esNueva,
+      respuestasGuardadas: respuestasGuardadas
+    });
+  } catch (err) {
+    Logger.log('Error en doPost: %s', err.message);
+    return jsonResponse_({ ok: false, error: 'error_interno', detalle: err.message });
   }
-
-  var correoEnviado = body.correoEnviado !== false; // por defecto true: no todo llamador informa este campo
-  if (!correoEnviado && body.correoPendiente) {
-    registrarCorreoPendiente_(email, guia, body.correoPendiente.cuerpoBrevo, body.correoPendiente.motivo);
-  }
-
-  return jsonResponse_({
-    ok: true,
-    uuid: persona.id,
-    personaNueva: persona.esNueva,
-    respuestasGuardadas: respuestasGuardadas
-  });
 }
 
 /** Solo para confirmar manualmente que el deploy está vivo — abre la URL del
