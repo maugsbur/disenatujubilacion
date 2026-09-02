@@ -6,4 +6,4 @@ pages_build_output_dir = "site"
 # Crea el namespace una vez (ver README.md § Etapa 4) y pega su id acá.
 [[kv_namespaces]]
 binding = "RATE_LIMIT_KV"
-id = "PEGAR_AQUI_EL_ID_DEL_NAMESPACE_KV"
+id = 589b85cf5b264064901d4b473a4e1af0

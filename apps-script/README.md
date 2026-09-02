@@ -42,8 +42,21 @@ la primera vez que hace falta, dentro del archivo de Personas.
    ```bash
    npm install -g @google/clasp
    clasp login
-   cd apps-script
-   clasp create --type sheets --title "DTJ · Backend" --parentId <ID_DEL_ARCHIVO_PERSONAS>
+   cd apps-script          # ⚠️ tiene que ser ESTA carpeta, no la raíz del repo
+   clasp create --type sheets --title "DTJ · Backend" --parentId <ID_DEL_ARCHIVO_PERSONAS> --rootDir .
+   ```
+   Si por error corres `clasp create` desde la raíz del repo (`disenatujubilacion/`
+   en vez de `disenatujubilacion/apps-script/`), te va a crear ahí un
+   `.clasp.json` y un `appsscript.json` nuevos y genéricos, pisando nada
+   importante pero apuntando al lugar equivocado — `clasp push` intentaría
+   subir *todo* el repo (`site/`, `functions/`, etc.) como si fuera código
+   de Apps Script. El proyecto en Google igual queda bien creado (atado al
+   archivo de Personas); solo hay que mover `.clasp.json` a esta carpeta y
+   borrar el `appsscript.json` de sobra en la raíz. Confirma con
+   `clasp status` (parado en `apps-script/`) que solo aparecen los siete
+   `.gs` y el `appsscript.json` de acá antes de hacer push:
+   ```bash
+   clasp status
    clasp push
    ```
 
