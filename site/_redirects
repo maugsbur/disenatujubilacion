@@ -1,0 +1,5 @@
+# La vista de resultado vive en el mismo index.html que las preguntas
+# (una sola página que cambia de vista con JS). Esta regla hace que
+# recargar /autodiagnostico/resultado sirva ese mismo archivo con 200,
+# sin redirigir la URL visible.
+/autodiagnostico/resultado   /autodiagnostico/   200
