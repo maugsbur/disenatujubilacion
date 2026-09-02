@@ -65,15 +65,22 @@ Apps Script (Etapa 3) verificado en producción con datos reales el 2026-09-03.
       Workers) no está documentado con la misma claridad, y 1.000 escrituras/día de KV
       sobra por mucho para el volumen esperado. Falla abierto si KV no responde
 - [x] Reenvío a Apps Script con token compartido dentro del cuerpo JSON
-- [x] Secretos en variables de entorno (dashboard de Pages, no en `wrangler.toml`)
+- [x] Secretos de verdad en el dashboard como **Secret** (`SHARED_TOKEN`); el resto
+      de las variables (no secretas) en `wrangler.toml` § `[vars]`
 - [x] Probado en local con `wrangler pages dev` + un Apps Script simulado: envío
       válido, honeypot, correo inválido, content-type incorrecto, y el límite de
       6/60s — los cinco se comportan como se espera
-- [ ] **Pendiente de Marcel:** crear el namespace de KV, pegar su ID en `wrangler.toml`,
-      y configurar `APPS_SCRIPT_URL` + `SHARED_TOKEN` en el dashboard — pasos en
-      el `README.md` § El Worker
-- [ ] **Pendiente:** una vez Apps Script esté desplegado de verdad (Etapa 3), probar
-      el flujo completo en producción, no solo contra el simulado
+- [x] **Probado en producción real, 2026-09-03**, contra Apps Script real (no
+      simulado): `{"ok":true,"recibido":true,"uuid":"...","correoEnviado":false}`
+      — `correoEnviado:false` es lo esperado, Brevo (Etapa 5) aún no está configurado
+- [x] **Bug real encontrado y corregido:** con `wrangler.toml` presente, Cloudflare
+      Pages ignora las variables de texto plano puestas en el dashboard — solo
+      respeta ahí las marcadas como Secret. `APPS_SCRIPT_URL` se agregó bien en el
+      dashboard y el Worker nunca la vio; costó una sesión completa de diagnóstico
+      (incluida una pista falsa sobre "propagación" que resultó ser un bug en mi
+      propio script de prueba, no del sistema). Ahora `APPS_SCRIPT_URL` vive en
+      `wrangler.toml` § `[vars]`; solo lo genuinamente secreto queda en el dashboard.
+      Ver `README.md` § El Worker para el detalle completo
 
 ## Etapa 5 — Correo (Brevo) ✅ código listo y probado en local
 - [x] **Decisión de arquitectura, confirmada por Marcel el 2026-09-02:** los tres PDF
