@@ -29,44 +29,52 @@ la primera vez que hace falta, dentro del archivo de Personas.
 
 ## 2. Crear el proyecto de Apps Script
 
-1. Desde el archivo `DTJ · Personas`: **Extensiones → Apps Script**. Esto lo
-   deja *bound* a ese archivo, que es lo que necesitas para que el menú
-   `DTJ · Privacidad` aparezca al abrirlo.
-2. Borra el `Code.gs` vacío que trae por defecto.
-3. Copia el contenido de cada archivo de esta carpeta a un archivo nuevo del
-   mismo nombre en el editor (Config, Utilidades, Personas, Respuestas,
-   Codigo, DerechosARCO, Retencion). El manifiesto (`appsscript.json`) se
-   edita desde **Configuración del proyecto → Mostrar "appsscript.json"**.
+**El binding a una planilla que ya existe SOLO se puede hacer desde la
+interfaz de Sheets — no hay ningún comando de clasp que ate un script a un
+archivo existente.** (`clasp create --type sheets --parentId <ID>` no
+sirve para esto: con `--type` definido, clasp ignora por completo
+`--parentId` y siempre crea una planilla nueva — se confirmó leyendo el
+código fuente de clasp 3.x, después de dos intentos fallidos tratando de
+usarlo así.)
 
-   *Alternativa más rápida si ya usas [clasp](https://github.com/google/clasp):*
+1. Desde el archivo `DTJ · Personas`: **Extensiones → Apps Script**. Esto
+   crea (o abre, si ya existe) el proyecto *bound* a ese archivo — es lo
+   que hace que el menú `DTJ · Privacidad` aparezca al abrirlo, y es un
+   paso que no se puede saltar ni reemplazar con clasp.
+2. Copia el **Id. de secuencia de comandos** (Script ID) desde el ícono de
+   engranaje **Configuración del proyecto**.
+3. Ahora sí, para subir el código: **copia y pega manualmente** el
+   contenido de cada archivo de esta carpeta en un archivo nuevo del mismo
+   nombre en el editor (Config, Utilidades, Personas, Respuestas, Codigo,
+   DerechosARCO, Retencion — y borra el `Code.gs` vacío que trae por
+   defecto). El manifiesto (`appsscript.json`) se edita desde
+   **Configuración del proyecto → Mostrar "appsscript.json" en el editor**.
+
+   *Alternativa con [clasp](https://github.com/google/clasp), una vez que
+   ya tienes el Script ID del paso 2:*
    ```bash
    npm install -g @google/clasp
    clasp login
    cd apps-script          # ⚠️ tiene que ser ESTA carpeta, no la raíz del repo
-   clasp create --type sheets --title "DTJ · Backend" --parentId <ID_DEL_ARCHIVO_PERSONAS> --rootDir .
+   clasp clone TU_SCRIPT_ID --rootDir .
    ```
-   Si por error corres `clasp create` desde la raíz del repo (`disenatujubilacion/`
-   en vez de `disenatujubilacion/apps-script/`), te va a crear ahí un
-   `.clasp.json` y un `appsscript.json` nuevos y genéricos, pisando nada
-   importante pero apuntando al lugar equivocado — `clasp push` intentaría
-   subir *todo* el repo (`site/`, `functions/`, etc.) como si fuera código
-   de Apps Script. El proyecto en Google igual queda bien creado (atado al
-   archivo de Personas); solo hay que mover `.clasp.json` a esta carpeta y
-   borrar el `appsscript.json` de sobra en la raíz. Confirma con
-   `clasp status` (parado en `apps-script/`) que solo aparecen los siete
-   `.gs` y el `appsscript.json` de acá antes de hacer push:
+   `clone` trae de vuelta un `Code.gs` vacío y probablemente pisa
+   `appsscript.json` con uno genérico — bórralo y revisa el manifiesto
+   antes de seguir:
    ```bash
-   clasp status
+   rm Code.gs
+   cat appsscript.json    # ¿sigue el bloque "webapp"? si no, restáuralo desde git
+   clasp status            # confirma que solo aparecen los siete .gs + appsscript.json
    clasp push
    ```
 
-   *Nota sobre versiones:* clasp 3.x renombró varios comandos. `create`,
-   `push` y `status` siguen funcionando igual (son alias), pero **`clasp
-   open` ya no existe** — ahora es `clasp open-script` (abre el editor del
-   proyecto en el navegador; útil para confirmar que el push llegó a donde
-   correspondía, sobre todo si entrar por Extensions → Apps Script desde la
-   planilla no muestra los archivos — a veces es solo la pestaña vieja del
-   editor, sin recargar).
+   *Nota sobre versiones:* clasp 3.x renombró varios comandos. `push` y
+   `status` siguen funcionando igual (son alias), pero **`clasp open` ya
+   no existe** — ahora es `clasp open-script` (abre el editor del proyecto
+   en el navegador; útil para confirmar que el push llegó a donde
+   correspondía, sobre todo si entrar por Extensions → Apps Script desde
+   la planilla no muestra los archivos — a veces es solo la pestaña vieja
+   del editor, sin recargar).
 
 ## 3. Configurar las propiedades (el token y los IDs de los dos archivos)
 
