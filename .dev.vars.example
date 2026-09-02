@@ -1,0 +1,9 @@
+# Copia este archivo a .dev.vars (que está en .gitignore, nunca se sube)
+# para probar el Worker en local con `wrangler pages dev`.
+#
+# En producción estas mismas dos variables se configuran en el dashboard:
+# Workers & Pages → tu proyecto → Settings → Environment variables
+# (como "Secret", no como texto plano).
+
+APPS_SCRIPT_URL=https://script.google.com/macros/s/TU_ID_DE_IMPLEMENTACION/exec
+SHARED_TOKEN=el-mismo-token-que-configuraste-en-apps-script

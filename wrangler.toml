@@ -1,0 +1,9 @@
+name = "disenatujubilacion"
+compatibility_date = "2026-09-02"
+pages_build_output_dir = "site"
+
+# KV para el límite de envíos por IP en functions/api/submit.js.
+# Crea el namespace una vez (ver README.md § Etapa 4) y pega su id acá.
+[[kv_namespaces]]
+binding = "RATE_LIMIT_KV"
+id = "PEGAR_AQUI_EL_ID_DEL_NAMESPACE_KV"

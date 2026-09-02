@@ -54,14 +54,24 @@ Carlos confirmado.
       prueba incluido en el README) y confirmar en vivo que las cuatro
       combinaciones de casillas hacen lo que dicen
 
-## Etapa 4 — Worker
-- [ ] Validación de payload y consentimientos
-- [ ] Honeypot + rate limiting por IP (confirmar si el binding nativo de Rate Limiting
-      de Cloudflare está disponible en el plan free; si no, KV con 1.000 escrituras/día)
-- [ ] Reenvío a Apps Script con token compartido **dentro del cuerpo JSON**
-      (campo `token`) — Apps Script no expone headers HTTP personalizados,
-      así que no puede ir como `Authorization`. Descubierto en la Etapa 3
-- [ ] Secretos en variables de entorno
+## Etapa 4 — Worker ✅ código listo y probado en local
+- [x] Implementado como **Pages Function** (`functions/api/submit.js`), no como
+      Worker/dominio aparte — se despliega solo con cada push, mismo dominio, sin CORS
+- [x] Validación de payload y consentimientos
+- [x] Honeypot + rate limiting por IP — se optó por **KV** (6 envíos/IP cada 60s) en vez
+      del binding nativo de Rate Limiting: su soporte en Pages Functions (a diferencia de
+      Workers) no está documentado con la misma claridad, y 1.000 escrituras/día de KV
+      sobra por mucho para el volumen esperado. Falla abierto si KV no responde
+- [x] Reenvío a Apps Script con token compartido dentro del cuerpo JSON
+- [x] Secretos en variables de entorno (dashboard de Pages, no en `wrangler.toml`)
+- [x] Probado en local con `wrangler pages dev` + un Apps Script simulado: envío
+      válido, honeypot, correo inválido, content-type incorrecto, y el límite de
+      6/60s — los cinco se comportan como se espera
+- [ ] **Pendiente de Marcel:** crear el namespace de KV, pegar su ID en `wrangler.toml`,
+      y configurar `APPS_SCRIPT_URL` + `SHARED_TOKEN` en el dashboard — pasos en
+      el `README.md` § El Worker
+- [ ] **Pendiente:** una vez Apps Script esté desplegado de verdad (Etapa 3), probar
+      el flujo completo en producción, no solo contra el simulado
 
 ## Etapa 5 — Correo (Brevo)
 - [ ] Cuenta Brevo + dominio verificado (SPF, DKIM, DMARC en `disenatujubilacion.com`)

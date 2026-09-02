@@ -22,8 +22,13 @@ site/              → carpeta que Cloudflare Pages publica (output directory = 
   _redirects           rewrite de /autodiagnostico/resultado (Pages)
   _headers             headers de seguridad básicos (Pages)
 
-worker/            → Worker delgado de Cloudflare (Etapa 4, aún no construido)
-apps-script/       → código de Apps Script para Sheets + Gmail (Etapa 3, aún no construido)
+functions/         → Worker delgado, como Cloudflare Pages Function (Etapa 4)
+  api/submit.js       POST /api/submit: valida, limita por IP, reenvía a Apps Script
+
+wrangler.toml      → config del proyecto Pages: KV para el límite por IP
+.dev.vars.example  → plantilla de variables de entorno para probar en local
+
+apps-script/       → código de Apps Script para las dos planillas (Etapa 3)
 ```
 
 ## Desarrollo local
@@ -54,9 +59,34 @@ así que se puede probar completa sin el Worker ni Apps Script desplegados.
 4. Agrega el dominio personalizado `disenatujubilacion.com` en **Custom domains** una vez creado el proyecto.
 5. Cada push a `main` dispara un deploy automático (dentro del límite de 500 builds/mes del plan gratuito).
 
-El Worker (`/api/submit`) y Apps Script se conectan en la Etapa 4–5; hasta entonces, el
-formulario del autodiagnóstico intenta el POST, falla en silencio (404, sin endpoint aún) y
-el resultado se muestra igual — es el comportamiento esperado, ver `PLAN.md`.
+## El Worker (`/api/submit`)
+
+Vive en `functions/api/submit.js` como **Pages Function** — se despliega solo con cada
+push a `main`, en el mismo dominio que el sitio (sin CORS que configurar), sin un
+`wrangler deploy` aparte. Valida el payload, limita por IP con KV, filtra el honeypot,
+y reenvía a Apps Script agregando el token compartido dentro del cuerpo JSON (Apps Script
+no expone headers HTTP personalizados — no puede ir como `Authorization`).
+
+**Para activarlo en producción**, dos cosas en el dashboard de Cloudflare (proyecto Pages
+→ Settings):
+
+1. **Crear el namespace de KV** para el límite por IP: **Workers & Pages → KV → Create
+   namespace** (nómbralo `dtj-rate-limit`), copia su ID, y pégalo en `wrangler.toml` en
+   este repo, reemplazando `PEGAR_AQUI_EL_ID_DEL_NAMESPACE_KV`. Al hacer push, Pages lo
+   detecta solo (los bindings de `wrangler.toml` se aplican en cada deploy conectado a Git).
+2. **Variables de entorno** (Settings → Environment variables, en Production): agrega
+   `APPS_SCRIPT_URL` (la URL `/exec` del Web App, ver `apps-script/README.md`) y
+   `SHARED_TOKEN` (el mismo token que configuraste en Apps Script) — marca esta última
+   como **Secret**, no como texto plano. Estas dos NO van en `wrangler.toml` ni en el
+   repo: solo en el dashboard.
+
+Hasta que esas dos cosas estén configuradas, el formulario del autodiagnóstico sigue
+mostrando el resultado igual (el diseño nunca dependió del envío para eso), pero el POST
+le va a devolver `config_del_worker_incompleta` en vez de guardar nada.
+
+**Probado en local** con `wrangler pages dev` y un Apps Script simulado: envío válido,
+honeypot, correo inválido, tipo de contenido incorrecto y el límite de 6 envíos por
+IP cada 60 segundos — los cinco se comportan como se espera antes de este commit.
 
 ## Autodiagnóstico: cómo está armado
 
