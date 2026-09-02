@@ -1,17 +1,13 @@
 # Plantilla HABLAR — guía de conversaciones
 
-> ⚠️ **Borrador mínimo, no el copy final.** Todavía no leí el contenido
-> completo del PDF (`guia-HABLAR-conversaciones.pdf`, 8 páginas) — solo lo
-> tengo como archivo adjunto, no como texto. Ver la misma nota en
-> `PLAN.md`: esto alcanza para probar el envío de punta a punta en la
-> Etapa 5, el copy real es trabajo de la Etapa 6.
-
-**Con adjunto**: el PDF, vía el campo `attachment.url` de Brevo apuntando a
-la ruta oscura en `site/assets/pdfs/` (ver `brevo/README.md`).
+Se envía al dejar el correo en `/hablar`. **Con adjunto**: el PDF, vía el
+campo `attachment.url` de Brevo apuntando a la ruta oscura en
+`site/assets/pdfs/` (ver `brevo/README.md`).
 
 ## Cómo crearla en Brevo
 
-Igual que `DOMINO.md` y `PLAN.md`. Sin parámetros dinámicos por ahora.
+**Campañas → Plantillas → Crear una plantilla.** Sin parámetros
+dinámicos.
 
 Asunto sugerido:
 
@@ -21,13 +17,20 @@ Tu guía: cómo hablar de tu jubilación
 
 Anota el **Template ID** — va en `BREVO_TEMPLATE_HABLAR`.
 
-## Copy sugerido (genérico, a reemplazar en Etapa 6)
+## Copy
 
 > **Aquí tienes tu guía**
 >
 > Hola,
 >
-> Adjunta va la guía que pediste. Tómate un momento para leerla con calma.
+> Adjunta va **Las cuatro conversaciones que hay que tener antes de
+> jubilar** — cuidados, dónde y cómo vivir, dinero, y qué pasa con tus
+> bienes. Con una estructura para plantear cada una sin que suene a
+> reproche ni a anuncio, ejemplos reales, y una hoja de preparación para
+> llenar antes de proponerla.
+>
+> Empieza por una sola. La que menos ganas te dé tener suele ser la más
+> importante.
 >
 > Si quieres que revisemos tu caso juntos, agenda una sesión de
 > diagnóstico gratuita de 45 minutos:

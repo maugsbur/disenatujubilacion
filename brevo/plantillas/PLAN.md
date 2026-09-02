@@ -1,22 +1,15 @@
 # Plantilla PLAN — guía de las cuatro acciones
 
-> ⚠️ **Borrador mínimo, no el copy final.** Todavía no leí el contenido
-> completo del PDF (`guia-PLAN-cuatro-acciones.pdf`, 8 páginas) — solo lo
-> tengo como archivo adjunto, no como texto. Esto alcanza para que el envío
-> funcione de punta a punta en la Etapa 5. La Etapa 6 (páginas de captura)
-> es el momento de leer la guía completa y escribir un copy que realmente
-> la describa, en vez de este texto genérico.
-
-**Con adjunto**: el PDF, vía el campo `attachment.url` de Brevo apuntando a
-la ruta oscura en `site/assets/pdfs/` (ver `brevo/README.md`).
+Se envía al dejar el correo en `/plan`. **Con adjunto**: el PDF, vía el
+campo `attachment.url` de Brevo apuntando a la ruta oscura en
+`site/assets/pdfs/` (ver `brevo/README.md`).
 
 ## Cómo crearla en Brevo
 
-Igual que `DOMINO.md`: **Campañas → Plantillas → Crear una plantilla**.
-Esta no necesita parámetros dinámicos — el Worker igual manda
-`params: {}`, así que si más adelante quieres personalizarla (por
-ejemplo con el nombre de la persona) no hay que tocar el Worker, solo
-agregar el parámetro ahí y en la plantilla.
+**Campañas → Plantillas → Crear una plantilla.** Sin parámetros
+dinámicos — el Worker manda `params: {}}` para esta guía, así que si más
+adelante se quiere personalizar (el nombre de la persona, por ejemplo) no
+hay que tocar el Worker, solo agregar el parámetro ahí y acá.
 
 Asunto sugerido:
 
@@ -26,13 +19,19 @@ Tu guía: cuatro acciones para tu jubilación
 
 Anota el **Template ID** — va en `BREVO_TEMPLATE_PLAN`.
 
-## Copy sugerido (genérico, a reemplazar en Etapa 6)
+## Copy
 
 > **Aquí tienes tu guía**
 >
 > Hola,
 >
-> Adjunta va la guía que pediste. Tómate un momento para leerla con calma.
+> Adjunta va **Tu jubilación no se resuelve esta semana. Estas cuatro
+> acciones sí.** — un número, una hora médica, una persona y una fecha.
+> Cuatro cosas que se hacen una sola vez y quedan hechas, cada una con un
+> primer paso de menos de cinco minutos.
+>
+> Elige la que te dio más incomodidad al leerla. Casi siempre es la que
+> más falta hace.
 >
 > Si quieres que revisemos tu caso juntos, agenda una sesión de
 > diagnóstico gratuita de 45 minutos:

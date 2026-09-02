@@ -1,17 +1,14 @@
 # Plantilla ENTUSIASMO — el caso de Carlos
 
-> ⚠️ **Borrador mínimo, no el copy final.** Todavía no leí el contenido
-> completo del PDF (`guia-ENTUSIASMO-carlos.pdf`, 8 páginas) — solo lo
-> tengo como archivo adjunto, no como texto. Ver la misma nota en
-> `PLAN.md`. El consentimiento de Carlos ya está confirmado (Marcel,
-> 2026-09-02); lo que falta es el copy real de esta plantilla, Etapa 6.
-
-**Con adjunto**: el PDF, vía el campo `attachment.url` de Brevo apuntando a
-la ruta oscura en `site/assets/pdfs/` (ver `brevo/README.md`).
+Se envía al dejar el correo en `/carlos`. Consentimiento de Carlos
+confirmado por Marcel (2026-09-02). **Con adjunto**: el PDF, vía el campo
+`attachment.url` de Brevo apuntando a la ruta oscura en
+`site/assets/pdfs/` (ver `brevo/README.md`).
 
 ## Cómo crearla en Brevo
 
-Igual que las otras tres. Sin parámetros dinámicos por ahora.
+**Campañas → Plantillas → Crear una plantilla.** Sin parámetros
+dinámicos.
 
 Asunto sugerido:
 
@@ -21,13 +18,21 @@ Tu guía: el caso de Carlos
 
 Anota el **Template ID** — va en `BREVO_TEMPLATE_ENTUSIASMO`.
 
-## Copy sugerido (genérico, a reemplazar en Etapa 6)
+## Copy
 
 > **Aquí tienes tu guía**
 >
 > Hola,
 >
-> Adjunta va la guía que pediste. Tómate un momento para leerla con calma.
+> Adjunto va el caso de Carlos, publicado con su autorización. Jubiló
+> por invalidez, antes de lo que tenía planeado, y esta es la secuencia
+> real de lo que hizo después: en qué orden, y lo que todavía le está
+> costando. No es una historia de motivación — es un método.
+>
+> Lo replicable no es su objetivo, que es suyo. Es el orden: primero una
+> dirección propia, después una auditoría honesta de la agenda, los
+> apoyos que faltan, los hábitos, el dinero, y al final las
+> conversaciones que hacen que todo eso sea sostenible con tu gente.
 >
 > Si quieres que revisemos tu caso juntos, agenda una sesión de
 > diagnóstico gratuita de 45 minutos:

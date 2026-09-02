@@ -3,33 +3,113 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Guía PLAN | Diseña tu Jubilación</title>
-<meta name="robots" content="noindex, follow">
+<title>Guía PLAN: cuatro acciones | Diseña tu Jubilación</title>
+<meta name="description" content="Cuatro acciones que se hacen una sola vez y quedan hechas — sin hábitos nuevos, sin doce semanas de plan. Recíbela gratis en tu correo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700&family=Poppins:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,700&family=Poppins:wght@300;400;500;600;700&display=swap">
 <link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/captura.css">
 </head>
-<body class="placeholder-page">
+<body>
+
+<div class="cap-hero">
   <div class="container">
     <div class="kicker" style="color:var(--dtj-amber)">Guía · PLAN</div>
-    <h1>Estamos preparando esta página</h1>
-    <p>Acá vas a poder dejar tu correo para recibir la guía de las cuatro acciones, en PDF. Vuelve pronto.</p>
-    <div class="cta-row">
-      <a class="btn btn-outline" style="border-color: var(--dtj-cream); color: var(--dtj-cream);" href="/">Volver al inicio</a>
+    <h1>Tu jubilación no se resuelve esta semana. Estas cuatro acciones sí.</h1>
+    <p class="sub">Sin planes de doce semanas, sin hábitos nuevos y sin agobio. Cuatro acciones que se hacen una vez y quedan hechas.</p>
+    <span class="badge">8 páginas · PDF</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <section class="cap-section">
+    <h2>Esto no es un plan</h2>
+    <div class="cap-rule"></div>
+    <p>Hay áreas donde el cambio necesita hábitos — comer distinto, moverte, dormir mejor — y esas cuestan, porque hay que sostenerlas. Las cuatro acciones de esta guía no son de esas: se hacen una sola vez. Ninguna te pide cambiar tu rutina ni ser constante, y cada una arranca con un primer paso de menos de cinco minutos que puedes dar hoy mismo.</p>
+    <div class="cap-highlight">Las decisiones que tomas hoy, y sobre todo las que no tomas, las va a vivir tu yo del futuro.</div>
+  </section>
+
+  <section class="cap-section">
+    <h2>Las cuatro acciones</h2>
+    <div class="cap-rule"></div>
+    <ul class="cap-structure">
+      <li>
+        <span class="n">1</span>
+        <span>
+          <span class="t">Un número</span>
+          <span class="d">Cuánto cuesta un mes de tu vida — no una estimación, un número real, sacado de tu propia cuenta.</span>
+        </span>
+      </li>
+      <li>
+        <span class="n">2</span>
+        <span>
+          <span class="t">Una hora médica</span>
+          <span class="d">Agendar ese examen o control que vienes postergando. Uno, no todos.</span>
+        </span>
+      </li>
+      <li>
+        <span class="n">3</span>
+        <span>
+          <span class="t">Una persona</span>
+          <span class="d">Definir quién decide por ti si en algún momento tú no puedes hacerlo, y decírselo.</span>
+        </span>
+      </li>
+      <li>
+        <span class="n">4</span>
+        <span>
+          <span class="t">Una fecha</span>
+          <span class="d">Un encuentro presencial y recurrente con alguien que te importa, con día y hora fijos.</span>
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="cap-section" style="border-bottom:none; padding-bottom: 0;">
+    <form class="cap-form" id="capForm" data-guia="PLAN" novalidate>
+      <h2>Recibe la guía completa</h2>
+      <p>Las cuatro acciones explicadas paso a paso, con el primer movimiento de cada una y cómo saber cuándo está realmente hecha.</p>
+
+      <div id="capFormError" class="cap-form-error" hidden></div>
+
+      <div class="cap-field">
+        <label for="capEmail">Tu correo electrónico</label>
+        <input type="email" id="capEmail" name="email" placeholder="tu@correo.com" autocomplete="email" inputmode="email">
+      </div>
+
+      <label class="cap-check">
+        <input type="checkbox" id="capConsentMarketing" name="consentMarketing">
+        <span>Quiero recibir información sobre el programa Diseña tu Jubilación y sus contenidos.</span>
+      </label>
+
+      <p class="cap-privacy-link">Puedes pedir que eliminemos tus datos en cualquier momento escribiendo a <a href="mailto:disenatujubilacion@gmail.com">disenatujubilacion@gmail.com</a>. Revisa cómo los tratamos en nuestra <a href="/privacidad">Política de Privacidad</a>.</p>
+
+      <div class="cap-hp" aria-hidden="true">
+        <label for="capHp">Deja este campo vacío</label>
+        <input type="text" id="capHp" name="sitioWeb" tabindex="-1" autocomplete="off">
+      </div>
+
+      <button type="submit" class="btn cap-submit">Enviarme la guía</button>
+    </form>
+    <div class="cap-form-ok" id="capFormOk" hidden></div>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <span>© Diseña tu Jubilación</span>
+      <div class="links">
+        <a href="https://www.instagram.com/disenatujubilacion/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/56934865410" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="/privacidad">Política de privacidad</a>
+      </div>
     </div>
   </div>
-  <div class="container" style="flex: none;">
-    <footer class="site-footer on-dark">
-      <div class="row">
-        <span>© Diseña tu Jubilación</span>
-        <div class="links">
-          <a href="https://www.instagram.com/disenatujubilacion/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://wa.me/56934865410" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="/privacidad">Política de privacidad</a>
-        </div>
-      </div>
-    </footer>
-  </div>
+</footer>
+
+<script src="/assets/js/captura.js" defer></script>
 </body>
 </html>

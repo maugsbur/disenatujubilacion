@@ -1,0 +1,141 @@
+/* Páginas de captura (/plan, /hablar, /carlos) y landing — comparten estos
+   componentes. Mobile-first, mismos tokens de marca que autodiagnostico.css. */
+
+.cap-hero {
+  background: var(--dtj-green);
+  color: var(--dtj-offwhite);
+  padding: var(--space-6) 0 var(--space-5);
+}
+.cap-hero h1 {
+  color: var(--dtj-cream);
+  font-size: clamp(1.6rem, 6vw, 2.5rem);
+  margin-bottom: var(--space-3);
+}
+.cap-hero .sub { font-size: 1.05rem; opacity: 0.9; margin-bottom: 0; }
+.cap-hero .badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dtj-green);
+  background: var(--dtj-cream);
+  font-weight: 600;
+  padding: 0.3em 0.8em;
+  border-radius: 999px;
+  margin-top: var(--space-3);
+}
+
+.cap-section { padding: var(--space-5) 0; border-bottom: 1px solid var(--dtj-border); }
+.cap-section:last-of-type { border-bottom: none; }
+.cap-section h2 { font-size: clamp(1.3rem, 5vw, 1.6rem); }
+.cap-rule { height: 2px; width: 2.4rem; background: var(--dtj-amber); margin: 0 0 var(--space-4); }
+
+.cap-highlight {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--dtj-green);
+  border-left: 3px solid var(--dtj-amber);
+  padding-left: var(--space-3);
+  margin: var(--space-4) 0;
+}
+
+.cap-structure { list-style: none; margin: 0; padding: 0; }
+.cap-structure li {
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--dtj-border);
+  display: flex;
+  gap: 0.9rem;
+  align-items: baseline;
+}
+.cap-structure li:first-child { border-top: none; }
+.cap-structure .n {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--dtj-amber);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  width: 1.6rem;
+}
+.cap-structure .t { font-weight: 500; color: var(--dtj-green); display: block; margin-bottom: 0.2rem; }
+.cap-structure .d { font-size: 0.92rem; color: var(--dtj-muted); }
+
+/* ---------- Formulario de captura ---------- */
+.cap-form {
+  background: var(--dtj-green);
+  color: var(--dtj-offwhite);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  margin: var(--space-2) 0 var(--space-6);
+}
+.cap-form h2 { color: var(--dtj-cream); font-size: 1.3rem; }
+.cap-form > p { opacity: 0.9; font-size: 0.95rem; }
+.cap-field { margin: var(--space-4) 0; }
+.cap-field label { display: block; font-size: 0.95rem; margin-bottom: 0.4rem; font-weight: 500; }
+.cap-field input[type="email"] {
+  width: 100%;
+  min-height: var(--touch-min);
+  padding: 0.7em 0.9em;
+  border-radius: var(--radius-sm);
+  border: none;
+  font-size: 1rem;
+  background: var(--dtj-offwhite);
+  color: var(--dtj-charcoal);
+}
+.cap-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin-bottom: var(--space-3);
+  cursor: pointer;
+}
+.cap-check input {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  accent-color: var(--dtj-amber);
+}
+.cap-check span { font-size: 0.92rem; line-height: 1.5; }
+.cap-privacy-link { font-size: 0.82rem; opacity: 0.85; margin: var(--space-3) 0 var(--space-4); }
+.cap-privacy-link a { color: var(--dtj-cream); }
+.cap-submit { width: 100%; background: var(--dtj-amber); color: var(--dtj-offwhite); }
+.cap-submit:hover { background: var(--dtj-amber-ink); }
+.cap-form-error {
+  background: rgba(230, 95, 43, 0.18);
+  border: 1px solid var(--dtj-amber);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.9rem;
+  font-size: 0.88rem;
+  margin-bottom: var(--space-3);
+}
+.cap-form-ok {
+  background: rgba(203, 220, 213, 0.2);
+  border: 1px solid var(--dtj-cream);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1rem;
+  font-size: 0.95rem;
+}
+.cap-form-ok strong { color: var(--dtj-cream); }
+.cap-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* ---------- Grilla de recursos (landing) ---------- */
+.res-grid { display: grid; gap: var(--space-3); }
+.res-card {
+  display: block;
+  background: var(--dtj-offwhite);
+  border: 1px solid var(--dtj-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  text-decoration: none;
+  transition: border-color 0.12s ease;
+}
+.res-card:hover { border-color: var(--dtj-amber); }
+.res-card .rk { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dtj-amber); font-weight: 600; margin-bottom: 0.4rem; }
+.res-card h3 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+.res-card p { font-size: 0.9rem; color: var(--dtj-muted); margin: 0; }
+
+@media (min-width: 640px) {
+  .res-grid { grid-template-columns: 1fr 1fr; }
+}

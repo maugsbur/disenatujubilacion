@@ -97,17 +97,30 @@ Carlos confirmado.
       variables de entorno — todo el detalle en `brevo/README.md`
 - [ ] **Pendiente:** prueba de entregabilidad real una vez desplegado: Gmail,
       Outlook, un corporativo
-- [ ] **Pendiente (Etapa 6):** leer los tres PDF completos y reemplazar el copy
-      genérico de PLAN/HABLAR/ENTUSIASMO por uno que realmente los describa
+- [x] Los tres PDF ya se leyeron completos (Etapa 6) y las plantillas de
+      Brevo se actualizaron con copy real
 
-## Etapa 6 — Landing, tres páginas de captura y privacidad
-- [x] CTA de Calendly (45 min), WhatsApp (+56 9 3486 5410) e Instagram —
-      agregados el 2026-09-02 en el placeholder; se trasladan tal cual al diseño final
-- [ ] Landing real (hoy: placeholder con el copy y los CTA ya correctos)
-- [ ] Copy real de `/plan`, `/hablar`, `/carlos` — para esto hay que leer el contenido
-      completo de los tres PDF (en esta sesión solo se confirmaron metadatos: tamaño de
-      archivo, no el texto)
-- [ ] Política de privacidad completa, según checklist de `08-cumplimiento-datos.md` §7
+## Etapa 6 — Landing, tres páginas de captura y privacidad ✅
+- [x] CTA de Calendly (45 min), WhatsApp (+56 9 3486 5410) e Instagram
+- [x] Landing real: qué es el programa, los cinco pilares, grilla de recursos
+      gratuitos (autodiagnóstico + las tres guías), CTA final
+- [x] Copy real de `/plan`, `/hablar`, `/carlos` — se leyeron los tres PDF
+      completos y se escribió una versión condensada para cada página (no el
+      PDF entero: la guía completa es el incentivo para dejar el correo)
+- [x] Formulario de captura compartido (`assets/js/captura.js`): valida,
+      manda a `/api/submit`, y el mensaje final depende de si Brevo
+      realmente envió el correo o quedó en la cola de reintento
+- [x] Política de privacidad completa, según checklist de
+      `08-cumplimiento-datos.md` §7 — **borrador de buena fe, no revisión
+      legal.** Esa revisión sigue listada para antes del 1 de diciembre en
+      la sección de abajo, tal como ya lo marcaba `08-cumplimiento-datos.md`
+- [x] Bug real encontrado y corregido de paso: `wrangler.toml` tenía el ID
+      del namespace de KV sin comillas (TOML inválido) — habría roto el
+      deploy real, no solo las pruebas locales
+- [x] Probado en local con `wrangler pages dev`: landing, las tres páginas
+      de captura y la política de privacidad en viewport móvil; el
+      formulario de captura probado de punta a punta (envío exitoso y
+      camino de error) contra Apps Script y Brevo simulados
 
 ## Etapa 7 — Cierre
 - [ ] Prueba extremo a extremo de los cuatro flujos

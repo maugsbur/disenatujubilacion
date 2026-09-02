@@ -3,33 +3,114 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Guía HABLAR | Diseña tu Jubilación</title>
-<meta name="robots" content="noindex, follow">
+<title>Guía HABLAR: cuatro conversaciones | Diseña tu Jubilación</title>
+<meta name="description" content="Las cuatro conversaciones que hay que tener antes de jubilar, con una estructura para no hacerlas incómodas. Recíbela gratis en tu correo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700&family=Poppins:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,700&family=Poppins:wght@300;400;500;600;700&display=swap">
 <link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/captura.css">
 </head>
-<body class="placeholder-page">
+<body>
+
+<div class="cap-hero">
   <div class="container">
     <div class="kicker" style="color:var(--dtj-amber)">Guía · HABLAR</div>
-    <h1>Estamos preparando esta página</h1>
-    <p>Acá vas a poder dejar tu correo para recibir la guía de conversaciones, en PDF. Vuelve pronto.</p>
-    <div class="cta-row">
-      <a class="btn btn-outline" style="border-color: var(--dtj-cream); color: var(--dtj-cream);" href="/">Volver al inicio</a>
+    <h1>Las cuatro conversaciones que hay que tener antes de jubilar</h1>
+    <p class="sub">Una forma simple de empezar las cuatro conversaciones que casi nadie tiene a tiempo, y que casi todos terminan teniendo en el peor momento.</p>
+    <span class="badge">8 páginas · PDF</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <section class="cap-section">
+    <h2>Mientras no se hablan, se asumen</h2>
+    <div class="cap-rule"></div>
+    <p>«Mi hijo me va a cuidar.» «Eso lo vemos cuando pase.» Ninguna de esas frases es un acuerdo — son suposiciones que nadie verificó, y que muchas veces la otra persona ni siquiera sabe que existen. Lo que sí es incómodo es la otra versión: la conversación que no se tuvo, ocurriendo en un pasillo de hospital, con prisa y con gente que no está en condiciones de pensar bien.</p>
+    <div class="cap-highlight">La diferencia entre una suposición y un acuerdo es una conversación.</div>
+  </section>
+
+  <section class="cap-section">
+    <h2>Las cuatro conversaciones</h2>
+    <div class="cap-rule"></div>
+    <ul class="cap-structure">
+      <li>
+        <span class="n">1</span>
+        <span>
+          <span class="t">Cuidados</span>
+          <span class="d">Qué pasa si en algún momento necesitas ayuda para el día a día. Quién, cómo, y con qué se paga.</span>
+        </span>
+      </li>
+      <li>
+        <span class="n">2</span>
+        <span>
+          <span class="t">Dónde y cómo quieres vivir</span>
+          <span class="d">En tu casa, con familia, en una residencia. Y sobre todo: qué no estás dispuesto a negociar.</span>
+        </span>
+      </li>
+      <li>
+        <span class="n">3</span>
+        <span>
+          <span class="t">Dinero</span>
+          <span class="d">Qué pasa si no alcanza. Qué esperas tú de los tuyos, y qué esperan ellos de ti — casi nunca coincide.</span>
+        </span>
+      </li>
+      <li>
+        <span class="n">4</span>
+        <span>
+          <span class="t">Qué pasa con tus bienes</span>
+          <span class="d">Qué quieres que ocurra y por qué. Qué conviene nombrar ahora, antes de que genere conflicto.</span>
+        </span>
+      </li>
+    </ul>
+    <p style="margin-top: var(--space-4); font-size: 0.92rem; color: var(--dtj-muted);">La guía trae una estructura de cuatro partes para plantear cada conversación sin que suene a reproche ni a anuncio, con ejemplos reales — y una hoja de preparación para llenar antes de proponerla.</p>
+  </section>
+
+  <section class="cap-section" style="border-bottom:none; padding-bottom: 0;">
+    <form class="cap-form" id="capForm" data-guia="HABLAR" novalidate>
+      <h2>Recibe la guía completa</h2>
+      <p>Las cuatro conversaciones, la estructura para tenerlas sin que se descarrilen, y la hoja de preparación en versión imprimible.</p>
+
+      <div id="capFormError" class="cap-form-error" hidden></div>
+
+      <div class="cap-field">
+        <label for="capEmail">Tu correo electrónico</label>
+        <input type="email" id="capEmail" name="email" placeholder="tu@correo.com" autocomplete="email" inputmode="email">
+      </div>
+
+      <label class="cap-check">
+        <input type="checkbox" id="capConsentMarketing" name="consentMarketing">
+        <span>Quiero recibir información sobre el programa Diseña tu Jubilación y sus contenidos.</span>
+      </label>
+
+      <p class="cap-privacy-link">Puedes pedir que eliminemos tus datos en cualquier momento escribiendo a <a href="mailto:disenatujubilacion@gmail.com">disenatujubilacion@gmail.com</a>. Revisa cómo los tratamos en nuestra <a href="/privacidad">Política de Privacidad</a>.</p>
+
+      <div class="cap-hp" aria-hidden="true">
+        <label for="capHp">Deja este campo vacío</label>
+        <input type="text" id="capHp" name="sitioWeb" tabindex="-1" autocomplete="off">
+      </div>
+
+      <button type="submit" class="btn cap-submit">Enviarme la guía</button>
+    </form>
+    <div class="cap-form-ok" id="capFormOk" hidden></div>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <span>© Diseña tu Jubilación</span>
+      <div class="links">
+        <a href="https://www.instagram.com/disenatujubilacion/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/56934865410" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="/privacidad">Política de privacidad</a>
+      </div>
     </div>
   </div>
-  <div class="container" style="flex: none;">
-    <footer class="site-footer on-dark">
-      <div class="row">
-        <span>© Diseña tu Jubilación</span>
-        <div class="links">
-          <a href="https://www.instagram.com/disenatujubilacion/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://wa.me/56934865410" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="/privacidad">Política de privacidad</a>
-        </div>
-      </div>
-    </footer>
-  </div>
+</footer>
+
+<script src="/assets/js/captura.js" defer></script>
 </body>
 </html>

@@ -8,17 +8,19 @@ Ver [`PLAN.md`](./PLAN.md) para las etapas de trabajo y su estado.
 
 ```
 site/              → carpeta que Cloudflare Pages publica (output directory = "site")
-  index.html          landing (placeholder, Etapa 6 la reemplaza)
+  index.html          landing: qué es el programa, los cinco pilares, recursos gratuitos, CTA
   autodiagnostico/
     index.html         única página interactiva: preguntas + resultado, una vista JS
   plan/ hablar/ carlos/
-    index.html         páginas de captura para las guías PDF (placeholder, Etapa 6)
+    index.html         páginas de captura, con el contenido real de cada PDF (Etapa 6)
   privacidad/
-    index.html         política de privacidad (placeholder, Etapa 6)
+    index.html         política de privacidad completa (Etapa 6 — pendiente de revisión legal)
   assets/
     css/base.css        tokens de marca + reset, compartido por todo el sitio
     css/autodiagnostico.css
+    css/captura.css      landing + páginas de captura + política de privacidad
     js/autodiagnostico.js
+    js/captura.js        formulario compartido por /plan, /hablar y /carlos
     pdfs/                los tres PDF de las guías, en rutas oscuras y sin enlazar (Etapa 5)
   _redirects           rewrite de /autodiagnostico/resultado (Pages)
   _headers             headers de seguridad básicos + noindex de /assets/pdfs/ (Pages)
