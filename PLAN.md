@@ -73,12 +73,32 @@ Carlos confirmado.
 - [ ] **Pendiente:** una vez Apps Script esté desplegado de verdad (Etapa 3), probar
       el flujo completo en producción, no solo contra el simulado
 
-## Etapa 5 — Correo (Brevo)
-- [ ] Cuenta Brevo + dominio verificado (SPF, DKIM, DMARC en `disenatujubilacion.com`)
-- [ ] Plantillas de los cuatro envíos (DOMINÓ con totales por pilar, PLAN, HABLAR, ENTUSIASMO)
-- [ ] Adjuntos de los tres PDF (PLAN, HABLAR, ENTUSIASMO)
-- [ ] Cola con reintento cuando se tope la cuota diaria + alerta al equipo
-- [ ] Prueba de entregabilidad real: Gmail, Outlook, un corporativo
+## Etapa 5 — Correo (Brevo) ✅ código listo y probado en local
+- [x] **Decisión de arquitectura, confirmada por Marcel el 2026-09-02:** los tres PDF
+      viven en `site/assets/pdfs/`, en rutas largas y aleatorias, sin enlazar desde
+      ninguna página — Brevo los descarga con `attachment.url`. Se descartó Cloudflare
+      R2 (exige tarjeta de crédito para activarlo, incluso en el nivel gratuito) y volver
+      a rutear adjuntos por Apps Script/Drive (reabría la Etapa 3 sin necesidad)
+- [x] Worker: intenta Brevo primero; si falla, le pasa a Apps Script el cuerpo exacto
+      que se le iba a mandar a Brevo, listo para reintentar sin reconstruir nada
+- [x] Apps Script: `CorreoPendiente.gs` — cola de reintento cada 30 min, alerta al
+      equipo si una fila lleva 24h fallando (tiempo de sobra para que se resetee
+      una cuota diaria topada)
+- [x] Plantilla DOMINÓ con copy real (los cinco totales + pilar más bajo) — las
+      plantillas de PLAN/HABLAR/ENTUSIASMO son borradores mínimos, marcados como
+      tal en `brevo/plantillas/`: aún no leí el contenido completo de esos tres PDF
+- [x] Los tres PDF ya copiados al repo con nombres aleatorios (`brevo/README.md`
+      tiene la tabla exacta) y `noindex` en `_headers`
+- [x] Probado en local con Brevo simulado: envío exitoso con parámetros correctos,
+      adjunto solo en las guías que corresponde, y el camino de falla (402 forzado)
+      arma el payload de reintento exactamente como lo necesita Apps Script
+- [ ] **Pendiente de Marcel:** cuenta Brevo + dominio verificado (SPF/DKIM/DMARC),
+      crear las cuatro plantillas, generar la llave de API, y cargar unas 10
+      variables de entorno — todo el detalle en `brevo/README.md`
+- [ ] **Pendiente:** prueba de entregabilidad real una vez desplegado: Gmail,
+      Outlook, un corporativo
+- [ ] **Pendiente (Etapa 6):** leer los tres PDF completos y reemplazar el copy
+      genérico de PLAN/HABLAR/ENTUSIASMO por uno que realmente los describa
 
 ## Etapa 6 — Landing, tres páginas de captura y privacidad
 - [x] CTA de Calendly (45 min), WhatsApp (+56 9 3486 5410) e Instagram —

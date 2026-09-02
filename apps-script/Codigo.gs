@@ -15,6 +15,12 @@
  * Eso se traduce acá en una sola regla: las respuestas SOLO se escriben si
  * consentGuardado === true. El consentimiento de marketing no habilita ni
  * bloquea el guardado de respuestas — son independientes, a propósito.
+ *
+ * Correo (Etapa 5): el Worker ya intentó mandarlo con Brevo antes de llamar
+ * acá. Si falló, el mismo payload trae `correoEnviado:false` y
+ * `correoPendiente` con el cuerpo exacto que se le iba a mandar a Brevo —
+ * esta función solo lo deja en la cola de reintento (CorreoPendiente.gs),
+ * no vuelve a intentar el envío ella misma.
  */
 function doPost(e) {
   var cfg = getConfig_();
@@ -61,6 +67,11 @@ function doPost(e) {
   var respuestasGuardadas = 0;
   if (consentGuardado && Array.isArray(body.respuestas) && body.respuestas.length) {
     respuestasGuardadas = escribirRespuestas_(persona.id, guia, body.respuestas, body.totales || {}, ahora);
+  }
+
+  var correoEnviado = body.correoEnviado !== false; // por defecto true: no todo llamador informa este campo
+  if (!correoEnviado && body.correoPendiente) {
+    registrarCorreoPendiente_(email, guia, body.correoPendiente.cuerpoBrevo, body.correoPendiente.motivo);
   }
 
   return jsonResponse_({

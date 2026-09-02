@@ -19,16 +19,17 @@ site/              → carpeta que Cloudflare Pages publica (output directory = 
     css/base.css        tokens de marca + reset, compartido por todo el sitio
     css/autodiagnostico.css
     js/autodiagnostico.js
+    pdfs/                los tres PDF de las guías, en rutas oscuras y sin enlazar (Etapa 5)
   _redirects           rewrite de /autodiagnostico/resultado (Pages)
-  _headers             headers de seguridad básicos (Pages)
+  _headers             headers de seguridad básicos + noindex de /assets/pdfs/ (Pages)
 
 functions/         → Worker delgado, como Cloudflare Pages Function (Etapa 4)
-  api/submit.js       POST /api/submit: valida, limita por IP, reenvía a Apps Script
+  api/submit.js       POST /api/submit: valida, limita por IP, reenvía a Apps Script y Brevo
 
+brevo/             → plantillas de correo + guía de configuración (Etapa 5)
+apps-script/       → código de Apps Script: dos planillas, derechos ARCO, cola de reintento
 wrangler.toml      → config del proyecto Pages: KV para el límite por IP
 .dev.vars.example  → plantilla de variables de entorno para probar en local
-
-apps-script/       → código de Apps Script para las dos planillas (Etapa 3)
 ```
 
 ## Desarrollo local
@@ -87,6 +88,27 @@ le va a devolver `config_del_worker_incompleta` en vez de guardar nada.
 **Probado en local** con `wrangler pages dev` y un Apps Script simulado: envío válido,
 honeypot, correo inválido, tipo de contenido incorrecto y el límite de 6 envíos por
 IP cada 60 segundos — los cinco se comportan como se espera antes de este commit.
+
+## El correo (Brevo, Etapa 5)
+
+El Worker intenta mandar el correo con Brevo **antes** de reenviar a Apps Script; si
+Brevo falla, se lo dice a Apps Script en el mismo request para que quede en la cola de
+reintento (`apps-script/CorreoPendiente.gs`). Ver `brevo/README.md` para la cuenta, el
+dominio (SPF/DKIM/DMARC), las cuatro plantillas y todas las variables de entorno que
+faltan (`BREVO_API_KEY`, `BREVO_SENDER_EMAIL`, `BREVO_SENDER_NAME`,
+`BREVO_TEMPLATE_DOMINO/PLAN/HABLAR/ENTUSIASMO`, `PDF_URL_PLAN/HABLAR/ENTUSIASMO`).
+
+Los tres PDF ya están en el repo (`site/assets/pdfs/`), en rutas largas y aleatorias,
+sin enlazar desde ninguna página — Brevo los descarga con el campo `url` de su API al
+momento de mandar el correo. `BREVO_API_URL` es opcional y solo existe para poder
+apuntar a un servidor simulado al probar en local; sin definirla, el Worker usa la URL
+real de Brevo.
+
+**Probado en local** con Brevo simulado, éxito y con un 402 forzado (cuota topada): el
+correo con adjunto solo se arma para PLAN/HABLAR/ENTUSIASMO, DOMINÓ lleva los cinco
+totales por pilar en los parámetros, y cuando el envío falla, el cuerpo que llega a
+Apps Script para la cola de reintento es exactamente el que hacía falta para
+reintentarlo sin reconstruir nada.
 
 ## Autodiagnóstico: cómo está armado
 

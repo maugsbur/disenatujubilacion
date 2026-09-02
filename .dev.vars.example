@@ -1,9 +1,26 @@
 # Copia este archivo a .dev.vars (que está en .gitignore, nunca se sube)
 # para probar el Worker en local con `wrangler pages dev`.
 #
-# En producción estas mismas dos variables se configuran en el dashboard:
+# En producción, todo esto se configura en el dashboard:
 # Workers & Pages → tu proyecto → Settings → Environment variables
-# (como "Secret", no como texto plano).
+# (los que dicen "Secret" abajo van marcados como Secret ahí, no como
+# texto plano).
 
 APPS_SCRIPT_URL=https://script.google.com/macros/s/TU_ID_DE_IMPLEMENTACION/exec
-SHARED_TOKEN=el-mismo-token-que-configuraste-en-apps-script
+SHARED_TOKEN=el-mismo-token-que-configuraste-en-apps-script  # Secret
+
+# --- Brevo (Etapa 5) — ver brevo/README.md ---
+BREVO_API_KEY=tu-llave-de-brevo  # Secret
+BREVO_SENDER_EMAIL=hola@disenatujubilacion.com
+BREVO_SENDER_NAME=Diseña tu Jubilación
+BREVO_TEMPLATE_DOMINO=1
+BREVO_TEMPLATE_PLAN=2
+BREVO_TEMPLATE_HABLAR=3
+BREVO_TEMPLATE_ENTUSIASMO=4
+PDF_URL_PLAN=https://disenatujubilacion.com/assets/pdfs/plan-468b5d9455ce73904853.pdf
+PDF_URL_HABLAR=https://disenatujubilacion.com/assets/pdfs/hablar-bf1229460d8da5438ed2.pdf
+PDF_URL_ENTUSIASMO=https://disenatujubilacion.com/assets/pdfs/entusiasmo-9cad1ef7759af90e6233.pdf
+
+# Opcional, solo para pruebas en local: apunta a un servidor simulado en vez
+# de la API real de Brevo. Sin esta variable, el Worker usa la URL real.
+# BREVO_API_URL=http://localhost:9091

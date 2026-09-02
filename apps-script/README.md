@@ -58,15 +58,16 @@ Genera un token largo y aleatorio, por ejemplo con:
 openssl rand -hex 32
 ```
 
-En el editor de Apps Script, abre `Config.gs`, reemplaza los tres
-`PEGAR_AQUI_...` por los valores reales dentro de `configurarPropiedades()`,
-**ejecuta esa función una vez** (▶ en el editor), y después revierte el
-archivo a los placeholders antes de guardar/subir — así el token real nunca
-queda escrito en el código ni en git. Confirma que quedó bien con
-`revisarPropiedades()` (te muestra los primeros caracteres del token, no
-el token completo).
+En el editor de Apps Script, abre `Config.gs`, reemplaza los `PEGAR_AQUI_...`
+por los valores reales dentro de `configurarPropiedades()` — incluida
+`BREVO_API_KEY` (Etapa 5: la misma llave que configuraste en el Worker,
+ver `brevo/README.md` § 2), **ejecuta esa función una vez** (▶ en el
+editor), y después revierte el archivo a los placeholders antes de
+guardar/subir — así ningún secreto real queda escrito en el código ni en
+git. Confirma que quedó bien con `revisarPropiedades()` (te muestra los
+primeros caracteres de cada secreto, no el valor completo).
 
-Guarda ese mismo token en un lugar seguro — el Worker de la Etapa 4 lo
+Guarda el token compartido en un lugar seguro — el Worker de la Etapa 4 lo
 necesita para poder llamar a este endpoint.
 
 ## 4. Publicar como Web App
@@ -85,10 +86,14 @@ el Worker va a necesitar en la Etapa 4.
 (o editar la existente con "Gestionar implementaciones" → ✏️ → nueva
 versión) para que los cambios se reflejen en esa URL.
 
-## 5. Instalar el disparador de retención
+## 5. Instalar los disparadores
 
-Una sola vez, ejecuta `instalarTriggerRetencion()` desde el editor (▶).
-Vas a tener que autorizar los permisos del script la primera vez.
+Una sola vez cada uno, ejecuta desde el editor (▶) — vas a tener que
+autorizar los permisos del script la primera vez:
+
+- `instalarTriggerRetencion()` — retención a 18 meses (Etapa 3)
+- `instalarTriggerReintentoCorreos()` — reintento de correos que Brevo
+  rechazó, cada 30 minutos (Etapa 5, ver `brevo/README.md` § 6)
 
 ## 6. Probar que responde
 

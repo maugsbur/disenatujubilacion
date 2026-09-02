@@ -2,3 +2,12 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), camera=(), microphone=()
+
+# Los PDF de las guías viven acá bajo una ruta larga y aleatoria, no enlazada
+# desde ninguna página. No es control de acceso -- Brevo los descarga con el
+# campo "url" de su API y cualquiera que adivine la ruta puede bajarlos, tal
+# como ya asume 07-brief-web.md ("no vale la pena invertir en evitarlo").
+# Esto solo evita que un crawler los indexe si algún día los encuentra.
+/assets/pdfs/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: private, no-store

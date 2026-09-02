@@ -1,5 +1,5 @@
 /**
- * POST /api/submit — el Worker delgado delante de Apps Script.
+ * POST /api/submit — el Worker delgado delante de Apps Script y Brevo.
  *
  * Vive como Pages Function: se despliega solo, en el mismo dominio que el
  * sitio (sin CORS que configurar), cada vez que se hace push a `main` —
@@ -11,12 +11,17 @@
  *   3. Honeypot: si viene con contenido, responde éxito sin escribir nada
  *      (no le confirma al bot que lo detectamos).
  *   4. Valida forma y tamaño del payload.
- *   5. Reenvía a Apps Script agregando el token compartido DENTRO del
+ *   5. Intenta enviar el correo con Brevo (con el PDF adjunto si la guía
+ *      lo tiene — ver brevo/README.md para las plantillas y las rutas).
+ *   6. Reenvía a Apps Script agregando el token compartido DENTRO del
  *      cuerpo JSON — Apps Script no expone headers HTTP personalizados,
  *      así que no puede ir como Authorization (ver apps-script/README.md).
+ *      Si Brevo falló en el paso 5, este mismo envío le pide a Apps Script
+ *      que deje el correo en la cola de reintento — un solo viaje, no dos.
  *
- * Nunca confía en nada que mande el navegador para decidir el token: lo
- * agrega este archivo, desde una variable de entorno, siempre.
+ * Nunca confía en nada que mande el navegador para decidir el token ni la
+ * llave de Brevo: las agrega este archivo, desde variables de entorno,
+ * siempre.
  */
 
 const GUIAS_VALIDAS = ['DOMINO', 'PLAN', 'HABLAR', 'ENTUSIASMO', 'RETIRO'];
@@ -67,7 +72,15 @@ export async function onRequestPost(context) {
     return jsonError_('config_del_worker_incompleta', 500);
   }
 
-  const payload = Object.assign({ token: env.SHARED_TOKEN }, validado.datos);
+  const correo = await enviarCorreo_(env, validado.datos);
+
+  const payload = Object.assign({ token: env.SHARED_TOKEN, correoEnviado: correo.enviado }, validado.datos);
+  if (!correo.enviado) {
+    // Apps Script no necesita saber POR QUÉ falló Brevo ni reconstruir el
+    // cuerpo de la API: le mandamos exactamente lo que este archivo ya
+    // armó, listo para que la cola de reintento lo reintente tal cual.
+    payload.correoPendiente = { cuerpoBrevo: correo.cuerpoIntentado, motivo: correo.motivo };
+  }
 
   let upstream;
   try {
@@ -92,7 +105,7 @@ export async function onRequestPost(context) {
     return jsonError_('no_se_pudo_guardar', 502);
   }
 
-  return jsonOk_({ recibido: true, uuid: resultado.uuid });
+  return jsonOk_({ recibido: true, uuid: resultado.uuid, correoEnviado: correo.enviado });
 }
 
 // Cualquier otro método explica el error en vez de devolver el 405 genérico
@@ -102,6 +115,91 @@ export async function onRequestGet() {
     status: 405,
     headers: { 'Content-Type': 'text/plain; charset=utf-8' }
   });
+}
+
+/* ----------------------------------- Brevo ------------------------------------- */
+
+/**
+ * Intenta enviar el correo con Brevo. Nunca lanza — si algo falla, devuelve
+ * {enviado:false, ...} con todo lo necesario para que quien llama deje el
+ * envío en la cola de reintento de Apps Script.
+ */
+async function enviarCorreo_(env, datos) {
+  const templateId = plantillaParaGuia_(env, datos.guia);
+  if (!env.BREVO_API_KEY || !templateId) {
+    return { enviado: false, motivo: 'config_correo_incompleta', cuerpoIntentado: null };
+  }
+
+  const cuerpo = {
+    sender: { email: env.BREVO_SENDER_EMAIL || 'hola@disenatujubilacion.com', name: env.BREVO_SENDER_NAME || 'Diseña tu Jubilación' },
+    to: [{ email: datos.email }],
+    templateId: Number(templateId),
+    params: paramsParaGuia_(datos)
+  };
+
+  const pdfUrl = pdfParaGuia_(env, datos.guia);
+  if (pdfUrl) {
+    cuerpo.attachment = [{ url: pdfUrl, name: nombreArchivoParaGuia_(datos.guia) }];
+  }
+
+  try {
+    const resp = await fetch(env.BREVO_API_URL || 'https://api.brevo.com/v3/smtp/email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'api-key': env.BREVO_API_KEY, accept: 'application/json' },
+      body: JSON.stringify(cuerpo)
+    });
+    if (resp.ok) return { enviado: true, cuerpoIntentado: cuerpo };
+    return { enviado: false, motivo: `brevo_${resp.status}`, cuerpoIntentado: cuerpo };
+  } catch (err) {
+    return { enviado: false, motivo: 'brevo_no_alcanzable', cuerpoIntentado: cuerpo };
+  }
+}
+
+function plantillaParaGuia_(env, guia) {
+  return (
+    {
+      DOMINO: env.BREVO_TEMPLATE_DOMINO,
+      PLAN: env.BREVO_TEMPLATE_PLAN,
+      HABLAR: env.BREVO_TEMPLATE_HABLAR,
+      ENTUSIASMO: env.BREVO_TEMPLATE_ENTUSIASMO
+    }[guia] || null
+  );
+}
+
+function pdfParaGuia_(env, guia) {
+  return { PLAN: env.PDF_URL_PLAN, HABLAR: env.PDF_URL_HABLAR, ENTUSIASMO: env.PDF_URL_ENTUSIASMO }[guia] || null;
+}
+
+function nombreArchivoParaGuia_(guia) {
+  return (
+    {
+      PLAN: 'Diseña tu Jubilación - Guía PLAN.pdf',
+      HABLAR: 'Diseña tu Jubilación - Guía HABLAR.pdf',
+      ENTUSIASMO: 'Diseña tu Jubilación - Guía ENTUSIASMO.pdf'
+    }[guia] || 'guia.pdf'
+  );
+}
+
+// Ver brevo/plantillas/*.md para el texto completo de cada plantilla y qué
+// hace cada parámetro. Acá solo se arma el objeto que Brevo espera en
+// `params` — mantenerlo en sync con lo que las plantillas realmente usan.
+function paramsParaGuia_(datos) {
+  if (datos.guia !== 'DOMINO' || !datos.totales) return {};
+
+  const NOMBRES = { proposito: 'Propósito', fisico: 'Físico', mental: 'Mental', social: 'Social', finanzas: 'Finanzas' };
+  let pilarMasBajoKey = null;
+  for (const pilar of Object.keys(datos.totales)) {
+    if (pilarMasBajoKey === null || datos.totales[pilar] < datos.totales[pilarMasBajoKey]) pilarMasBajoKey = pilar;
+  }
+
+  return {
+    proposito: datos.totales.proposito ?? '',
+    fisico: datos.totales.fisico ?? '',
+    mental: datos.totales.mental ?? '',
+    social: datos.totales.social ?? '',
+    finanzas: datos.totales.finanzas ?? '',
+    pilarMasBajo: pilarMasBajoKey ? NOMBRES[pilarMasBajoKey] || pilarMasBajoKey : ''
+  };
 }
 
 /* --------------------------------- Validación --------------------------------- */
