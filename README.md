@@ -70,18 +70,24 @@ push a `main`, en el mismo dominio que el sitio (sin CORS que configurar), sin u
 y reenvía a Apps Script agregando el token compartido dentro del cuerpo JSON (Apps Script
 no expone headers HTTP personalizados — no puede ir como `Authorization`).
 
-**Para activarlo en producción**, dos cosas en el dashboard de Cloudflare (proyecto Pages
-→ Settings):
+**Para activarlo en producción**, dos cosas:
 
 1. **Crear el namespace de KV** para el límite por IP: **Workers & Pages → KV → Create
    namespace** (nómbralo `dtj-rate-limit`), copia su ID, y pégalo en `wrangler.toml` en
    este repo, reemplazando `PEGAR_AQUI_EL_ID_DEL_NAMESPACE_KV`. Al hacer push, Pages lo
    detecta solo (los bindings de `wrangler.toml` se aplican en cada deploy conectado a Git).
-2. **Variables de entorno** (Settings → Environment variables, en Production): agrega
-   `APPS_SCRIPT_URL` (la URL `/exec` del Web App, ver `apps-script/README.md`) y
-   `SHARED_TOKEN` (el mismo token que configuraste en Apps Script) — marca esta última
-   como **Secret**, no como texto plano. Estas dos NO van en `wrangler.toml` ni en el
-   repo: solo en el dashboard.
+2. **Variables de entorno.** ⚠️ **No van en el dashboard, salvo la que es secreta de
+   verdad** — con `wrangler.toml` presente en el proyecto, Cloudflare Pages **ignora**
+   las variables de texto plano puestas en el dashboard; solo respeta ahí las marcadas
+   como **Secret**. Nos costó bastante diagnosticar esto en producción (todo se veía
+   bien configurado y el Worker seguía devolviendo `config_del_worker_incompleta`).
+   - `APPS_SCRIPT_URL` (la URL `/exec` del Web App) → va en `wrangler.toml`, sección
+     `[vars]`, comiteada al repo. No es secreta en el sentido estricto: sin el
+     `SHARED_TOKEN`, nadie puede escribir nada con solo conocer la URL.
+   - `SHARED_TOKEN` (el mismo token que configuraste en Apps Script) → **sí** va en el
+     dashboard (Settings → Environment variables, Production), pero marcada
+     explícitamente como **Secret** — nunca como texto plano, y nunca en
+     `wrangler.toml` ni en ningún archivo del repo.
 
 Hasta que esas dos cosas estén configuradas, el formulario del autodiagnóstico sigue
 mostrando el resultado igual (el diseño nunca dependió del envío para eso), pero el POST

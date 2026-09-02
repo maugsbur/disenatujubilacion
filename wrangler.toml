@@ -7,3 +7,12 @@ pages_build_output_dir = "site"
 [[kv_namespaces]]
 binding = "RATE_LIMIT_KV"
 id = "589b85cf5b264064901d4b473a4e1af0"
+
+# Variables de texto plano (no secretas). Con wrangler.toml presente en el
+# proyecto, Cloudflare Pages IGNORA las variables de texto plano puestas en
+# el dashboard — solo respeta ahí las marcadas como "Secret". Por eso estas
+# van acá, comiteadas, y las secretas de verdad (SHARED_TOKEN,
+# BREVO_API_KEY) van SOLO en el dashboard como Secret, nunca en este archivo.
+# Ver README.md § El Worker y brevo/README.md § 5.
+[vars]
+APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw9WOisFjHNuGWuEkcqgUBm4PHdOMLbowWQesEDXJaD0LBmuV3lFDs83ZvIwVW_pzS8cg/exec"

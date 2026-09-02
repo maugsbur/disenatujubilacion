@@ -80,22 +80,35 @@ correspondiente.
 
 ## 5. Variables de entorno del Worker
 
-En el dashboard de Cloudflare Pages → tu proyecto → Settings →
-Environment variables (Production). Además de `APPS_SCRIPT_URL` y
-`SHARED_TOKEN` (Etapa 4):
+⚠️ **Casi ninguna de estas va en el dashboard.** Con `wrangler.toml` presente
+en el proyecto (como es nuestro caso, por el binding de KV de la Etapa 4),
+Cloudflare Pages ignora las variables de texto plano puestas en el
+dashboard — solo respeta ahí las marcadas como **Secret**. Esto costó una
+buena sesión de diagnóstico en producción, ver `README.md` § El Worker.
 
-| Variable | Valor | ¿Secret? |
-|---|---|---|
-| `BREVO_API_KEY` | la llave del paso 2 | Sí |
-| `BREVO_SENDER_EMAIL` | `hola@disenatujubilacion.com` | No |
-| `BREVO_SENDER_NAME` | `Diseña tu Jubilación` | No |
-| `BREVO_TEMPLATE_DOMINO` | Template ID de DOMINÓ | No |
-| `BREVO_TEMPLATE_PLAN` | Template ID de PLAN | No |
-| `BREVO_TEMPLATE_HABLAR` | Template ID de HABLAR | No |
-| `BREVO_TEMPLATE_ENTUSIASMO` | Template ID de ENTUSIASMO | No |
-| `PDF_URL_PLAN` | URL completa del PDF de PLAN (tabla arriba) | No |
-| `PDF_URL_HABLAR` | URL completa del PDF de HABLAR | No |
-| `PDF_URL_ENTUSIASMO` | URL completa del PDF de ENTUSIASMO | No |
+**En `wrangler.toml`, sección `[vars]`** (texto plano, comiteado al repo):
+
+| Variable | Valor |
+|---|---|
+| `APPS_SCRIPT_URL` | la URL `/exec` del Web App (Etapa 4) |
+| `BREVO_SENDER_EMAIL` | `hola@disenatujubilacion.com` |
+| `BREVO_SENDER_NAME` | `Diseña tu Jubilación` |
+| `BREVO_TEMPLATE_DOMINO` | Template ID de DOMINÓ |
+| `BREVO_TEMPLATE_PLAN` | Template ID de PLAN |
+| `BREVO_TEMPLATE_HABLAR` | Template ID de HABLAR |
+| `BREVO_TEMPLATE_ENTUSIASMO` | Template ID de ENTUSIASMO |
+| `PDF_URL_PLAN` | URL completa del PDF de PLAN (tabla arriba) |
+| `PDF_URL_HABLAR` | URL completa del PDF de HABLAR |
+| `PDF_URL_ENTUSIASMO` | URL completa del PDF de ENTUSIASMO |
+
+**En el dashboard de Cloudflare Pages → tu proyecto → Settings →
+Environment variables (Production), marcadas como Secret** — estas sí son
+sensibles de verdad y nunca van al repo:
+
+| Variable | Valor |
+|---|---|
+| `SHARED_TOKEN` | el mismo token que configuraste en Apps Script (Etapa 4) |
+| `BREVO_API_KEY` | la llave del paso 2 de arriba |
 
 ## 6. Qué pasa si Brevo falla o se topa la cuota
 
