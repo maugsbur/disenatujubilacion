@@ -123,6 +123,24 @@ button, input, textarea, select { font-family: inherit; font-size: 1rem; }
 }
 .site-footer a { color: var(--dtj-muted); }
 
+.site-footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.4rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.site-footer .links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; }
+
+/* Variante para las páginas placeholder de fondo verde: mismo footer,
+   colores legibles sobre --dtj-green en vez de sobre --dtj-offwhite. */
+.site-footer.on-dark {
+  border-top-color: rgba(248, 249, 250, 0.18);
+  color: rgba(248, 249, 250, 0.7);
+}
+.site-footer.on-dark a { color: var(--dtj-cream); }
+.site-footer.on-dark a:hover { color: var(--dtj-offwhite); }
+
 .placeholder-page {
   min-height: 100dvh;
   display: flex;

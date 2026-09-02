@@ -180,12 +180,17 @@
       var score = totals[p.key];
       var band = bandFor(score);
       var pct = ((score - 5) / (25 - 5)) * 100;
+      // El marcador nunca se pega al borde exacto (0% o 100%), o el redondeo
+      // de la barra se lo come. clamp() lo mantiene siempre visible.
+      var markerLeft = 'clamp(2px, ' + pct + '%, calc(100% - 2px))';
       html += '' +
         '<div class="adg-bar-row">' +
           '<div class="bar-head"><span class="bar-name">' + p.name + '</span><span class="bar-score">' + score + ' / 25</span></div>' +
-          '<div class="adg-bar-track">' +
-            '<div class="zone atencion"></div><div class="zone intermedia"></div><div class="zone solida"></div>' +
-            '<div class="marker" style="left:' + pct + '%"></div>' +
+          '<div class="adg-bar-wrap">' +
+            '<div class="adg-bar-track">' +
+              '<div class="zone atencion"></div><div class="zone intermedia"></div><div class="zone solida"></div>' +
+            '</div>' +
+            '<div class="marker" style="left:' + markerLeft + '"></div>' +
           '</div>' +
           '<div class="bar-band">' + band.label + '</div>' +
         '</div>';

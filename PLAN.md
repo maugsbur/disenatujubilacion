@@ -58,9 +58,9 @@ Carlos confirmado.
 - [ ] Prueba de entregabilidad real: Gmail, Outlook, un corporativo
 
 ## Etapa 6 — Landing, tres páginas de captura y privacidad
-- [ ] Landing real (hoy: placeholder) — CTA a Calendly y WhatsApp
-      **Pendiente: número de WhatsApp** — no está en el brief ni en los documentos, hace
-      falta antes de poder poner el botón
+- [x] CTA de Calendly (45 min), WhatsApp (+56 9 3486 5410) e Instagram —
+      agregados el 2026-09-02 en el placeholder; se trasladan tal cual al diseño final
+- [ ] Landing real (hoy: placeholder con el copy y los CTA ya correctos)
 - [ ] Copy real de `/plan`, `/hablar`, `/carlos` — para esto hay que leer el contenido
       completo de los tres PDF (en esta sesión solo se confirmaron metadatos: tamaño de
       archivo, no el texto)

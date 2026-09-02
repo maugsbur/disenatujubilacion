@@ -273,11 +273,13 @@ body.autodiag { padding-bottom: 4.5rem; } /* deja aire bajo la barra de progreso
 }
 .adg-bar-row .bar-name { font-family: var(--font-serif); font-weight: 700; color: var(--dtj-green); }
 .adg-bar-row .bar-score { font-family: var(--font-serif); font-weight: 700; }
+.adg-bar-wrap {
+  position: relative; /* el marcador vive acá, fuera del recorte redondeado de abajo */
+}
 .adg-bar-track {
-  position: relative;
   height: 14px;
   border-radius: 999px;
-  overflow: hidden;
+  overflow: hidden; /* redondea las puntas de las zonas de color */
   display: flex;
   border: 1px solid var(--dtj-border);
 }
@@ -285,14 +287,15 @@ body.autodiag { padding-bottom: 4.5rem; } /* deja aire bajo la barra de progreso
 .adg-bar-track .zone.atencion { background: var(--dtj-zone-atencion); flex: 7; }
 .adg-bar-track .zone.intermedia { background: var(--dtj-zone-intermedia); flex: 7; }
 .adg-bar-track .zone.solida { background: var(--dtj-zone-solida); flex: 7; }
-.adg-bar-track .marker {
+.adg-bar-wrap .marker {
   position: absolute;
   top: -3px;
   width: 4px;
   height: 20px;
   background: var(--dtj-charcoal);
   border-radius: 2px;
-  transform: translateX(-2px);
+  transform: translateX(-50%);
+  /* nunca pegado al borde: en 5/25 y 25/25 queda igual de visible que en el resto */
 }
 .adg-bar-row .bar-band {
   font-size: 0.78rem;
