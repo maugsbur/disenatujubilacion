@@ -1,0 +1,78 @@
+/**
+ * Punto de entrada del Web App. Lo llama el Worker de Cloudflare (Etapa 4),
+ * nunca el navegador directamente.
+ *
+ * IMPORTANTE — límite real de Apps Script: un Web App no puede leer headers
+ * HTTP personalizados (no existe e.headers). El token compartido viaja
+ * DENTRO del cuerpo JSON, como el campo "token" — no como Authorization.
+ * Esto lo tiene que respetar el Worker cuando reenvíe la petición.
+ *
+ * Comportamiento de las dos casillas (08-cumplimiento-datos.md §3):
+ *   - Ninguna casilla:      se guarda correo + fecha + origen. Nada más.
+ *   - Solo "guardar":       además se guardan las respuestas.
+ *   - Solo "marketing":     solo cambia el consentimiento; no se guardan respuestas.
+ *   - Ambas:                las dos cosas.
+ * Eso se traduce acá en una sola regla: las respuestas SOLO se escriben si
+ * consentGuardado === true. El consentimiento de marketing no habilita ni
+ * bloquea el guardado de respuestas — son independientes, a propósito.
+ */
+function doPost(e) {
+  var cfg = getConfig_();
+  var body;
+
+  try {
+    body = JSON.parse(e.postData.contents);
+  } catch (err) {
+    return jsonResponse_({ ok: false, error: 'payload_invalido' });
+  }
+
+  if (!cfg.SHARED_TOKEN || body.token !== cfg.SHARED_TOKEN) {
+    return jsonResponse_({ ok: false, error: 'token_invalido' });
+  }
+
+  // Honeypot: si vino con contenido, es casi seguro un bot. No es un error
+  // de la persona real, así que respondemos "ok" para no delatar el filtro,
+  // pero no escribimos nada.
+  if (body.sitioWeb) {
+    return jsonResponse_({ ok: true, guardado: false, motivo: 'honeypot' });
+  }
+
+  var email = normalizarEmail_(body.email);
+  if (!email || !validarEmail_(email)) {
+    return jsonResponse_({ ok: false, error: 'email_invalido' });
+  }
+
+  var guia = String(body.guia || 'DOMINO').toUpperCase().slice(0, 30);
+  var origen = String(body.origen || guia).toUpperCase().slice(0, 30);
+  var consentGuardado = body.consentGuardado === true;
+  var consentMarketing = body.consentMarketing === true;
+  var versionTexto = String(body.versionTexto || '').slice(0, 100);
+  var ahora = new Date();
+
+  var persona = upsertPersona_({
+    email: email,
+    origen: origen,
+    consentGuardado: consentGuardado,
+    consentMarketing: consentMarketing,
+    versionTexto: versionTexto,
+    fecha: ahora
+  });
+
+  var respuestasGuardadas = 0;
+  if (consentGuardado && Array.isArray(body.respuestas) && body.respuestas.length) {
+    respuestasGuardadas = escribirRespuestas_(persona.id, guia, body.respuestas, body.totales || {}, ahora);
+  }
+
+  return jsonResponse_({
+    ok: true,
+    uuid: persona.id,
+    personaNueva: persona.esNueva,
+    respuestasGuardadas: respuestasGuardadas
+  });
+}
+
+/** Solo para confirmar manualmente que el deploy está vivo — abre la URL del
+ *  Web App en el navegador y deberías ver este mensaje. */
+function doGet(e) {
+  return ContentService.createTextOutput('DTJ Apps Script activo. Este endpoint solo acepta POST.');
+}

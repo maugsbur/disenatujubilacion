@@ -35,19 +35,32 @@ Carlos confirmado.
       no solo en emulación de viewport — el comportamiento del teclado y el `100dvh`
       puede variar
 
-## Etapa 3 — Contrato de datos y Apps Script
-- [ ] Dos archivos de Sheets separados (`DTJ · Personas`, `DTJ · Respuestas`) por UUID
-- [ ] `doPost` con token compartido, valida y escribe
-- [ ] Comportamiento de las dos casillas verificado de verdad (sin casilla 1, no se
-      escribe ninguna respuesta)
-- [ ] `borrarPersona(email)`, `exportarPersona(email)`
-- [ ] Disparador mensual de retención a 18 meses
+## Etapa 3 — Contrato de datos y Apps Script ✅ código listo
+- [x] Código completo en `apps-script/`: `doPost` con token compartido (va en el
+      cuerpo JSON, no en un header — Apps Script no expone headers personalizados),
+      upsert por correo en Personas, escritura condicional en Respuestas
+- [x] Comportamiento de las dos casillas implementado tal cual la tabla de
+      `08-cumplimiento-datos.md` §3: las respuestas solo se escriben si
+      `consentGuardado === true`, independiente de la casilla de marketing
+- [x] `borrarPersona(email)`, `exportarPersona(email)`, más un menú
+      "DTJ · Privacidad" en la planilla para que Nicole no necesite el editor
+- [x] `limpiarRetencion18Meses()` + `instalarTriggerRetencion()`
+- [x] Decisión: una fila por correo (upsert), el origen del primer contacto
+      nunca se sobrescribe — confirmado por Marcel el 2026-09-02
+- [ ] **Pendiente de Marcel:** crear las dos planillas con los encabezados
+      exactos, pegar el código, configurar propiedades y desplegar — pasos en
+      `apps-script/README.md`
+- [ ] **Pendiente:** probar con datos reales una vez desplegado (curl de
+      prueba incluido en el README) y confirmar en vivo que las cuatro
+      combinaciones de casillas hacen lo que dicen
 
 ## Etapa 4 — Worker
 - [ ] Validación de payload y consentimientos
 - [ ] Honeypot + rate limiting por IP (confirmar si el binding nativo de Rate Limiting
       de Cloudflare está disponible en el plan free; si no, KV con 1.000 escrituras/día)
-- [ ] Reenvío a Apps Script con token compartido
+- [ ] Reenvío a Apps Script con token compartido **dentro del cuerpo JSON**
+      (campo `token`) — Apps Script no expone headers HTTP personalizados,
+      así que no puede ir como `Authorization`. Descubierto en la Etapa 3
 - [ ] Secretos en variables de entorno
 
 ## Etapa 5 — Correo (Brevo)
