@@ -5,6 +5,8 @@ reintento si se topa la cuota diaria, repo privado en GitHub conectado a Cloudfl
 Pages, el correo de resultado incluye los cinco totales por pilar, consentimiento de
 Carlos confirmado.
 
+Apps Script (Etapa 3) verificado en producción con datos reales el 2026-09-03.
+
 ## Etapa 0 — Decisiones bloqueantes ✅
 - [x] Proveedor de correo: **Brevo**, no Apps Script/GmailApp (el alias de dominio en
       Gmail sin Workspace deja de ser viable: Google restringe "Enviar como" para
