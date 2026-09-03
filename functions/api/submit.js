@@ -133,9 +133,15 @@ async function enviarCorreo_(env, datos) {
   const cuerpo = {
     sender: { email: env.BREVO_SENDER_EMAIL || 'hola@disenatujubilacion.com', name: env.BREVO_SENDER_NAME || 'Diseña tu Jubilación' },
     to: [{ email: datos.email }],
-    templateId: Number(templateId),
-    params: paramsParaGuia_(datos)
+    templateId: Number(templateId)
   };
+
+  // Brevo rechaza params:{} como "blank" — solo se manda el campo cuando
+  // hay algo real adentro (hoy, solo DOMINO tiene parámetros dinámicos).
+  const params = paramsParaGuia_(datos);
+  if (params && Object.keys(params).length) {
+    cuerpo.params = params;
+  }
 
   const pdfUrl = pdfParaGuia_(env, datos.guia);
   if (pdfUrl) {
