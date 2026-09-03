@@ -82,7 +82,7 @@ Apps Script (Etapa 3) verificado en producción con datos reales el 2026-09-03.
       `wrangler.toml` § `[vars]`; solo lo genuinamente secreto queda en el dashboard.
       Ver `README.md` § El Worker para el detalle completo
 
-## Etapa 5 — Correo (Brevo) ✅ código listo y probado en local
+## Etapa 5 — Correo (Brevo) ✅ configurado y verificado en producción
 - [x] **Decisión de arquitectura, confirmada por Marcel el 2026-09-02:** los tres PDF
       viven en `site/assets/pdfs/`, en rutas largas y aleatorias, sin enlazar desde
       ninguna página — Brevo los descarga con `attachment.url`. Se descartó Cloudflare
@@ -93,17 +93,31 @@ Apps Script (Etapa 3) verificado en producción con datos reales el 2026-09-03.
 - [x] Apps Script: `CorreoPendiente.gs` — cola de reintento cada 30 min, alerta al
       equipo si una fila lleva 24h fallando (tiempo de sobra para que se resetee
       una cuota diaria topada)
-- [x] Plantilla DOMINÓ con copy real (los cinco totales + pilar más bajo) — las
-      plantillas de PLAN/HABLAR/ENTUSIASMO son borradores mínimos, marcados como
-      tal en `brevo/plantillas/`: aún no leí el contenido completo de esos tres PDF
-- [x] Los tres PDF ya copiados al repo con nombres aleatorios (`brevo/README.md`
-      tiene la tabla exacta) y `noindex` en `_headers`
-- [x] Probado en local con Brevo simulado: envío exitoso con parámetros correctos,
-      adjunto solo en las guías que corresponde, y el camino de falla (402 forzado)
-      arma el payload de reintento exactamente como lo necesita Apps Script
-- [ ] **Pendiente de Marcel:** cuenta Brevo + dominio verificado (SPF/DKIM/DMARC),
-      crear las cuatro plantillas, generar la llave de API, y cargar unas 10
-      variables de entorno — todo el detalle en `brevo/README.md`
+- [x] Las cuatro plantillas creadas en Brevo con copy real (Etapa 6 leyó los tres
+      PDF completos), Template ID: DOMINO=1, ENTUSIASMO=2, HABLAR=3, PLAN=4
+- [x] Cuenta Brevo configurada, dominio autenticado — SPF, DKIM y DMARC en `PASS`,
+      confirmado tanto a nivel de dominio como en un mensaje real
+- [x] Los tres PDF copiados al repo con nombres aleatorios (`brevo/README.md` tiene
+      la tabla exacta) y `noindex` en `_headers` — confirmados accesibles en producción
+- [x] **Probado en producción real, 2026-09-03**, las cuatro plantillas: DOMINO,
+      PLAN y ENTUSIASMO devuelven `correoEnviado:true` de la API de Brevo
+- [x] **Bug real encontrado y corregido:** Brevo rechaza `params:{}` (objeto vacío)
+      con `"params is blank"` — las guías sin parámetros dinámicos (PLAN, HABLAR,
+      ENTUSIASMO) ahora omiten el campo por completo en vez de mandarlo vacío
+- [x] **Vacío real encontrado y corregido:** `borrarPersona()` no limpiaba
+      `correos_pendientes`, que sí tiene datos de la persona (correo, y para
+      DOMINO los totales). Ahora se borra junto con Personas y Respuestas
+- [ ] **Riesgo abierto, no resuelto — no es un bug de configuración:** un correo de
+      PLAN a la casilla real de Marcel se entregó pero no apareció en ninguna
+      pestaña de Gmail ni en spam (solo con `in:all`) — con SPF/DKIM/DMARC en PASS
+      confirmado en el mensaje mismo, sin filtro de Gmail ni hilo anterior de por
+      medio. Explicación más probable: el dominio empezó a enviar hoy, en IP
+      compartida, y este fue su primer correo con adjunto — sin reputación aún,
+      Gmail puede clasificar de forma inconsistente mensaje a mensaje. Se resuelve
+      con volumen y consistencia de envío, no con más configuración. **Seguir
+      probando en los próximos días** (Gmail, Outlook, un corporativo — ítem ya
+      pendiente en el checklist de `08-cumplimiento-datos.md`) antes de asumir que
+      quedó resuelto
 - [ ] **Pendiente:** prueba de entregabilidad real una vez desplegado: Gmail,
       Outlook, un corporativo
 - [x] Los tres PDF ya se leyeron completos (Etapa 6) y las plantillas de
