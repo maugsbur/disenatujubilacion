@@ -86,10 +86,13 @@ function borrarPersona(email) {
   var uuid = encontrada.datos.id;
   personasSheet_().deleteRow(encontrada.fila);
   var respuestasBorradas = eliminarRespuestasPorUuid_(uuid);
+  var pendientesBorrados = eliminarCorreosPendientesPorEmail_(email);
 
-  var mensaje = 'Eliminada 1 fila en personas y ' + respuestasBorradas + ' en respuestas (uuid ' + uuid + ').';
+  var mensaje =
+    'Eliminada 1 fila en personas, ' + respuestasBorradas + ' en respuestas y ' +
+    pendientesBorrados + ' en correos_pendientes (uuid ' + uuid + ').';
   registrarSolicitud_('borrado', email, mensaje);
-  return { ok: true, filasBorradas: 1 + respuestasBorradas, mensaje: mensaje };
+  return { ok: true, filasBorradas: 1 + respuestasBorradas + pendientesBorrados, mensaje: mensaje };
 }
 
 /* ---------------------- Menú: diálogos con la interfaz ---------------------- */
@@ -141,7 +144,7 @@ function menuBorrar_() {
   var email = normalizarEmail_(resp.getResponseText());
   var confirmar = ui.alert(
     'Confirmar eliminación',
-    'Esto borra para siempre la fila de "' + email + '" en Personas y todas sus filas en Respuestas. No se puede deshacer.\n\n¿Continuar?',
+    'Esto borra para siempre la fila de "' + email + '" en Personas, todas sus filas en Respuestas, y cualquier envío pendiente en la cola de correos. No se puede deshacer.\n\n¿Continuar?',
     ui.ButtonSet.YES_NO
   );
   if (confirmar !== ui.Button.YES) return;

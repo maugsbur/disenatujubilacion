@@ -13,11 +13,15 @@
  * (el Worker) — acá solo se repite el intento.
  *
  * Encabezados de la pestaña "correos_pendientes" (vive en el archivo de
- * Personas, igual que "solicitudes" — es un registro operativo, no un dato
- * de la persona en sí):
+ * Personas, igual que "solicitudes"):
  * fecha_primera_falla | email | guia | cuerpo_brevo_json | intentos | ultimo_error | estado
  *
  * estado: "pendiente" → "enviado" | "fallido_definitivo" | "error_datos"
+ *
+ * ⚠️ Esta pestaña SÍ tiene datos de la persona (el correo, y para DOMINO
+ * los totales por pilar dentro de cuerpo_brevo_json) — no es solo un
+ * registro operativo. borrarPersona() en DerechosARCO.gs la limpia
+ * también, no solo Personas y Respuestas.
  */
 
 function registrarCorreoPendiente_(email, guia, cuerpoBrevo, motivo) {
@@ -134,6 +138,25 @@ function avisarAlEquipo_(destinatario, alertas) {
       alertas.join('\n') +
       '\n\nDetalle completo en la pestaña "correos_pendientes" del archivo DTJ · Personas.'
   });
+}
+
+/** Usado por borrarPersona() (DerechosARCO.gs) — borra todas las filas de
+ *  esta pestaña para un correo, sin importar su estado (incluso las
+ *  "pendiente": si la persona pidió que la eliminemos, no le mandamos
+ *  nada más, tampoco lo que ya estaba en la cola). */
+function eliminarCorreosPendientesPorEmail_(email) {
+  var sheet = correosPendientesSheet_();
+  var data = sheet.getDataRange().getValues();
+  var header = data[0];
+  var col = colIndex_(header);
+  var borrados = 0;
+  for (var r = data.length - 1; r >= 1; r--) {
+    if (String(data[r][col.email]).toLowerCase() === email) {
+      sheet.deleteRow(r + 1);
+      borrados++;
+    }
+  }
+  return borrados;
 }
 
 function correosPendientesSheet_() {
