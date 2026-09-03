@@ -149,7 +149,8 @@ async function enviarCorreo_(env, datos) {
       body: JSON.stringify(cuerpo)
     });
     if (resp.ok) return { enviado: true, cuerpoIntentado: cuerpo };
-    return { enviado: false, motivo: `brevo_${resp.status}`, cuerpoIntentado: cuerpo };
+    const detalle = await resp.text().catch(() => '');
+    return { enviado: false, motivo: `brevo_${resp.status}: ${detalle}`.slice(0, 300), cuerpoIntentado: cuerpo };
   } catch (err) {
     return { enviado: false, motivo: 'brevo_no_alcanzable', cuerpoIntentado: cuerpo };
   }
