@@ -25,9 +25,6 @@ BREVO_TEMPLATE_DOMINO = "1"
 BREVO_TEMPLATE_ENTUSIASMO = "2"
 BREVO_TEMPLATE_HABLAR = "3"
 BREVO_TEMPLATE_PLAN = "4"
-# ⚠️ Todavía apuntan a *.pages.dev porque disenatujubilacion.com aún no
-# está conectado (Brevo necesita poder descargar el archivo de verdad al
-# enviar). Cuando conectes el dominio, cambia las tres al dominio real.
-PDF_URL_PLAN = "https://disenatujubilacion.pages.dev/assets/pdfs/plan-468b5d9455ce73904853.pdf"
-PDF_URL_HABLAR = "https://disenatujubilacion.pages.dev/assets/pdfs/hablar-bf1229460d8da5438ed2.pdf"
-PDF_URL_ENTUSIASMO = "https://disenatujubilacion.pages.dev/assets/pdfs/entusiasmo-9cad1ef7759af90e6233.pdf"
+PDF_URL_PLAN = "https://disenatujubilacion.com/assets/pdfs/plan-468b5d9455ce73904853.pdf"
+PDF_URL_HABLAR = "https://disenatujubilacion.com/assets/pdfs/hablar-bf1229460d8da5438ed2.pdf"
+PDF_URL_ENTUSIASMO = "https://disenatujubilacion.com/assets/pdfs/entusiasmo-9cad1ef7759af90e6233.pdf"
