@@ -7,6 +7,14 @@ Carlos confirmado.
 
 Apps Script (Etapa 3) verificado en producción con datos reales el 2026-09-03.
 
+Decisiones del 2026-09-03: las planillas, el script y la cuenta de Brevo se quedan
+bajo la cuenta personal de Marcel — compartidos como Editoras con Nicole y
+Margarita, sin transferir propiedad a `disenatujubilacion@gmail.com` (esa cuenta
+ya se bloqueó una vez, y cambiar de dueño no cambia la exposición a GDPR, que
+depende del establecimiento de las personas, no de en qué cuenta vive el archivo).
+Pendiente real y aparte: Google Workspace en el futuro no lejano, sobre todo por
+que "Enviar como" para terceros lo elimina Google en enero de 2027.
+
 ## Etapa 0 — Decisiones bloqueantes ✅
 - [x] Proveedor de correo: **Brevo**, no Apps Script/GmailApp (el alias de dominio en
       Gmail sin Workspace deja de ser viable: Google restringe "Enviar como" para
