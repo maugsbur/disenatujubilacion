@@ -6,8 +6,8 @@ campo `attachment.url` de Brevo apuntando a la ruta oscura en
 
 ## Cómo crearla en Brevo
 
-**Campañas → Plantillas → Crear una plantilla.** Sin parámetros
-dinámicos.
+**Transaccional → Plantillas → Crear plantilla → Plantilla de email**
+(no Campañas, esa es de marketing). Sin parámetros dinámicos.
 
 Asunto sugerido:
 

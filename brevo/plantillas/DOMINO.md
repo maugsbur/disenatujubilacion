@@ -11,8 +11,10 @@ que pidió, con los cinco números — la decisión de Marcel del 2026-09-02.
 
 ## Cómo crearla en Brevo
 
-**Campañas → Plantillas → Crear una plantilla** (editor de arrastrar y
-soltar o HTML, como prefiera Margarita). Asunto sugerido:
+**Transaccional → Plantillas → Crear plantilla → Plantilla de email**
+(editor de arrastrar y soltar o HTML, como prefiera Margarita) — no la
+sección de Campañas, esa es para marketing y no expone el `templateId`
+que necesita la API que usa el Worker. Asunto sugerido:
 
 ```
 Tu resultado: los 5 pilares de tu jubilación

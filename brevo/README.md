@@ -38,13 +38,14 @@ si falla, Apps Script la usa para reintentar más tarde con la misma):
 ## 3. Plantillas
 
 Cuatro, una por guía. El texto y los parámetros de cada una están en
-`brevo/plantillas/` — `DOMINO.md` tiene el copy real y aprobado; `PLAN.md`,
-`HABLAR.md` y `ENTUSIASMO.md` son borradores mínimos (marcados como tal)
-hasta que en la Etapa 6 se lean los tres PDF completos y se escriba el
-copy de verdad.
+`brevo/plantillas/` — las cuatro tienen copy real (se leyeron los tres PDF
+completos en la Etapa 6, ya no son borradores).
 
-Crea las cuatro en **Campañas → Plantillas** y anota el **Template ID**
-que Brevo le asigna a cada una — son números, los vas a necesitar en la
+Crea las cuatro en **Transaccional → Plantillas → Crear plantilla →
+Plantilla de email** — no en Campañas, esa sección es de marketing y no
+expone el `templateId` numérico que necesita la API que usa el Worker.
+Anota el **Template ID** que Brevo le asigna a cada una — son números
+(aparecen junto al nombre de la plantilla en la lista), los vas a necesitar en la
 Etapa siguiente.
 
 ## 4. Los tres PDF

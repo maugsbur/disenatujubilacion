@@ -6,7 +6,8 @@ campo `attachment.url` de Brevo apuntando a la ruta oscura en
 
 ## Cómo crearla en Brevo
 
-**Campañas → Plantillas → Crear una plantilla.** Sin parámetros
+**Transaccional → Plantillas → Crear plantilla → Plantilla de email**
+(no Campañas, esa es de marketing). Sin parámetros
 dinámicos — el Worker manda `params: {}}` para esta guía, así que si más
 adelante se quiere personalizar (el nombre de la persona, por ejemplo) no
 hay que tocar el Worker, solo agregar el parámetro ahí y acá.

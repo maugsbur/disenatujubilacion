@@ -7,8 +7,8 @@ confirmado por Marcel (2026-09-02). **Con adjunto**: el PDF, vía el campo
 
 ## Cómo crearla en Brevo
 
-**Campañas → Plantillas → Crear una plantilla.** Sin parámetros
-dinámicos.
+**Transaccional → Plantillas → Crear plantilla → Plantilla de email**
+(no Campañas, esa es de marketing). Sin parámetros dinámicos.
 
 Asunto sugerido:
 
