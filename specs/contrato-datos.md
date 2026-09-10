@@ -117,6 +117,28 @@ por uuid.
   que `borrarPersona()` la limpia también.
 - `solicitudes`: registro de cada solicitud de derechos atendida.
 
+## 5 · Navegador → Calendly (la llamada de Margarita)
+
+No pasa por el Worker. Cuando la vista de resultado se muestra,
+`autodiagnostico.js` reescribe el `href` del botón *Agendar sesión gratuita*
+(`#ctaCalendly`) con estos parámetros:
+
+| Parámetro | Contenido | Nota |
+|---|---|---|
+| `utm_source` | `autodiagnostico` | Fijo. Atribuye qué trae llamadas agendadas, igual que `pdf-<guia>` en los PDF |
+| `email` | el correo que la persona ya escribió | Solo en el envío fresco. En un refresco de `/resultado` no está (no se guarda PII en `sessionStorage`); Calendly igual pide el correo al reservar |
+| `a1` | `Propósito 12/25 · Físico 18/25 · … — pilar más bajo: Social` | Respuesta a la **primera pregunta personalizada** del tipo de evento en Calendly. Si Margarita no la creó, Calendly ignora el parámetro sin romper nada |
+
+Para qué: que el correo de confirmación de cada reserva ya traiga con quién
+va a hablar Margarita y por dónde entrar, sin que ella tenga que cruzar
+nada a mano. El `email` permite además unir la reserva con la fila de
+`personas`.
+
+**Paso manual, una vez (Margarita):** en Calendly → el evento de 45 min →
+*Invitee Questions* → agregar una pregunta de texto (p. ej. "Resultado del
+autodiagnóstico — no editar"). Debe quedar **primera** para que `a1` caiga
+ahí. Funciona en el plan gratis.
+
 ## Deuda saldada en la Fase 0
 
 **`origen` estaba sobrecargado** — significaba `utm_source` en el

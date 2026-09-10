@@ -201,13 +201,19 @@ sirva a uno de esos tres es ruido.
 Mayor retorno por esfuerzo. No toca el sitio: cambia cada conversación de
 venta. El dato ya está guardado, falta ponérselo enfrente.
 
-- [ ] Que Margarita reciba los cinco puntajes y el pilar más bajo de quien
-      agenda, antes de la llamada
-- [ ] Pasar el correo a Calendly por parámetro de URL, para cruzar quién
-      agendó con qué resultado del autodiagnóstico
-- [ ] **Decisión de Nicole + Marcel:** qué formato le sirve a Margarita —
-      un correo automático, una vista en la planilla, o un mensaje al canal
-      del equipo
+- [x] **Formato (decidido 2026-09-11):** todo va en el mismo enlace de
+      Calendly. El botón del resultado precarga `email` y `a1` (los cinco
+      puntajes + el pilar más bajo, en texto legible). Sin backend nuevo;
+      solo dispara cuando alguien realmente agenda
+- [x] Que Margarita reciba los cinco puntajes y el pilar más bajo de quien
+      agenda, antes de la llamada — llegan en el correo de confirmación de
+      la reserva (`autodiagnostico.js` → `#ctaCalendly`)
+- [x] Pasar el correo a Calendly por parámetro de URL — `?email=…` en el
+      mismo enlace, para unir la reserva con la fila de `personas`
+- [ ] **Paso manual de Margarita:** en Calendly → evento de 45 min →
+      *Invitee Questions* → agregar una pregunta de texto y dejarla primera,
+      para que `a1` caiga ahí. Ver `specs/contrato-datos.md` § 5. Hasta que
+      lo haga, el correo prellenado funciona y el resultado no
 
 ## Fase 2 — Credibilidad
 

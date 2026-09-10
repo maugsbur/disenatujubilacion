@@ -8,6 +8,14 @@
   var TOTAL_QUESTIONS = 25;
   var STORAGE_KEY = 'dtj_autodiagnostico_resultado_v1';
   var SUBMIT_ENDPOINT = '/api/submit';
+  // Enlace de la llamada de Margarita. Al mostrar el resultado le precargamos
+  // el correo y un resumen del autodiagnóstico (los cinco puntajes + el pilar
+  // más bajo). Así el correo de confirmación de cada reserva ya trae con quién
+  // va a hablar y por dónde. El resumen viaja en a1: la respuesta a la primera
+  // pregunta personalizada del tipo de evento en Calendly — si Margarita aún
+  // no la creó, Calendly ignora el parámetro sin romper nada. Ver
+  // specs/contrato-datos.md § "La llamada de Margarita".
+  var CALENDLY_BASE = 'https://calendly.com/margarita-disenatujubilacion/45min';
   var RESULT_PATH = '/autodiagnostico/resultado';
   var QUESTIONS_PATH = '/autodiagnostico';
 
@@ -236,18 +244,37 @@
     el.textContent = 'Tu pilar más bajo es ' + pillarName(minKey) + ', con ' + totals[minKey] + ' de 25.';
   }
 
-  function renderResult(totals) {
+  // Resumen legible para el correo de reserva de Calendly:
+  // "Propósito 12/25 · Físico 18/25 · … — pilar más bajo: Social"
+  function resumenParaMargarita(totals, minKey) {
+    var partes = PILLARS.map(function (p) {
+      return p.name + ' ' + totals[p.key] + '/25';
+    });
+    return partes.join(' · ') + ' — pilar más bajo: ' + pillarName(minKey);
+  }
+
+  function setCalendlyLink(totals, minKey, email) {
+    var cta = document.getElementById('ctaCalendly');
+    if (!cta) return;
+    var q = ['utm_source=autodiagnostico'];
+    q.push('a1=' + encodeURIComponent(resumenParaMargarita(totals, minKey)));
+    if (email) q.push('email=' + encodeURIComponent(email));
+    cta.href = CALENDLY_BASE + '?' + q.join('&');
+  }
+
+  function renderResult(totals, email) {
     var minKey = lowestPillar(totals);
     renderLowestLine(minKey, totals);
     renderBars(totals);
     renderDomino(minKey);
+    setCalendlyLink(totals, minKey, email);
   }
 
   // ---------------------------------------------------------------
   // Cambiar de vista
   // ---------------------------------------------------------------
-  function showResultView(totals) {
-    renderResult(totals);
+  function showResultView(totals, email) {
+    renderResult(totals, email);
     viewQuestions.hidden = true;
     viewResult.hidden = false;
     if (progressBar) progressBar.hidden = true;
@@ -364,7 +391,7 @@
     if (window.dtjEvento) window.dtjEvento('autodiagnostico_enviado', { pilarMasBajo: minKey });
 
     // Mostrar el resultado ya, en paralelo con el envío — nunca al revés.
-    showResultView(totals);
+    showResultView(totals, email);
     sendResult(payload);
 
     try {
