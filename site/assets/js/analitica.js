@@ -1,9 +1,13 @@
-/* analitica.js — PostHog + Meta Pixel, cargados en runtime desde /api/config.
+/* analitica.js — PostHog, cargado en runtime desde /api/config.
  *
- * No-op sin llaves: si /api/config devuelve todo vacío (o falla), este
+ * No-op sin llave: si /api/config devuelve el key vacío (o falla), este
  * archivo no hace nada y el sitio funciona igual. Así se puede desplegar
- * antes de tener las cuentas, y activar después solo cargando las
- * variables en wrangler.toml. Ver specs/analitica.md.
+ * antes de tener la cuenta, y activar después solo cargando POSTHOG_KEY
+ * en wrangler.toml. Ver specs/analitica.md.
+ *
+ * Sin Meta Pixel: los ads de Instagram no llevan al sitio (el funnel de
+ * venta es Instagram mismo), así que el pixel no tendría nada que
+ * optimizar. Si más adelante se hace retargeting, ver specs/analitica.md.
  *
  * Reglas de eventos (aprendidas del repo jubilarme-landing-hijos):
  *   - Nombres estables y aburridos. No se renombran.
@@ -25,12 +29,6 @@
       window.posthog.capture(nombre, props);
     } else {
       cola.push([nombre, props]);
-    }
-    // Meta: solo eventos estándar mapeados; el resto se ignora para no
-    // ensuciar el pixel.
-    if (window.fbq) {
-      var meta = { guia_solicitada: 'Lead', autodiagnostico_enviado: 'Lead', cta_calendly: 'Schedule' }[nombre];
-      if (meta) window.fbq('track', meta);
     }
   };
 
@@ -55,18 +53,11 @@
     });
   }
 
-  function cargarMetaPixel(id) {
-    !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-    window.fbq('init', id);
-    window.fbq('track', 'PageView');
-  }
-
   fetch('/api/config')
     .then(function (r) { return r.json(); })
     .then(function (cfg) {
-      if (cfg.posthogKey) cargarPostHog(cfg.posthogKey, cfg.posthogHost || 'https://us.i.posthog.com');
-      else listo = true; // sin PostHog: los eventos encolados se descartan, sin ruido
-      if (cfg.metaPixelId) cargarMetaPixel(cfg.metaPixelId);
+      if (cfg && cfg.posthogKey) cargarPostHog(cfg.posthogKey, cfg.posthogHost || 'https://us.i.posthog.com');
+      else listo = true; // sin llave: los eventos encolados se descartan, sin ruido
     })
     .catch(function () { listo = true; });
 

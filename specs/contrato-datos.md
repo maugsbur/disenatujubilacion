@@ -54,9 +54,10 @@ Agrega:
 | `correoEnviado` | Si Brevo aceptó el envío |
 | `correoPendiente` | Solo si falló: `{cuerpoBrevo, motivo}` con el cuerpo exacto que se le iba a mandar a Brevo, listo para reintentar sin reconstruir nada |
 
-Recortes defensivos: `email` ≤254, `guia`/`origen` ≤30, `versionTexto` ≤100,
-`respuestas` ≤200 entradas, `pregunta` ≤500. Una guía que no esté en la lista
-cae a `DOMINO`.
+Recortes defensivos: `email` ≤254, `guia` ≤30, `origen`/`campana`/`contenido`
+≤80, `versionTexto` ≤100, `respuestas` ≤200 entradas, `pregunta` ≤500. Una
+guía que no esté en la lista cae a `DOMINO`. `origen` y compañía **no** se
+pasan a mayúsculas (los valores de `utm_*` distinguen mayúsculas).
 
 ## 3 · Worker → Brevo
 
@@ -138,8 +139,8 @@ en el enlace de Calendly, para atribuir qué guía trae llamadas agendadas.
 - El **límite por IP** vive en KV (1.000 escrituras/día). Para un pico de
   tráfico pagado de Instagram puede quedar corto; migrar a Durable Objects
   o al binding nativo de Rate Limiting si el volumen lo pide.
-- La **analítica** (PostHog + Meta Pixel) está montada como scaffold
-  inerte hasta que se carguen las llaves. Ver `specs/analitica.md`.
+- La **analítica** (PostHog) está montada como scaffold inerte hasta que se
+  cargue `POSTHOG_KEY`. Ver `specs/analitica.md`.
 
 ## Reglas al cambiar este contrato
 
