@@ -153,9 +153,39 @@ que "Enviar como" para terceros lo elimina Google en enero de 2027.
       formulario de captura probado de punta a punta (envío exitoso y
       camino de error) contra Apps Script y Brevo simulados
 
+## Fase 0 — El sitio en el funnel (revisión de UX, 2026-09-10)
+
+Del plan en el artifact "El Sitio en el Funnel". Ver `specs/` y `CLAUDE.md`,
+montados en esta fase.
+
+- [x] **Lead magnets:** CTA roto (`/40min`) corregido en `build_common.py`,
+      con `utm_source=pdf-<guia>` por guía. Fuentes traídas al repo
+      (`lead-magnets/`). Dos bugs del build corregidos de paso: escritura
+      sin encoding (cp1252 en Windows contra `charset=utf-8`) y fuentes
+      Lora/Poppins que no se cargaban (caía a Arial/Times sin aviso). Los
+      cuatro PDF regenerados, aprobados por Marcel. **Pendiente de Marcel:
+      reemplazar los PDF en `site/assets/pdfs/`** (mismos nombres aleatorios)
+- [x] Landing: "40 minutos" → "45 minutos"
+- [x] **Atribución:** `atribucion.js` compartido produce `origen` (utm_source),
+      `campana` (utm_campaign), `contenido` (utm_content). `captura.js` ya no
+      manda `origen: guia`. `Personas.gs` pasó a header-driven. **Pendiente
+      de Marcel: agregar columnas `campana`, `contenido`, `regimen` a la
+      pestaña `personas`** (orden libre) + `clasp push` + redeploy
+- [x] **Consentimiento (régimen PRE_LEY):** casilla de guardado quitada,
+      declaración clara en su lugar, se guarda siempre. Constante `REGIMEN`
+      en front/Worker/Apps Script con la rama de LEY_21719 escrita. Marcador
+      de cohorte (`regimen` + `version_texto`). Política de privacidad §2/§3
+      actualizada. Ver `specs/consentimiento.md` para el checklist del
+      1 de diciembre
+- [x] **Analítica:** scaffold PostHog + Meta Pixel, inerte hasta cargar
+      llaves. `functions/api/config.js` + `analitica.js` + eventos de funnel.
+      **Pendiente de Marcel: todo lo de `specs/analitica.md`** (crear proyecto
+      PostHog, proxy, Pixel, cargar 3 variables)
+
 ## Etapa 7 — Cierre
 - [ ] Prueba extremo a extremo de los cuatro flujos
-- [ ] Las cuatro combinaciones de casillas verificadas
+- [ ] La casilla de marketing verificada en las dos combinaciones (la de
+      guardado ya no existe en PRE_LEY)
 - [ ] Borrado y exportación probados con un caso real
-- [ ] `origen`/UTM funcionando
+- [x] `origen`/UTM funcionando — Fase 0
 - [ ] Checklist "antes de publicar" de `08-cumplimiento-datos.md` §9, punto por punto
