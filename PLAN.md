@@ -177,10 +177,82 @@ montados en esta fase.
       de cohorte (`regimen` + `version_texto`). Política de privacidad §2/§3
       actualizada. Ver `specs/consentimiento.md` para el checklist del
       1 de diciembre
-- [x] **Analítica:** scaffold PostHog + Meta Pixel, inerte hasta cargar
-      llaves. `functions/api/config.js` + `analitica.js` + eventos de funnel.
-      **Pendiente de Marcel: todo lo de `specs/analitica.md`** (crear proyecto
-      PostHog, proxy, Pixel, cargar 3 variables)
+- [x] **Analítica:** scaffold de PostHog, inerte hasta cargar `POSTHOG_KEY`.
+      `functions/api/config.js` + `analitica.js` + eventos de funnel. Sin
+      Meta Pixel — los ads de Instagram no llevan al sitio (corrección de
+      Marcel al modelo, ver artifact rev. 3). **Pendiente de Marcel: todo lo
+      de `specs/analitica.md`** (crear proyecto PostHog, decidir proxy,
+      autorizar dominio, cargar la llave)
+
+### Modelo de funnel (corregido por Marcel, 2026-09-10)
+
+Los ads pagados **no** llevan al sitio. El funnel de venta es Instagram:
+los ads llevan a la cuenta y al contenido, se nutre a la audiencia ahí, y
+recién después se redirige a la gente al sitio — sobre todo para los lead
+magnets. El sitio también es prueba de que hay un negocio real detrás.
+
+El sitio hace tres trabajos: (1) entregar el lead magnet a cambio de un
+correo con contexto, (2) ser la prueba de credibilidad para quien va a
+evaluar antes de agendar, (3) armar la llamada de Margarita. Lo que no
+sirva a uno de esos tres es ruido.
+
+## Fase 1 — Armar la llamada de Margarita
+
+Mayor retorno por esfuerzo. No toca el sitio: cambia cada conversación de
+venta. El dato ya está guardado, falta ponérselo enfrente.
+
+- [ ] Que Margarita reciba los cinco puntajes y el pilar más bajo de quien
+      agenda, antes de la llamada
+- [ ] Pasar el correo a Calendly por parámetro de URL, para cruzar quién
+      agendó con qué resultado del autodiagnóstico
+- [ ] **Decisión de Nicole + Marcel:** qué formato le sirve a Margarita —
+      un correo automático, una vista en la planilla, o un mensaje al canal
+      del equipo
+
+## Fase 2 — Credibilidad
+
+Con el modelo corregido, pasó de "una mejora más" a ser el trabajo central
+del sitio. Casi todo el material ya existe en `jubilar.me` (repo
+`jubilarme-landing-hijos` y la portada de `jubilar.me`).
+
+- [ ] Adaptar las bios de Nicole y Marcel — sumando el dato de metodologías
+      en sector privado, ONGs y la ONU, que no está en ningún material
+      nuevo, y ajustando la voz al público nuevo
+- [ ] Publicar los tres testimonios (Alejandro, Irene, Silvia), atribuidos
+      honestamente a la primera versión del programa. El de Silvia
+      ("energía joven con mucha sabiduría") responde la objeción de la edad
+- [ ] Llevar credibilidad a las tres páginas de captura, que hoy no tienen
+      ninguna
+- [ ] **De Nicole + Marcel:** foto nueva de Nicole (la de `jubilar.me` es
+      240×328), transcripción del audio de Alberto, número real de egresados
+      del Club de Implementación
+
+## Fase 3 — Afinar cada página de llegada
+
+Instagram ya enruta por temperatura. Esto es que cada página funcione para
+quien ya eligió llegar ahí.
+
+- [ ] CTA del resultado del autodiagnóstico personalizado al pilar más bajo
+      de esa persona — es el peak de intención del funnel y hoy dice lo
+      mismo para todos
+- [ ] Convención de UTM escrita (`utm_source` / `utm_campaign` /
+      `utm_content`), para que quien arma las piezas de Instagram la use
+      igual. Debe calzar con lo que `atribucion.js` ya lee
+- [ ] Revisar el orden de los CTA en la landing para el visitante que va a
+      evaluar: primero credibilidad, después las acciones
+
+## Fase 4 — Optimizar con datos
+
+Solo cuando la analítica lleve dos o tres semanas midiendo con tráfico
+real. Antes no hay nada que optimizar, solo opiniones.
+
+- [ ] El abandono real del autodiagnóstico: 25 preguntas desde el celular
+      es una apuesta fuerte que puede estar funcionando o sangrando
+- [ ] Evaluar si el correo obligatorio en el peak de intención es un
+      problema real. Distinto de la casilla de guardado (esa ya se decidió)
+- [ ] Probar el encuadre de la landing: "Con intención y no por inercia" es
+      un principio de marca excelente y quizá abstracto como primera pantalla
+      para quien fue a evaluar quiénes son
 
 ## Etapa 7 — Cierre
 - [ ] Prueba extremo a extremo de los cuatro flujos
