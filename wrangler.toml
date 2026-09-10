@@ -28,3 +28,11 @@ BREVO_TEMPLATE_PLAN = "4"
 PDF_URL_PLAN = "https://disenatujubilacion.com/assets/pdfs/plan-468b5d9455ce73904853.pdf"
 PDF_URL_HABLAR = "https://disenatujubilacion.com/assets/pdfs/hablar-bf1229460d8da5438ed2.pdf"
 PDF_URL_ENTUSIASMO = "https://disenatujubilacion.com/assets/pdfs/entusiasmo-9cad1ef7759af90e6233.pdf"
+
+# Analítica (Fase 0). Todo vacío = la analítica no carga y el sitio funciona
+# igual (analitica.js es no-op sin llaves). Ver specs/analitica.md.
+# NINGUNA es secreta: la clave pública de PostHog y el ID del Pixel van en
+# el HTML del navegador de todos modos.
+POSTHOG_KEY = ""
+POSTHOG_HOST = "https://us.i.posthog.com"
+META_PIXEL_ID = ""

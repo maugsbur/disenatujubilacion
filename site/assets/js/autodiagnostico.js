@@ -118,11 +118,26 @@
     return n;
   }
 
+  var eventoIniciado = false;
+  var eventoCompletado = false;
+
   document.addEventListener('change', function (e) {
     if (e.target && e.target.matches('.adg-q input[type="radio"]')) {
       var q = e.target.closest('.adg-q');
       if (q) q.classList.remove('is-empty');
-      updateProgress();
+      var n = updateProgress();
+
+      // Eventos de funnel: primera pregunta y cuestionario completo. Una
+      // sola vez cada uno. Sin propiedades — el pilar más bajo recién se
+      // sabe al enviar. Ver specs/analitica.md.
+      if (!eventoIniciado && n >= 1) {
+        eventoIniciado = true;
+        if (window.dtjEvento) window.dtjEvento('autodiagnostico_iniciado');
+      }
+      if (!eventoCompletado && n >= TOTAL_QUESTIONS) {
+        eventoCompletado = true;
+        if (window.dtjEvento) window.dtjEvento('autodiagnostico_completado');
+      }
     }
   });
 
@@ -345,6 +360,8 @@
       respuestas: collectAnswers(),
       sitioWeb: document.getElementById('sitioWeb').value // honeypot
     };
+
+    if (window.dtjEvento) window.dtjEvento('autodiagnostico_enviado', { pilarMasBajo: minKey });
 
     // Mostrar el resultado ya, en paralelo con el envío — nunca al revés.
     showResultView(totals);

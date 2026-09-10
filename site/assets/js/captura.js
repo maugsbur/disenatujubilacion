@@ -78,6 +78,8 @@
         if (!r.data || r.data.ok !== true) {
           throw new Error((r.data && r.data.error) || 'error_desconocido');
         }
+        if (window.dtjEvento) window.dtjEvento('guia_solicitada', { guia: guia });
+
         if (r.data.correoEnviado) {
           showOk('<strong>Listo.</strong> Te enviamos la guía a tu correo — revisa también la carpeta de spam por si acaso.');
         } else {

@@ -29,6 +29,7 @@ comportamiento.
 |---|---|
 | [`contrato-datos.md`](contrato-datos.md) | El payload que cruza navegador → Worker → Apps Script → Sheets → Brevo. La superficie de mayor riesgo del proyecto |
 | [`consentimiento.md`](consentimiento.md) | Los dos regímenes de consentimiento y qué hacer el 1 de diciembre de 2026 |
+| [`analitica.md`](analitica.md) | PostHog + Meta Pixel: cómo está armado y qué falta de Marcel para activarlo |
 
 ## Cómo se trabaja
 
