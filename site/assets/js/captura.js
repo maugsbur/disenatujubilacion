@@ -49,12 +49,15 @@
 
     var consentMarketing = document.getElementById('capConsentMarketing');
     var honeypot = document.getElementById('capHp');
+    var atrib = (window.dtjAtribucion && window.dtjAtribucion()) || { origen: 'directo', campana: '', contenido: '' };
 
     var payload = {
       email: email,
       guia: guia,
-      origen: guia,
-      consentGuardado: false, // estas páginas no tienen respuestas de cuestionario que guardar
+      origen: atrib.origen,      // de dónde vino, NO qué guía pidió (eso es `guia`)
+      campana: atrib.campana,
+      contenido: atrib.contenido,
+      consentGuardado: false,    // estas páginas no tienen respuestas de cuestionario que guardar
       consentMarketing: consentMarketing ? consentMarketing.checked : false,
       versionTexto: TEXT_VERSION,
       sitioWeb: honeypot ? honeypot.value : ''

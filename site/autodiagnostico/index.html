@@ -366,17 +366,16 @@
           <p class="hint">Te enviamos tu resultado a esta dirección.</p>
         </div>
 
-        <label class="adg-check">
-          <input type="checkbox" id="consentSave" name="consentSave">
-          <span>Autorizo que se guarden mis respuestas para preparar una eventual conversación conmigo y para elaborar estadísticas agregadas sobre el público del programa.</span>
-        </label>
+        <!-- Régimen PRE_LEY: guardamos siempre y lo declaramos, en vez de
+             preguntar con una casilla e ignorar la respuesta. Cuando entre
+             en vigencia la Ley 21.719 vuelve la casilla — ver
+             specs/consentimiento.md, no borrar esta lógica. -->
+        <p class="adg-privacy-link">Guardamos tus respuestas para conocer mejor al público del programa y preparar una eventual conversación contigo. No las compartimos con terceros ni las publicamos con tu nombre. Puedes pedir que las eliminemos cuando quieras escribiendo a <a href="mailto:disenatujubilacion@gmail.com">disenatujubilacion@gmail.com</a>. Revisa el detalle en nuestra <a href="/privacidad">Política de Privacidad</a>.</p>
 
         <label class="adg-check">
           <input type="checkbox" id="consentMarketing" name="consentMarketing">
           <span>Quiero recibir información sobre el programa Diseña tu Jubilación y sus contenidos.</span>
         </label>
-
-        <p class="adg-privacy-link">Puedes pedir que eliminemos tus datos en cualquier momento escribiendo a <a href="mailto:disenatujubilacion@gmail.com">disenatujubilacion@gmail.com</a>. Revisa cómo los tratamos en nuestra <a href="/privacidad">Política de Privacidad</a>. No compartimos tu información con terceros con fines comerciales.</p>
 
         <!-- honeypot: campo invisible para personas, visible para bots simples -->
         <div class="adg-hp" aria-hidden="true">
@@ -515,6 +514,7 @@
   <div class="label"><span id="progressText">0 de 25 respondidas</span><span id="progressPillar"></span></div>
 </div>
 
+<script src="/assets/js/atribucion.js" defer></script>
 <script src="/assets/js/autodiagnostico.js" defer></script>
 </body>
 </html>

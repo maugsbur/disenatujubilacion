@@ -8,9 +8,17 @@
   var TOTAL_QUESTIONS = 25;
   var STORAGE_KEY = 'dtj_autodiagnostico_resultado_v1';
   var SUBMIT_ENDPOINT = '/api/submit';
-  var TEXT_VERSION = 'autodiagnostico-v1-2026-09';
   var RESULT_PATH = '/autodiagnostico/resultado';
   var QUESTIONS_PATH = '/autodiagnostico';
+
+  // Régimen de consentimiento. En PRE_LEY se guarda siempre y la casilla no
+  // existe. En LEY_21719 vuelve la casilla y decide de verdad. El Worker es
+  // el punto de aplicación real; esto solo alinea la UI. Ver
+  // specs/consentimiento.md — no borrar la rama de LEY_21719.
+  var REGIMEN = 'PRE_LEY';
+  var TEXT_VERSION = REGIMEN === 'PRE_LEY'
+    ? 'autodiagnostico-preley-2026-09'
+    : 'autodiagnostico-ley21719-2026-12';
 
   var PILLARS = [
     { key: 'proposito', name: 'Propósito' },
@@ -317,14 +325,20 @@
     var totals = computeTotals();
     var minKey = lowestPillar(totals);
 
+    var saveCheckbox = document.getElementById('consentSave'); // solo existe en LEY_21719
+    var atrib = (window.dtjAtribucion && window.dtjAtribucion()) || { origen: 'directo', campana: '', contenido: '' };
+
     var payload = {
       uuid: (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()) + '-' + Math.random().toString(16).slice(2),
       guia: 'DOMINO',
       email: email,
-      consentGuardado: document.getElementById('consentSave').checked,
+      regimen: REGIMEN,
+      consentGuardado: REGIMEN === 'PRE_LEY' ? true : (saveCheckbox ? saveCheckbox.checked : false),
       consentMarketing: document.getElementById('consentMarketing').checked,
       versionTexto: TEXT_VERSION,
-      origen: new URLSearchParams(location.search).get('utm_source') || 'sitio',
+      origen: atrib.origen,
+      campana: atrib.campana,
+      contenido: atrib.contenido,
       fecha: new Date().toISOString(),
       totales: totals,
       pilarMasBajo: minKey,

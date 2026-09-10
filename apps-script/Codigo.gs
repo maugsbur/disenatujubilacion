@@ -7,14 +7,14 @@
  * DENTRO del cuerpo JSON, como el campo "token" — no como Authorization.
  * Esto lo tiene que respetar el Worker cuando reenvíe la petición.
  *
- * Comportamiento de las dos casillas (08-cumplimiento-datos.md §3):
- *   - Ninguna casilla:      se guarda correo + fecha + origen. Nada más.
- *   - Solo "guardar":       además se guardan las respuestas.
- *   - Solo "marketing":     solo cambia el consentimiento; no se guardan respuestas.
- *   - Ambas:                las dos cosas.
- * Eso se traduce acá en una sola regla: las respuestas SOLO se escriben si
- * consentGuardado === true. El consentimiento de marketing no habilita ni
- * bloquea el guardado de respuestas — son independientes, a propósito.
+ * Régimen de consentimiento (specs/consentimiento.md):
+ *   - PRE_LEY:    se guardan las respuestas SIEMPRE. La casilla "guardar"
+ *                 no existe en el formulario. El Worker ya fuerza
+ *                 consentGuardado = true, pero acá se vuelve a chequear el
+ *                 régimen por si alguien llama a este endpoint directo.
+ *   - LEY_21719:  se guardan solo si consentGuardado === true.
+ * El consentimiento de marketing es una finalidad aparte: no habilita ni
+ * bloquea el guardado de respuestas, en ningún régimen.
  *
  * Correo (Etapa 5): el Worker ya intentó mandarlo con Brevo antes de llamar
  * acá. Si falló, el mismo payload trae `correoEnviado:false` y
@@ -22,6 +22,11 @@
  * esta función solo lo deja en la cola de reintento (CorreoPendiente.gs),
  * no vuelve a intentar el envío ella misma.
  */
+// Espejo de la constante del Worker. Si difieren, gana el Worker (es el
+// punto de aplicación real); esto solo cubre el caso de que alguien llame
+// a este Web App directo con el token. Ver specs/consentimiento.md.
+var REGIMEN = 'PRE_LEY';
+
 function doPost(e) {
   var cfg = getConfig_();
   var body;
@@ -49,9 +54,12 @@ function doPost(e) {
   }
 
   var guia = String(body.guia || 'DOMINO').toUpperCase().slice(0, 30);
-  var origen = String(body.origen || guia).toUpperCase().slice(0, 30);
-  var consentGuardado = body.consentGuardado === true;
+  var origen = String(body.origen || 'directo').slice(0, 80);
+  var campana = String(body.campana || '').slice(0, 80);
+  var contenido = String(body.contenido || '').slice(0, 80);
+  var regimen = String(body.regimen || REGIMEN).slice(0, 20);
   var consentMarketing = body.consentMarketing === true;
+  var consentGuardado = (regimen === 'PRE_LEY') || body.consentGuardado === true;
   var versionTexto = String(body.versionTexto || '').slice(0, 100);
   var ahora = new Date();
 
@@ -67,6 +75,9 @@ function doPost(e) {
     var persona = upsertPersona_({
       email: email,
       origen: origen,
+      campana: campana,
+      contenido: contenido,
+      regimen: regimen,
       consentGuardado: consentGuardado,
       consentMarketing: consentMarketing,
       versionTexto: versionTexto,

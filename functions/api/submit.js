@@ -27,6 +27,13 @@
 const GUIAS_VALIDAS = ['DOMINO', 'PLAN', 'HABLAR', 'ENTUSIASMO', 'RETIRO'];
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+// Régimen de consentimiento. ESTE es el punto de aplicación real —
+// Apps Script y el front lo replican, pero acá se decide. En PRE_LEY se
+// guardan las respuestas siempre; en LEY_21719 se respeta lo que marcó la
+// persona en el formulario. Ver specs/consentimiento.md. No borrar la
+// rama de LEY_21719 al cambiar el valor.
+const REGIMEN = 'PRE_LEY';
+
 // Por IP: máximo N envíos exitosos por ventana de M segundos. Generoso para
 // una persona real (nadie manda su propio autodiagnóstico seis veces en un
 // minuto) y restrictivo para un bot golpeando el endpoint.
@@ -220,15 +227,27 @@ function validarPayload_(body) {
   let guia = String(body.guia || 'DOMINO').toUpperCase().slice(0, 30);
   if (!GUIAS_VALIDAS.includes(guia)) guia = 'DOMINO';
 
-  const origen = String(body.origen || guia).toUpperCase().slice(0, 30);
+  // Atribución: de dónde vino la persona. NO se fuerza a mayúsculas — los
+  // valores de utm_* son sensibles al caso ("reel-jinetes" ≠ "REEL-JINETES").
+  // `origen` es la fuente, distinta de `guia` (qué pidió). Ver
+  // specs/contrato-datos.md § Deuda conocida.
+  const origen = String(body.origen || 'directo').slice(0, 80);
+  const campana = String(body.campana || '').slice(0, 80);
+  const contenido = String(body.contenido || '').slice(0, 80);
+
   const versionTexto = String(body.versionTexto || '').slice(0, 100);
-  const consentGuardado = body.consentGuardado === true;
   const consentMarketing = body.consentMarketing === true;
+
+  // En PRE_LEY se guarda siempre, sin importar lo que llegue del formulario.
+  const consentGuardado = REGIMEN === 'PRE_LEY' ? true : body.consentGuardado === true;
 
   const datos = {
     email: email,
     guia: guia,
     origen: origen,
+    campana: campana,
+    contenido: contenido,
+    regimen: REGIMEN,
     versionTexto: versionTexto,
     consentGuardado: consentGuardado,
     consentMarketing: consentMarketing,

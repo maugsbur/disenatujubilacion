@@ -1,6 +1,6 @@
 # Spec · Contrato de datos del envío
 
-**Estado:** vigente · **Última revisión:** 2026-09-10
+**Estado:** vigente · **Última revisión:** 2026-09-10 (Fase 0: se separó `origen` de `guia`, se agregó atribución UTM y el régimen de consentimiento)
 
 Este contrato cruza cuatro codebases en dos lenguajes: el JavaScript del
 navegador, la Pages Function, Apps Script y las planillas. Nada lo valida de
@@ -26,11 +26,14 @@ Lo emiten `assets/js/autodiagnostico.js` y `assets/js/captura.js`.
 | Campo | Tipo | Quién lo manda | Nota |
 |---|---|---|---|
 | `email` | texto | ambos | Obligatorio. Único campo sin el cual se rechaza |
-| `guia` | texto | ambos | `DOMINO` · `PLAN` · `HABLAR` · `ENTUSIASMO` · `RETIRO` |
-| `origen` | texto | ambos | ⚠️ Ver *Deuda conocida* |
+| `guia` | texto | ambos | `DOMINO` · `PLAN` · `HABLAR` · `ENTUSIASMO` · `RETIRO`. Qué recurso pidió |
+| `origen` | texto | ambos | `utm_source`, o `sitio-interno` / `directo`. **De dónde vino**, distinto de `guia`. Producido por `atribucion.js` |
+| `campana` | texto | ambos | `utm_campaign`. Vacío si no vino de una campaña |
+| `contenido` | texto | ambos | `utm_content`. La pieza puntual: `reel-jinetes`, `historia-3`… |
+| `regimen` | texto | ambos | `PRE_LEY` o `LEY_21719`. Bajo qué régimen se captó. Ver `specs/consentimiento.md` |
 | `consentMarketing` | booleano | ambos | Casilla opcional, sin premarcar |
-| `consentGuardado` | booleano | ambos | ⚠️ Ver `specs/consentimiento.md` |
-| `versionTexto` | texto | ambos | Qué versión del texto legal aceptó la persona |
+| `consentGuardado` | booleano | ambos | En PRE_LEY el front lo manda `true` y el Worker igual lo fuerza. Ver `specs/consentimiento.md` |
+| `versionTexto` | texto | ambos | Qué versión del texto legal aceptó la persona. Nombra el régimen (`…-preley-…`) |
 | `sitioWeb` | texto | ambos | Honeypot. Si trae contenido, es un bot |
 | `totales` | objeto | solo autodiagnóstico | `{proposito, fisico, mental, social, finanzas}`, cada uno 5–25 |
 | `respuestas` | arreglo | solo autodiagnóstico | `[{pregunta, pilar, valor}]`, valor 1–5 |
@@ -85,9 +88,15 @@ interacción).
 ### `DTJ · Personas` — pestaña `personas`
 
 ```
-id · email · fecha_alta · origen · consent_guardado · consent_guardado_fecha
+id · email · fecha_alta · origen · campana · contenido · regimen
+consent_guardado · consent_guardado_fecha
 consent_marketing · consent_marketing_fecha · version_texto · ultimo_contacto
 ```
+
+El **orden de las columnas no importa**: `Personas.gs` se guía por el nombre
+del encabezado. `campana`, `contenido` y `regimen` se agregaron en la Fase 0;
+si la planilla todavía no las tiene, la persona igual se guarda con el resto
+y el log avisa qué campo no cupo.
 
 ### `DTJ · Respuestas` — pestaña `respuestas`
 
@@ -107,25 +116,30 @@ por uuid.
   que `borrarPersona()` la limpia también.
 - `solicitudes`: registro de cada solicitud de derechos atendida.
 
-## Deuda conocida
+## Deuda saldada en la Fase 0
 
-**`origen` está sobrecargado y hay que separarlo.** Hoy significa cosas
-distintas según quién escriba:
+**`origen` estaba sobrecargado** — significaba `utm_source` en el
+autodiagnóstico y el nombre de la guía en las capturas, duplicando `guia`.
+Resuelto:
 
-| Quién | Qué mete en `origen` |
-|---|---|
-| `autodiagnostico.js` | `utm_source`, o `"sitio"` |
-| `captura.js` | el nombre de la guía — duplica el campo `guia` |
-| Esquema de cumplimiento | "de qué guía vino la persona" |
+| Campo | Qué es | Lo produce |
+|---|---|---|
+| `guia` | qué recurso pidió | el `data-guia` del form / hardcode `DOMINO` |
+| `origen` | `utm_source`, o `sitio-interno` / `directo` | `atribucion.js` |
+| `campana` | `utm_campaign` | `atribucion.js` |
+| `contenido` | `utm_content` | `atribucion.js` |
 
-Para un funnel de Instagram pagado esto no alcanza: hace falta distinguir un
-reel de otro, y una campaña de otra. Lo que corresponde:
+`atribucion.js` es el único lugar donde vive esta lógica; los dos forms lo
+llaman. Los PDF (`lead-magnets/build_common.py`) ponen `utm_source=pdf-<guia>`
+en el enlace de Calendly, para atribuir qué guía trae llamadas agendadas.
 
-- `guia` — qué recurso pidió (ya existe, ya funciona)
-- `origen` — `utm_source`, de dónde vino
-- `campana` / `contenido` — `utm_campaign` y `utm_content`, qué pieza
+## Deuda pendiente
 
-Y `captura.js` tiene que capturar UTM, que hoy no captura nada.
+- El **límite por IP** vive en KV (1.000 escrituras/día). Para un pico de
+  tráfico pagado de Instagram puede quedar corto; migrar a Durable Objects
+  o al binding nativo de Rate Limiting si el volumen lo pide.
+- La **analítica** (PostHog + Meta Pixel) está montada como scaffold
+  inerte hasta que se carguen las llaves. Ver `specs/analitica.md`.
 
 ## Reglas al cambiar este contrato
 
