@@ -8,3 +8,13 @@ Thumbs.db
 *.log
 *.bak
 *.bak[0-9]
+
+# Salidas del build de lead-magnets (se regeneran con los build_*.py)
+lead-magnets/*.pdf
+lead-magnets/*_px.html
+lead-magnets/autodiagnostico.html
+lead-magnets/plan.html
+lead-magnets/hablar.html
+lead-magnets/carlos.html
+__pycache__/
+*.pyc

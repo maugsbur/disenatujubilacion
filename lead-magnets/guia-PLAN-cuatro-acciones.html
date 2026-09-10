@@ -1,0 +1,212 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Poppins', sans-serif; color: #1A2421; background: #F8F9FA;
+         -webkit-print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; padding: 20mm 18mm; position: relative;
+          page-break-after: always; overflow: hidden; }
+  .page:last-child { page-break-after: auto; }
+
+  .cover { background: #0E3A2F; color: #F8F9FA; padding: 0; width: 212mm; height: 300mm; }
+  .cover-inner { padding: 38mm 20mm; height: 100%; position: relative; }
+  .cover .eyebrow { font-size: 10.5pt; letter-spacing: 3.2px; text-transform: uppercase;
+                    color: #E65F2B; font-weight: 500; margin-bottom: 24mm; }
+  .cover h1 { font-family: 'Lora', serif; font-size: 40pt; line-height: 1.1;
+              font-weight: 700; color: #F6E7B0; margin-bottom: 9mm; }
+  .cover .sub { font-size: 13pt; line-height: 1.6; color: #F8F9FA; opacity: .88;
+                max-width: 122mm; font-weight: 300; }
+  .cover .footer { position: absolute; bottom: 24mm; left: 20mm; right: 20mm;
+                   border-top: 1px solid rgba(246,231,176,.28); padding-top: 6mm;
+                   font-size: 9.5pt; letter-spacing: 1.6px; text-transform: uppercase;
+                   color: #F6E7B0; opacity: .75; }
+  .draft { position: absolute; top: 14mm; right: 20mm; background: #E65F2B; color: #F8F9FA;
+           font-size: 8pt; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;
+           padding: 2mm 4mm; }
+
+  h2 { font-family: 'Lora', serif; font-size: 25pt; line-height: 1.2; color: #0E3A2F;
+       font-weight: 700; margin-bottom: 7mm; }
+  h3 { font-size: 12.5pt; font-weight: 600; color: #0E3A2F; margin-bottom: 3mm; }
+  p { font-size: 11.5pt; line-height: 1.65; margin-bottom: 5mm; font-weight: 300; }
+  p strong { font-weight: 600; }
+  .hl { font-family: 'Lora', serif; font-size: 14pt; line-height: 1.5; font-weight: 700;
+        color: #0E3A2F; margin: 7mm 0; padding-left: 6mm; border-left: 2.5px solid #E65F2B; }
+  .close .hl { color: #F6E7B0; }
+  a { color: inherit; text-decoration: none; }
+  .lead { font-size: 13pt; line-height: 1.6; font-weight: 300; }
+  .kicker { font-size: 9pt; letter-spacing: 2.6px; text-transform: uppercase;
+            color: #E65F2B; font-weight: 500; margin-bottom: 4mm; }
+  .rule { height: 2px; background: #E65F2B; width: 26mm; margin: 0 0 7mm 0; }
+
+  .bignum { font-family: 'Lora', serif; font-size: 46pt; font-weight: 700;
+            color: #F6E7B0; line-height: 1; margin-bottom: 2mm; }
+  .numhead { font-size: 9pt; letter-spacing: 2.6px; text-transform: uppercase;
+             color: #E65F2B; font-weight: 500; margin-bottom: 3mm; }
+
+  .field { margin-bottom: 8.5mm; }
+  .field .fl { font-size: 8.5pt; letter-spacing: 2px; text-transform: uppercase;
+               color: #0E3A2F; opacity: .55; font-weight: 500; margin-bottom: 2.5mm; }
+  .field .fv { font-size: 11pt; line-height: 1.6; font-weight: 300; }
+
+  .action { background: #F6E7B0; padding: 7mm 7mm; margin: 8mm 0; }
+  .action .al { font-size: 8.5pt; letter-spacing: 2px; text-transform: uppercase;
+                color: #0E3A2F; font-weight: 600; margin-bottom: 2.5mm; }
+  .action .av { font-size: 11.5pt; line-height: 1.55; font-weight: 500; color: #1A2421; }
+
+  .done { border: 1.5px solid #0E3A2F; padding: 6mm; margin-top: 7mm; }
+  .done .dl { font-size: 8.5pt; letter-spacing: 2px; text-transform: uppercase;
+              color: #0E3A2F; opacity: .55; font-weight: 500; margin-bottom: 2mm; }
+  .done .dv { font-size: 11pt; line-height: 1.55; font-weight: 300; }
+  .chk { display: inline-block; width: 6mm; height: 6mm; border: 1.5px solid #0E3A2F;
+         margin-right: 3mm; vertical-align: -1mm; }
+
+  .note { background: #EFF1F0; border-left: 2.5px solid #0E3A2F; padding: 5mm 6mm; margin-top: 6mm; }
+  .note p { font-size: 10.5pt; line-height: 1.55; margin-bottom: 0; font-weight: 300; }
+  .warn { background: #F6E7B0; border-left: 2.5px solid #E65F2B; padding: 5mm 6mm; margin: 6mm 0; }
+  .warn p { font-size: 10.5pt; line-height: 1.55; margin-bottom: 0; font-weight: 400; }
+
+  .item { margin-bottom: 7mm; padding-left: 6mm; border-left: 2.5px solid #F6E7B0; }
+  .item h3 { font-size: 11.5pt; margin-bottom: 2mm; }
+  .item p { font-size: 11pt; line-height: 1.58; margin-bottom: 0; }
+  .item .qq { font-family: 'Lora', serif; font-style: italic; font-size: 11pt;
+              color: #0E3A2F; margin-top: 2.5mm; display: block; }
+
+  .rules { counter-reset: r; }
+  .rule-i { margin-bottom: 6.5mm; }
+  .rule-i .rn { font-family: 'Lora', serif; font-size: 15pt; font-weight: 700;
+                color: #E65F2B; display: inline-block; width: 9mm; }
+  .rule-i .rt { font-size: 11.5pt; font-weight: 600; color: #0E3A2F; }
+  .rule-i .rd { font-size: 11pt; line-height: 1.58; font-weight: 300; margin-top: 2mm;
+                padding-left: 9mm; }
+
+  .formula { background: #0E3A2F; color: #F6E7B0; padding: 7mm; margin: 6mm 0; text-align: center;
+             font-family: 'Lora', serif; font-size: 13pt; line-height: 1.7; }
+  .example { border: 1px solid #D8DCDA; padding: 5mm 6mm; margin-bottom: 4.5mm; }
+  .example .el { font-size: 8.5pt; letter-spacing: 1.8px; text-transform: uppercase;
+                 color: #E65F2B; font-weight: 500; margin-bottom: 2.5mm; }
+  .example p { font-size: 10.5pt; line-height: 1.6; margin-bottom: 0; font-style: italic; }
+
+  .blank { border-bottom: 1px solid #B9C1BD; height: 9mm; margin-bottom: 2mm; }
+  .blank.tall { height: 16mm; }
+
+  .close { background: #0E3A2F; color: #F8F9FA; width: 212mm; height: 300mm; }
+  .close h2 { color: #F6E7B0; font-size: 29pt; }
+  .close p { color: #F8F9FA; opacity: .9; }
+  .close .principle { font-family: 'Lora', serif; font-size: 20pt; line-height: 1.35;
+                      color: #F6E7B0; font-style: italic; margin: 9mm 0;
+                      padding-left: 7mm; border-left: 2.5px solid #E65F2B; }
+  .cta { background: #E65F2B; color: #F8F9FA; padding: 7mm; margin-top: 8mm; }
+  .cta .ct { font-size: 9pt; letter-spacing: 2.4px; text-transform: uppercase;
+             font-weight: 600; margin-bottom: 3mm; }
+  .cta .cb { font-size: 12pt; font-weight: 400; line-height: 1.55; margin-bottom: 4mm; }
+  .cta .cw { font-size: 10pt; font-weight: 400; margin-bottom: 2mm; opacity: .92; }
+  .cta .cl { font-family: 'Lora', serif; font-size: 13pt; font-weight: 700; word-break: break-all; }
+  .cta .cl a { color: #F8F9FA; text-decoration: underline; }
+  a { color: #0E3A2F; }
+
+  .pgnum { position: absolute; bottom: 12mm; right: 18mm; font-size: 8.5pt;
+           color: #0E3A2F; opacity: .35; letter-spacing: 1px; }
+  .close .pgnum { color: #F6E7B0; opacity: .4; }
+</style></head><body>
+<div class="page cover">
+  <div class="cover-inner">
+    <div class="eyebrow">Diseña tu Jubilación</div>
+    <h1>Tu jubilación no<br>se resuelve esta<br>semana. Estas cuatro<br>acciones sí.</h1>
+    <div class="sub">Sin planes de doce semanas, sin hábitos nuevos y sin agobio. Cuatro acciones que se hacen una vez y quedan hechas.</div>
+    <div class="footer">Guía práctica · Cuatro acciones · Sin agobio</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="kicker">Antes de empezar</div>
+  <h2>Esto no es un plan</h2>
+  <div class="rule"></div>
+  <p class="lead">No vas a diseñar tu jubilación en las próximas páginas. Vas a <strong>tomar acción y terminar cuatro cosas de tu lista</strong>.</p>
+  <p>La diferencia importa. Hay áreas donde el cambio necesita hábitos: comer distinto, moverte, dormir mejor. Esos hay que sostenerlos, practicarlos y defenderlos de la vida que se te atraviesa, y por eso cuestan.</p><p>Estas cuatro no son de esas.</p>
+  <p><strong>Son acciones que se hacen una sola vez.</strong> Y ojo con esto: no basta con decidirlas, hay que ejecutarlas. Ninguna te pide cambiar tu rutina, ninguna te pide constancia y ninguna se te puede caer en dos semanas. Cada una arranca con un primer paso que toma menos de cinco minutos y que puedes dar hoy mismo.</p>
+  <p>Si el tema te viene pesando hace tiempo, ese es exactamente el motivo por el que esta guía es corta.</p>
+  <div class="note">
+    <p>No venimos a decirte cómo se vive esta etapa. Esa es una decisión personal y es tuya. Venimos con método, con evidencia y con estructura. <strong>Quien decide eres tú.</strong></p>
+  </div>
+  <div class="pgnum">2</div>
+</div>
+
+<div class="page">
+  <div class="kicker">El costo de esperar</div>
+  <h2>Por qué "ya lo<br>resolveré" no funciona</h2>
+  <div class="rule"></div>
+  <p class="lead">Es la respuesta más común, y es razonable: nadie quiere ocuparse hoy de algo que va a pasar en unos años.</p>
+  <p>El problema es lo que ocurre cuando llega el momento.</p>
+  <h3>Primero: llega todo junto</h3>
+  <p>Las conversaciones de dinero, las de salud, las de cuidados, las de dónde vas a vivir y con quién. Ninguna llega sola y ninguna llega con tiempo. Llegan el mismo mes, casi siempre empujadas por algo que se rompió, y hay que resolverlas rápido y bajo presión. <strong>Diseñar y reaccionar son dos modos de actuar distintos</strong>, y el segundo produce resultados mucho peores.</p>
+  <h3>Segundo: el dinero es una pata de cuatro</h3>
+  <p>Tener las finanzas ordenadas es necesario y no es suficiente. Ningún monto compra una dirección para tus días, condición física, una cabeza que funcione ni gente cerca. Esas cuatro cosas se construyen con tiempo, y el tiempo es justamente lo que no vas a tener cuando decidas ocuparte.</p>
+  <div class="note">
+    <p>Las decisiones que tomas hoy, y sobre todo las que no tomas, las va a vivir tu yo del futuro. Es la persona que vas a ser en diez, veinte o treinta años. Esta persona va a heredar el cuerpo, la cabeza, los vínculos y las finanzas que resulten de las acciones que tomes hoy.</p>
+  </div>
+  <div class="pgnum">3</div>
+</div>
+
+<div class="page">
+  <div class="numhead">Acción 1 de 4</div>
+  <h2>Un número</h2>
+  <div class="rule"></div>
+  <div class="field"><div class="fl">Qué es</div><div class="fv">Cuánto cuesta un mes de tu vida. No lo que te gustaría gastar ni lo que gastaste el mes de las vacaciones: lo que cuesta sostener tu vida normal durante treinta días.</div></div>
+  <div class="field"><div class="fl">Por qué esta y no otra</div><div class="fv">Porque <strong>es el número desde el cual se calcula cualquier otra cosa</strong>. Sin él, no se puede saber si te alcanza, cuánto te falta ni por cuánto tiempo estás cubierto. La mayoría de la gente tiene una estimación, y las estimaciones suelen estar entre un 20% y un 30% por debajo del gasto real.</div></div>
+  <div class="action"><div class="al">Primer paso · menos de 5 minutos</div><div class="av">Abre la aplicación de tu banco y anota el total de gastos del último mes cerrado. Ese es tu punto de partida, aunque esté sucio.</div></div>
+  <div class="done"><div class="dl">Cómo se ve "hecho"</div><div class="dv"><span class="chk"></span>Tienes un número escrito en alguna parte, con fecha, y sabes qué incluye y qué no.</div></div>
+  <div class="note"><p><strong>Hay un segundo número.</strong> Este es el costo de subsistir. El otro es cuánto cuesta vivir bien: los viajes, los nietos, lo que le da sentido al resto. Casi nadie lo ha calculado nunca. Por ahora quédate con el primero.</p></div>
+  <div class="pgnum">4</div>
+</div>
+<div class="page">
+  <div class="numhead">Acción 2 de 4</div>
+  <h2>Una hora médica</h2>
+  <div class="rule"></div>
+  <div class="field"><div class="fl">Qué es</div><div class="fv">Agendar ese examen o control que vienes postergando. Uno. No todos.</div></div>
+  <div class="field"><div class="fl">Por qué esta y no otra</div><div class="fv">Porque postergarlo no lo cancela, solo lo mueve a un momento en que tengas menos margen para decidir con calma. Y porque el costo de agendar es una llamada, mientras que el costo de no hacerlo es desconocido.</div></div>
+  <div class="action"><div class="al">Primer paso · menos de 5 minutos</div><div class="av">Busca el teléfono o la aplicación y agenda. Si no sabes cuál corresponde, agenda con tu médico general y llega con la pregunta.</div></div>
+  <div class="done"><div class="dl">Cómo se ve "hecho"</div><div class="dv"><span class="chk"></span><strong>Ya te lo hiciste, conoces el resultado y sabes qué significa.</strong> No basta con agendarlo: la hora se puede postergar por algo que parezca más importante, y normalmente aparece algo.</div></div>
+  <div class="field" style="margin-top:6mm"><div class="fl">Por si te sirve para recordar cuál</div><div class="fv">El que tu médico te pidió y no hiciste &nbsp;·&nbsp; el control anual que dejaste de hacer en algún momento y no retomaste &nbsp;·&nbsp; el dental &nbsp;·&nbsp; el oftalmológico &nbsp;·&nbsp; el de audición</div></div>
+  <div class="warn"><p>Esta lista es solo para ayudarte a recordar. No es una indicación médica ni una recomendación de qué examen corresponde en tu caso: eso lo define tu médico, con tu edad, tu historia y la de tu familia sobre la mesa.</p></div>
+  <div class="pgnum">5</div>
+</div>
+<div class="page">
+  <div class="numhead">Acción 3 de 4</div>
+  <h2>Una persona</h2>
+  <div class="rule"></div>
+  <div class="field"><div class="fl">Qué es</div><div class="fv">Definir quién va a decidir por ti si en algún momento tú no puedes hacerlo, y decírselo a esa persona.</div></div>
+  <div class="field"><div class="fl">Por qué esta y no otra</div><div class="fv">Porque si no lo decides tú, lo decide la circunstancia. Y la circunstancia normalmente elige a quien esté más cerca ese día, sin que esa persona sepa qué querías, sin que se lo haya pensado nunca y en el peor momento posible para pensarlo. <strong>Es la decisión más barata de esta guía y la que más peso le saca de encima a tu familia.</strong></div></div>
+  <div class="action"><div class="al">Primer paso · menos de 5 minutos</div><div class="av">Escríbele a esa persona: “quiero conversar algo contigo, ¿cuándo puedes?”. Nada más. La conversación viene después.</div></div>
+  <div class="done"><div class="dl">Cómo se ve "hecho"</div><div class="dv"><span class="chk"></span>Esa persona sabe que es ella, y sabe a grandes rasgos qué querrías tú.</div></div>
+  <div class="note"><p>No necesitas tener todas las respuestas para tener la conversación. Basta con que la otra persona entienda tu criterio general: qué es importante para ti y qué no estarías dispuesto a aceptar. El detalle se puede ir llenando después.</p></div>
+  <div class="pgnum">6</div>
+</div>
+<div class="page">
+  <div class="numhead">Acción 4 de 4</div>
+  <h2>Una fecha</h2>
+  <div class="rule"></div>
+  <div class="field"><div class="fl">Qué es</div><div class="fv">Un encuentro presencial y recurrente con alguien que te importa, con día y hora fijos en el calendario.</div></div>
+  <div class="field"><div class="fl">Por qué esta y no otra</div><div class="fv">Porque los vínculos que dependen del trabajo se van con el trabajo, normalmente el mismo mes. Y porque lo que no se agenda no ocurre: los encuentros que quedan en “tenemos que juntarnos alguna vez” no se materializan casi nunca. Presencial y recurrente, porque es la combinación que sostiene una relación en el tiempo.</div></div>
+  <div class="action"><div class="al">Primer paso · menos de 5 minutos</div><div class="av">Elige a la persona y propón un día y una hora fijos. Semanal, quincenal o mensual: da lo mismo cuál, mientras se repita.</div></div>
+  <div class="done"><div class="dl">Cómo se ve "hecho"</div><div class="dv"><span class="chk"></span>Está en el calendario, tiene día fijo y ya ocurrió al menos una vez.</div></div>
+  
+  <div class="pgnum">7</div>
+</div>
+<div class="page close">
+  <div class="kicker">Para terminar</div>
+  <h2>Elige una,<br>no cuatro</h2>
+  <div class="rule"></div>
+  <p class="lead">Si intentas las cuatro esta semana, es bastante probable que no hagas ninguna. Eso no sería falta de compromiso: sería exactamente el mismo agobio que te trajo hasta acá.</p>
+  <p><strong>Elige la que te dio más incomodidad al leerla.</strong> Casi siempre es la que más falta hace, y esa incomodidad es información, no una señal de que no corresponde.</p>
+  <p><strong>Da tu primer paso hoy.</strong> Las otras tres van a seguir estando la semana que viene.</p>
+  <div class="principle">¿Vas a actuar por inercia<br>o con intención?</div>
+
+  <div class="cta">
+    <div class="ct">Si quieres seguir</div>
+    <div class="cb">Si quieres que revisemos juntos estas y otras áreas tuyas, te invitamos a agendar una sesión de diagnóstico <strong>gratuita</strong> con nosotros. Dura 40 minutos y sirve para mirar tu caso en particular y ver si tiene sentido que trabajemos juntos.</div>
+    <div class="cw">Haz clic en el enlace para agendar:</div>
+    <div class="cl"><a href="https://calendly.com/margarita-disenatujubilacion/40min">calendly.com/margarita-disenatujubilacion/40min</a></div>
+  </div>
+
+  <div class="pgnum">8</div>
+</div>
+</body></html>

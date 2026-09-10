@@ -1,0 +1,372 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Poppins', sans-serif; color: #1A2421; background: #F8F9FA;
+         -webkit-print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; padding: 20mm 18mm; position: relative;
+          page-break-after: always; overflow: hidden; }
+  .page:last-child { page-break-after: auto; }
+
+  .cover { background: #0E3A2F; color: #F8F9FA; padding: 0; width: 212mm; height: 300mm; }
+  .cover-inner { padding: 38mm 20mm; height: 100%; position: relative; }
+  .cover .eyebrow { font-size: 10.5pt; letter-spacing: 3.2px; text-transform: uppercase;
+                    color: #E65F2B; font-weight: 500; margin-bottom: 24mm; }
+  .cover h1 { font-family: 'Lora', serif; font-size: 40pt; line-height: 1.1;
+              font-weight: 700; color: #F6E7B0; margin-bottom: 9mm; }
+  .cover .sub { font-size: 13pt; line-height: 1.6; color: #F8F9FA; opacity: .88;
+                max-width: 122mm; font-weight: 300; }
+  .cover .footer { position: absolute; bottom: 24mm; left: 20mm; right: 20mm;
+                   border-top: 1px solid rgba(246,231,176,.28); padding-top: 6mm;
+                   font-size: 9.5pt; letter-spacing: 1.6px; text-transform: uppercase;
+                   color: #F6E7B0; opacity: .75; }
+  .draft { position: absolute; top: 14mm; right: 20mm; background: #E65F2B; color: #F8F9FA;
+           font-size: 8pt; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;
+           padding: 2mm 4mm; }
+
+  h2 { font-family: 'Lora', serif; font-size: 25pt; line-height: 1.2; color: #0E3A2F;
+       font-weight: 700; margin-bottom: 7mm; }
+  h3 { font-size: 12.5pt; font-weight: 600; color: #0E3A2F; margin-bottom: 3mm; }
+  p { font-size: 11.5pt; line-height: 1.65; margin-bottom: 5mm; font-weight: 300; }
+  p strong { font-weight: 600; }
+  .hl { font-family: 'Lora', serif; font-size: 14pt; line-height: 1.5; font-weight: 700;
+        color: #0E3A2F; margin: 7mm 0; padding-left: 6mm; border-left: 2.5px solid #E65F2B; }
+  .close .hl { color: #F6E7B0; }
+  a { color: inherit; text-decoration: none; }
+  .lead { font-size: 13pt; line-height: 1.6; font-weight: 300; }
+  .kicker { font-size: 9pt; letter-spacing: 2.6px; text-transform: uppercase;
+            color: #E65F2B; font-weight: 500; margin-bottom: 4mm; }
+  .rule { height: 2px; background: #E65F2B; width: 26mm; margin: 0 0 7mm 0; }
+
+  .bignum { font-family: 'Lora', serif; font-size: 46pt; font-weight: 700;
+            color: #F6E7B0; line-height: 1; margin-bottom: 2mm; }
+  .numhead { font-size: 9pt; letter-spacing: 2.6px; text-transform: uppercase;
+             color: #E65F2B; font-weight: 500; margin-bottom: 3mm; }
+
+  .field { margin-bottom: 8.5mm; }
+  .field .fl { font-size: 8.5pt; letter-spacing: 2px; text-transform: uppercase;
+               color: #0E3A2F; opacity: .55; font-weight: 500; margin-bottom: 2.5mm; }
+  .field .fv { font-size: 11pt; line-height: 1.6; font-weight: 300; }
+
+  .action { background: #F6E7B0; padding: 7mm 7mm; margin: 8mm 0; }
+  .action .al { font-size: 8.5pt; letter-spacing: 2px; text-transform: uppercase;
+                color: #0E3A2F; font-weight: 600; margin-bottom: 2.5mm; }
+  .action .av { font-size: 11.5pt; line-height: 1.55; font-weight: 500; color: #1A2421; }
+
+  .done { border: 1.5px solid #0E3A2F; padding: 6mm; margin-top: 7mm; }
+  .done .dl { font-size: 8.5pt; letter-spacing: 2px; text-transform: uppercase;
+              color: #0E3A2F; opacity: .55; font-weight: 500; margin-bottom: 2mm; }
+  .done .dv { font-size: 11pt; line-height: 1.55; font-weight: 300; }
+  .chk { display: inline-block; width: 6mm; height: 6mm; border: 1.5px solid #0E3A2F;
+         margin-right: 3mm; vertical-align: -1mm; }
+
+  .note { background: #EFF1F0; border-left: 2.5px solid #0E3A2F; padding: 5mm 6mm; margin-top: 6mm; }
+  .note p { font-size: 10.5pt; line-height: 1.55; margin-bottom: 0; font-weight: 300; }
+  .warn { background: #F6E7B0; border-left: 2.5px solid #E65F2B; padding: 5mm 6mm; margin: 6mm 0; }
+  .warn p { font-size: 10.5pt; line-height: 1.55; margin-bottom: 0; font-weight: 400; }
+
+  .item { margin-bottom: 7mm; padding-left: 6mm; border-left: 2.5px solid #F6E7B0; }
+  .item h3 { font-size: 11.5pt; margin-bottom: 2mm; }
+  .item p { font-size: 11pt; line-height: 1.58; margin-bottom: 0; }
+  .item .qq { font-family: 'Lora', serif; font-style: italic; font-size: 11pt;
+              color: #0E3A2F; margin-top: 2.5mm; display: block; }
+
+  .rules { counter-reset: r; }
+  .rule-i { margin-bottom: 6.5mm; }
+  .rule-i .rn { font-family: 'Lora', serif; font-size: 15pt; font-weight: 700;
+                color: #E65F2B; display: inline-block; width: 9mm; }
+  .rule-i .rt { font-size: 11.5pt; font-weight: 600; color: #0E3A2F; }
+  .rule-i .rd { font-size: 11pt; line-height: 1.58; font-weight: 300; margin-top: 2mm;
+                padding-left: 9mm; }
+
+  .formula { background: #0E3A2F; color: #F6E7B0; padding: 7mm; margin: 6mm 0; text-align: center;
+             font-family: 'Lora', serif; font-size: 13pt; line-height: 1.7; }
+  .example { border: 1px solid #D8DCDA; padding: 5mm 6mm; margin-bottom: 4.5mm; }
+  .example .el { font-size: 8.5pt; letter-spacing: 1.8px; text-transform: uppercase;
+                 color: #E65F2B; font-weight: 500; margin-bottom: 2.5mm; }
+  .example p { font-size: 10.5pt; line-height: 1.6; margin-bottom: 0; font-style: italic; }
+
+  .blank { border-bottom: 1px solid #B9C1BD; height: 9mm; margin-bottom: 2mm; }
+  .blank.tall { height: 16mm; }
+
+  .close { background: #0E3A2F; color: #F8F9FA; width: 212mm; height: 300mm; }
+  .close h2 { color: #F6E7B0; font-size: 29pt; }
+  .close p { color: #F8F9FA; opacity: .9; }
+  .close .principle { font-family: 'Lora', serif; font-size: 20pt; line-height: 1.35;
+                      color: #F6E7B0; font-style: italic; margin: 9mm 0;
+                      padding-left: 7mm; border-left: 2.5px solid #E65F2B; }
+  .cta { background: #E65F2B; color: #F8F9FA; padding: 7mm; margin-top: 8mm; }
+  .cta .ct { font-size: 9pt; letter-spacing: 2.4px; text-transform: uppercase;
+             font-weight: 600; margin-bottom: 3mm; }
+  .cta .cb { font-size: 12pt; font-weight: 400; line-height: 1.55; margin-bottom: 4mm; }
+  .cta .cw { font-size: 10pt; font-weight: 400; margin-bottom: 2mm; opacity: .92; }
+  .cta .cl { font-family: 'Lora', serif; font-size: 13pt; font-weight: 700; word-break: break-all; }
+  .cta .cl a { color: #F8F9FA; text-decoration: underline; }
+  a { color: #0E3A2F; }
+
+  .pgnum { position: absolute; bottom: 12mm; right: 18mm; font-size: 8.5pt;
+           color: #0E3A2F; opacity: .35; letter-spacing: 1px; }
+  .close .pgnum { color: #F6E7B0; opacity: .4; }
+</style>
+<style>
+  .scale { background: #F6E7B0; padding: 5.5mm 6mm; margin-bottom: 8.5mm; }
+  .scale-q { font-size: 10.5pt; font-weight: 600; color: #0E3A2F; margin-bottom: 3mm; }
+  .scale table { width: 100%; border-collapse: collapse; }
+  .scale td { font-size: 9.5pt; color: #1A2421; text-align: center; padding: 0 1mm; width: 20%; }
+  .scale td .num { font-family: 'Lora', serif; font-size: 13pt; font-weight: 700;
+                   color: #0E3A2F; display: block; margin-bottom: .5mm; }
+  .q { border-bottom: 1px solid #E3E5E4; padding: 6.6mm 0; }
+  .q:last-of-type { border-bottom: none; }
+  .q table { width: 100%; border-collapse: collapse; }
+  .q .txt { font-size: 12pt; line-height: 1.55; font-weight: 300; color: #1A2421;
+            padding-right: 7mm; vertical-align: middle; }
+  .q .boxes { width: 46mm; text-align: right; vertical-align: middle; white-space: nowrap; }
+  .bx { display: inline-block; width: 7.5mm; height: 7.5mm; border: 1.2px solid #B9C1BD;
+        margin-left: 1.4mm; text-align: center; font-size: 8pt; color: #B9C1BD;
+        line-height: 7.3mm; font-weight: 500; }
+  .total-row { margin-top: 7mm; background: #0E3A2F; color: #F6E7B0; padding: 5mm 6mm; }
+  .total-row table { width: 100%; border-collapse: collapse; }
+  .total-row .lbl { font-size: 10pt; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
+  .total-row .val { text-align: right; }
+  .total-row .val .bl { display: inline-block; width: 18mm; border-bottom: 1.5px solid #F6E7B0; height: 6mm; }
+  .total-row .val .of { font-family: 'Lora', serif; font-size: 13pt; margin-left: 3mm; color: #F8F9FA; opacity: .7; }
+
+  .scoregrid { width: 100%; border-collapse: collapse; margin-bottom: 5mm; }
+  .scoregrid td { padding: 2.4mm 0; vertical-align: middle; }
+  .scoregrid .pname { font-family: 'Lora', serif; font-size: 11.5pt; font-weight: 700; color: #0E3A2F; width: 30mm; }
+  .scoregrid .cells { white-space: nowrap; }
+  .cell { display: inline-block; width: 5.2mm; height: 6.6mm; border: 1px solid #CFD5D2;
+          margin-right: .6mm; text-align: center; font-size: 7.5pt; line-height: 6.4mm;
+          color: #1A2421; font-weight: 500; }
+  .cell.z1 { background: #FBDACB; border-color: #E9A183; }
+  .cell.z2 { background: #F9EFC9; border-color: #DFC97F; }
+  .cell.z3 { background: #CBDCD5; border-color: #7FA598; }
+  .scoregrid .sc { width: 16mm; text-align: right; }
+  .scoregrid .sc .bl { display: inline-block; width: 13mm; border-bottom: 1.5px solid #0E3A2F; height: 6mm; }
+  .zonekey { width: 100%; border-collapse: collapse; margin-bottom: 6mm; }
+  .zonekey td { font-size: 9pt; letter-spacing: 1.2px; text-transform: uppercase;
+                color: #0E3A2F; opacity: .6; font-weight: 500; }
+
+  .band { padding: 5mm 6mm; margin-bottom: 4mm; }
+  .band.at { background: #E65F2B; color: #1A2421; }
+  .band.mid { background: #F6E7B0; color: #1A2421; }
+  .band.ok { background: #0E3A2F; color: #F6E7B0; }
+  .band .bn { font-family: 'Lora', serif; font-size: 15pt; font-weight: 700; display: inline-block; width: 26mm; }
+  .band .bt { font-size: 10.5pt; font-weight: 500; }
+  .band .bd { font-size: 10.5pt; font-weight: 400; line-height: 1.55; margin-top: 2mm; opacity: .95; }
+
+  .drag { margin-bottom: 6mm; padding-left: 6mm; border-left: 2.5px solid #F6E7B0; }
+  .drag h3 { font-size: 11.5pt; margin-bottom: 2.5mm; }
+  .drag ul { list-style: none; margin: 0; padding: 0; }
+  .drag li { font-size: 10.5pt; line-height: 1.5; margin-bottom: 2mm; padding-left: 6mm; text-indent: -6mm; }
+  .arrow { color: #E65F2B; font-weight: 600; }
+
+  .arch { margin-bottom: 6mm; }
+  .arch .an { font-family: 'Lora', serif; font-size: 13pt; font-weight: 700; color: #0E3A2F; margin-bottom: 1mm; }
+  .arch .ap { font-size: 8.5pt; letter-spacing: 1.4px; text-transform: uppercase; color: #E65F2B;
+              font-weight: 500; margin-bottom: 2mm; }
+  .arch p { font-size: 10.5pt; line-height: 1.55; margin-bottom: 0; }
+</style>
+</head><body>
+<div class="page cover">
+  <div class="cover-inner">
+    <div class="eyebrow">Diseña tu Jubilación</div>
+    <h1>Tu jubilación<br>se juega en cinco<br>pilares. ¿Cuál te<br>está frenando?</h1>
+    <div class="sub">Un autodiagnóstico de 25 preguntas para descubrir dónde está tu cuello de botella antes de que llegue el momento. Toma doce minutos y se responde con lápiz.</div>
+    <div class="footer">Autodiagnóstico · 5 pilares · Efecto dominó</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="kicker">Antes de empezar</div>
+  <h2>Cómo usar esto</h2>
+  <div class="rule"></div>
+  <p class="lead">La mayoría de la gente que se acerca al retiro no tiene un problema en los cinco pilares. Tiene un problema en uno o dos, y esos le están arrastrando a los demás.</p>
+  <p>Este cuadernillo sirve para encontrar cuáles son. No para arreglarlos (eso toma bastante más de doce minutos), sino para saber dónde estás parado antes de decidir qué hacer.</p>
+  <p>No venimos a decirte cómo se vive esta etapa. Es una decisión personal y es tuya. Venimos con método, con evidencia y con estructura. <strong>Quien decide eres tú</strong>, empezando por este cuadernillo, que respondes por tu cuenta y que nadie más tiene que ver.</p>
+  <h3>Cuatro instrucciones</h3>
+  <p><strong>1. Responde rápido.</strong> La primera reacción es más honesta que la reflexionada. Si llevas más de quince segundos en una pregunta, marca lo que sentiste primero y sigue.</p>
+  <p><strong>2. Responde por lo que haces, no por lo que sabes.</strong> Varias preguntas describen cosas que probablemente ya sabes que son buena idea. La pregunta no es si lo sabes: es si ocurre.</p>
+  <p><strong>3. No optimices el resultado.</strong> Un puntaje alto que no es real no te sirve para nada.</p>
+  <p><strong>4. Suma cada pilar al final de su página.</strong> Al final vas a traspasar los cinco totales a una sola hoja.</p>
+  <div class="note">
+    <p><strong>Qué es y qué no es esto.</strong> Este es un ejercicio de orientación personal, no un instrumento clínico ni un diagnóstico de ningún tipo. No detecta enfermedades, no evalúa tu salud mental y no reemplaza a ningún profesional. Si algo de lo que respondas te preocupa, sea de salud, de ánimo o de dinero, la conversación correcta es con tu médico, con un profesional de salud mental o con un asesor, no con un cuadernillo.</p>
+  </div>
+  <div class="pgnum">2</div>
+</div>
+
+<div class="page">
+  <div class="kicker">Pilar 1 de 5</div>
+  <h2>Vida con Propósito</h2>
+  <div class="rule"></div>
+  <p style="font-size:11pt; opacity:.75; margin-bottom:6mm;">Dirección, identidad y estructura del tiempo. Es el pilar que organiza a los otros cuatro.</p>
+  
+  <div class="scale">
+    <div class="scale-q">¿Qué tan cierto es esto para ti hoy?</div>
+    <table><tr>
+      <td><span class="num">1</span>Nada cierto</td>
+      <td><span class="num">2</span>Poco cierto</td>
+      <td><span class="num">3</span>A medias</td>
+      <td><span class="num">4</span>Bastante cierto</td>
+      <td><span class="num">5</span>Totalmente cierto</td>
+    </tr></table>
+  </div>
+  <div class="q"><table><tr><td class="txt">Tengo claro qué quiero hacer con mi tiempo cuando deje de trabajar, o ahora que ya dejé de hacerlo.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Mis semanas tienen una estructura que yo diseñé, no una que simplemente ocurrió.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Si mañana dejara de trabajar, no sentiría que pierdo una parte de mi valor ni de mi identidad.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Fuera del trabajo, realizo actividades que me producen una gran satisfacción personal.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Si sigo con mi vida tal como va, sin realizar ningún cambio importante, lograría hacer todo lo que me gustaría hacer en ella.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div>
+  <div class="total-row"><table><tr><td class="lbl">Total Propósito</td>
+    <td class="val"><span class="bl"></span><span class="of">/ 25</span></td></tr></table></div>
+  <div class="pgnum">3</div>
+</div>
+<div class="page">
+  <div class="kicker">Pilar 2 de 5</div>
+  <h2>Salud Física</h2>
+  <div class="rule"></div>
+  <p style="font-size:11pt; opacity:.75; margin-bottom:6mm;">El objetivo es morir joven&hellip; a los 95.</p>
+  
+  <div class="scale">
+    <div class="scale-q">¿Qué tan cierto es esto para ti hoy?</div>
+    <table><tr>
+      <td><span class="num">1</span>Nada cierto</td>
+      <td><span class="num">2</span>Poco cierto</td>
+      <td><span class="num">3</span>A medias</td>
+      <td><span class="num">4</span>Bastante cierto</td>
+      <td><span class="num">5</span>Totalmente cierto</td>
+    </tr></table>
+  </div>
+  <div class="q"><table><tr><td class="txt">Hago entrenamiento de fuerza al menos dos veces por semana.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Camino, pedaleo, nado o hago otra actividad física a ritmo sostenido varias horas a la semana.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Sé cuáles son mis necesidades nutricionales y me alimento y suplemento acorde a ellas, en tipos y en cantidades.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Tengo bajo control el alcohol, el azúcar, el tabaco y otras cosas que sé que me hacen daño.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Me he hecho todos mis exámenes preventivos en los últimos doce meses.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div>
+  <div class="total-row"><table><tr><td class="lbl">Total Físico</td>
+    <td class="val"><span class="bl"></span><span class="of">/ 25</span></td></tr></table></div>
+  <div class="pgnum">4</div>
+</div>
+<div class="page">
+  <div class="kicker">Pilar 3 de 5</div>
+  <h2>Salud Mental<br>y Cognitiva</h2>
+  <div class="rule"></div>
+  <p style="font-size:11pt; opacity:.75; margin-bottom:6mm;">Sueño, aprendizaje y manejo de emociones. El pilar que decide si vas a seguir siendo tú.</p>
+  
+  <div class="scale">
+    <div class="scale-q">¿Qué tan cierto es esto para ti hoy?</div>
+    <table><tr>
+      <td><span class="num">1</span>Nada cierto</td>
+      <td><span class="num">2</span>Poco cierto</td>
+      <td><span class="num">3</span>A medias</td>
+      <td><span class="num">4</span>Bastante cierto</td>
+      <td><span class="num">5</span>Totalmente cierto</td>
+    </tr></table>
+  </div>
+  <div class="q"><table><tr><td class="txt">Duermo entre siete y ocho horas la mayoría de las noches y despierto descansado.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Estoy aprendiendo algo nuevo y desafiante, fuera de lo laboral.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Cuando algo me altera, se me pasa en minutos y no me dura el día entero.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Tengo espacios en la semana donde mi cabeza descansa de verdad, sin pantallas, sin entretenimiento y sin preocupaciones.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Cuando hay tensión en mi casa, logramos conversarla y llegar a acuerdos que dejan a todos conformes.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div>
+  <div class="total-row"><table><tr><td class="lbl">Total Mental</td>
+    <td class="val"><span class="bl"></span><span class="of">/ 25</span></td></tr></table></div>
+  <div class="pgnum">5</div>
+</div>
+<div class="page">
+  <div class="kicker">Pilar 4 de 5</div>
+  <h2>Salud Social</h2>
+  <div class="rule"></div>
+  <p style="font-size:11pt; opacity:.75; margin-bottom:6mm;">El pilar que más gente subestima y el que más rápido se desarma al dejar de trabajar.</p>
+  
+  <div class="scale">
+    <div class="scale-q">¿Qué tan cierto es esto para ti hoy?</div>
+    <table><tr>
+      <td><span class="num">1</span>Nada cierto</td>
+      <td><span class="num">2</span>Poco cierto</td>
+      <td><span class="num">3</span>A medias</td>
+      <td><span class="num">4</span>Bastante cierto</td>
+      <td><span class="num">5</span>Totalmente cierto</td>
+    </tr></table>
+  </div>
+  <div class="q"><table><tr><td class="txt">Tengo al menos tres personas a las que podría llamar de madrugada por un problema, aunque no fuera de vida o muerte.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Al menos una vez a la semana me reúno con personas importantes para mí, que no viven conmigo, a pasar tiempo de calidad.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Si dejara mi trabajo mañana, mi vida social sería igual de activa.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Tengo vínculos cercanos con personas de otras generaciones, que no son de mi familia.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Tengo conversaciones frecuentes en las que digo lo que me pasa sin miedo a que me juzguen.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div>
+  <div class="total-row"><table><tr><td class="lbl">Total Social</td>
+    <td class="val"><span class="bl"></span><span class="of">/ 25</span></td></tr></table></div>
+  <div class="pgnum">6</div>
+</div>
+<div class="page">
+  <div class="kicker">Pilar 5 de 5</div>
+  <h2>Finanzas<br>con Propósito</h2>
+  <div class="rule"></div>
+  <p style="font-size:11pt; opacity:.75; margin-bottom:6mm;">No cuánto tienes. Cuánto sabes de lo que tienes, y para qué lo estás guardando.</p>
+  
+  <div class="scale">
+    <div class="scale-q">¿Qué tan cierto es esto para ti hoy?</div>
+    <table><tr>
+      <td><span class="num">1</span>Nada cierto</td>
+      <td><span class="num">2</span>Poco cierto</td>
+      <td><span class="num">3</span>A medias</td>
+      <td><span class="num">4</span>Bastante cierto</td>
+      <td><span class="num">5</span>Totalmente cierto</td>
+    </tr></table>
+  </div>
+  <div class="q"><table><tr><td class="txt">Sé cuánto cuesta un mes de mi vida. Con número, no con estimación.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Sé cuánto voy a recibir al mes cuando deje de trabajar. También con número.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Puedo acceder en menos de una semana al dinero que necesitaría para cubrir un año de mis gastos, ya sea en efectivo o vendiendo algo.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Tengo planificado con números cómo voy a financiar los años en que pueda necesitar cuidados, y lo tengo conversado con mi familia.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div><div class="q"><table><tr><td class="txt">Lo que ahorro tiene destinos definidos y planificados, no es solo ahorrar por si acaso.</td><td class="boxes"><span class="bx">1</span><span class="bx">2</span><span class="bx">3</span><span class="bx">4</span><span class="bx">5</span></td></tr></table></div>
+  <div class="total-row"><table><tr><td class="lbl">Total Finanzas</td>
+    <td class="val"><span class="bl"></span><span class="of">/ 25</span></td></tr></table></div>
+  <div class="pgnum">7</div>
+</div>
+<div class="page">
+  <div class="kicker">Tu perfil</div>
+  <h2>Los cinco juntos</h2>
+  <div class="rule"></div>
+  <p style="margin-bottom:7mm;">Anota el total de cada pilar y marca ese número en su fila. El color te dice en qué zona caíste, y la forma del conjunto dice más que los números sueltos.</p>
+  <table class="scoregrid">
+    <tr><td class="pname">Propósito</td><td class="cells"><span class="cell z1">5</span><span class="cell z1">6</span><span class="cell z1">7</span><span class="cell z1">8</span><span class="cell z1">9</span><span class="cell z1">10</span><span class="cell z1">11</span><span class="cell z2">12</span><span class="cell z2">13</span><span class="cell z2">14</span><span class="cell z2">15</span><span class="cell z2">16</span><span class="cell z2">17</span><span class="cell z2">18</span><span class="cell z3">19</span><span class="cell z3">20</span><span class="cell z3">21</span><span class="cell z3">22</span><span class="cell z3">23</span><span class="cell z3">24</span><span class="cell z3">25</span></td><td class="sc"><span class="bl"></span></td></tr><tr><td class="pname">Físico</td><td class="cells"><span class="cell z1">5</span><span class="cell z1">6</span><span class="cell z1">7</span><span class="cell z1">8</span><span class="cell z1">9</span><span class="cell z1">10</span><span class="cell z1">11</span><span class="cell z2">12</span><span class="cell z2">13</span><span class="cell z2">14</span><span class="cell z2">15</span><span class="cell z2">16</span><span class="cell z2">17</span><span class="cell z2">18</span><span class="cell z3">19</span><span class="cell z3">20</span><span class="cell z3">21</span><span class="cell z3">22</span><span class="cell z3">23</span><span class="cell z3">24</span><span class="cell z3">25</span></td><td class="sc"><span class="bl"></span></td></tr><tr><td class="pname">Mental</td><td class="cells"><span class="cell z1">5</span><span class="cell z1">6</span><span class="cell z1">7</span><span class="cell z1">8</span><span class="cell z1">9</span><span class="cell z1">10</span><span class="cell z1">11</span><span class="cell z2">12</span><span class="cell z2">13</span><span class="cell z2">14</span><span class="cell z2">15</span><span class="cell z2">16</span><span class="cell z2">17</span><span class="cell z2">18</span><span class="cell z3">19</span><span class="cell z3">20</span><span class="cell z3">21</span><span class="cell z3">22</span><span class="cell z3">23</span><span class="cell z3">24</span><span class="cell z3">25</span></td><td class="sc"><span class="bl"></span></td></tr><tr><td class="pname">Social</td><td class="cells"><span class="cell z1">5</span><span class="cell z1">6</span><span class="cell z1">7</span><span class="cell z1">8</span><span class="cell z1">9</span><span class="cell z1">10</span><span class="cell z1">11</span><span class="cell z2">12</span><span class="cell z2">13</span><span class="cell z2">14</span><span class="cell z2">15</span><span class="cell z2">16</span><span class="cell z2">17</span><span class="cell z2">18</span><span class="cell z3">19</span><span class="cell z3">20</span><span class="cell z3">21</span><span class="cell z3">22</span><span class="cell z3">23</span><span class="cell z3">24</span><span class="cell z3">25</span></td><td class="sc"><span class="bl"></span></td></tr><tr><td class="pname">Finanzas</td><td class="cells"><span class="cell z1">5</span><span class="cell z1">6</span><span class="cell z1">7</span><span class="cell z1">8</span><span class="cell z1">9</span><span class="cell z1">10</span><span class="cell z1">11</span><span class="cell z2">12</span><span class="cell z2">13</span><span class="cell z2">14</span><span class="cell z2">15</span><span class="cell z2">16</span><span class="cell z2">17</span><span class="cell z2">18</span><span class="cell z3">19</span><span class="cell z3">20</span><span class="cell z3">21</span><span class="cell z3">22</span><span class="cell z3">23</span><span class="cell z3">24</span><span class="cell z3">25</span></td><td class="sc"><span class="bl"></span></td></tr>
+  </table>
+  <table class="zonekey"><tr>
+    <td style="width:30mm"></td><td style="width:41mm">Atención (5–11)</td>
+    <td style="width:41mm">Intermedia (12–18)</td><td>Sólida (19–25)</td><td style="width:16mm"></td>
+  </tr></table>
+  <div class="band at"><span class="bn">5 – 11</span><span class="bt">Zona de atención</span>
+    <div class="bd">Probablemente este es tu cuello de botella. No significa que estés mal: significa que es el pilar donde una acción tiene más impacto que en cualquier otro lado.</div></div>
+  <div class="band mid"><span class="bn">12 – 18</span><span class="bt">Zona intermedia</span>
+    <div class="bd">Hay algo funcionando, aunque no de forma sistemática. Es el rango más frecuente y también el más fácil de mover: acá los cambios pequeños se notan rápido.</div></div>
+  <div class="band ok"><span class="bn">19 – 25</span><span class="bt">Zona sólida</span>
+    <div class="bd">Está instalado. Este pilar no es donde tienes que poner tu energía ahora.</div></div>
+  <div class="pgnum">8</div>
+</div>
+
+<div class="page">
+  <div class="kicker">Lo importante</div>
+  <h2>El efecto dominó</h2>
+  <div class="rule"></div>
+  <p class="lead">Cualquiera puede hacerte una lista de cinco pilares. Lo que casi nadie explica es que no funcionan por separado.</p>
+  <div class="hl">Tu pilar más bajo no es solamente tu pilar más bajo. Es el que está frenando a los otros cuatro.</div>
+  <p style="margin-bottom:6mm;">Por eso es donde una sola acción genera más impacto. Busca el tuyo abajo.</p>
+<div class="drag"><h3>Si tu más bajo es Propósito</h3><ul><li><span class="arrow">→</span> Arrastra <strong>Finanzas</strong>: sin dirección, ningún monto alcanza, porque no sabes para qué lo estás guardando.</li><li><span class="arrow">→</span> Arrastra <strong>Social</strong>: cuando el rol laboral se va, se lleva de una vez el círculo de colegas, reuniones y almuerzos.</li><li><span class="arrow">→</span> Arrastra <strong>Mental y Cognitivo</strong>: sin proyectos que te exijan, usas cada vez menos tus capacidades mentales, y lo que se deja de usar se deteriora.</li></ul></div><div class="drag"><h3>Si tu más bajo es Físico</h3><ul><li><span class="arrow">→</span> Arrastra <strong>Mental y Cognitivo</strong>: la mala salud física está fuertemente asociada a mayor riesgo de enfermedades neurodegenerativas.</li><li><span class="arrow">→</span> Arrastra <strong>Social</strong>: la autonomía física es lo que te permite salir de la casa y sostener tus vínculos.</li><li><span class="arrow">→</span> Arrastra <strong>Finanzas</strong>: la pérdida de autonomía puede desbaratar tu plan financiero, porque el gasto en cuidados es el que más se subestima.</li></ul></div><div class="drag"><h3>Si tu más bajo es Mental y Cognitivo</h3><ul><li><span class="arrow">→</span> Arrastra <strong>Físico</strong>: sin descanso no hay recuperación, y tampoco energía para entrenar.</li><li><span class="arrow">→</span> Arrastra <strong>Social</strong>: cuando aparece deterioro cognitivo, seguir una conversación cuesta más, y la reacción natural es retirarse.</li><li><span class="arrow">→</span> Arrastra <strong>Propósito</strong>: perder capacidades cognitivas es lo que más preocupa a la gente en esta etapa, y sin cabeza no hay plan que se sostenga.</li></ul></div><div class="drag"><h3>Si tu más bajo es Social</h3><ul><li><span class="arrow">→</span> Arrastra <strong>Mental y Físico</strong> a la vez: en la literatura de longevidad, la soledad crónica se comporta como un factor de riesgo, no como un tema emocional.</li><li><span class="arrow">→</span> Arrastra <strong>Propósito</strong>: sostener un propósito necesita gente alrededor, que celebre contigo lo que logras y te acompañe cuando algo se cae.</li></ul></div><div class="drag"><h3>Si tu más bajo es Finanzas</h3><ul><li><span class="arrow">→</span> Arrastra <strong>Social</strong>: cuando la plata aprieta, lo primero que se recorta son las salidas, los viajes y los regalos. Restarse de las instancias sociales es barato hoy y caro después.</li><li><span class="arrow">→</span> Arrastra <strong>Mental</strong>: la incertidumbre financiera es un impuesto cognitivo que se paga todos los días.</li><li><span class="arrow">→</span> Arrastra <strong>Propósito</strong>: si no sabes si te alcanza, no exploras lo que te gustaría hacer. La falta de números termina limitando lo que te permites imaginar.</li></ul></div>
+  <div class="pgnum">9</div>
+</div>
+
+<div class="page">
+  <div class="kicker">Patrones frecuentes</div>
+  <h2>Cinco perfiles<br>comunes</h2>
+  <div class="rule"></div>
+  <p style="margin-bottom:7mm;">Hay combinaciones que aparecen seguido en este perfil de personas. No son categorías clínicas ni salen de un estudio: son patrones que vale la pena mirar.</p>
+  <div class="arch"><div class="ap">Finanzas alto · Propósito bajo</div><div class="an">El financista sin destino</div>
+    <p>Tienes resuelto el cómo y no el para qué. Es frecuente en quien lleva años planificando el retiro en una planilla: el número está, la vida que quieres financiar con ese número no.</p></div>
+  <div class="arch"><div class="ap">Propósito bajo · Social bajo</div><div class="an">Sostenido por el trabajo</div>
+    <p>El perfil de mayor riesgo en la transición. Tu estructura de tiempo y tu círculo social vienen del mismo lugar, así que el día que se acabe el rol, pierdes los dos.</p></div>
+  <div class="arch"><div class="ap">Social alto · Físico y Propósito bajos</div><div class="an">El que cuida a todos menos a sí mismo</div>
+    <p>Tu semana está llena, pero de las urgencias y prioridades de otros. Se siente como cuidar a los tuyos, y por eso cuesta tanto verlo. La paradoja es que la persona que se cuida es la que puede seguir estando.</p></div>
+  <div class="arch"><div class="ap">Todo entre 12 y 18</div><div class="an">El perfil parejo</div>
+    <p>Ningún pilar grita, y eso hace más difícil saber por dónde empezar. Las causas son variadas: puede que nada esté instalado de forma sistemática, que estés en un momento de transición, que tu vida esté efectivamente equilibrada, o simplemente que hayas respondido con cautela sin marcar extremos. Acá la pregunta útil no es cuál está más bajo, sino cuál de los cinco arrastra más a los otros. Esa respuesta está en la página anterior.</p></div>
+  <div class="arch"><div class="ap">Todo alto menos Físico</div><div class="an">El cuerpo postergado</div>
+    <p>Ordenaste la carrera, la familia y las platas. El cuerpo era el que siempre podía esperar un poco más. Es un pilar donde el tiempo perdido cuesta mucho recuperarlo, aunque sí se puede.</p></div>
+  <div class="note"><p>Si no te reconoces en ninguno, no fuerces la comparación. Estos son patrones frecuentes, no todas las categorías posibles, y tu perfil es simplemente tu perfil.</p></div>
+  <div class="pgnum">10</div>
+</div>
+
+<div class="page close">
+  <div class="kicker">Y ahora</div>
+  <h2>Ya sabes cuál es el<br>pilar que te está<br>frenando</h2>
+  <div class="rule"></div>
+  <p class="lead">Tener el número no cambia nada por sí solo. Lo que sí produce un cambio son tus acciones, basadas en tus decisiones. Y eso incluye decidir, conscientemente, no hacer nada por ahora.</p>
+  <p>La mayoría de la gente no llega mal al retiro por haber tomado malas decisiones. Llega mal por no haber tomado ninguna: por haber dejado que el trabajo definiera la estructura del día, que el círculo social se armara solo con quien aparecía, que el dinero se acumulara sin destino y que el cuerpo esperara a que hubiera tiempo.</p>
+  <p>Hay una persona concreta que va a heredar estos cinco pilares exactamente como tú se los dejes. Es tu yo del futuro, la persona que vas a ser en diez, veinte o treinta años. Esta persona va a heredar el cuerpo, la cabeza, los vínculos y las finanzas que resulten de las acciones que tomes hoy.</p>
+  <div class="hl">No hay nadie en el mundo en mejor posición que tú para cuidar a esa persona.</div>
+  <div class="principle" style="font-family:Lora,serif; font-size:19pt; line-height:1.35; color:#F6E7B0; font-style:italic; margin:8mm 0; padding-left:7mm; border-left:2.5px solid #E65F2B;">¿Vas a actuar por inercia<br>o con intención?</div>
+
+  <div class="cta">
+    <div class="ct">Si quieres seguir</div>
+    <div class="cb">Si quieres que revisemos tu caso juntos, te invitamos a agendar una sesión de diagnóstico <strong>gratuita</strong> con nosotros. Dura 40 minutos y sirve para mirar tu caso en particular y ver si tiene sentido que trabajemos juntos.</div>
+    <div class="cw">Haz clic en el enlace para agendar:</div>
+    <div class="cl"><a href="https://calendly.com/margarita-disenatujubilacion/40min">calendly.com/margarita-disenatujubilacion/40min</a></div>
+  </div>
+
+  <div class="pgnum">11</div>
+</div>
+</body></html>

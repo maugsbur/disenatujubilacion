@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Poppins', sans-serif; color: #1A2421; background: #F8F9FA;
+         -webkit-print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; padding: 20mm 18mm; position: relative;
+          page-break-after: always; overflow: hidden; }
+  .page:last-child { page-break-after: auto; }
+
+  .cover { background: #0E3A2F; color: #F8F9FA; padding: 0; width: 212mm; height: 300mm; }
+  .cover-inner { padding: 38mm 20mm; height: 100%; position: relative; }
+  .cover .eyebrow { font-size: 10.5pt; letter-spacing: 3.2px; text-transform: uppercase;
+                    color: #E65F2B; font-weight: 500; margin-bottom: 24mm; }
+  .cover h1 { font-family: 'Lora', serif; font-size: 40pt; line-height: 1.1;
+              font-weight: 700; color: #F6E7B0; margin-bottom: 9mm; }
+  .cover .sub { font-size: 13pt; line-height: 1.6; color: #F8F9FA; opacity: .88;
+                max-width: 122mm; font-weight: 300; }
+  .cover .footer { position: absolute; bottom: 24mm; left: 20mm; right: 20mm;
+                   border-top: 1px solid rgba(246,231,176,.28); padding-top: 6mm;
+                   font-size: 9.5pt; letter-spacing: 1.6px; text-transform: uppercase;
+                   color: #F6E7B0; opacity: .75; }
+  .draft { position: absolute; top: 14mm; right: 20mm; background: #E65F2B; color: #F8F9FA;
+           font-size: 8pt; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;
+           padding: 2mm 4mm; }
+
+  h2 { font-family: 'Lora', serif; font-size: 25pt; line-height: 1.2; color: #0E3A2F;
+       font-weight: 700; margin-bottom: 7mm; }
+  h3 { font-size: 12.5pt; font-weight: 600; color: #0E3A2F; margin-bottom: 3mm; }
+  p { font-size: 11.5pt; line-height: 1.65; margin-bottom: 5mm; font-weight: 300; }
+  p strong { font-weight: 600; }
+  .hl { font-family: 'Lora', serif; font-size: 14pt; line-height: 1.5; font-weight: 700;
+        color: #0E3A2F; margin: 7mm 0; padding-left: 6mm; border-left: 2.5px solid #E65F2B; }
+  .close .hl { color: #F6E7B0; }
+  a { color: inherit; text-decoration: none; }
+  .lead { font-size: 13pt; line-height: 1.6; font-weight: 300; }
+  .kicker { font-size: 9pt; letter-spacing: 2.6px; text-transform: uppercase;
+            color: #E65F2B; font-weight: 500; margin-bottom: 4mm; }
+  .rule { height: 2px; background: #E65F2B; width: 26mm; margin: 0 0 7mm 0; }
+
+  .bignum { font-family: 'Lora', serif; font-size: 46pt; font-weight: 700;
+            color: #F6E7B0; line-height: 1; margin-bottom: 2mm; }
+  .numhead { font-size: 9pt; letter-spacing: 2.6px; text-transform: uppercase;
+             color: #E65F2B; font-weight: 500; margin-bottom: 3mm; }
+
+  .field { margin-bottom: 8.5mm; }
+  .field .fl { font-size: 8.5pt; letter-spacing: 2px; text-transform: uppercase;
+               color: #0E3A2F; opacity: .55; font-weight: 500; margin-bottom: 2.5mm; }
+  .field .fv { font-size: 11pt; line-height: 1.6; font-weight: 300; }
+
+  .action { background: #F6E7B0; padding: 7mm 7mm; margin: 8mm 0; }
+  .action .al { font-size: 8.5pt; letter-spacing: 2px; text-transform: uppercase;
+                color: #0E3A2F; font-weight: 600; margin-bottom: 2.5mm; }
+  .action .av { font-size: 11.5pt; line-height: 1.55; font-weight: 500; color: #1A2421; }
+
+  .done { border: 1.5px solid #0E3A2F; padding: 6mm; margin-top: 7mm; }
+  .done .dl { font-size: 8.5pt; letter-spacing: 2px; text-transform: uppercase;
+              color: #0E3A2F; opacity: .55; font-weight: 500; margin-bottom: 2mm; }
+  .done .dv { font-size: 11pt; line-height: 1.55; font-weight: 300; }
+  .chk { display: inline-block; width: 6mm; height: 6mm; border: 1.5px solid #0E3A2F;
+         margin-right: 3mm; vertical-align: -1mm; }
+
+  .note { background: #EFF1F0; border-left: 2.5px solid #0E3A2F; padding: 5mm 6mm; margin-top: 6mm; }
+  .note p { font-size: 10.5pt; line-height: 1.55; margin-bottom: 0; font-weight: 300; }
+  .warn { background: #F6E7B0; border-left: 2.5px solid #E65F2B; padding: 5mm 6mm; margin: 6mm 0; }
+  .warn p { font-size: 10.5pt; line-height: 1.55; margin-bottom: 0; font-weight: 400; }
+
+  .item { margin-bottom: 7mm; padding-left: 6mm; border-left: 2.5px solid #F6E7B0; }
+  .item h3 { font-size: 11.5pt; margin-bottom: 2mm; }
+  .item p { font-size: 11pt; line-height: 1.58; margin-bottom: 0; }
+  .item .qq { font-family: 'Lora', serif; font-style: italic; font-size: 11pt;
+              color: #0E3A2F; margin-top: 2.5mm; display: block; }
+
+  .rules { counter-reset: r; }
+  .rule-i { margin-bottom: 6.5mm; }
+  .rule-i .rn { font-family: 'Lora', serif; font-size: 15pt; font-weight: 700;
+                color: #E65F2B; display: inline-block; width: 9mm; }
+  .rule-i .rt { font-size: 11.5pt; font-weight: 600; color: #0E3A2F; }
+  .rule-i .rd { font-size: 11pt; line-height: 1.58; font-weight: 300; margin-top: 2mm;
+                padding-left: 9mm; }
+
+  .formula { background: #0E3A2F; color: #F6E7B0; padding: 7mm; margin: 6mm 0; text-align: center;
+             font-family: 'Lora', serif; font-size: 13pt; line-height: 1.7; }
+  .example { border: 1px solid #D8DCDA; padding: 5mm 6mm; margin-bottom: 4.5mm; }
+  .example .el { font-size: 8.5pt; letter-spacing: 1.8px; text-transform: uppercase;
+                 color: #E65F2B; font-weight: 500; margin-bottom: 2.5mm; }
+  .example p { font-size: 10.5pt; line-height: 1.6; margin-bottom: 0; font-style: italic; }
+
+  .blank { border-bottom: 1px solid #B9C1BD; height: 9mm; margin-bottom: 2mm; }
+  .blank.tall { height: 16mm; }
+
+  .close { background: #0E3A2F; color: #F8F9FA; width: 212mm; height: 300mm; }
+  .close h2 { color: #F6E7B0; font-size: 29pt; }
+  .close p { color: #F8F9FA; opacity: .9; }
+  .close .principle { font-family: 'Lora', serif; font-size: 20pt; line-height: 1.35;
+                      color: #F6E7B0; font-style: italic; margin: 9mm 0;
+                      padding-left: 7mm; border-left: 2.5px solid #E65F2B; }
+  .cta { background: #E65F2B; color: #F8F9FA; padding: 7mm; margin-top: 8mm; }
+  .cta .ct { font-size: 9pt; letter-spacing: 2.4px; text-transform: uppercase;
+             font-weight: 600; margin-bottom: 3mm; }
+  .cta .cb { font-size: 12pt; font-weight: 400; line-height: 1.55; margin-bottom: 4mm; }
+  .cta .cw { font-size: 10pt; font-weight: 400; margin-bottom: 2mm; opacity: .92; }
+  .cta .cl { font-family: 'Lora', serif; font-size: 13pt; font-weight: 700; word-break: break-all; }
+  .cta .cl a { color: #F8F9FA; text-decoration: underline; }
+  a { color: #0E3A2F; }
+
+  .pgnum { position: absolute; bottom: 12mm; right: 18mm; font-size: 8.5pt;
+           color: #0E3A2F; opacity: .35; letter-spacing: 1px; }
+  .close .pgnum { color: #F6E7B0; opacity: .4; }
+</style></head><body>
+<div class="page cover">
+  <div class="cover-inner">
+    <div class="eyebrow">Diseña tu Jubilación</div>
+    <h1>Las cuatro<br>conversaciones que<br>hay que tener antes<br>de jubilar</h1>
+    <div class="sub">Una forma simple de empezar las cuatro conversaciones que casi nadie tiene a tiempo, y que casi todos terminan teniendo en el peor momento.</div>
+    <div class="footer">Guía práctica · Cuatro conversaciones · Antes de jubilar</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="kicker">El problema</div>
+  <h2>Mientras no se<br>hablan, se asumen</h2>
+  <div class="rule"></div>
+  <p class="lead">“Mi hijo me va a cuidar.” “Mi hermana se va a hacer cargo.” “Eso lo vemos cuando pase.”</p>
+  <p>Ninguna de esas frases es un acuerdo. Son suposiciones que nadie verificó, y que muchas veces la otra persona ni siquiera sabe que existen. A veces esa persona tiene una idea completamente distinta de lo que va a pasar. A veces tiene la misma idea, pero no sabe cómo, ni con qué plata, ni por cuánto tiempo.</p>
+  <div class="hl">La diferencia entre una suposición y un acuerdo es una conversación.</div>
+  <p> Una sola, de treinta o cuarenta minutos, que casi siempre resulta menos incómoda de lo que uno se imaginó durante meses.</p>
+  <p>Lo que sí es incómodo es la otra versión: la conversación que no se tuvo y que termina ocurriendo en un pasillo de hospital, con prisa, con miedo y con gente que no está en condiciones de pensar bien.</p>
+  <p>No venimos a decirte cómo se vive esta etapa. Es una decisión personal y es tuya. Venimos con método, con evidencia y con estructura. <strong>Quien decide eres tú</strong>, empezando por cuál de estas conversaciones vas a tener primero.</p>
+  <div class="note">
+    <p>Estas conversaciones no se posponen por descuido. Se posponen porque tocan cosas reales: la propia fragilidad, el dinero, el peso que uno puede llegar a ser para los demás. Que incomoden no significa que estés haciendo algo mal. Significa que importan.</p>
+  </div>
+  <div class="pgnum">2</div>
+</div>
+
+<div class="page">
+  <div class="kicker">Las cuatro</div>
+  <h2>Qué hay que hablar</h2>
+  <div class="rule"></div>
+  <p style="margin-bottom:8mm">Cada una tiene una pregunta central. Si logras que esa pregunta quede respondida, la conversación cumplió su propósito.</p>
+
+  <div class="item">
+    <h3>1 · Cuidados</h3>
+    <p>Qué pasa si en algún momento necesitas ayuda para el día a día. Quién, cómo, y con qué se paga.</p>
+    <span class="qq">Si yo necesitara ayuda todos los días, ¿qué pasaría?</span>
+  </div>
+
+  <div class="item">
+    <h3>2 · Dónde y cómo quieres vivir</h3>
+    <p>En tu casa, con alguien de la familia, en una residencia. Y sobre todo: qué es lo que no estás dispuesto a negociar.</p>
+    <span class="qq">¿Qué es lo que no querría perder, aunque todo lo demás cambie?</span>
+  </div>
+
+  <div class="item">
+    <h3>3 · Dinero</h3>
+    <p>Qué pasa si no alcanza. Qué esperas tú de tus hijos, y qué esperan ellos de ti. Casi nunca coincide, y casi nunca se pregunta.</p>
+    <span class="qq">Si mi dinero no alcanza, ¿quién pone la diferencia?</span>
+  </div>
+
+  <div class="item">
+    <h3>4 · Qué pasa con tus bienes</h3>
+    <p>Qué quieres que ocurra y por qué. Si hay algo que preferirías dar en vida. Si hay algo que va a generar conflicto y conviene nombrar ahora.</p>
+    <span class="qq">¿Qué está dando cada uno por hecho que ya está decidido?</span>
+  </div>
+  <div class="pgnum">3</div>
+</div>
+
+<div class="page">
+  <div class="kicker">Un punto importante</div>
+  <h2>El papel no reemplaza<br>la conversación</h2>
+  <div class="rule"></div>
+  <p class="lead">Mucha gente cree que esto se resuelve firmando un documento. Conviene saber dos cosas antes.</p>
+  <h3>Primero: depende mucho de dónde vivas</h3>
+  <p>En América Latina el estatus legal de las voluntades anticipadas varía bastante de un país a otro. En algunos existe una figura regulada, con formalidades definidas y efecto vinculante. En otros no hay norma que las regule, y el documento vale como orientación pero no obliga legalmente a nadie.</p>
+  <p>Averigua cómo es en el tuyo. Es una pregunta concreta para un abogado o para tu sistema de salud, y la respuesta cambia bastante lo que conviene hacer.</p>
+  <h3>Segundo: esto es igual en todas partes</h3>
+  <p>Un documento que la persona designada no conoce, no entiende o no encuentra a tiempo, no sirve. Y aunque lo encuentre, si nunca conversaron, va a tener que interpretar en el peor momento qué quisiste decir con cada frase.</p>
+  <div class="hl">Lo que funciona en la práctica es que alguien sepa qué querías y por qué.</div>
+  <p> Con eso puede decidir bien incluso frente a una situación que ustedes nunca previeron. Sin eso, ningún papel lo salva.</p>
+  <div class="note">
+    <p>Por eso el orden correcto es este: primero la conversación, después el documento si en tu país corresponde. Al revés casi nunca funciona.</p>
+  </div>
+  <div class="pgnum">4</div>
+</div>
+
+<div class="page">
+  <div class="kicker">La herramienta</div>
+  <h2>Cómo diseñar<br>la conversación</h2>
+  <div class="rule"></div>
+  <p>Lo que hace que estas conversaciones se descarrilen no es el tema: es que empiezan como reproche o como anuncio. Esta estructura evita las dos cosas.</p>
+  <div class="formula">Hecho concreto &nbsp;+&nbsp; Cómo me hace sentir<br>+&nbsp; Qué necesito &nbsp;+&nbsp; Qué te pido concretamente</div>
+  <p style="margin-bottom:6mm">No culpa a nadie, no exige una respuesta inmediata y deja claro qué esperas de la otra persona.</p>
+
+  <div class="example">
+    <div class="el">Ejemplo · cuidados, con un hijo</div>
+    <p>“Cumplí 64 y todavía no hemos hablado de qué pasaría si yo necesitara ayuda para el día a día. Me da algo de vergüenza sacar el tema y a la vez me deja intranquilo no haberlo hecho. Necesito estar en paz sabiendo que tú y yo tenemos claro y acordado qué vamos a hacer si eso pasa. Te pido que nos sentemos una hora este mes a conversarlo, sin decidir nada todavía.”</p>
+  </div>
+
+  <div class="example">
+    <div class="el">Ejemplo · bienes, entre hermanos</div>
+    <p>“Cuando hablamos de la casa el otro día, cada uno dio por hecho una cosa distinta. Me incomoda que esto quede flotando y termine saliendo en un mal momento. Necesito claridad de qué vamos a hacer. Te pido que busquemos una fecha para hablarlo con calma, antes de fin de mes.”</p>
+  </div>
+  <div class="pgnum">5</div>
+</div>
+
+<div class="page">
+  <div class="kicker">Para que resulte</div>
+  <h2>Cuatro reglas</h2>
+  <div class="rule"></div>
+  <div class="rules">
+    <div class="rule-i">
+      <span class="rn">1</span><span class="rt">Avisa el tema antes</span>
+      <div class="rd">Nunca emboscar. Un mensaje corto un par de días antes, del tipo «quiero conversar contigo sobre qué pasaría si yo necesitara ayuda», le da a la otra persona tiempo de llegar pensando en vez de reaccionando. La mitad de las conversaciones difíciles fracasan por sorpresa, no por contenido.</div>
+    </div>
+    <div class="rule-i">
+      <span class="rn">2</span><span class="rt">Un tema por conversación</span>
+      <div class="rd">Cuidados, vivienda, dinero y bienes son cuatro conversaciones, no una. Juntarlas garantiza que todas queden a medias y que alguna genere problemas para las otras tres. Si el tema se desvía, anótalo y déjalo para la próxima.</div>
+    </div>
+    <div class="rule-i">
+      <span class="rn">3</span><span class="rt">No busques cerrar, busca abrir</span>
+      <div class="rd">El objetivo de la primera conversación no es llegar a un acuerdo. Es que el tema deje de ser intocable. Si terminas sin decisión pero con la certeza de que pueden volver a hablarlo, resultó.</div>
+    </div>
+    <div class="rule-i">
+      <span class="rn">4</span><span class="rt">Si no se puede decidir hoy, define cuándo</span>
+      <div class="rd">Hay cosas que no se pueden decidir con la información que tienes ahora. Está bien. Lo que no está bien es dejarlo abierto: escribe qué falta para poder decidir y en qué fecha lo van a retomar. Eso sigue siendo decidir.</div>
+    </div>
+  </div>
+  <div class="pgnum">6</div>
+</div>
+
+<div class="page">
+  <div class="kicker">Tu turno</div>
+  <h2>Hoja de preparación</h2>
+  <div class="rule"></div>
+  <p style="margin-bottom:8mm">Llena esto antes de proponer la conversación. Diez minutos acá te ahorran una hora incómoda después.</p>
+
+  <div class="field"><div class="fl">Con quién voy a hablar</div><div class="blank"></div></div>
+  <div class="field"><div class="fl">Cuál de las cuatro conversaciones es (una sola)</div><div class="blank"></div></div>
+  <div class="field"><div class="fl">Qué quiero que quede claro al terminar</div><div class="blank"></div><div class="blank"></div></div>
+  <div class="field"><div class="fl">Qué temo que pase en esa conversación</div><div class="blank"></div><div class="blank"></div></div>
+  <div class="field"><div class="fl">Cómo voy a avisar el tema, y cuándo se lo propongo</div><div class="blank"></div><div class="blank"></div></div>
+  <div class="pgnum">7</div>
+</div>
+
+<div class="page close">
+  <div class="kicker">Para terminar</div>
+  <h2>Que no decida<br>la crisis por ti</h2>
+  <div class="rule"></div>
+  <p class="lead">Estas conversaciones van a ocurrir. Esa parte no está en discusión. Lo único que está en discusión es si van a ocurrir cuando tú las elijas, o cuando algo se rompa.</p>
+  <p>La versión que eliges tú pasa un domingo en la tarde, con café, y se puede pausar y retomar. La otra pasa en un pasillo, con prisa y con gente asustada tomando decisiones que van a durar años.</p>
+  <p>Empieza por una. La que menos ganas te dio tener suele ser la más importante.</p>
+  <p>Y hay alguien más en juego: tu yo del futuro, la persona que vas a ser en diez, veinte o treinta años. Esta persona va a vivir con las consecuencias de estas conversaciones, las hayas tenido o no.</p>
+  <div class="principle">¿Vas a actuar por inercia<br>o con intención?</div>
+
+  <div class="cta">
+    <div class="ct">Si quieres seguir</div>
+    <div class="cb">Si quieres diseñar estas conversaciones con método en vez de improvisarlas, te invitamos a agendar una sesión de diagnóstico <strong>gratuita</strong> con nosotros. Dura 40 minutos y sirve para mirar tu caso en particular y ver si tiene sentido que trabajemos juntos.</div>
+    <div class="cw">Haz clic en el enlace para agendar:</div>
+    <div class="cl"><a href="https://calendly.com/margarita-disenatujubilacion/40min">calendly.com/margarita-disenatujubilacion/40min</a></div>
+  </div>
+
+  <div class="pgnum">8</div>
+</div>
+</body></html>
