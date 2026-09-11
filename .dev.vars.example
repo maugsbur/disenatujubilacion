@@ -7,6 +7,10 @@
 # texto plano).
 
 APPS_SCRIPT_URL=https://script.google.com/macros/s/TU_ID_DE_IMPLEMENTACION/exec
+
+# --- PostHog (clave pública; configura los valores reales en .dev.vars) ---
+POSTHOG_PROJECT_TOKEN=phc_your_project_token
+POSTHOG_HOST=https://your-posthog-host
 SHARED_TOKEN=el-mismo-token-que-configuraste-en-apps-script  # Secret
 
 # --- Brevo (Etapa 5) — ver brevo/README.md ---

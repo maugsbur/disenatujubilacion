@@ -196,7 +196,7 @@ en el enlace de Calendly, para atribuir qué guía trae llamadas agendadas.
   tráfico pagado de Instagram puede quedar corto; migrar a Durable Objects
   o al binding nativo de Rate Limiting si el volumen lo pide.
 - La **analítica** (PostHog) está montada como scaffold inerte hasta que se
-  cargue `POSTHOG_KEY`. Ver `specs/analitica.md`.
+  cargue `POSTHOG_PROJECT_TOKEN`. Ver `specs/analitica.md`.
 
 ## Reglas al cambiar este contrato
 

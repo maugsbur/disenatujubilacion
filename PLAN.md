@@ -177,7 +177,7 @@ montados en esta fase.
       de cohorte (`regimen` + `version_texto`). Política de privacidad §2/§3
       actualizada. Ver `specs/consentimiento.md` para el checklist del
       1 de diciembre
-- [x] **Analítica:** scaffold de PostHog, inerte hasta cargar `POSTHOG_KEY`.
+- [x] **Analítica:** scaffold de PostHog, inerte hasta cargar `POSTHOG_PROJECT_TOKEN`.
       `functions/api/config.js` + `analitica.js` + eventos de funnel. Sin
       Meta Pixel — los ads de Instagram no llevan al sitio (corrección de
       Marcel al modelo, ver artifact rev. 3). **Pendiente de Marcel: todo lo

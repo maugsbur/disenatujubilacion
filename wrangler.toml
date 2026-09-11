@@ -29,8 +29,6 @@ PDF_URL_PLAN = "https://disenatujubilacion.com/assets/pdfs/plan-468b5d9455ce7390
 PDF_URL_HABLAR = "https://disenatujubilacion.com/assets/pdfs/hablar-bf1229460d8da5438ed2.pdf"
 PDF_URL_ENTUSIASMO = "https://disenatujubilacion.com/assets/pdfs/entusiasmo-9cad1ef7759af90e6233.pdf"
 
-# Analítica (Fase 0). Vacío = no carga y el sitio funciona igual
-# (analitica.js es no-op sin llave). Ver specs/analitica.md.
-# No es secreta: la clave pública de PostHog va en el navegador igual.
-POSTHOG_KEY = ""
-POSTHOG_HOST = "https://us.i.posthog.com"
+# Analítica. /api/config entrega estas variables al navegador. Configura
+# POSTHOG_PROJECT_TOKEN y POSTHOG_HOST como Secrets de Cloudflare Pages;
+# para desarrollo local están documentadas en .dev.vars.example.

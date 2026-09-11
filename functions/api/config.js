@@ -4,8 +4,8 @@
  *
  * Por qué un endpoint y no meterlo en el HTML directo: el sitio se sirve
  * estático y cacheado, pero las llaves las manda Cloudflare Pages en
- * runtime. Así se cambian sin reconstruir nada, y si están vacías la
- * analítica simplemente no carga (analitica.js es no-op).
+ * runtime. Así se cambian sin reconstruir nada. En producción, si faltan,
+ * analitica.js no carga; en desarrollo informa la configuración faltante.
  *
  * NADA de esto es secreto: la clave pública de PostHog termina en el
  * navegador de todas formas. Los secretos de verdad (SHARED_TOKEN,
@@ -15,8 +15,8 @@ export async function onRequestGet(context) {
   const { env } = context;
   return new Response(
     JSON.stringify({
-      posthogKey: env.POSTHOG_KEY || '',
-      posthogHost: env.POSTHOG_HOST || 'https://us.i.posthog.com'
+      posthogKey: env.POSTHOG_PROJECT_TOKEN,
+      posthogHost: env.POSTHOG_HOST
     }),
     {
       headers: {

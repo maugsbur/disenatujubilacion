@@ -18,3 +18,6 @@ lead-magnets/hablar.html
 lead-magnets/carlos.html
 __pycache__/
 *.pyc
+
+# Caché temporal del wizard de instalación de PostHog (se autoborra normalmente)
+.posthog-wizard-cache/

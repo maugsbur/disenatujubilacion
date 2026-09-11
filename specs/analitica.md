@@ -33,7 +33,7 @@ preguntas del sitio siguen siendo reales:
 
 ```
 wrangler.toml [vars]  →  GET /api/config  →  analitica.js  →  PostHog
-   (POSTHOG_KEY, …)       (endpoint público)   (en cada página)
+   (POSTHOG_PROJECT_TOKEN, …)       (endpoint público)   (en cada página)
 ```
 
 - **`functions/api/config.js`** devuelve la llave pública en runtime. No es
@@ -42,7 +42,7 @@ wrangler.toml [vars]  →  GET /api/config  →  analitica.js  →  PostHog
   viene vacío (o falla), no hace nada. El sitio funciona igual.
 - Cargado en las 6 páginas, antes de `atribucion.js` y los scripts de form.
 
-**Se puede desplegar ahora sin cuenta.** Con `POSTHOG_KEY` vacío la analítica
+**Se puede desplegar ahora sin cuenta.** Con `POSTHOG_PROJECT_TOKEN` vacío la analítica
 no carga. Se activa después poniendo la llave en `wrangler.toml` y push.
 
 ## Eventos
@@ -83,7 +83,7 @@ regalo de `hijos`.
 - [ ] Autorizar el dominio en PostHog (no basta con configurarlo en el
       código — sin esto los pageviews nativos quedan en cero aunque los
       eventos custom aparezcan; es la trampa que documenta el README de `hijos`)
-- [ ] Cargar `POSTHOG_KEY` y, si hay proxy, `POSTHOG_HOST` en
+- [ ] Cargar `POSTHOG_PROJECT_TOKEN` y, si hay proxy, `POSTHOG_HOST` en
       `wrangler.toml` § `[vars]` (NO en el dashboard — ver `CLAUDE.md`), y push
 - [ ] Verificar en PostHog → Activity que llegan `autodiagnostico_iniciado`
       y compañía

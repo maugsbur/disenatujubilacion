@@ -1,9 +1,9 @@
 /* analitica.js — PostHog, cargado en runtime desde /api/config.
  *
- * No-op sin llave: si /api/config devuelve el key vacío (o falla), este
- * archivo no hace nada y el sitio funciona igual. Así se puede desplegar
- * antes de tener la cuenta, y activar después solo cargando POSTHOG_KEY
- * en wrangler.toml. Ver specs/analitica.md.
+ * No-op en producción sin configuración: si /api/config no devuelve las
+ * variables, este archivo no carga el SDK y el sitio sigue funcionando. En
+ * desarrollo informa el problema para evitar perder eventos silenciosamente.
+ * Ver specs/analitica.md.
  *
  * Sin Meta Pixel: los ads de Instagram no llevan al sitio (el funnel de
  * venta es Instagram mismo), así que el pixel no tendría nada que
@@ -47,19 +47,36 @@
     window.posthog.init(key, {
       api_host: host,
       person_profiles: 'identified_only',
+      defaults: '2026-05-30',
       capture_pageview: true,
-      autocapture: false, // eventos explícitos, no todo clic
+      autocapture: false, // eventos explícitos, no todo clic — ver "Reglas de eventos" arriba
+      capture_exceptions: {
+        capture_unhandled_errors: true,
+        capture_unhandled_rejections: true,
+        capture_console_errors: false
+      },
       loaded: drenarCola
     });
+  }
+
+  function faltaConfiguracion(nombre) {
+    listo = true;
+    if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+      throw new Error(nombre + ' variable required by PostHog is missing or un-configured, this causes events to be silently missed. This error stops appearing once ' + nombre + ' is configured');
+    }
   }
 
   fetch('/api/config')
     .then(function (r) { return r.json(); })
     .then(function (cfg) {
-      if (cfg && cfg.posthogKey) cargarPostHog(cfg.posthogKey, cfg.posthogHost || 'https://us.i.posthog.com');
-      else listo = true; // sin llave: los eventos encolados se descartan, sin ruido
+      if (!cfg || !cfg.posthogKey) return faltaConfiguracion('POSTHOG_PROJECT_TOKEN');
+      if (!cfg.posthogHost) return faltaConfiguracion('POSTHOG_HOST');
+      cargarPostHog(cfg.posthogKey, cfg.posthogHost);
     })
-    .catch(function () { listo = true; });
+    .catch(function (error) {
+      if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') throw error;
+      listo = true;
+    });
 
   // Clics de CTA: se instrumentan acá para no repetir el listener en cada
   // página. Los enlaces abren en pestaña nueva, así que no hay carrera con
