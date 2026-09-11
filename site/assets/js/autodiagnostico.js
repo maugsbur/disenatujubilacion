@@ -262,11 +262,24 @@
     cta.href = CALENDLY_BASE + '?' + q.join('&');
   }
 
+  // El CTA de cierre es el momento de mayor intención de todo el funnel
+  // (Fase 3): personalizarlo al pilar más bajo en vez de repetir el mismo
+  // texto para todos. Ver PLAN.md § Fase 3.
+  function renderCtaBody(minKey) {
+    var el = document.getElementById('ctaBody');
+    if (!el) return;
+    el.innerHTML = 'Si quieres que revisemos tu caso juntos — partiendo por tu pilar de <strong>' +
+      pillarName(minKey) + '</strong>, que es donde hoy tienes más espacio para actuar — te invitamos ' +
+      'a agendar una sesión de diagnóstico <strong>gratuita</strong> con nosotros. Dura 45 minutos y sirve ' +
+      'para mirar tu caso en particular y ver si tiene sentido que trabajemos juntos.';
+  }
+
   function renderResult(totals, email) {
     var minKey = lowestPillar(totals);
     renderLowestLine(minKey, totals);
     renderBars(totals);
     renderDomino(minKey);
+    renderCtaBody(minKey);
     setCalendlyLink(totals, minKey, email);
   }
 

@@ -139,6 +139,40 @@ nada a mano. El `email` permite además unir la reserva con la fila de
 autodiagnóstico — no editar"). Debe quedar **primera** para que `a1` caiga
 ahí. Funciona en el plan gratis.
 
+## 6 · Convención de UTM para Instagram (Fase 3)
+
+Para quien arma las piezas en Instagram (Margarita, Nicole): así se
+nombran los tres parámetros que el sitio ya sabe leer (`atribucion.js`, ver
+§ *Deuda saldada en la Fase 0* más abajo). Sin esto, cada quien inventa su
+propio formato y `origen` se llena de valores que no se pueden agrupar.
+
+**Formato:** minúsculas, sin tildes ni espacios — palabras separadas por
+guion. Los tres viven en el enlace de Instagram (bio, sticker de la
+historia, o el anuncio), nunca hay que tocar el sitio para usarlos.
+
+| Parámetro | Qué va ahí | Ejemplos |
+|---|---|---|
+| `utm_source` | **Dónde** está el enlace — son solo tres valores posibles | `bio` (link en la biografía, lo usan reels y posts porque no pueden llevar link directo) · `historia` (sticker de link en una historia) · `ads` (anuncio pagado) |
+| `utm_campaign` | El nombre de la campaña o iniciativa puntual, si hay una | `lanzamiento-programa`, `otono-2026`. Vacío si es tráfico de bio de todos los días, sin campaña detrás |
+| `utm_content` | La pieza específica — lo bastante descriptivo para reconocerla meses después | `reel-jinetes`, `historia-3`, `post-testimonio-alejandro` |
+
+**Ejemplo completo**, un reel sobre los "cinco jinetes" que apunta a la bio:
+
+```
+https://disenatujubilacion.com/?utm_source=bio&utm_campaign=lanzamiento-programa&utm_content=reel-jinetes
+```
+
+Y una historia suelta, sin campaña, que enlaza directo a la guía PLAN:
+
+```
+https://disenatujubilacion.com/plan?utm_source=historia&utm_content=historia-3
+```
+
+Estos tres son distintos de `utm_source=autodiagnostico` (§ 5) y
+`utm_source=pdf-<guia>` (§ *Deuda saldada*): esos los pone el sitio solo,
+en el enlace de Calendly, para saber qué trae llamadas agendadas — no se
+escriben a mano.
+
 ## Deuda saldada en la Fase 0
 
 **`origen` estaba sobrecargado** — significaba `utm_source` en el

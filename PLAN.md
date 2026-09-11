@@ -242,19 +242,22 @@ curadas y con propósito de venta asignado — más completa que el sitio viejo.
       transcripción del audio de Alberto **ya existe** en Notion — no hace
       falta transcribirla, solo hay que decidir si se usa
 
-## Fase 3 — Afinar cada página de llegada
+## Fase 3 — Afinar cada página de llegada (implementada 2026-09-11)
 
 Instagram ya enruta por temperatura. Esto es que cada página funcione para
 quien ya eligió llegar ahí.
 
-- [ ] CTA del resultado del autodiagnóstico personalizado al pilar más bajo
-      de esa persona — es el peak de intención del funnel y hoy dice lo
-      mismo para todos
-- [ ] Convención de UTM escrita (`utm_source` / `utm_campaign` /
-      `utm_content`), para que quien arma las piezas de Instagram la use
-      igual. Debe calzar con lo que `atribucion.js` ya lee
-- [ ] Revisar el orden de los CTA en la landing para el visitante que va a
-      evaluar: primero credibilidad, después las acciones
+- [x] CTA del resultado del autodiagnóstico personalizado al pilar más bajo
+      de esa persona — el texto de cierre ahora nombra el pilar ("partiendo
+      por tu pilar de Propósito, que es donde hoy tienes más espacio para
+      actuar") en vez de decir lo mismo para todos
+- [x] Convención de UTM escrita en `specs/contrato-datos.md` § 6 —
+      `utm_source` solo puede ser `bio` / `historia` / `ads` (dónde está el
+      enlace), `utm_campaign` es la campaña si la hay, `utm_content` es la
+      pieza. Con ejemplos de enlace completo para copiar
+- [x] Orden de la landing corregido: "Quiénes te acompañan" y los
+      testimonios (Fase 2) ahora van **antes** de "Recursos gratuitos" —
+      primero credibilidad, después las acciones, para quien llega a evaluar
 
 ## Fase 4 — Optimizar con datos
 
