@@ -215,23 +215,32 @@ venta. El dato ya está guardado, falta ponérselo enfrente.
       para que `a1` caiga ahí. Ver `specs/contrato-datos.md` § 5. Hasta que
       lo haga, el correo prellenado funciona y el resultado no
 
-## Fase 2 — Credibilidad
+## Fase 2 — Credibilidad (implementada 2026-09-11)
 
 Con el modelo corregido, pasó de "una mejora más" a ser el trabajo central
-del sitio. Casi todo el material ya existe en `jubilar.me` (repo
-`jubilarme-landing-hijos` y la portada de `jubilar.me`).
+del sitio. El material salió de la portada de `jubilar.me` y, sobre todo,
+de Notion: la página **Testimonios** y la base **Citas** (dentro de
+`THE Plan / Diseña tu Jubilación / Entrevistas`), que ya tenía las citas
+curadas y con propósito de venta asignado — más completa que el sitio viejo.
 
-- [ ] Adaptar las bios de Nicole y Marcel — sumando el dato de metodologías
-      en sector privado, ONGs y la ONU, que no está en ningún material
-      nuevo, y ajustando la voz al público nuevo
-- [ ] Publicar los tres testimonios (Alejandro, Irene, Silvia), atribuidos
-      honestamente a la primera versión del programa. El de Silvia
-      ("energía joven con mucha sabiduría") responde la objeción de la edad
-- [ ] Llevar credibilidad a las tres páginas de captura, que hoy no tienen
-      ninguna
+- [x] Adaptar las bios de Nicole y Marcel — sección "Quiénes te acompañan"
+      en la landing, con el dato de metodologías en sector privado, ONGs y
+      la ONU. Sin foto todavía: el avatar es un monograma de color, listo
+      para reemplazar por una foto real sin tocar el layout
+- [x] Publicar tres testimonios (Alejandro, Irene, Silvia) en la landing,
+      con la nota "Diseña tu Jubilación es la evolución de Jubilar.me... estos
+      testimonios son de esa primera versión." Citas verificadas contra la
+      transcripción original en Notion, no contra el resumen del sitio viejo
+      (había pequeñas diferencias de redacción)
+- [x] Credibilidad en las tres páginas de captura, cada una con una cita
+      elegida por tema — no la misma en las tres: Alejandro ("no están
+      improvisando") en `/plan`, Silvia (el módulo legal como "un tema de
+      amor hacia los que se quedan") en `/hablar`, Irene (preparación para
+      30 años) en `/carlos`
 - [ ] **De Nicole + Marcel:** foto nueva de Nicole (la de `jubilar.me` es
-      240×328), transcripción del audio de Alberto, número real de egresados
-      del Club de Implementación
+      240×328) y número real de egresados del Club de Implementación. La
+      transcripción del audio de Alberto **ya existe** en Notion — no hace
+      falta transcribirla, solo hay que decidir si se usa
 
 ## Fase 3 — Afinar cada página de llegada
 

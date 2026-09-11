@@ -139,3 +139,53 @@
 @media (min-width: 640px) {
   .res-grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* ---------- Equipo (Fase 2 · Credibilidad) ---------- */
+.team-grid { display: grid; gap: var(--space-4); }
+.team-card { display: flex; gap: var(--space-3); align-items: flex-start; }
+.team-avatar {
+  flex-shrink: 0;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  background: var(--dtj-green);
+  color: var(--dtj-cream);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.team-name { font-weight: 600; color: var(--dtj-green); margin-bottom: 0.1rem; }
+.team-role { font-size: 0.82rem; color: var(--dtj-amber); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem; }
+.team-bio { font-size: 0.92rem; color: var(--dtj-muted); margin: 0; }
+@media (min-width: 640px) {
+  .team-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---------- Testimonios (Fase 2 · Credibilidad) ---------- */
+.testi-note { font-size: 0.85rem; color: var(--dtj-muted); margin-bottom: var(--space-4); }
+.testi-grid { display: grid; gap: var(--space-3); }
+.testi-card {
+  background: var(--dtj-offwhite);
+  border: 1px solid var(--dtj-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+.testi-card p { font-family: var(--font-serif); font-style: italic; color: var(--dtj-green); margin: 0 0 0.6rem; line-height: 1.5; }
+.testi-card .who { font-size: 0.85rem; color: var(--dtj-muted); font-style: normal; }
+@media (min-width: 640px) {
+  .testi-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---------- Testimonio único de credibilidad (páginas de captura) ---------- */
+.cap-testi {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--dtj-green);
+  border-left: 3px solid var(--dtj-amber);
+  padding-left: var(--space-3);
+  margin: var(--space-4) 0;
+}
+.cap-testi .who { display: block; font-style: normal; font-size: 0.85rem; color: var(--dtj-muted); margin-top: 0.4rem; }
