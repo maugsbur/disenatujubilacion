@@ -237,10 +237,11 @@ curadas y con propósito de venta asignado — más completa que el sitio viejo.
       improvisando") en `/plan`, Silvia (el módulo legal como "un tema de
       amor hacia los que se quedan") en `/hablar`, Irene (preparación para
       30 años) en `/carlos`
+- [x] Testimonio de Alberto agregado a la landing (Marcel confirmó usarlo,
+      2026-09-11): "Le diría que tomar este curso te cambiará la vida..."
+      — la sección pasó de tres a cuatro testimonios (grilla 2×2)
 - [ ] **De Nicole + Marcel:** foto nueva de Nicole (la de `jubilar.me` es
-      240×328) y número real de egresados del Club de Implementación. La
-      transcripción del audio de Alberto **ya existe** en Notion — no hace
-      falta transcribirla, solo hay que decidir si se usa
+      240×328) y número real de egresados del Club de Implementación
 
 ## Fase 3 — Afinar cada página de llegada (implementada 2026-09-11)
 

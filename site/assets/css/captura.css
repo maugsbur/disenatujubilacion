@@ -176,7 +176,10 @@
 .testi-card p { font-family: var(--font-serif); font-style: italic; color: var(--dtj-green); margin: 0 0 0.6rem; line-height: 1.5; }
 .testi-card .who { font-size: 0.85rem; color: var(--dtj-muted); font-style: normal; }
 @media (min-width: 640px) {
-  .testi-grid { grid-template-columns: repeat(3, 1fr); }
+  .testi-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 960px) {
+  .testi-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
 /* ---------- Testimonio único de credibilidad (páginas de captura) ---------- */
