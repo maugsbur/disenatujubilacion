@@ -63,6 +63,13 @@ de diagnóstico; el síntoma es `config_del_worker_incompleta` con todo
 aparentemente bien configurado. (El repo `jubilarme-landing-hijos` ya lo
 tenía documentado en sus Known Gotchas.)
 
+**Agregar o cambiar un Secret en el dashboard de Cloudflare Pages no se
+aplica solo.** Pasó dos veces con `POSTHOG_PROJECT_TOKEN` y `POSTHOG_HOST`:
+`/api/config` seguía devolviendo el valor viejo (o `{}`) hasta forzar un
+deploy nuevo (basta un commit vacío y push). No hace falta reconstruir
+nada — es solo que Pages Functions no relee las variables de un deployment
+ya publicado.
+
 **Apps Script Web Apps no pueden leer headers HTTP personalizados.** No
 existe `e.headers`. El token compartido viaja **dentro del cuerpo JSON**,
 nunca como `Authorization`.
