@@ -264,6 +264,23 @@ quien ya eligió llegar ahí.
       testimonios (Fase 2) ahora van **antes** de "Recursos gratuitos" —
       primero credibilidad, después las acciones, para quien llega a evaluar
 
+### Revisión de `hijos.jubilar.me` (2026-09-15)
+
+Marcel pidió revisar el sitio de regalo para hijos, ya funcionando de
+nuevo, y rescatar lo que sirviera adaptado (no el copy, no el enfoque de
+regalo — esa audiencia sigue descartada). Se agregaron tres de cuatro
+secciones a la landing:
+
+- [x] **"Qué nos hace distintos"** — 4 tarjetas de diferenciación, entre
+      "Los cinco pilares" y "Quiénes te acompañan"
+- [x] **"Es para ti si..."** — checklist de calificación + una línea de
+      descalificación honesta, antes del CTA final
+- [x] **Preguntas frecuentes** — acordeón nativo (`<details>`, sin JS),
+      antes del CTA final. Las preguntas se escribieron de cero para este
+      público — las de `hijos` (regalo, gift card) no aplicaban
+- [ ] **"Cómo funciona"** (4 pasos) — pendiente, Marcel pidió dejarla para
+      después
+
 ## Fase 4 — Optimizar con datos
 
 Solo cuando la analítica lleve dos o tres semanas midiendo con tráfico

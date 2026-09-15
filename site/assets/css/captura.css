@@ -182,6 +182,64 @@
   .testi-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
+/* ---------- Diferenciación (Fase 3, de hijos.jubilar.me adaptado) ---------- */
+.dif-grid { display: grid; gap: var(--space-3); }
+.dif-card {
+  background: var(--dtj-offwhite);
+  border: 1px solid var(--dtj-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+.dif-card h3 { font-size: 1.05rem; color: var(--dtj-green); margin-bottom: 0.4rem; }
+.dif-card p { font-size: 0.92rem; color: var(--dtj-muted); margin: 0; }
+@media (min-width: 640px) {
+  .dif-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- "Es para ti si..." (Fase 3) ---------- */
+.qualify-list { list-style: none; margin: 0 0 var(--space-4); padding: 0; }
+.qualify-list li {
+  display: flex;
+  gap: 0.7rem;
+  align-items: baseline;
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--dtj-border);
+}
+.qualify-list li:first-child { border-top: none; }
+.qualify-list .mark { color: var(--dtj-amber); font-weight: 700; flex-shrink: 0; }
+.qualify-not {
+  font-size: 0.9rem;
+  color: var(--dtj-muted);
+  border-left: 3px solid var(--dtj-border);
+  padding-left: var(--space-3);
+}
+
+/* ---------- FAQ (Fase 3) ---------- */
+.faq-list { border-top: 1px solid var(--dtj-border); }
+.faq-item { border-bottom: 1px solid var(--dtj-border); }
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: var(--space-3) 0;
+  min-height: var(--touch-min);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-weight: 500;
+  color: var(--dtj-green);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--dtj-amber);
+  flex-shrink: 0;
+}
+.faq-item[open] summary::after { content: '–'; }
+.faq-item p { font-size: 0.92rem; color: var(--dtj-muted); padding-bottom: var(--space-3); margin: 0; }
+
 /* ---------- Testimonio único de credibilidad (páginas de captura) ---------- */
 .cap-testi {
   font-family: var(--font-serif);
