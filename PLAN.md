@@ -177,12 +177,16 @@ montados en esta fase.
       de cohorte (`regimen` + `version_texto`). Política de privacidad §2/§3
       actualizada. Ver `specs/consentimiento.md` para el checklist del
       1 de diciembre
-- [x] **Analítica:** scaffold de PostHog, inerte hasta cargar `POSTHOG_PROJECT_TOKEN`.
-      `functions/api/config.js` + `analitica.js` + eventos de funnel. Sin
-      Meta Pixel — los ads de Instagram no llevan al sitio (corrección de
-      Marcel al modelo, ver artifact rev. 3). **Pendiente de Marcel: todo lo
-      de `specs/analitica.md`** (crear proyecto PostHog, decidir proxy,
-      autorizar dominio, cargar la llave)
+- [x] **Analítica:** scaffold de PostHog, inerte hasta cargar
+      `POSTHOG_PROJECT_TOKEN`. `functions/api/config.js` + `analitica.js` +
+      eventos de funnel. Sin Meta Pixel — los ads de Instagram no llevan al
+      sitio (corrección de Marcel al modelo, ver artifact rev. 3)
+- [x] Marcel corrió el wizard de instalación de PostHog (2026-09-15): SDK
+      integrado, token real en `.dev.vars` local. **Pendiente de Marcel: el
+      resto de `specs/analitica.md`** — sobre todo copiar el token al
+      dashboard de Cloudflare como Secret (`/api/config` en producción
+      sigue devolviendo `{}` mientras tanto), decidir proxy, autorizar
+      dominio
 
 ### Modelo de funnel (corregido por Marcel, 2026-09-10)
 

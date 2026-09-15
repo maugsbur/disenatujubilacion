@@ -1,6 +1,6 @@
 # Spec · Analítica
 
-**Estado:** scaffold listo, inerte hasta cargar la llave · **Última revisión:** 2026-09-10
+**Estado:** SDK integrado (wizard de PostHog), inerte hasta cargar la llave como Secret en Cloudflare · **Última revisión:** 2026-09-15
 
 ## El modelo de funnel (corregido por Marcel, 2026-09-10)
 
@@ -32,18 +32,26 @@ preguntas del sitio siguen siendo reales:
 ## Cómo está armado
 
 ```
-wrangler.toml [vars]  →  GET /api/config  →  analitica.js  →  PostHog
-   (POSTHOG_PROJECT_TOKEN, …)       (endpoint público)   (en cada página)
+Secret de Cloudflare Pages  →  GET /api/config  →  analitica.js  →  PostHog
+(POSTHOG_PROJECT_TOKEN, POSTHOG_HOST)  (endpoint público)   (en cada página)
 ```
 
 - **`functions/api/config.js`** devuelve la llave pública en runtime. No es
   secreta: la clave pública de PostHog vive en el navegador de todos modos.
-- **`site/assets/js/analitica.js`** carga el SDK desde ese config. Si el key
-  viene vacío (o falla), no hace nada. El sitio funciona igual.
+  Se marca como Secret en el dashboard igual, no por confidencialidad sino
+  porque así se evita tener que tocar `wrangler.toml` cada vez que cambia.
+- **`site/assets/js/analitica.js`** carga el SDK desde ese config. Si falta
+  alguna variable, no hace nada en producción (en `localhost` sí avisa con
+  una excepción, para no perder eventos en silencio durante el desarrollo).
 - Cargado en las 6 páginas, antes de `atribucion.js` y los scripts de form.
 
-**Se puede desplegar ahora sin cuenta.** Con `POSTHOG_PROJECT_TOKEN` vacío la analítica
-no carga. Se activa después poniendo la llave en `wrangler.toml` y push.
+**Se puede desplegar ahora sin cuenta.** Sin las dos variables, la analítica
+no carga y el sitio funciona igual. Se activa poniendo `POSTHOG_PROJECT_TOKEN`
+y `POSTHOG_HOST` como **Secret** en el dashboard de Cloudflare Pages
+(Settings → Environment variables del proyecto) — no hace falta tocar el
+repo ni hacer push. El wizard de instalación de PostHog (`npx @posthog/wizard`)
+dejó los valores reales en `.dev.vars` para pruebas en local; son los mismos
+que van al dashboard.
 
 ## Eventos
 
@@ -71,19 +79,23 @@ regalo de `hijos`.
 
 ## Lo que falta — todo es de Marcel
 
-- [ ] Crear el proyecto en PostHog (uno para producción; idealmente otro
-      aparte para preview, para no ensuciar el reporte con tráfico de prueba)
+- [x] Crear el proyecto en PostHog y correr el wizard de instalación
+      (2026-09-15) — integró el SDK en `analitica.js`/`config.js` y dejó
+      el token real en `.dev.vars` (gitignored)
+- [ ] **Cargar `POSTHOG_PROJECT_TOKEN` y `POSTHOG_HOST` como Secret en el
+      dashboard de Cloudflare Pages** — el wizard los dejó listos en
+      `.dev.vars`, solo hay que copiarlos ahí. Sin esto, `/api/config`
+      sigue devolviendo `{}` y la analítica no carga (confirmado en
+      producción el 2026-09-15)
 - [ ] Decidir sobre el **proxy inverso**. PostHog directo funciona pero lo
       bloquean varios ad-blockers. `hijos` lo resolvió con un subdominio
       (`a.hijos.jubilar.me`) que reenvía a `us.i.posthog.com`. El equivalente
       sería `a.disenatujubilacion.com`. Sin proxy: se pierden pageviews de
       quienes usan bloqueador, pero los eventos custom y las grabaciones
       suelen pasar igual. Se puede empezar sin proxy y agregarlo después
-      cambiando solo `POSTHOG_HOST`.
+      cambiando solo `POSTHOG_HOST`
 - [ ] Autorizar el dominio en PostHog (no basta con configurarlo en el
       código — sin esto los pageviews nativos quedan en cero aunque los
       eventos custom aparezcan; es la trampa que documenta el README de `hijos`)
-- [ ] Cargar `POSTHOG_PROJECT_TOKEN` y, si hay proxy, `POSTHOG_HOST` en
-      `wrangler.toml` § `[vars]` (NO en el dashboard — ver `CLAUDE.md`), y push
 - [ ] Verificar en PostHog → Activity que llegan `autodiagnostico_iniciado`
       y compañía
