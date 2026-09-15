@@ -182,20 +182,6 @@
   .testi-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
-/* ---------- Diferenciación (Fase 3, de hijos.jubilar.me adaptado) ---------- */
-.dif-grid { display: grid; gap: var(--space-3); }
-.dif-card {
-  background: var(--dtj-offwhite);
-  border: 1px solid var(--dtj-border);
-  border-radius: var(--radius);
-  padding: var(--space-4);
-}
-.dif-card h3 { font-size: 1.05rem; color: var(--dtj-green); margin-bottom: 0.4rem; }
-.dif-card p { font-size: 0.92rem; color: var(--dtj-muted); margin: 0; }
-@media (min-width: 640px) {
-  .dif-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
 /* ---------- "Es para ti si..." (Fase 3) ---------- */
 .qualify-list { list-style: none; margin: 0 0 var(--space-4); padding: 0; }
 .qualify-list li {

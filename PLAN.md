@@ -268,16 +268,16 @@ quien ya eligió llegar ahí.
 
 Marcel pidió revisar el sitio de regalo para hijos, ya funcionando de
 nuevo, y rescatar lo que sirviera adaptado (no el copy, no el enfoque de
-regalo — esa audiencia sigue descartada). Se agregaron tres de cuatro
-secciones a la landing:
+regalo — esa audiencia sigue descartada). De las cuatro secciones
+propuestas quedaron dos en la landing:
 
-- [x] **"Qué nos hace distintos"** — 4 tarjetas de diferenciación, entre
-      "Los cinco pilares" y "Quiénes te acompañan"
 - [x] **"Es para ti si..."** — checklist de calificación + una línea de
       descalificación honesta, antes del CTA final
 - [x] **Preguntas frecuentes** — acordeón nativo (`<details>`, sin JS),
       antes del CTA final. Las preguntas se escribieron de cero para este
       público — las de `hijos` (regalo, gift card) no aplicaban
+- [x] ~~"Qué nos hace distintos"~~ — se agregó y luego se sacó a pedido de
+      Marcel (2026-09-15)
 - [ ] **"Cómo funciona"** (4 pasos) — pendiente, Marcel pidió dejarla para
       después
 
