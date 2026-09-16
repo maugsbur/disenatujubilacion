@@ -110,7 +110,7 @@ CSS = """
   .close .pgnum { color: #F6E7B0; opacity: .4; }
 """
 
-# El enlace de agendamiento. La sesión pasó de 40 a 45 minutos y la URL vieja
+# El enlace de agendamiento. La llamada pasó de 40 a 45 minutos y la URL vieja
 # quedó muerta — los PDF que circulaban antes de 2026-09-10 apuntaban a ella.
 # Si vuelve a cambiar, se cambia ACÁ y se regeneran las cuatro guías.
 CAL = "https://calendly.com/margarita-disenatujubilacion/45min"
@@ -125,9 +125,9 @@ def cal_url(utm=None):
 
 def cta(lead, utm=None):
     return ('\n  <div class="cta">\n    <div class="ct">Si quieres seguir</div>\n'
-            '    <div class="cb">' + lead + ' te invitamos a agendar una sesión de diagnóstico '
-            '<strong>gratuita</strong> con nosotros. Dura 45 minutos y sirve para mirar tu caso en '
-            'particular y ver si tiene sentido que trabajemos juntos.</div>\n'
+            '    <div class="cb">' + lead + ' te invitamos a agendar una llamada de evaluación '
+            '<strong>gratuita</strong> con Margarita, que coordina el programa. Dura 45 minutos y sirve '
+            'para mirar tu caso en particular y ver si el programa de 3 meses tiene sentido para ti.</div>\n'
             '    <div class="cw">Haz clic en el enlace para agendar:</div>\n'
             '    <div class="cl"><a href="' + cal_url(utm) + '">' + CAL_TEXTO + '</a></div>\n'
             '  </div>\n')

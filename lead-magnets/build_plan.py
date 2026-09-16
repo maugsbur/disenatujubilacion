@@ -20,7 +20,7 @@ body = """
   <div class="cover-inner">
     <div class="eyebrow">Diseña tu Jubilación</div>
     <h1>Tu jubilación no<br>se resuelve esta<br>semana. Estas cuatro<br>acciones sí.</h1>
-    <div class="sub">Sin planes de doce semanas, sin hábitos nuevos y sin agobio. Cuatro acciones que se hacen una vez y quedan hechas.</div>
+    <div class="sub">Sin planes largos, sin hábitos nuevos y sin agobio. Cuatro acciones que se hacen una vez y quedan hechas.</div>
     <div class="footer">Guía práctica · Cuatro acciones · Sin agobio</div>
   </div>
 </div>

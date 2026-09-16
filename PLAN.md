@@ -342,8 +342,8 @@ FAQ · CTA final. Reglas de copy nuevas en `CLAUDE.md` § Idioma y tono.
 - [x] Incoherencias: `/plan` decía "sin planes de doce semanas" en un sitio
       que vende 13; `/carlos` decía "Guía · ENTUSIASMO" y la tarjeta "Caso
       real"; `/privacidad` hablaba de "leads" y "llamada de venta"
-- [ ] **De Marcel:** frecuencia de las sesiones y horas por semana. Sin eso
-      no se escribió la pregunta "¿Cuánto tiempo toma a la semana?"
+- [x] Pregunta "¿Cuánto tiempo toma a la semana?": 4 horas; la cantidad
+      de sesiones se ve en la llamada (Marcel, 2026-09-16)
 - [x] Testimonios de todo el sitio tomados de "✂️ Extractos" (verificados
       contra la transcripción) y elegidos por objeción del público: la
       identidad ligada al trabajo (Irene, Alejandro), "solo me preparé en lo
@@ -351,5 +351,9 @@ FAQ · CTA final. Reglas de copy nuevas en `CLAUDE.md` § Idioma y tono.
       `/hablar` que no aparecía en ningún lado se reemplazó por una de Juani
 - [x] Duración: **3 meses** en todo el sitio (decidido 2026-09-16), en vez
       de "13 semanas" o "90 días"
-- [ ] Los PDF y las plantillas de Brevo todavía tienen rayas y hablan de
-      "sesión". Hay que regenerar los PDF y editar las plantillas
+- [x] PDF regenerados (2026-09-16): el CTA dice "llamada de evaluación
+      gratuita con Margarita" y nombra el programa de 3 meses; `/plan` ya no
+      dice "doce semanas". Sin rayas en el texto
+- [ ] Plantillas de Brevo: revisar rayas y "sesión"
+- [x] Hero sin la etiqueta "Después de jubilar vienen 20 o 30 años más";
+      testimonios firmados "participante del programa piloto"

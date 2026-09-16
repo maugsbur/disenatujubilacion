@@ -50,6 +50,13 @@ anotada para el abogado. No la des por resuelta en ninguna dirección.
 - La duración se dice **3 meses**. No "13 semanas" (obliga a hacer la
   cuenta) ni "90 días" (suena a reto de Instagram, justo el tono que este
   público castiga).
+  Dedicación: **unas 4 horas por semana**. La cantidad de sesiones no se
+  publica, se conversa en la llamada de evaluación.
+- Quienes dan testimonio se firman **"participante del programa piloto"**,
+  no "ex alumno/a de Jubilar.me" (el público nuevo no conoce esa marca).
+  Las citas de Silvia en el calendario de Instagram de Notion ("toda la vida
+  me dediqué a otros", "el propósito me pegó fuerte") no están en su
+  transcripción: no se usan. La única verificada es la de Extractos (0:23).
 
 ## Arquitectura
 
