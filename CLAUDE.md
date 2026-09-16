@@ -1,6 +1,6 @@
 # Diseña tu Jubilación — contexto del proyecto
 
-Sitio de captación para un programa de acompañamiento de 13 semanas en la
+Sitio de captación para un programa de acompañamiento de 3 meses en la
 transición al retiro. Público: profesionales y líderes próximos a jubilar
 cuya identidad está anclada al trabajo. Chile y Latinoamérica, ticket
 USD 1.000, ingreso continuo sin cohortes.
@@ -38,10 +38,18 @@ anotada para el abogado. No la des por resuelta en ninguna dirección.
   documentación interna da igual.
 - **Lenguaje neutro en género** cuando se habla al lector ("Quieres tomarte
   esta etapa…", no "Estás dispuesto…"). La mitad del público son mujeres.
-- **Testimonios: solo citas verificables** en Notion (página "Testimonios"
-  o la base "✂️ Extractos"), de personas con consentimiento marcado.
+- **Testimonios: solo citas verificables** en Notion: la base "Entrevistas"
+  (versiones cortas), la base "✂️ Extractos (videos de entrevistas)" (citas
+  textuales, se pueden pulir sin cambiar el sentido) o la página
+  "Testimonios". Todas las personas entrevistadas dieron consentimiento.
+  Ojo: en Extractos, "Requiere permiso puntual" y "No publicable" son por
+  terceros identificables, datos de salud, precios o críticas, no por
+  consentimiento. Esas no se usan.
 - La llamada con Margarita se llama **llamada de evaluación** en todo el
   sitio. No "sesión de diagnóstico": choca con "autodiagnóstico".
+- La duración se dice **3 meses**. No "13 semanas" (obliga a hacer la
+  cuenta) ni "90 días" (suena a reto de Instagram, justo el tono que este
+  público castiga).
 
 ## Arquitectura
 

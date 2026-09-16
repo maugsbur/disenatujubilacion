@@ -344,8 +344,12 @@ FAQ · CTA final. Reglas de copy nuevas en `CLAUDE.md` § Idioma y tono.
       real"; `/privacidad` hablaba de "leads" y "llamada de venta"
 - [ ] **De Marcel:** frecuencia de las sesiones y horas por semana. Sin eso
       no se escribió la pregunta "¿Cuánto tiempo toma a la semana?"
-- [ ] **De Marcel:** la cita de Silvia en `/hablar` ("un tema de amor hacia
-      los que se quedan") no aparece en su entrevista ni en "Testimonios".
-      Confirmar la fuente o reemplazarla
+- [x] Testimonios de todo el sitio tomados de "✂️ Extractos" (verificados
+      contra la transcripción) y elegidos por objeción del público: la
+      identidad ligada al trabajo (Irene, Alejandro), "solo me preparé en lo
+      económico" (Carlos), "ya lo sé todo" (Silvia). La cita de Silvia en
+      `/hablar` que no aparecía en ningún lado se reemplazó por una de Juani
+- [x] Duración: **3 meses** en todo el sitio (decidido 2026-09-16), en vez
+      de "13 semanas" o "90 días"
 - [ ] Los PDF y las plantillas de Brevo todavía tienen rayas y hablan de
       "sesión". Hay que regenerar los PDF y editar las plantillas
