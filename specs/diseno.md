@@ -1,6 +1,6 @@
 # Spec · Sistema de diseño
 
-**Estado:** vigente · **Última revisión:** 2026-09-16 (se portó el lenguaje visual de `hijos.jubilar.me`)
+**Estado:** vigente · **Última revisión:** 2026-09-16 (lenguaje visual de `hijos.jubilar.me`, logo, header y fotos individuales)
 
 ## De dónde viene
 
@@ -25,7 +25,7 @@ llega a doler, se reevalúa — pero por contenido, no por diseño.
 | Franjas alternadas | `.bg-alt` sobre `--dtj-paper-alt`. Reemplaza las líneas divisorias en la landing |
 | Tarjetas con sombra | `.card` + sombra en `.res-card` / `.testi-card` |
 | Hero de dos columnas | `.hero-grid` (ver *El hero* abajo) |
-| Relato con foto | `.story-grid` + `.story-photo-shell` |
+| Quiénes somos | Relato + una tarjeta por persona con foto (`.person-grid`, `.person-card`) |
 | Chips de datos | `.microcopy`, solo en el hero (sus colores asumen fondo oscuro) |
 | Botones píldora | Ya existían — `.btn` con `border-radius: 999px` |
 
@@ -69,24 +69,28 @@ campo: para "líderes y profesionales exitosos cuya identidad está ligada al
 trabajo" apunta al lado equivocado y puede leerse condescendiente. Cuando
 exista, va como segundo hijo de `.hero-grid` y no hay que tocar CSS.
 
-## Imágenes
+## Imágenes y marca
 
-- `site/assets/img/nicole-marcel-{800,1200}.jpg` — foto de los dos, sacada
-  de `jubilarme-hijos/src/assets/marcel-nicole.jpg` (4000×3000). Resuelve
-  el pendiente de "foto nueva de Nicole" (la de `jubilar.me` era 240×328).
-- **El original trae orientación EXIF.** PIL la ignora al redimensionar y
-  la foto sale rotada 90°; Astro la corregía sola, por eso en hijos se ve
-  bien. Hay que pasar `ImageOps.exif_transpose()` antes de redimensionar.
-- Las caras quedan bajo el centro del encuadre: `object-position: center 42%`
-  evita que el recorte las corte en pantallas anchas.
+- **Logo:** el de Jubilar.me (anillos de árbol) con las tintas de DTJ. El
+  `logo-jubilarme.svg` original no es vectorial: es un PNG embebido en base64.
+  Se recoloreó pixel a pixel (cada pixel toma la tinta más cercana, verde o
+  terracota, y conserva su alfa). Master en `brand/logo-dtj-512.png`; en el
+  sitio `assets/img/logo-dtj.png` (192px, paleta de 48 colores, 9 KB),
+  `favicon.ico` y `apple-touch-icon.png` (este sobre fondo papel: iOS pinta
+  de negro la transparencia).
+- **Fotos individuales**, no la de los dos juntos (Marcel prefirió fotos
+  donde se vean más profesionales, y están lejos para sacarse una juntos):
+  `nicole.jpg` es la de jubilar.me (240×328, **provisoria**, Marcel busca
+  una de mejor calidad) y `marcel.jpg` la que mandó Marcel (300×300). Se
+  muestran como círculo de 88px, así que alcanza.
+- **Ojo con la orientación EXIF** al procesar fotos con PIL: la ignora y la
+  foto sale rotada. Pasar siempre `ImageOps.exif_transpose()` antes.
 
 ## Lo que falta
 
 - [ ] Imagen del hero (arriba)
-- [ ] **Logo.** hijos tiene un header fijo con logo y CTA. DTJ no tiene
-      ningún logo en el repo, así que no se agregó header. Si aparece uno,
-      el header es directo
-- [ ] Fotos individuales de Nicole y Marcel en las bios (hoy solo texto;
-      los avatares con letras "N"/"M" se quitaron al entrar la foto real)
+- [x] Logo y header fijo (2026-09-16)
+- [x] Fotos individuales en las bios (2026-09-16)
+- [ ] Foto de Nicole en mejor calidad (Marcel la está buscando)
 - [ ] El autodiagnóstico quedó fuera de esta pasada: hereda tokens y
       botones de `base.css`, pero su UI de 25 preguntas tiene CSS propio
