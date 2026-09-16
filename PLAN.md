@@ -281,6 +281,28 @@ propuestas quedaron dos en la landing:
 - [ ] **"Cómo funciona"** (4 pasos) — pendiente, Marcel pidió dejarla para
       después
 
+### Rediseño al estilo hijos (2026-09-16)
+
+Marcel prefiere el diseño de `hijos.jubilar.me` — layout, tarjetas,
+secciones y el bloque de "quiénes somos". Se portó el lenguaje visual a la
+capa CSS compartida, **sin migrar a Astro**. Detalle y decisiones en
+`specs/diseno.md`.
+
+- [x] Tokens nuevos en `base.css`: papel cálido, franja alterna, sombra,
+      contenedor ancho, grillas, `.card`, `.tag`, `.microcopy`
+- [x] Landing reestructurada: hero con etiqueta + dos CTA + chips, franjas
+      alternadas en vez de líneas, listas y checklists dentro de tarjetas
+- [x] "Quiénes te acompañan" con la **foto real** de Nicole y Marcel más el
+      relato "Por qué existe este programa", adaptado del de hijos al
+      público nuevo. Resuelve el pendiente de la foto de Nicole
+- [x] Las 4 páginas de captura y `/privacidad` heredan el lenguaje sin
+      tocarlas (comparten `base.css` + `captura.css`)
+- [ ] **De Marcel: la imagen del hero.** El hero ya está listo para
+      recibirla — se abre a dos columnas solo cuando el `<img>` existe
+- [ ] **De Marcel: un logo**, si quiere header fijo como hijos
+- [ ] El autodiagnóstico quedó fuera: hereda tokens y botones, pero su UI
+      de 25 preguntas tiene CSS propio y necesita una pasada aparte
+
 ## Fase 4 — Optimizar con datos
 
 Solo cuando la analítica lleve dos o tres semanas midiendo con tráfico
