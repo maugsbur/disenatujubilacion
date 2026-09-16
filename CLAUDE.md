@@ -7,7 +7,7 @@ USD 1.000, ingreso continuo sin cohortes.
 
 **El sitio no es el funnel — Instagram lo es.** El sitio cumple tres
 trabajos: convertir atención en un correo identificado, hacer creíble el
-programa, y calificar y armar la llamada de diagnóstico de Margarita
+programa, y calificar y armar la llamada de evaluación de Margarita
 (Calendly, 45 min). Todo lo que no sirva a uno de esos tres es ruido.
 
 ## Quiénes
@@ -31,6 +31,17 @@ anotada para el abogado. No la des por resuelta en ninguna dirección.
   hacer; mostramos dónde está la persona con datos y ella decide.
 - Se señala toda afirmación sin respaldo, incluidas las propias. Si una
   cifra o un mecanismo no se puede sostener, se dice.
+- **Nada de rayas (—) en el copy visible**, ni del patrón "no es X, es Y"
+  ("No es una historia de motivación: es un método"). El público los lee
+  como señal de texto hecho con IA. Se reemplazan por comas, puntos o dos
+  puntos, y la frase se reescribe en positivo. En comentarios de código y
+  documentación interna da igual.
+- **Lenguaje neutro en género** cuando se habla al lector ("Quieres tomarte
+  esta etapa…", no "Estás dispuesto…"). La mitad del público son mujeres.
+- **Testimonios: solo citas verificables** en Notion (página "Testimonios"
+  o la base "✂️ Extractos"), de personas con consentimiento marcado.
+- La llamada con Margarita se llama **llamada de evaluación** en todo el
+  sitio. No "sesión de diagnóstico": choca con "autodiagnóstico".
 
 ## Arquitectura
 

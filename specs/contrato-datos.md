@@ -120,14 +120,14 @@ por uuid.
 ## 5 · Navegador → Calendly (la llamada de Margarita)
 
 No pasa por el Worker. Cuando la vista de resultado se muestra,
-`autodiagnostico.js` reescribe el `href` del botón *Agendar sesión gratuita*
+`autodiagnostico.js` reescribe el `href` del botón *Agendar llamada de evaluación*
 (`#ctaCalendly`) con estos parámetros:
 
 | Parámetro | Contenido | Nota |
 |---|---|---|
 | `utm_source` | `autodiagnostico` | Fijo. Atribuye qué trae llamadas agendadas, igual que `pdf-<guia>` en los PDF |
 | `email` | el correo que la persona ya escribió | Solo en el envío fresco. En un refresco de `/resultado` no está (no se guarda PII en `sessionStorage`); Calendly igual pide el correo al reservar |
-| `a1` | `Propósito 12/25 · Físico 18/25 · … — pilar más bajo: Social` | Respuesta a la **primera pregunta personalizada** del tipo de evento en Calendly. Si Margarita no la creó, Calendly ignora el parámetro sin romper nada |
+| `a1` | `Propósito 12/25 · Físico 18/25 · … Pilar más bajo: Social` | Respuesta a la **primera pregunta personalizada** del tipo de evento en Calendly. Si Margarita no la creó, Calendly ignora el parámetro sin romper nada |
 
 Para qué: que el correo de confirmación de cada reserva ya traiga con quién
 va a hablar Margarita y por dónde entrar, sin que ella tenga que cruzar

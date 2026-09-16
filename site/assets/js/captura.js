@@ -81,7 +81,7 @@
         if (window.dtjEvento) window.dtjEvento('guia_solicitada', { guia: guia });
 
         if (r.data.correoEnviado) {
-          showOk('<strong>Listo.</strong> Te enviamos la guía a tu correo — revisa también la carpeta de spam por si acaso.');
+          showOk('<strong>Listo.</strong> Te enviamos la guía a tu correo. Revisa también la carpeta de spam, por si acaso.');
         } else {
           showOk('<strong>Recibimos tu solicitud.</strong> Tu guía va en camino; si no te llega en unos minutos, escríbenos a disenatujubilacion@gmail.com.');
         }

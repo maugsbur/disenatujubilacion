@@ -323,3 +323,29 @@ real. Antes no hay nada que optimizar, solo opiniones.
 - [ ] Borrado y exportación probados con un caso real
 - [x] `origen`/UTM funcionando — Fase 0
 - [ ] Checklist "antes de publicar" de `08-cumplimiento-datos.md` §9, punto por punto
+
+### Revisión de contenido de la landing (2026-09-16)
+
+Revisión completa pensando en quien llega desde Instagram a evaluar. Nueva
+estructura: hero · el problema · cinco pilares · qué incluye · cómo empezar
+· quiénes te acompañan · testimonios · es para ti si · recursos gratuitos ·
+FAQ · CTA final. Reglas de copy nuevas en `CLAUDE.md` § Idioma y tono.
+
+- [x] Decisiones de Marcel: formato mixto (sesiones individuales, grupales
+      y material), sin precio en la página, Margarita presentada en "Cómo
+      empezar" como quien coordina, la llamada pasa a llamarse **llamada de
+      evaluación**, el hero mantiene "Con intención y no por inercia"
+- [x] Sin rayas (—) ni "no es X, es Y" en el copy visible de todas las
+      páginas; lenguaje neutro en género
+- [x] Testimonios de la landing reemplazados por citas verificadas en
+      Notion (Marcela, Domingo, Alejandro, Irene, Pame, Alberto)
+- [x] Incoherencias: `/plan` decía "sin planes de doce semanas" en un sitio
+      que vende 13; `/carlos` decía "Guía · ENTUSIASMO" y la tarjeta "Caso
+      real"; `/privacidad` hablaba de "leads" y "llamada de venta"
+- [ ] **De Marcel:** frecuencia de las sesiones y horas por semana. Sin eso
+      no se escribió la pregunta "¿Cuánto tiempo toma a la semana?"
+- [ ] **De Marcel:** la cita de Silvia en `/hablar` ("un tema de amor hacia
+      los que se quedan") no aparece en su entrevista ni en "Testimonios".
+      Confirmar la fuente o reemplazarla
+- [ ] Los PDF y las plantillas de Brevo todavía tienen rayas y hablan de
+      "sesión". Hay que regenerar los PDF y editar las plantillas

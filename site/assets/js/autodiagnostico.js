@@ -250,7 +250,7 @@
     var partes = PILLARS.map(function (p) {
       return p.name + ' ' + totals[p.key] + '/25';
     });
-    return partes.join(' · ') + ' — pilar más bajo: ' + pillarName(minKey);
+    return partes.join(' · ') + '. Pilar más bajo: ' + pillarName(minKey);
   }
 
   function setCalendlyLink(totals, minKey, email) {
@@ -268,9 +268,9 @@
   function renderCtaBody(minKey) {
     var el = document.getElementById('ctaBody');
     if (!el) return;
-    el.innerHTML = 'Si quieres que revisemos tu caso juntos — partiendo por tu pilar de <strong>' +
-      pillarName(minKey) + '</strong>, que es donde hoy tienes más espacio para actuar — te invitamos ' +
-      'a agendar una sesión de diagnóstico <strong>gratuita</strong> con nosotros. Dura 45 minutos y sirve ' +
+    el.innerHTML = 'Si quieres que revisemos tu caso juntos, partiendo por tu pilar de <strong>' +
+      pillarName(minKey) + '</strong>, que es donde hoy tienes más espacio para actuar, te invitamos ' +
+      'a agendar una llamada de evaluación <strong>gratuita</strong> de 45 minutos con Margarita, que coordina el programa. Sirve ' +
       'para mirar tu caso en particular y ver si tiene sentido que trabajemos juntos.';
   }
 
