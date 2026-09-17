@@ -120,7 +120,7 @@ por uuid.
 ## 5 · Navegador → Calendly (la llamada de Margarita)
 
 No pasa por el Worker. Cuando la vista de resultado se muestra,
-`autodiagnostico.js` reescribe el `href` del botón *Agendar llamada de evaluación gratuita*
+`autodiagnostico.js` reescribe el `href` del botón *Agendar evaluación gratuita*
 (`#ctaCalendly`) con estos parámetros:
 
 | Parámetro | Contenido | Nota |

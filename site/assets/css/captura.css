@@ -272,9 +272,7 @@
 @media (min-width: 640px) {
   .testi-grid { grid-template-columns: repeat(2, 1fr); }
 }
-@media (min-width: 960px) {
-  .testi-grid { grid-template-columns: repeat(3, 1fr); }
-}
+/* Cuatro testimonios, uno por objeción: en computador quedan en 2×2. */
 
 /* ---------- "Es para ti si..." (Fase 3) ---------- */
 .qualify-list { list-style: none; margin: 0 0 var(--space-4); padding: 0; }

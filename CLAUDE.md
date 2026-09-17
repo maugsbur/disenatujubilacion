@@ -47,6 +47,8 @@ anotada para el abogado. No la des por resuelta en ninguna dirección.
   consentimiento. Esas no se usan.
 - La llamada con Margarita se llama **llamada de evaluación** en todo el
   sitio. No "sesión de diagnóstico": choca con "autodiagnóstico".
+  En botones se abrevia: **"Agendar evaluación gratuita"** y **"Hacer test
+  de autodiagnóstico"**.
 - La duración se dice **3 meses**. No "13 semanas" (obliga a hacer la
   cuenta) ni "90 días" (suena a reto de Instagram, justo el tono que este
   público castiga).
