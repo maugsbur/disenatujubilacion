@@ -14,7 +14,7 @@ wkhtmltopdf --enable-local-file-access --page-size A4 \
             -T 0 -B 0 -L 0 -R 0 autodiagnostico_px.html autodiagnostico.pdf
 ```
 
-Lo mismo con `build_plan.py`, `build_hablar.py` y `build_carlos.py`.
+Lo mismo con `build_plan.py`, `build_hablar.py`, `build_carlos.py` y `build_pilares.py`.
 
 ## Qué hay acá
 

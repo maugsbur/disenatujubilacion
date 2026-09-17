@@ -24,7 +24,7 @@
  * siempre.
  */
 
-const GUIAS_VALIDAS = ['DOMINO', 'PLAN', 'HABLAR', 'ENTUSIASMO', 'RETIRO'];
+const GUIAS_VALIDAS = ['DOMINO', 'PLAN', 'HABLAR', 'ENTUSIASMO', 'PILARES', 'RETIRO'];
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Régimen de consentimiento. ESTE es el punto de aplicación real —
@@ -175,13 +175,14 @@ function plantillaParaGuia_(env, guia) {
       DOMINO: env.BREVO_TEMPLATE_DOMINO,
       PLAN: env.BREVO_TEMPLATE_PLAN,
       HABLAR: env.BREVO_TEMPLATE_HABLAR,
-      ENTUSIASMO: env.BREVO_TEMPLATE_ENTUSIASMO
+      ENTUSIASMO: env.BREVO_TEMPLATE_ENTUSIASMO,
+      PILARES: env.BREVO_TEMPLATE_PILARES
     }[guia] || null
   );
 }
 
 function pdfParaGuia_(env, guia) {
-  return { PLAN: env.PDF_URL_PLAN, HABLAR: env.PDF_URL_HABLAR, ENTUSIASMO: env.PDF_URL_ENTUSIASMO }[guia] || null;
+  return { PLAN: env.PDF_URL_PLAN, HABLAR: env.PDF_URL_HABLAR, ENTUSIASMO: env.PDF_URL_ENTUSIASMO, PILARES: env.PDF_URL_PILARES }[guia] || null;
 }
 
 function nombreArchivoParaGuia_(guia) {
@@ -189,7 +190,8 @@ function nombreArchivoParaGuia_(guia) {
     {
       PLAN: 'Diseña tu Jubilación - Guía PLAN.pdf',
       HABLAR: 'Diseña tu Jubilación - Guía HABLAR.pdf',
-      ENTUSIASMO: 'Diseña tu Jubilación - Guía ENTUSIASMO.pdf'
+      ENTUSIASMO: 'Diseña tu Jubilación - Guía ENTUSIASMO.pdf',
+      PILARES: 'Diseña tu Jubilación - Guía PILARES.pdf'
     }[guia] || 'guia.pdf'
   );
 }

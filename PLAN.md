@@ -357,3 +357,22 @@ FAQ · CTA final. Reglas de copy nuevas en `CLAUDE.md` § Idioma y tono.
 - [ ] Plantillas de Brevo: revisar rayas y "sesión"
 - [x] Hero sin la etiqueta "Después de jubilar vienen 20 o 30 años más";
       testimonios firmados "participante del programa piloto"
+
+### Guía PILARES: los cinco pilares y el efecto dominó (2026-09-17)
+
+Versión de lectura del autodiagnóstico para quien recién llega al perfil y
+no va a responder 25 preguntas. Mismo marco y mismas cadenas del efecto
+dominó; en vez del cuestionario, tres señales por pilar y un ejercicio de
+cinco frases para marcar la menos cierta. Termina invitando al
+autodiagnóstico online (`utm_source=pdf-pilares`) y a la llamada.
+
+- [x] Borrador del PDF (8 páginas, `lead-magnets/build_pilares.py`)
+- [x] Página `/pilares`, guía `PILARES` en el Worker y `PDF_URL_PILARES`
+- [ ] **Marcel/Nicole:** revisar el texto del PDF
+- [ ] **Marcel:** crear la plantilla en Brevo (`brevo/plantillas/PILARES.md`)
+      y poner `BREVO_TEMPLATE_PILARES` en `wrangler.toml`. Hasta entonces
+      `/pilares` no manda correo: no enlazarla
+- [ ] **Margarita:** palabra clave de Instagram. Hoy DOMINÓ lleva al
+      autodiagnóstico
+- [ ] Agregar la tarjeta en "Empieza por aquí" de la landing, cuando el
+      correo funcione

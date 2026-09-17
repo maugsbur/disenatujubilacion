@@ -1,5 +1,5 @@
 /* Formulario de captura — compartido por /plan, /hablar y /carlos.
- * El <form> declara data-guia="PLAN|HABLAR|ENTUSIASMO"; este script hace
+ * El <form> declara data-guia="PLAN|HABLAR|ENTUSIASMO|PILARES"; este script hace
  * el resto. A diferencia del autodiagnóstico, acá SÍ importa si el correo
  * realmente se mandó (el "producto" es el PDF adjunto, no algo que ya se
  * calculó en el navegador) — por eso el mensaje final depende de

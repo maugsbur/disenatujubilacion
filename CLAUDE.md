@@ -66,13 +66,13 @@ anotada para el abogado. No la des por resuelta en ninguna dirección.
 site/              → lo que Cloudflare Pages publica (output dir = "site")
   index.html          landing
   autodiagnostico/    única página interactiva: 25 preguntas + resultado, una sola página que cambia de vista
-  plan/ hablar/ carlos/  páginas de captura de las guías PDF
+  plan/ hablar/ carlos/ pilares/  páginas de captura de las guías PDF
   privacidad/
   assets/pdfs/        los PDF de las guías, en rutas aleatorias, sin enlazar (Brevo los baja por URL)
   _redirects _headers
 functions/api/submit.js  → Pages Function: valida, limita por IP (KV), honeypot, llama a Brevo, reenvía a Apps Script
 apps-script/       → Web App atado a la planilla "DTJ · Personas": escribe en Sheets, cola de reintento de correo, derechos ARCO
-lead-magnets/      → fuentes de los 4 PDF (editar los .py, NO los .html)
+lead-magnets/      → fuentes de los 5 PDF (editar los .py, NO los .html)
 brevo/             → plantillas de correo y guía de configuración
 specs/             → contratos y decisiones de comportamiento. Leer antes de tocar el pipeline
 ```

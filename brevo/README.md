@@ -62,6 +62,7 @@ igual.
 | PLAN | `site/assets/pdfs/plan-468b5d9455ce73904853.pdf` |
 | HABLAR | `site/assets/pdfs/hablar-bf1229460d8da5438ed2.pdf` |
 | ENTUSIASMO | `site/assets/pdfs/entusiasmo-9cad1ef7759af90e6233.pdf` |
+| PILARES | `site/assets/pdfs/pilares-{H}.pdf` |
 
 Las URLs completas una vez desplegado el sitio:
 
@@ -69,6 +70,7 @@ Las URLs completas una vez desplegado el sitio:
 https://disenatujubilacion.com/assets/pdfs/plan-468b5d9455ce73904853.pdf
 https://disenatujubilacion.com/assets/pdfs/hablar-bf1229460d8da5438ed2.pdf
 https://disenatujubilacion.com/assets/pdfs/entusiasmo-9cad1ef7759af90e6233.pdf
+https://disenatujubilacion.com/assets/pdfs/pilares-{H}.pdf
 ```
 
 **Si alguna vez hay que reemplazar un PDF** (una corrección, quitar el
@@ -98,9 +100,11 @@ buena sesión de diagnóstico en producción, ver `README.md` § El Worker.
 | `BREVO_TEMPLATE_PLAN` | Template ID de PLAN |
 | `BREVO_TEMPLATE_HABLAR` | Template ID de HABLAR |
 | `BREVO_TEMPLATE_ENTUSIASMO` | Template ID de ENTUSIASMO |
+| `BREVO_TEMPLATE_PILARES` | Template ID de PILARES |
 | `PDF_URL_PLAN` | URL completa del PDF de PLAN (tabla arriba) |
 | `PDF_URL_HABLAR` | URL completa del PDF de HABLAR |
 | `PDF_URL_ENTUSIASMO` | URL completa del PDF de ENTUSIASMO |
+| `PDF_URL_PILARES` | URL completa del PDF de PILARES |
 
 **En el dashboard de Cloudflare Pages → tu proyecto → Settings →
 Environment variables (Production), marcadas como Secret** — estas sí son

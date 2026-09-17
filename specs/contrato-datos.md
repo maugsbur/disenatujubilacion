@@ -26,7 +26,7 @@ Lo emiten `assets/js/autodiagnostico.js` y `assets/js/captura.js`.
 | Campo | Tipo | Quién lo manda | Nota |
 |---|---|---|---|
 | `email` | texto | ambos | Obligatorio. Único campo sin el cual se rechaza |
-| `guia` | texto | ambos | `DOMINO` · `PLAN` · `HABLAR` · `ENTUSIASMO` · `RETIRO`. Qué recurso pidió |
+| `guia` | texto | ambos | `DOMINO` · `PLAN` · `HABLAR` · `ENTUSIASMO` · `PILARES` · `RETIRO`. Qué recurso pidió |
 | `origen` | texto | ambos | `utm_source`, o `sitio-interno` / `directo`. **De dónde vino**, distinto de `guia`. Producido por `atribucion.js` |
 | `campana` | texto | ambos | `utm_campaign`. Vacío si no vino de una campaña |
 | `contenido` | texto | ambos | `utm_content`. La pieza puntual: `reel-jinetes`, `historia-3`… |
@@ -72,7 +72,7 @@ pasan a mayúsculas (los valores de `utm_*` distinguen mayúsculas).
 - `params` **solo se incluye si tiene contenido** — Brevo rechaza `{}` con
   `"params is blank"`. Hoy solo `DOMINO` manda parámetros: los cinco totales
   más `pilarMasBajo` con el nombre legible del pilar.
-- `attachment` solo en las guías con PDF (PLAN, HABLAR, ENTUSIASMO); Brevo
+- `attachment` solo en las guías con PDF (PLAN, HABLAR, ENTUSIASMO, PILARES); Brevo
   descarga el archivo desde la URL.
 
 ## 4 · Apps Script → Sheets
