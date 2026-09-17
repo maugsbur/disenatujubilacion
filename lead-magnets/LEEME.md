@@ -16,6 +16,10 @@ wkhtmltopdf --enable-local-file-access --page-size A4 \
 
 Lo mismo con `build_plan.py`, `build_hablar.py`, `build_carlos.py` y `build_pilares.py`.
 
+⚠️ **Nada de `opacity` ni `rgba()` en texto.** wkhtmltopdf rasteriza esos
+párrafos y se ven pixeleados. Los grises van como color sólido ya mezclado
+contra el fondo (por ejemplo `#77908A` para el verde al 55% sobre el papel).
+
 ## Qué hay acá
 
 | Archivo | Qué es |

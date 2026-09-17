@@ -15,12 +15,12 @@ CSS = """
                     color: #E65F2B; font-weight: 500; margin-bottom: 24mm; }
   .cover h1 { font-family: 'Lora', serif; font-size: 40pt; line-height: 1.1;
               font-weight: 700; color: #F6E7B0; margin-bottom: 9mm; }
-  .cover .sub { font-size: 13pt; line-height: 1.6; color: #F8F9FA; opacity: .88;
+  .cover .sub { font-size: 13pt; line-height: 1.6; color: #DCE2E2;
                 max-width: 122mm; font-weight: 300; }
   .cover .footer { position: absolute; bottom: 24mm; left: 20mm; right: 20mm;
-                   border-top: 1px solid rgba(246,231,176,.28); padding-top: 6mm;
+                   border-top: 1px solid #4F6A53; padding-top: 6mm;
                    font-size: 9.5pt; letter-spacing: 1.6px; text-transform: uppercase;
-                   color: #F6E7B0; opacity: .75; }
+                   color: #BCBC90; }
   .draft { position: absolute; top: 14mm; right: 20mm; background: #E65F2B; color: #F8F9FA;
            font-size: 8pt; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;
            padding: 2mm 4mm; }
@@ -46,7 +46,7 @@ CSS = """
 
   .field { margin-bottom: 8.5mm; }
   .field .fl { font-size: 8.5pt; letter-spacing: 2px; text-transform: uppercase;
-               color: #0E3A2F; opacity: .55; font-weight: 500; margin-bottom: 2.5mm; }
+               color: #77908A; font-weight: 500; margin-bottom: 2.5mm; }
   .field .fv { font-size: 11pt; line-height: 1.6; font-weight: 300; }
 
   .action { background: #F6E7B0; padding: 7mm 7mm; margin: 8mm 0; }
@@ -56,7 +56,7 @@ CSS = """
 
   .done { border: 1.5px solid #0E3A2F; padding: 6mm; margin-top: 7mm; }
   .done .dl { font-size: 8.5pt; letter-spacing: 2px; text-transform: uppercase;
-              color: #0E3A2F; opacity: .55; font-weight: 500; margin-bottom: 2mm; }
+              color: #77908A; font-weight: 500; margin-bottom: 2mm; }
   .done .dv { font-size: 11pt; line-height: 1.55; font-weight: 300; }
   .chk { display: inline-block; width: 6mm; height: 6mm; border: 1.5px solid #0E3A2F;
          margin-right: 3mm; vertical-align: -1mm; }
@@ -92,7 +92,7 @@ CSS = """
 
   .close { background: #0E3A2F; color: #F8F9FA; width: 212mm; height: 300mm; }
   .close h2 { color: #F6E7B0; font-size: 29pt; }
-  .close p { color: #F8F9FA; opacity: .9; }
+  .close p { color: #E1E6E6; }
   .close .principle { font-family: 'Lora', serif; font-size: 20pt; line-height: 1.35;
                       color: #F6E7B0; font-style: italic; margin: 9mm 0;
                       padding-left: 7mm; border-left: 2.5px solid #E65F2B; }
@@ -100,14 +100,14 @@ CSS = """
   .cta .ct { font-size: 9pt; letter-spacing: 2.4px; text-transform: uppercase;
              font-weight: 600; margin-bottom: 3mm; }
   .cta .cb { font-size: 12pt; font-weight: 400; line-height: 1.55; margin-bottom: 4mm; }
-  .cta .cw { font-size: 10pt; font-weight: 400; margin-bottom: 2mm; opacity: .92; }
+  .cta .cw { font-size: 10pt; font-weight: 400; margin-bottom: 2mm; color: #F7EDE9; }
   .cta .cl { font-family: 'Lora', serif; font-size: 13pt; font-weight: 700; word-break: break-all; }
   .cta .cl a { color: #F8F9FA; text-decoration: underline; }
   a { color: #0E3A2F; }
 
   .pgnum { position: absolute; bottom: 12mm; right: 18mm; font-size: 8.5pt;
-           color: #0E3A2F; opacity: .35; letter-spacing: 1px; }
-  .close .pgnum { color: #F6E7B0; opacity: .4; }
+           color: #A6B6B3; letter-spacing: 1px; }
+  .close .pgnum { color: #6B7F63; }
 """
 
 # El enlace de agendamiento. La llamada pasó de 40 a 45 minutos y la URL vieja

@@ -126,6 +126,12 @@ se puede desactivar. Los fuentes están en mm/pt y hay que convertirlos a px
 tomando **210 mm ≡ 1024 px** antes de renderizar, o el contenido sale al 77%.
 La función `to_px()` de `build_common.py` lo hace.
 
+**wkhtmltopdf convierte a imagen cualquier texto con `opacity`.** El
+párrafo sale rasterizado y se ve pixelado en el PDF, sin ningún error. Por
+eso en `lead-magnets/` no se usa `opacity` (ni `rgba()`) en texto: los
+grises son colores sólidos ya mezclados contra su fondo. Para comprobarlo,
+un PDF sano no tiene ningún `/XObject` de tipo `/Image`.
+
 **El "Enviar como" de Gmail muere en enero de 2027.** Google lo restringe
 durante 2026. Las tres cuentas del equipo dependen de él hoy para escribir
 desde `contacto@disenatujubilacion.com`. Por eso el correo transaccional va

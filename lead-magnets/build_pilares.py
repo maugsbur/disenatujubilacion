@@ -13,16 +13,16 @@ EXTRA = """
              color: #E65F2B; font-weight: 500; margin-bottom: 1.5mm; }
   .pil h3 { font-family: 'Lora', serif; font-size: 17pt; font-weight: 700; color: #0E3A2F;
             margin-bottom: 2mm; }
-  .pil .pd { font-size: 10.5pt; font-style: italic; color: #0E3A2F; opacity: .8; margin-bottom: 3.5mm; }
+  .pil .pd { font-size: 10.5pt; font-style: italic; color: #3D6058; margin-bottom: 3.5mm; }
   .pil p { font-size: 11pt; line-height: 1.58; margin-bottom: 3.5mm; }
   .pil .sl { font-size: 8.5pt; letter-spacing: 2px; text-transform: uppercase;
-             color: #0E3A2F; opacity: .55; font-weight: 500; margin-bottom: 2mm; }
+             color: #77908A; font-weight: 500; margin-bottom: 2mm; }
   .pil ul { list-style: none; margin: 0; padding: 0; }
   .pil li { font-size: 10.5pt; line-height: 1.5; margin-bottom: 1.6mm; padding-left: 6mm; text-indent: -6mm; }
   .pil .qt { font-family: 'Lora', serif; font-style: italic; font-size: 10.5pt; color: #0E3A2F;
              margin: 0 0 3.5mm; padding-left: 5mm; border-left: 2px solid #F6E7B0; line-height: 1.5; }
   .pil .qt span { display: block; font-family: 'Poppins', sans-serif; font-style: normal;
-                  font-size: 8.5pt; opacity: .6; margin-top: 1mm; }
+                  font-size: 8.5pt; color: #6C8680; margin-top: 1mm; }
   .arrow { color: #E65F2B; font-weight: 600; }
 
   /* Fichas de dominó que se apoyan hacia la derecha: la primera (naranja) es

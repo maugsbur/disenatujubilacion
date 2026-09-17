@@ -59,17 +59,17 @@ igual.
 
 | Guía | Archivo |
 |---|---|
-| PLAN | `site/assets/pdfs/plan-468b5d9455ce73904853.pdf` |
-| HABLAR | `site/assets/pdfs/hablar-bf1229460d8da5438ed2.pdf` |
-| ENTUSIASMO | `site/assets/pdfs/entusiasmo-9cad1ef7759af90e6233.pdf` |
+| PLAN | `site/assets/pdfs/plan-1d7f207bf6891b1855d8.pdf` |
+| HABLAR | `site/assets/pdfs/hablar-4f964b58aad1d277aa65.pdf` |
+| ENTUSIASMO | `site/assets/pdfs/entusiasmo-9b1f19eec2298c198edf.pdf` |
 | PILARES | `site/assets/pdfs/pilares-{H}.pdf` |
 
 Las URLs completas una vez desplegado el sitio:
 
 ```
-https://disenatujubilacion.com/assets/pdfs/plan-468b5d9455ce73904853.pdf
-https://disenatujubilacion.com/assets/pdfs/hablar-bf1229460d8da5438ed2.pdf
-https://disenatujubilacion.com/assets/pdfs/entusiasmo-9cad1ef7759af90e6233.pdf
+https://disenatujubilacion.com/assets/pdfs/plan-1d7f207bf6891b1855d8.pdf
+https://disenatujubilacion.com/assets/pdfs/hablar-4f964b58aad1d277aa65.pdf
+https://disenatujubilacion.com/assets/pdfs/entusiasmo-9b1f19eec2298c198edf.pdf
 https://disenatujubilacion.com/assets/pdfs/pilares-{H}.pdf
 ```
 

@@ -23,7 +23,7 @@ EXTRA = """
   .total-row .lbl { font-size: 10pt; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
   .total-row .val { text-align: right; }
   .total-row .val .bl { display: inline-block; width: 18mm; border-bottom: 1.5px solid #F6E7B0; height: 6mm; }
-  .total-row .val .of { font-family: 'Lora', serif; font-size: 13pt; margin-left: 3mm; color: #F8F9FA; opacity: .7; }
+  .total-row .val .of { font-family: 'Lora', serif; font-size: 13pt; margin-left: 3mm; color: #B2C0BD; }
 
   .scoregrid { width: 100%; border-collapse: collapse; margin-bottom: 5mm; }
   .scoregrid td { padding: 2.4mm 0; vertical-align: middle; }
@@ -39,7 +39,7 @@ EXTRA = """
   .scoregrid .sc .bl { display: inline-block; width: 13mm; border-bottom: 1.5px solid #0E3A2F; height: 6mm; }
   .zonekey { width: 100%; border-collapse: collapse; margin-bottom: 6mm; }
   .zonekey td { font-size: 9pt; letter-spacing: 1.2px; text-transform: uppercase;
-                color: #0E3A2F; opacity: .6; font-weight: 500; }
+                color: #6C8680; font-weight: 500; }
 
   .band { padding: 5mm 6mm; margin-bottom: 4mm; }
   .band.at { background: #E65F2B; color: #1A2421; }
@@ -47,7 +47,7 @@ EXTRA = """
   .band.ok { background: #0E3A2F; color: #F6E7B0; }
   .band .bn { font-family: 'Lora', serif; font-size: 15pt; font-weight: 700; display: inline-block; width: 26mm; }
   .band .bt { font-size: 10.5pt; font-weight: 500; }
-  .band .bd { font-size: 10.5pt; font-weight: 400; line-height: 1.55; margin-top: 2mm; opacity: .95; }
+  .band .bd { font-size: 10.5pt; font-weight: 400; line-height: 1.55; margin-top: 2mm; }
 
   .drag { margin-bottom: 6mm; padding-left: 6mm; border-left: 2.5px solid #F6E7B0; }
   .drag h3 { font-size: 11.5pt; margin-bottom: 2.5mm; }
@@ -85,7 +85,7 @@ def pillar(n, idx, title, sub, items, total):
   <div class="kicker">Pilar {idx} de 5</div>
   <h2>{title}</h2>
   <div class="rule"></div>
-  <p style="font-size:11pt; opacity:.75; margin-bottom:6mm;">{sub}</p>
+  <p style="font-size:11pt; color:#525957; margin-bottom:6mm;">{sub}</p>
   {SCALE}
   {qs}
   <div class="total-row"><table><tr><td class="lbl">Total {total}</td>

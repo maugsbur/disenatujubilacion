@@ -376,3 +376,7 @@ autodiagnóstico online (`utm_source=pdf-pilares`) y a la llamada.
       autodiagnóstico
 - [ ] Agregar la tarjeta en "Empieza por aquí" de la landing, cuando el
       correo funcione
+
+- [x] Texto pixelado en los PDF (2026-09-17): era `opacity` en texto, que
+      wkhtmltopdf rasteriza. Reemplazado por colores sólidos en las cinco
+      guías; las cuatro publicadas se regeneraron con rutas nuevas
