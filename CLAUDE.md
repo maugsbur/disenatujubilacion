@@ -15,7 +15,7 @@ programa, y calificar y armar la llamada de evaluación de Margarita
 | | Rol | Dónde |
 |---|---|---|
 | **Nicole** | Terapeuta ocupacional, magíster en Gerontología, docencia e investigación. Conduce sesiones. Punto de contacto para derechos de datos | Viña del Mar, Chile |
-| **Marcel** | Coach, background en ciencias y computación. Metodologías en sector privado, ONGs y la ONU. Lleva lo técnico | Dinamarca |
+| **Marcel** | Ingeniero y coach, background en ciencias y computación. Metodologías en sector privado, ONGs y la ONU. Lleva lo técnico | Dinamarca |
 | **Margarita** | Edición y ventas. Contactos por Instagram y la llamada de venta. El Calendly es suyo | Dinamarca |
 
 Dos de tres están en la UE: la pregunta de si aplica GDPR está abierta y
