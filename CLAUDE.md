@@ -72,7 +72,10 @@ site/              → lo que Cloudflare Pages publica (output dir = "site")
   _redirects _headers
 functions/api/submit.js  → Pages Function: valida, limita por IP (KV), honeypot, llama a Brevo, reenvía a Apps Script
 apps-script/       → Web App atado a la planilla "DTJ · Personas": escribe en Sheets, cola de reintento de correo, derechos ARCO
-lead-magnets/      → fuentes de los 5 PDF (editar los .py, NO los .html)
+lead-magnets/      → fuentes de los PDF (editar los .py, NO los .html). Cada guía
+                     tiene versión breve de 2 páginas (build_breves.py, la que se
+                     adjunta al correo) y versión completa de 8 (build_*.py, se
+                     entrega a mano a quien pide más)
 brevo/             → plantillas de correo y guía de configuración
 specs/             → contratos y decisiones de comportamiento. Leer antes de tocar el pipeline
 ```

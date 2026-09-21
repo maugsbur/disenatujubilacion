@@ -6,7 +6,7 @@ body = """
   <div class="cover-inner">
     <div class="eyebrow">Diseña tu Jubilación</div>
     <h1>Carlos jubiló antes<br>de lo que pensaba.<br>Esto es lo que<br>hizo después.</h1>
-    <div class="sub">La secuencia real de las acciones que fue tomando, en qué orden, y lo que todavía le está costando. No es una historia de motivación: es un método.</div>
+    <div class="sub">La secuencia real de las acciones que fue tomando, en qué orden, y lo que todavía le está costando. Un método, contado desde un caso real.</div>
     <div class="footer">Caso real · Publicado con su autorización</div>
   </div>
 </div>

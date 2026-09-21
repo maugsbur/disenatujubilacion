@@ -380,3 +380,22 @@ autodiagnóstico online (`utm_source=pdf-pilares`) y a la llamada.
 - [x] Texto pixelado en los PDF (2026-09-17): era `opacity` en texto, que
       wkhtmltopdf rasteriza. Reemplazado por colores sólidos en las cinco
       guías; las cuatro publicadas se regeneraron con rutas nuevas
+
+### Versiones breves de las guías (2026-09-21)
+
+Marcel pidió una segunda versión de cada guía, más corta, porque las de 8
+páginas piden demasiado tiempo a quien recién llega desde Instagram. Decidido
+con él: **la breve se adjunta al correo y la completa se entrega a mano** a
+quien sigue la conversación, sin enlazarla en ninguna parte (así ese pedido
+es una señal de interés y la conversación sigue con una persona).
+
+- [x] `lead-magnets/build_breves.py`: PILARES, PLAN, HABLAR y ENTUSIASMO en
+      2 páginas, con la misma estructura (portada integrada · el problema ·
+      lo esencial · el mismo CTA a la llamada de evaluación)
+- [x] `PDF_URL_*` apunta a las breves; las completas quedan en sus rutas,
+      listadas en `brevo/README.md` § 4 para envío manual
+- [x] Las páginas de captura dicen "2 páginas · PDF"
+- [x] La portada de ENTUSIASMO decía "No es una historia de motivación: es
+      un método", el patrón que el público castiga. Ahora dice "Un método,
+      contado desde un caso real"
+- [ ] **Marcel/Nicole:** revisar las cuatro breves

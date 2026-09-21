@@ -48,30 +48,41 @@ Anota el **Template ID** que Brevo le asigna a cada una — son números
 (aparecen junto al nombre de la plantilla en la lista), los vas a necesitar en la
 Etapa siguiente.
 
-## 4. Los tres PDF
+## 4. Los PDF
 
-Ya están en el repo, en `site/assets/pdfs/`, con nombres largos y
-aleatorios — no están enlazados desde ninguna página del sitio, así que la
-única forma de llegar a ellos es con la URL exacta (por eso el adjunto se
-manda por `url` y no hace falta subirlos a otro lado). El archivo
-`site/_headers` ya les pone `noindex` por si algún crawler los encuentra
-igual.
+Cada guía tiene dos versiones:
+
+- **Breve (2 páginas):** es la que se adjunta al correo. Lo esencial, con el
+  mismo CTA a la llamada de evaluación.
+- **Completa (8 páginas):** no se enlaza en ninguna parte. Se entrega a mano
+  a quien sigue la conversación y pide más.
+
+Todas viven en `site/assets/pdfs/`, con nombres largos y aleatorios, sin
+enlace desde ninguna página, así que la única forma de llegar a ellas es con
+la URL exacta (por eso el adjunto se manda por `url`). `site/_headers` les
+pone `noindex` por si algún crawler las encuentra igual.
+
+**Breves, las que van en `PDF_URL_*`:**
 
 | Guía | Archivo |
 |---|---|
-| PLAN | `site/assets/pdfs/plan-1d7f207bf6891b1855d8.pdf` |
-| HABLAR | `site/assets/pdfs/hablar-4f964b58aad1d277aa65.pdf` |
-| ENTUSIASMO | `site/assets/pdfs/entusiasmo-9b1f19eec2298c198edf.pdf` |
-| PILARES | `site/assets/pdfs/pilares-{H}.pdf` |
+| PLAN | `plan-breve-4b57cc88378d2a672a78.pdf` |
+| HABLAR | `hablar-breve-3dc3b7dea09c89c81ac3.pdf` |
+| ENTUSIASMO | `entusiasmo-breve-b8926a5ff47be9474165.pdf` |
+| PILARES | `pilares-breve-a45f49d2d03b67a809f4.pdf` |
 
-Las URLs completas una vez desplegado el sitio:
+**Completas, para enviar a mano** (Margarita, cuando alguien quiere más):
 
-```
-https://disenatujubilacion.com/assets/pdfs/plan-1d7f207bf6891b1855d8.pdf
-https://disenatujubilacion.com/assets/pdfs/hablar-4f964b58aad1d277aa65.pdf
-https://disenatujubilacion.com/assets/pdfs/entusiasmo-9b1f19eec2298c198edf.pdf
-https://disenatujubilacion.com/assets/pdfs/pilares-{H}.pdf
-```
+| Guía | URL |
+|---|---|
+| PLAN | https://disenatujubilacion.com/assets/pdfs/plan-1d7f207bf6891b1855d8.pdf |
+| HABLAR | https://disenatujubilacion.com/assets/pdfs/hablar-4f964b58aad1d277aa65.pdf |
+| ENTUSIASMO | https://disenatujubilacion.com/assets/pdfs/entusiasmo-ecc2941dd28b63fa82a8.pdf |
+| PILARES | https://disenatujubilacion.com/assets/pdfs/pilares-51bf822b33480a55f72f.pdf |
+
+A la URL de una guía breve hay que anteponerle
+`https://disenatujubilacion.com/assets/pdfs/`, igual que en la tabla de
+arriba.
 
 **Si alguna vez hay que reemplazar un PDF** (una corrección, quitar el
 sello de borrador de ENTUSIASMO, etc.): sube el archivo nuevo con un

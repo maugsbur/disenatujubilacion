@@ -1,6 +1,6 @@
 # Plantilla PLAN — guía de las cuatro acciones
 
-Se envía al dejar el correo en `/plan`. **Con adjunto**: el PDF, vía el
+Se envía al dejar el correo en `/plan`. **Con adjunto**: el PDF **breve** (2 páginas), vía el
 campo `attachment.url` de Brevo apuntando a la ruta oscura en
 `site/assets/pdfs/` (ver `brevo/README.md`).
 
@@ -39,3 +39,9 @@ Anota el **Template ID** — va en `BREVO_TEMPLATE_PLAN`.
 > **[calendly.com/margarita-disenatujubilacion/45min](https://calendly.com/margarita-disenatujubilacion/45min)**
 >
 > — Diseña tu Jubilación
+
+## La versión completa
+
+El correo lleva solo la versión breve. La guía completa de 8 páginas no se
+enlaza en ninguna parte: la manda Margarita a quien sigue la conversación y
+pide más. Las URLs están en `brevo/README.md` § 4.

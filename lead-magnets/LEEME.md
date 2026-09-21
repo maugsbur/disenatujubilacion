@@ -20,6 +20,15 @@ Lo mismo con `build_plan.py`, `build_hablar.py`, `build_carlos.py` y `build_pila
 párrafos y se ven pixeleados. Los grises van como color sólido ya mezclado
 contra el fondo (por ejemplo `#77908A` para el verde al 55% sobre el papel).
 
+## Dos versiones de cada guía
+
+`build_breves.py` genera las cuatro **versiones breves** (2 páginas), que son
+las que se adjuntan al correo: portada integrada, el problema, lo esencial y
+el mismo CTA. Los `build_*.py` restantes generan las **completas** (8 a 11
+páginas), que no se enlazan en ninguna parte y se entregan a mano.
+
+Al editar una guía, revisa si el cambio también aplica a la otra versión.
+
 ## Qué hay acá
 
 | Archivo | Qué es |
