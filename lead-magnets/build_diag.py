@@ -106,7 +106,7 @@ body = """
 <div class="page cover">
   <div class="cover-inner">
     <div class="eyebrow">Diseña tu Jubilación</div>
-    <h1>Tu jubilación<br>se juega en cinco<br>pilares. ¿Cuál te<br>está frenando?</h1>
+    <h1>Tu bienestar en la<br>jubilación depende de<br>cinco pilares. ¿Cuál<br>está más débil hoy?</h1>
     <div class="sub">Un autodiagnóstico de 25 preguntas para descubrir dónde está tu cuello de botella antes de que llegue el momento. Toma doce minutos y se responde con lápiz.</div>
     <div class="footer">Autodiagnóstico · 5 pilares · Efecto dominó</div>
   </div>
@@ -116,7 +116,7 @@ body = """
   <div class="kicker">Antes de empezar</div>
   <h2>Cómo usar esto</h2>
   <div class="rule"></div>
-  <p class="lead">La mayoría de la gente que se acerca al retiro no tiene un problema en los cinco pilares. Tiene un problema en uno o dos, y esos le están arrastrando a los demás.</p>
+  <p class="lead">La mayoría de la gente que se acerca al retiro no tiene un problema en los cinco pilares. Tiene un problema en uno o dos, y esos están afectando a los demás.</p>
   <p>Este cuadernillo sirve para encontrar cuáles son. No para arreglarlos (eso toma bastante más de doce minutos), sino para saber dónde estás parado antes de decidir qué hacer.</p>
   <p>No venimos a decirte cómo se vive esta etapa. Es una decisión personal y es tuya. Venimos con método, con evidencia y con estructura. <strong>Quien decide eres tú</strong>, empezando por este cuadernillo, que respondes por tu cuenta y que nadie más tiene que ver.</p>
   <h3>Cuatro instrucciones</h3>
@@ -240,7 +240,7 @@ body += f"""
   <div class="arch"><div class="ap">Social alto · Físico y Propósito bajos</div><div class="an">El que cuida a todos menos a sí mismo</div>
     <p>Tu semana está llena, pero de las urgencias y prioridades de otros. Se siente como cuidar a los tuyos, y por eso cuesta tanto verlo. La paradoja es que la persona que se cuida es la que puede seguir estando.</p></div>
   <div class="arch"><div class="ap">Todo entre 12 y 18</div><div class="an">El perfil parejo</div>
-    <p>Ningún pilar grita, y eso hace más difícil saber por dónde empezar. Las causas son variadas: puede que nada esté instalado de forma sistemática, que estés en un momento de transición, que tu vida esté efectivamente equilibrada, o simplemente que hayas respondido con cautela sin marcar extremos. Acá la pregunta útil no es cuál está más bajo, sino cuál de los cinco arrastra más a los otros. Esa respuesta está en la página anterior.</p></div>
+    <p>Ningún pilar se destaca por lo bajo, y eso hace más difícil saber por dónde comenzar. Las causas son variadas: puede que nada esté instalado de forma sistemática, que estés en un momento de transición, que tu vida esté efectivamente equilibrada, o simplemente que hayas respondido con cautela sin marcar extremos. Acá la pregunta útil es cuál de los cinco afecta más a los otros. Esa respuesta está en la página anterior.</p></div>
   <div class="arch"><div class="ap">Todo alto menos Físico</div><div class="an">El cuerpo postergado</div>
     <p>Ordenaste la carrera, la familia y las platas. El cuerpo era el que siempre podía esperar un poco más. Es un pilar donde el tiempo perdido cuesta mucho recuperarlo, aunque sí se puede.</p></div>
   <div class="note"><p>Si no te reconoces en ninguno, no fuerces la comparación. Estos son patrones frecuentes, no todas las categorías posibles, y tu perfil es simplemente tu perfil.</p></div>

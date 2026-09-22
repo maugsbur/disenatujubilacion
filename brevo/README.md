@@ -66,10 +66,10 @@ pone `noindex` por si algún crawler las encuentra igual.
 
 | Guía | Archivo |
 |---|---|
-| PLAN | `plan-breve-4b57cc88378d2a672a78.pdf` |
-| HABLAR | `hablar-breve-3dc3b7dea09c89c81ac3.pdf` |
-| ENTUSIASMO | `entusiasmo-breve-b8926a5ff47be9474165.pdf` |
-| PILARES | `pilares-breve-1e6dbbf5ece887420f06.pdf` |
+| PLAN | `plan-breve-0730bfeee0b3e5cc914b.pdf` |
+| HABLAR | `hablar-breve-ba27f7a25a7d7d3edaf9.pdf` |
+| ENTUSIASMO | `entusiasmo-breve-376bbbcba35abfc542bd.pdf` |
+| PILARES | `pilares-breve-a5df182873eac611445e.pdf` |
 
 **Completas, para enviar a mano** (Margarita, cuando alguien quiere más):
 

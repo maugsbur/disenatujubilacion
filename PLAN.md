@@ -406,3 +406,21 @@ Marcel pidió que la versión breve de PILARES explicara mejor qué es cada
 pilar, no solo la señal de alerta. Cada uno ahora tiene una frase de qué
 es y por qué importa (tomada de la guía completa), y para que siguiera en
 2 páginas se recortó la intro y se ajustó el interlineado de la lista.
+
+### Criterio de escritura, fijado con Marcel (2026-09-22)
+
+Marcel revisó línea por línea la guía PILARES breve y de ahí salió un
+criterio de escritura que ahora vive en `CLAUDE.md` § Cómo se escribe el
+copy: hablarle a quien todavía no jubila, ninguna metáfora sin explicar,
+sin absolutos, sin meta-comentarios del formato, etiquetas precisas
+("Alerta:", "Pregunta central:"), cada idea una sola vez, nombrar el
+mecanismo y no solo el efecto, y nombrar toda pérdida junto con su salida.
+
+- [x] Las cuatro guías breves reescritas con ese criterio
+- [x] Páginas de captura alineadas con los títulos nuevos (`/pilares`,
+      `/plan`, `/hablar`) y tarjeta de PLAN en la landing
+- [x] Autodiagnóstico (página y PDF): fuera "se juega", "arrastra" y
+      "ningún pilar grita"
+- [ ] Las cuatro guías **completas** todavía tienen el lenguaje viejo. Se
+      entregan a mano, así que no urge, pero conviene pasarles el mismo
+      criterio antes de repartirlas mucho

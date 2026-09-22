@@ -60,6 +60,44 @@ anotada para el abogado. No la des por resuelta en ninguna dirección.
   me dediqué a otros", "el propósito me pegó fuerte") no están en su
   transcripción: no se usan. La única verificada es la de Extractos (0:23).
 
+### Cómo se escribe el copy
+
+Reglas que salieron de revisar las guías con Marcel (2026-09-22). Aplican a
+todo el copy visible: PDF, páginas, correos y piezas de Instagram.
+
+- **Se le habla a quien todavía no jubila.** El público está próximo a
+  jubilar, no jubilado. Los mecanismos van en presente o futuro ("el trabajo
+  te entrega un rol y horarios", "al jubilar eso desaparece"), no en pasado
+  ("el trabajo te daba"), que deja fuera a quien todavía no pasa por eso.
+- **Ninguna metáfora sin explicar.** "Se juega en cinco pilares", "arrastra",
+  "ninguno cae solo", "ningún pilar grita": si la imagen no viene explicada
+  en la misma frase, se dice literal ("dependen unos de otros", "cuando uno
+  se debilita, empuja hacia abajo a los demás"). *El efecto dominó* sí se
+  puede nombrar, porque es el gancho de Instagram, pero se explica en la
+  misma frase en que aparece.
+- **Sin absolutos.** "Casi todo el mundo", "nunca", "todos", "casi nadie" →
+  "la mayoría", "suele", "es frecuente". Quien no se reconoce en un absoluto
+  deja de leer, y además casi ninguno es sostenible.
+- **Nada de meta-comentarios sobre el formato** ("lo esencial en dos
+  páginas", "en esta guía corta"). El lector ya ve cuánto hay.
+- **Etiquetas precisas y en singular cuando corresponde.** "Alerta:" antes de
+  cada señal de alerta, "Pregunta central:", "Primer paso:". Y un título no
+  debe implicar exclusividad: "los pilares y una señal de alerta para cada
+  uno", no "el pilar y su señal".
+- **Cada idea se explica una vez.** Si el mecanismo ya está dicho, no se
+  repite con otras palabras más abajo en la misma pieza.
+- **Se nombra el mecanismo, no solo el efecto.** "El trabajo te entrega un
+  rol, metas y horarios, y con eso un sentido de valor propio y de eficacia"
+  explica por qué perderlo pesa. "Te daba estructura" no lo explica.
+- **Toda pérdida se nombra junto con su salida.** Al describir lo que se
+  pierde al jubilar, se dice qué se puede hacer con eso ("ahí se abre una
+  oportunidad de reinvención para quien la trabaja a tiempo"). Sin arenga y
+  sin dramatizar: "tragedia" y palabras de ese peso quedan fuera.
+- **Los adverbios cargan el principio.** "Una semana que hayas diseñado
+  **intencionalmente**" ata con "con intención y no por inercia".
+- **No se dice qué hacer.** "Las cuatro conversaciones que **conviene**
+  tener", no "que hay que tener".
+
 ## Arquitectura
 
 ```

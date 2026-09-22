@@ -28,10 +28,10 @@ BREVO_TEMPLATE_PLAN = "4"
 # Lo que se adjunta al correo es la versión BREVE (2 páginas). La guía
 # completa no se enlaza en ninguna parte: se entrega a mano a quien sigue
 # la conversación. Las rutas de las completas están en brevo/README.md.
-PDF_URL_PLAN = "https://disenatujubilacion.com/assets/pdfs/plan-breve-4b57cc88378d2a672a78.pdf"
-PDF_URL_HABLAR = "https://disenatujubilacion.com/assets/pdfs/hablar-breve-3dc3b7dea09c89c81ac3.pdf"
-PDF_URL_ENTUSIASMO = "https://disenatujubilacion.com/assets/pdfs/entusiasmo-breve-b8926a5ff47be9474165.pdf"
-PDF_URL_PILARES = "https://disenatujubilacion.com/assets/pdfs/pilares-breve-1e6dbbf5ece887420f06.pdf"
+PDF_URL_PLAN = "https://disenatujubilacion.com/assets/pdfs/plan-breve-0730bfeee0b3e5cc914b.pdf"
+PDF_URL_HABLAR = "https://disenatujubilacion.com/assets/pdfs/hablar-breve-ba27f7a25a7d7d3edaf9.pdf"
+PDF_URL_ENTUSIASMO = "https://disenatujubilacion.com/assets/pdfs/entusiasmo-breve-376bbbcba35abfc542bd.pdf"
+PDF_URL_PILARES = "https://disenatujubilacion.com/assets/pdfs/pilares-breve-a5df182873eac611445e.pdf"
 # BREVO_TEMPLATE_PILARES: falta crear la plantilla en Brevo (brevo/plantillas/PILARES.md).
 # Mientras no exista, no enlazar /pilares desde Instagram: el correo no saldría.
 
