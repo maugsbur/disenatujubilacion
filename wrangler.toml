@@ -31,7 +31,7 @@ BREVO_TEMPLATE_PLAN = "4"
 PDF_URL_PLAN = "https://disenatujubilacion.com/assets/pdfs/plan-breve-4b57cc88378d2a672a78.pdf"
 PDF_URL_HABLAR = "https://disenatujubilacion.com/assets/pdfs/hablar-breve-3dc3b7dea09c89c81ac3.pdf"
 PDF_URL_ENTUSIASMO = "https://disenatujubilacion.com/assets/pdfs/entusiasmo-breve-b8926a5ff47be9474165.pdf"
-PDF_URL_PILARES = "https://disenatujubilacion.com/assets/pdfs/pilares-breve-a45f49d2d03b67a809f4.pdf"
+PDF_URL_PILARES = "https://disenatujubilacion.com/assets/pdfs/pilares-breve-1e6dbbf5ece887420f06.pdf"
 # BREVO_TEMPLATE_PILARES: falta crear la plantilla en Brevo (brevo/plantillas/PILARES.md).
 # Mientras no exista, no enlazar /pilares desde Instagram: el correo no saldría.
 

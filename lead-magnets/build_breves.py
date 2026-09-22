@@ -32,11 +32,11 @@ EXTRA = """
   .brief-body { padding: 0 18mm; }
   .brief-body.p2 { padding-top: 14mm; }
 
-  .mini { margin-bottom: 4mm; padding-left: 6mm; border-left: 2.5px solid #F6E7B0; }
+  .mini { margin-bottom: 3mm; padding-left: 6mm; border-left: 2.5px solid #F6E7B0; }
   .mini .mt { font-size: 11pt; font-weight: 600; color: #0E3A2F; }
-  .mini .md { font-size: 10.5pt; line-height: 1.5; font-weight: 300; margin-top: 1mm; }
-  .mini .mq { font-family: 'Lora', serif; font-style: italic; font-size: 10.5pt;
-              color: #0E3A2F; display: block; margin-top: 1.5mm; }
+  .mini .md { font-size: 10pt; line-height: 1.42; font-weight: 300; margin-top: 1mm; }
+  .mini .mq { font-family: 'Lora', serif; font-style: italic; font-size: 9.5pt;
+              color: #0E3A2F; display: block; margin-top: 1mm; }
 
   .step { margin-bottom: 2.5mm; }
   .step .sn { font-family: 'Lora', serif; font-size: 12pt; font-weight: 700; color: #E65F2B;
@@ -105,33 +105,32 @@ guia('pilares-breve',
   "Lo esencial en dos páginas: qué sostiene esta etapa, cómo se arrastran los pilares entre sí y cuál es el que hoy te está frenando.",
   """    <div class="kicker">El problema</div>
     <p class="lead">Casi todo el mundo llega a esta etapa con el pilar financiero revisado y los otros cuatro sin mirar nunca.</p>
-    <p>El dinero resuelve una parte. Para vivir bien los años que vienen también hacen falta dirección, cuerpo, cabeza y gente cerca.</p>
     <div class="hl">Tu pilar más débil no se queda en ese pilar. Arrastra a los otros cuatro.</div>
-    <h3>Los cinco pilares, y una señal de cada uno</h3>
+    <h3>Qué es cada pilar, y su señal de alerta</h3>
 """
-  + mini("1 · Vida con Propósito", "Dirección, identidad y estructura del tiempo. Organiza a los otros cuatro.",
+  + mini("1 · Vida con Propósito", "Dirección, identidad y estructura del tiempo. El trabajo te daba, sin pedirlo, una razón para levantarte y un horario. Al jubilar, hay que construirlos tú.",
          "Señal: tus semanas tienen la forma que les dio el trabajo, no una que hayas diseñado.")
-  + mini("2 · Salud Física", "Fuerza, movimiento, alimentación y prevención. Es lo que sostiene tu autonomía.",
+  + mini("2 · Salud Física", "Fuerza, movimiento, alimentación y prevención. Es lo que te da autonomía para salir, viajar y resolver lo cotidiano sin depender de nadie.",
          "Señal: hay un examen o control preventivo que vienes postergando.")
-  + mini("3 · Salud Mental y Cognitiva", "Sueño, aprendizaje y manejo de emociones. Decide si vas a seguir siendo tú.",
+  + mini("3 · Salud Mental y Cognitiva", "Sueño, aprendizaje y manejo de emociones. El trabajo le exigía algo a tu cabeza todos los días; esa exigencia hay que reemplazarla con algo, o las capacidades que dejas de usar se deterioran.",
          "Señal: hace tiempo que no aprendes algo nuevo y desafiante fuera del trabajo.")
-  + mini("4 · Salud Social", "Vínculos, compañía y pertenencia. El que más rápido se desarma al dejar de trabajar.",
+  + mini("4 · Salud Social", "Vínculos, compañía y pertenencia. Buena parte de tu vida social ocurre en el trabajo (el café, el almuerzo, la conversación de pasillo) y se va con él, casi siempre sin que nadie lo note a tiempo.",
          "Señal: la mayoría de tus conversaciones de la semana son con gente del trabajo.")
-  + mini("5 · Finanzas con Propósito", "Cuánto sabes de lo que tienes, y para qué lo estás guardando.",
+  + mini("5 · Finanzas con Propósito", "Cuánto sabes de lo que tienes, y para qué lo estás guardando. Un monto sin destino no da tranquilidad: primero se define la vida que quieres, después se hacen los números.",
          "Señal: no sabes con número cuánto cuesta un mes de tu vida."),
   """    <div class="kicker">El efecto dominó</div>
     <h2>Qué arrastra cada pilar</h2>
     <div class="rule"></div>
-    <p>Los cinco funcionan conectados, así que el que está más abajo frena a los demás. Por eso una acción bien elegida rinde más que cinco repartidas.</p>
+    <p>Los cinco funcionan conectados: el que está más abajo frena a los demás. Por eso una acción bien elegida rinde más que cinco repartidas.</p>
 """
-  + step("→", "<strong>Propósito</strong> arrastra a Finanzas, porque ningún monto alcanza si no sabes para qué lo guardas, y a Social, porque el círculo venía con el rol.")
-  + step("→", "<strong>Físico</strong> arrastra a Social, porque la autonomía es lo que te permite salir, y a Finanzas, porque el gasto en cuidados es el más subestimado.")
-  + step("→", "<strong>Mental y Cognitivo</strong> arrastra a Físico, porque sin descanso no hay energía, y a Propósito, porque sin cabeza no hay plan que se sostenga.")
-  + step("→", "<strong>Social</strong> arrastra a Mental y a Físico a la vez: en la literatura de longevidad, la soledad crónica se comporta como un factor de riesgo para la salud.")
-  + step("→", "<strong>Finanzas</strong> arrastra a Propósito, porque si no sabes si te alcanza, no exploras lo que te gustaría hacer.")
+  + step("→", "<strong>Propósito</strong> arrastra a Finanzas y a Social: sin dirección ningún monto alcanza, y el círculo venía con el rol.")
+  + step("→", "<strong>Físico</strong> arrastra a Social y a Finanzas: sin autonomía cuesta salir, y el gasto en cuidados es el más subestimado.")
+  + step("→", "<strong>Mental y Cognitivo</strong> arrastra a Físico y a Propósito: sin descanso no hay energía, y sin cabeza no hay plan que se sostenga.")
+  + step("→", "<strong>Social</strong> arrastra a Mental y a Físico a la vez: la soledad crónica es un factor de riesgo para la salud.")
+  + step("→", "<strong>Finanzas</strong> arrastra a Propósito: si no sabes si te alcanza, no exploras lo que te gustaría hacer.")
   + """
     <h3>El ejercicio de un minuto</h3>
-    <p>Vuelve a las cinco señales de la página anterior y marca la que más se parece a tu semana de hoy. Ese es tu punto de partida, y arriba está lo que ese pilar está frenando.</p>
+    <p>Vuelve a las cinco señales de la página anterior y marca la que más se parece a tu semana de hoy. Arriba está lo que ese pilar está frenando.</p>
     <div class="note">
       <p><strong>Qué es y qué no es esto.</strong> Orientación personal, no un diagnóstico. No reemplaza a tu médico, a un profesional de salud mental ni a un asesor financiero.</p>
     </div>""",

@@ -69,7 +69,7 @@ pone `noindex` por si algún crawler las encuentra igual.
 | PLAN | `plan-breve-4b57cc88378d2a672a78.pdf` |
 | HABLAR | `hablar-breve-3dc3b7dea09c89c81ac3.pdf` |
 | ENTUSIASMO | `entusiasmo-breve-b8926a5ff47be9474165.pdf` |
-| PILARES | `pilares-breve-a45f49d2d03b67a809f4.pdf` |
+| PILARES | `pilares-breve-1e6dbbf5ece887420f06.pdf` |
 
 **Completas, para enviar a mano** (Margarita, cuando alguien quiere más):
 

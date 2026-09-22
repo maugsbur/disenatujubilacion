@@ -399,3 +399,10 @@ es una señal de interés y la conversación sigue con una persona).
       un método", el patrón que el público castiga. Ahora dice "Un método,
       contado desde un caso real"
 - [ ] **Marcel/Nicole:** revisar las cuatro breves
+
+### Más explicación de los cinco pilares en la breve (2026-09-22)
+
+Marcel pidió que la versión breve de PILARES explicara mejor qué es cada
+pilar, no solo la señal de alerta. Cada uno ahora tiene una frase de qué
+es y por qué importa (tomada de la guía completa), y para que siguiera en
+2 páginas se recortó la intro y se ajustó el interlineado de la lista.
