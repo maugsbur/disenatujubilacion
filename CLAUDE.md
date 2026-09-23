@@ -25,78 +25,40 @@ anotada para el abogado. No la des por resuelta en ninguna dirección.
 
 - **Todo en español**, incluidos código, comentarios y documentación. Nicole
   y Margarita leen estos documentos y no son desarrolladoras.
-- El público **castiga el tono motivacional**. Nada de "tú puedes" ni
-  divulgación pop. Los mecanismos se explican sin culpa y sin arenga.
 - Principio operativo: *"Con intención y no por inercia."* No decimos qué
   hacer; mostramos dónde está la persona con datos y ella decide.
 - Se señala toda afirmación sin respaldo, incluidas las propias. Si una
   cifra o un mecanismo no se puede sostener, se dice.
-- **Nada de rayas (—) en el copy visible**, ni del patrón "no es X, es Y"
-  ("No es una historia de motivación: es un método"). El público los lee
-  como señal de texto hecho con IA. Se reemplazan por comas, puntos o dos
-  puntos, y la frase se reescribe en positivo. En comentarios de código y
-  documentación interna da igual.
-- **Lenguaje neutro en género** cuando se habla al lector ("Quieres tomarte
-  esta etapa…", no "Estás dispuesto…"). La mitad del público son mujeres.
-- **Testimonios: solo citas verificables** en Notion: la base "Entrevistas"
-  (versiones cortas), la base "✂️ Extractos (videos de entrevistas)" (citas
-  textuales, se pueden pulir sin cambiar el sentido) o la página
-  "Testimonios". Todas las personas entrevistadas dieron consentimiento.
-  Ojo: en Extractos, "Requiere permiso puntual" y "No publicable" son por
-  terceros identificables, datos de salud, precios o críticas, no por
-  consentimiento. Esas no se usan.
-- La llamada con Margarita se llama **llamada de evaluación** en todo el
-  sitio. No "sesión de diagnóstico": choca con "autodiagnóstico".
-  En botones se abrevia: **"Agendar evaluación gratuita"** y **"Hacer test
-  de autodiagnóstico"**.
-- La duración se dice **3 meses**. No "13 semanas" (obliga a hacer la
-  cuenta) ni "90 días" (suena a reto de Instagram, justo el tono que este
-  público castiga).
-  Dedicación: **unas 4 horas por semana**. La cantidad de sesiones no se
-  publica, se conversa en la llamada de evaluación.
-- Quienes dan testimonio se firman **"participante del programa piloto"**,
-  no "ex alumno/a de Jubilar.me" (el público nuevo no conoce esa marca).
-  Las citas de Silvia en el calendario de Instagram de Notion ("toda la vida
-  me dediqué a otros", "el propósito me pegó fuerte") no están en su
-  transcripción: no se usan. La única verificada es la de Extractos (0:23).
+- Datos que se repiten en todo el material: el programa dura **3 meses**, pide
+  **unas 4 horas por semana** (la cantidad de sesiones se conversa en la
+  llamada), la llamada con Margarita es la **llamada de evaluación** y quienes
+  dan testimonio se firman **"participante del programa piloto"**.
+- **Testimonios: solo citas verificables** en Notion (bases *Entrevistas* y
+  *✂️ Extractos*, o la página *Testimonios*). En Extractos, "Requiere permiso
+  puntual" y "No publicable" son por terceros, salud, precios o críticas: esas
+  no se usan. Las citas de Silvia que circulan en el calendario de Instagram
+  ("toda la vida me dediqué a otros", "el propósito me pegó fuerte") no están
+  en su transcripción; la única verificada es la de Extractos (0:23).
 
 ### Cómo se escribe el copy
 
-Reglas que salieron de revisar las guías con Marcel (2026-09-22). Aplican a
-todo el copy visible: PDF, páginas, correos y piezas de Instagram.
+**Las reglas completas están en [`specs/voz.md`](specs/voz.md)**, que es la
+fuente única para PDF, sitio, correos y piezas de Instagram, y se publica en
+Notion como *✍️ Cómo escribimos*. Léelo antes de escribir copy visible. Lo
+esencial, para no equivocarse sin abrirlo:
 
-- **Se le habla a quien todavía no jubila.** El público está próximo a
-  jubilar, no jubilado. Los mecanismos van en presente o futuro ("el trabajo
-  te entrega un rol y horarios", "al jubilar eso desaparece"), no en pasado
-  ("el trabajo te daba"), que deja fuera a quien todavía no pasa por eso.
-- **Ninguna metáfora sin explicar.** "Se juega en cinco pilares", "arrastra",
-  "ninguno cae solo", "ningún pilar grita": si la imagen no viene explicada
-  en la misma frase, se dice literal ("dependen unos de otros", "cuando uno
-  se debilita, empuja hacia abajo a los demás"). *El efecto dominó* sí se
-  puede nombrar, porque es el gancho de Instagram, pero se explica en la
-  misma frase en que aparece.
-- **Sin absolutos.** "Casi todo el mundo", "nunca", "todos", "casi nadie" →
-  "la mayoría", "suele", "es frecuente". Quien no se reconoce en un absoluto
-  deja de leer, y además casi ninguno es sostenible.
-- **Nada de meta-comentarios sobre el formato** ("lo esencial en dos
-  páginas", "en esta guía corta"). El lector ya ve cuánto hay.
-- **Etiquetas precisas y en singular cuando corresponde.** "Alerta:" antes de
-  cada señal de alerta, "Pregunta central:", "Primer paso:". Y un título no
-  debe implicar exclusividad: "los pilares y una señal de alerta para cada
-  uno", no "el pilar y su señal".
-- **Cada idea se explica una vez.** Si el mecanismo ya está dicho, no se
-  repite con otras palabras más abajo en la misma pieza.
-- **Se nombra el mecanismo, no solo el efecto.** "El trabajo te entrega un
-  rol, metas y horarios, y con eso un sentido de valor propio y de eficacia"
-  explica por qué perderlo pesa. "Te daba estructura" no lo explica.
-- **Toda pérdida se nombra junto con su salida.** Al describir lo que se
-  pierde al jubilar, se dice qué se puede hacer con eso ("ahí se abre una
-  oportunidad de reinvención para quien la trabaja a tiempo"). Sin arenga y
-  sin dramatizar: "tragedia" y palabras de ese peso quedan fuera.
-- **Los adverbios cargan el principio.** "Una semana que hayas diseñado
-  **intencionalmente**" ata con "con intención y no por inercia".
-- **No se dice qué hacer.** "Las cuatro conversaciones que **conviene**
-  tener", no "que hay que tener".
+- Se le habla a quien **todavía no jubila**: presente y futuro, nunca pasado.
+- **Ninguna metáfora sin explicar** ("arrastra", "se juega", "ninguno cae
+  solo"), **sin absolutos** ("nunca", "casi todo el mundo") y **sin rayas (—)**.
+- **Ni tono motivacional ni dramatismo.** Toda pérdida se nombra junto con su
+  salida.
+- **No se dice qué hacer** ("conviene tener", no "hay que tener"), y los
+  testimonios son solo los verificables en Notion.
+- La contraposición ("no era falta de actividad, era falta de dirección") se
+  usa donde de verdad separa dos cosas que se confunden, no como fórmula.
+
+Lo visual, incluidas las placas de Instagram, está en
+[`specs/diseno.md`](specs/diseno.md).
 
 ## Arquitectura
 

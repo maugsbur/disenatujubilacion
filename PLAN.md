@@ -424,3 +424,26 @@ mecanismo y no solo el efecto, y nombrar toda pérdida junto con su salida.
 - [ ] Las cuatro guías **completas** todavía tienen el lenguaje viejo. Se
       entregan a mano, así que no urge, pero conviene pasarles el mismo
       criterio antes de repartirlas mucho
+
+### Guías de voz y diseño unificadas (2026-09-23)
+
+Había cuatro documentos que se solapaban: `CLAUDE.md` § tono, las reglas
+nuevas del repo, y en Notion *✍️ Cómo escribimos* y *🎨 Cómo diseñamos*.
+Cada agente leía uno distinto, así que las reglas de las guías no llegaban a
+Instagram y las de Instagram no llegaban a los PDF.
+
+Quedó así: **una fuente por tema, con una copia publicada en Notion.**
+
+- `specs/voz.md`: todas las reglas de texto, para todos los canales. Se
+  publica en Notion como *✍️ Cómo escribimos*, que es lo que leen el equipo y
+  las skills de Instagram
+- `specs/diseno.md`: lo visual del sitio, los PDF y ahora también las placas.
+  Se publica en Notion como *🎨 Cómo diseñamos*
+- `CLAUDE.md` queda con un resumen corto y el puntero a los dos
+
+- [x] Las cuatro guías breves pasadas por el conjunto completo de reglas:
+      vuelve el principio operativo al cierre, PLAN vuelve a hablar de
+      acciones y suma "Hecho:" en cada una, ENTUSIASMO recupera la
+      contraposición y PILARES incorpora "puede vivirse como una pérdida o
+      trabajarse como una reinvención"
+- [ ] Las guías completas siguen con el lenguaje viejo

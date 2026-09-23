@@ -109,7 +109,7 @@
 
   /* La portada no ocupa una página entera: es una franja verde arriba de la
      primera. En dos páginas no sobra el espacio de una portada completa. */
-  .brief { padding: 0 0 15mm; }
+  .brief { padding: 0 0 13mm; }
   .brief-top { background: #0E3A2F; color: #F8F9FA; padding: 15mm 18mm 13mm; margin-bottom: 9mm; }
   .brief-top .eyebrow { font-size: 9pt; letter-spacing: 3px; text-transform: uppercase;
                         color: #E65F2B; font-weight: 500; margin-bottom: 7mm; }
@@ -125,6 +125,11 @@
   .mini .md { font-size: 10pt; line-height: 1.38; font-weight: 300; margin-top: 1mm; }
   .mini .mq { font-family: 'Lora', serif; font-style: italic; font-size: 9.5pt;
               color: #0E3A2F; display: block; margin-top: 1mm; }
+  .mini .mh { font-size: 9.5pt; color: #3D6058; display: block; margin-top: 0.8mm; }
+  /* El principio operativo cierra las cuatro guías, justo antes del CTA. */
+  .brief .principio { font-family: 'Lora', serif; font-style: italic; font-size: 12.5pt;
+                      color: #0E3A2F; margin: 5mm 0 0; padding-left: 6mm;
+                      border-left: 2.5px solid #E65F2B; line-height: 1.35; }
 
   .step { margin-bottom: 2.5mm; }
   .step .sn { font-family: 'Lora', serif; font-size: 12pt; font-weight: 700; color: #E65F2B;
@@ -152,7 +157,7 @@
     <div class="kicker">El problema</div>
     <p class="lead">La mayoría de las personas solo se preocupa del pilar financiero, sin saber que su bienestar también depende de otros cuatro.</p>
     <h3>Los pilares y una señal de alerta para cada uno</h3>
-<div class="mini"><div class="mt">1 · Vida con Propósito</div><div class="md">Dirección, identidad y estructura del tiempo. El trabajo te entrega un rol, metas y horarios, y con eso un sentido de valor propio y de eficacia. Al jubilar eso desaparece, y ahí se abre una oportunidad de reinvención para quien la trabaja a tiempo.</div><span class="mq">Alerta: tus semanas tienen la estructura que les dio el trabajo, no una que hayas diseñado intencionalmente.</span></div><div class="mini"><div class="mt">2 · Salud Física</div><div class="md">Fuerza, movimiento, alimentación y prevención. Es lo que sostiene tu autonomía para salir, viajar y resolver lo cotidiano sin depender de nadie, y es donde el tiempo perdido cuesta más recuperar.</div><span class="mq">Alerta: hay un examen o control preventivo que vienes postergando.</span></div><div class="mini"><div class="mt">3 · Salud Mental y Cognitiva</div><div class="md">Sueño, aprendizaje y manejo de emociones. Hoy tu trabajo le exige algo a tu cabeza todos los días, y esa exigencia hay que reemplazarla después, porque las capacidades que se dejan de usar se deterioran.</div><span class="mq">Alerta: hace tiempo que no aprendes algo nuevo y desafiante fuera del trabajo.</span></div><div class="mini"><div class="mt">4 · Salud Social</div><div class="md">Vínculos, compañía y pertenencia. Buena parte de tu vida social ocurre hoy en el trabajo: el café, el almuerzo, la conversación de pasillo. Al jubilar se va con él, y reconstruirla toma más tiempo del que se suele calcular.</div><span class="mq">Alerta: la mayoría de tus conversaciones de la semana son con gente del trabajo.</span></div><div class="mini"><div class="mt">5 · Finanzas con Propósito</div><div class="md">Cuánto sabes de lo que tienes, y para qué lo estás guardando. Un monto sin destino no da tranquilidad, porque no hay con qué compararlo: primero se define la vida que quieres y después se calcula cuánto cuesta.</div><span class="mq">Alerta: no sabes con número cuánto cuesta un mes de tu vida.</span></div>
+<div class="mini"><div class="mt">1 · Vida con Propósito</div><div class="md">Dirección, identidad y estructura del tiempo. El trabajo te entrega un rol, metas y horarios, y con eso un sentido de valor propio y de eficacia. Al jubilar eso desaparece, y puede vivirse como una pérdida o trabajarse como una reinvención: la diferencia la hace el tiempo con que te prepares.</div><span class="mq">Alerta: tus semanas tienen la estructura que les dio el trabajo, no una que hayas diseñado intencionalmente.</span></div><div class="mini"><div class="mt">2 · Salud Física</div><div class="md">Fuerza, movimiento, alimentación y prevención. Es lo que sostiene tu autonomía para salir, viajar y resolver lo cotidiano sin depender de nadie, y es donde el tiempo perdido cuesta más recuperar.</div><span class="mq">Alerta: hay un examen o control preventivo que vienes postergando.</span></div><div class="mini"><div class="mt">3 · Salud Mental y Cognitiva</div><div class="md">Sueño, aprendizaje y manejo de emociones. Hoy tu trabajo le exige algo a tu cabeza todos los días, y esa exigencia hay que reemplazarla después, porque las capacidades que se dejan de usar se deterioran.</div><span class="mq">Alerta: hace tiempo que no aprendes algo nuevo y desafiante fuera del trabajo.</span></div><div class="mini"><div class="mt">4 · Salud Social</div><div class="md">Vínculos, compañía y pertenencia. Buena parte de tu vida social ocurre hoy en el trabajo: el café, el almuerzo, la conversación de pasillo. Al jubilar se va con él, y reconstruirla toma más tiempo del que se suele calcular.</div><span class="mq">Alerta: la mayoría de tus conversaciones de la semana son con gente del trabajo.</span></div><div class="mini"><div class="mt">5 · Finanzas con Propósito</div><div class="md">Cuánto sabes de lo que tienes, y para qué lo guardas. Un monto sin destino no da tranquilidad, porque no hay con qué compararlo: primero se define la vida que quieres y después se calcula cuánto cuesta.</div><span class="mq">Alerta: no sabes con número cuánto cuesta un mes de tu vida.</span></div>
   </div>
   <div class="pgnum">1</div>
 </div>
@@ -161,13 +166,14 @@
     <div class="kicker">El efecto dominó</div>
     <h2>Cómo depende cada<br>pilar de los otros</h2>
     <div class="rule"></div>
-    <p>Los cinco están conectados: cuando uno se debilita, empuja hacia abajo a los demás. A eso le llamamos el efecto dominó, y es la razón por la que conviene comenzar por el pilar más débil: una acción ahí rinde más que cinco repartidas.</p>
-<div class="step"><span class="sn">→</span><span class="st"><strong>Propósito</strong> afecta a Finanzas y a Social: sin una dirección ningún monto se siente suficiente, y el círculo que venía con el rol se va con él.</span></div><div class="step"><span class="sn">→</span><span class="st"><strong>Físico</strong> afecta a Social y a Finanzas: sin autonomía cuesta salir y sostener los vínculos, y el gasto en cuidados es el que más se subestima.</span></div><div class="step"><span class="sn">→</span><span class="st"><strong>Mental y Cognitivo</strong> afecta a Físico y a Propósito: sin descanso no hay energía para entrenar, y sin claridad mental ningún plan se sostiene.</span></div><div class="step"><span class="sn">→</span><span class="st"><strong>Social</strong> afecta a Mental y a Físico a la vez: la soledad crónica se comporta como un factor de riesgo para la salud.</span></div><div class="step"><span class="sn">→</span><span class="st"><strong>Finanzas</strong> afecta a Propósito: si no sabes si te alcanza, no exploras lo que te gustaría hacer.</span></div>
+    <p>Los cinco están conectados: cuando uno se debilita, empuja hacia abajo a los demás. A eso le llamamos el efecto dominó, y por eso conviene comenzar por el pilar más débil: una acción ahí rinde más que cinco repartidas.</p>
+<div class="step"><span class="sn">→</span><span class="st"><strong>Propósito</strong> afecta a Finanzas y a Social: sin dirección ningún monto se siente suficiente, y el círculo que venía con el rol se va con él.</span></div><div class="step"><span class="sn">→</span><span class="st"><strong>Físico</strong> afecta a Social y a Finanzas: sin autonomía cuesta sostener los vínculos, y el gasto en cuidados es el que más se subestima.</span></div><div class="step"><span class="sn">→</span><span class="st"><strong>Mental y Cognitivo</strong> afecta a Físico y a Propósito: sin descanso no hay energía, y sin claridad mental ningún plan se sostiene.</span></div><div class="step"><span class="sn">→</span><span class="st"><strong>Social</strong> afecta a Mental y a Físico: la soledad crónica se comporta como un factor de riesgo para la salud.</span></div><div class="step"><span class="sn">→</span><span class="st"><strong>Finanzas</strong> afecta a Propósito: si no sabes si te alcanza, no exploras lo que te gustaría hacer.</span></div>
     <h3>Por dónde comenzar</h3>
-    <p>Vuelve a las cinco alertas de la página anterior y marca la que más se parece a tu semana. Ese es el pilar por el que te conviene comenzar, y arriba está lo que está afectando.</p>
+    <p>Vuelve a las cinco alertas de la página anterior y marca la que más se parece a tu semana. Ese es el pilar por el que te conviene comenzar.</p>
     <div class="note">
-      <p><strong>Qué es y qué no es esto.</strong> Orientación personal, no un diagnóstico. No reemplaza a tu médico, a un profesional de salud mental ni a un asesor financiero.</p>
+      <p><strong>Ojo:</strong> esto es orientación personal, no un diagnóstico, y no reemplaza a tu médico ni a tu asesor financiero.</p>
     </div>
+    <div class="principio">¿Vas a actuar por inercia o con intención?</div>
 
   <div class="cta">
     <div class="ct">Si quieres seguir</div>

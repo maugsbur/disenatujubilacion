@@ -1,6 +1,14 @@
 # Spec · Sistema de diseño
 
-**Estado:** vigente · **Última revisión:** 2026-09-16 (lenguaje visual de `hijos.jubilar.me`, logo, header y fotos individuales)
+**Estado:** vigente · **Última revisión:** 2026-09-23 (se suman las reglas
+de las placas de Instagram, que vivían solo en Notion)
+
+Cubre lo visual de los tres soportes: el sitio, los PDF de las guías y las
+placas de Instagram. Lo que es de texto vive en [`voz.md`](voz.md).
+
+La página de Notion *🎨 Cómo diseñamos* es la **copia publicada** de la
+sección de placas, para el equipo y para la skill `disenar-placas-ig`. Si
+cambias una regla acá, actualiza esa página en el mismo movimiento.
 
 ## De dónde viene
 
@@ -94,3 +102,55 @@ exista, va como segundo hijo de `.hero-grid` y no hay que tocar CSS.
 - [ ] Foto de Nicole en mejor calidad (Marcel la está buscando)
 - [ ] El autodiagnóstico quedó fuera de esta pasada: hereda tokens y
       botones de `base.css`, pero su UI de 25 preguntas tiene CSS propio
+
+## Placas de Instagram
+
+Vienen de la página de Notion *🎨 Cómo diseñamos*, que se llena con las
+correcciones de Nicole en el visor de cada secuencia.
+
+### Legibilidad, que manda sobre la estética
+
+El público tiene 55 años o más y mira en un teléfono, muchas veces de paso.
+Una placa elegante que no se lee es una placa fallida.
+
+- **Nada de texto bajo 36px** en un lienzo de 1080 de ancho. El contexto en
+  mayúsculas va en 46px, el pie en 38px, el matiz en 50px.
+- **Contraste mínimo 4,5:1 para texto normal y 3:1 para texto grande**,
+  verificado y no a ojo.
+- **Ámbar `#E65F2B` solo sobre fondos oscuros o el off-white.** Sobre crema
+  da 2,81:1 y no se lee, así que ahí el contexto va en verde.
+- **El tamaño de la frase principal se calcula solo** hasta llenar el 62% del
+  área segura. Es lo que hace que una placa de seis palabras y otra de treinta
+  se vean de la misma familia.
+- **Zona segura de 260px arriba y abajo** en historias, donde Instagram pone
+  la barra de perfil y la caja de respuesta.
+
+### Consistencia con un quiebre
+
+- **Solo dos fondos: verde y blanco.** El crema no se usa de fondo, queda para
+  texto de contexto sobre verde (Nicole, 08/09/2026).
+- **Verde es la base de la secuencia** y **una o dos placas rompen a blanco**
+  para destacar, típicamente la del dato. Si rompen todas, no destaca ninguna.
+- **El CTA vuelve al verde**, para cerrar donde empezó.
+
+### Color y tipografía
+
+| Fondo | Texto | Contexto | Palabra del CTA |
+|---|---|---|---|
+| Verde `#0E3A2F` | off-white | crema | **ámbar** |
+| Carbón `#1A2421` | off-white | crema | **ámbar** |
+| Crema `#F6E7B0` | verde | verde | verde (el ámbar no contrasta) |
+| Claro `#F8F9FA` | carbón | verde | **ámbar** |
+
+- **Lora para lo que se lee, Poppins para lo que se etiqueta.** Frase
+  principal, dato y cita en serif; contexto, autoría y pie en sans.
+- **Una idea por placa**: contexto, frase, matiz. Si hace falta una cuarta
+  línea, sobra algo o son dos placas.
+- El **ámbar es acento, nunca fondo**.
+
+### Dónde se revisan
+
+Cada secuencia se publica como un **visor**, una página con las placas en tira
+a proporción real y con botón de descarga. El enlace va en la fila de la pieza
+en Notion, y el feedback se deja como comentario sobre la placa concreta.
+Cuando la misma corrección aparece dos veces, sube a regla acá.
