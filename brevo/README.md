@@ -136,7 +136,7 @@ sigue fallando después de 24 horas, deja de reintentar esa fila y manda
 una alerta a `disenatujubilacion@gmail.com` — para entonces ya se resetea
 cualquier cuota diaria, así que 24 horas fallando significa que hay algo
 más que revisar (llave vencida, plantilla borrada, etc.), no un simple
-pico de tráfico.
+peak de tráfico.
 
 Instala ese disparador una vez, desde el editor de Apps Script:
 

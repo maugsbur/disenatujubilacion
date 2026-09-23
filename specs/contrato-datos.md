@@ -29,7 +29,7 @@ Lo emiten `assets/js/autodiagnostico.js` y `assets/js/captura.js`.
 | `guia` | texto | ambos | `DOMINO` · `PLAN` · `HABLAR` · `ENTUSIASMO` · `PILARES` · `RETIRO`. Qué recurso pidió |
 | `origen` | texto | ambos | `utm_source`, o `sitio-interno` / `directo`. **De dónde vino**, distinto de `guia`. Producido por `atribucion.js` |
 | `campana` | texto | ambos | `utm_campaign`. Vacío si no vino de una campaña |
-| `contenido` | texto | ambos | `utm_content`. La pieza puntual: `reel-jinetes`, `historia-3`… |
+| `contenido` | texto | ambos | `utm_content`. La pieza puntual: `reel-desgastes`, `historia-3`… |
 | `regimen` | texto | ambos | `PRE_LEY` o `LEY_21719`. Bajo qué régimen se captó. Ver `specs/consentimiento.md` |
 | `consentMarketing` | booleano | ambos | Casilla opcional, sin premarcar |
 | `consentGuardado` | booleano | ambos | En PRE_LEY el front lo manda `true` y el Worker igual lo fuerza. Ver `specs/consentimiento.md` |
@@ -154,12 +154,12 @@ historia, o el anuncio), nunca hay que tocar el sitio para usarlos.
 |---|---|---|
 | `utm_source` | **Dónde** está el enlace — son solo tres valores posibles | `bio` (link en la biografía, lo usan reels y posts porque no pueden llevar link directo) · `historia` (sticker de link en una historia) · `ads` (anuncio pagado) |
 | `utm_campaign` | El nombre de la campaña o iniciativa puntual, si hay una | `lanzamiento-programa`, `otono-2026`. Vacío si es tráfico de bio de todos los días, sin campaña detrás |
-| `utm_content` | La pieza específica — lo bastante descriptivo para reconocerla meses después | `reel-jinetes`, `historia-3`, `post-testimonio-alejandro` |
+| `utm_content` | La pieza específica — lo bastante descriptivo para reconocerla meses después | `reel-desgastes`, `historia-3`, `post-testimonio-alejandro` |
 
-**Ejemplo completo**, un reel sobre los "cinco jinetes" que apunta a la bio:
+**Ejemplo completo**, un reel sobre los Cuatro Desgastes que apunta a la bio:
 
 ```
-https://disenatujubilacion.com/?utm_source=bio&utm_campaign=lanzamiento-programa&utm_content=reel-jinetes
+https://disenatujubilacion.com/?utm_source=bio&utm_campaign=lanzamiento-programa&utm_content=reel-desgastes
 ```
 
 Y una historia suelta, sin campaña, que enlaza directo a la guía PLAN:
@@ -192,7 +192,7 @@ en el enlace de Calendly, para atribuir qué guía trae llamadas agendadas.
 
 ## Deuda pendiente
 
-- El **límite por IP** vive en KV (1.000 escrituras/día). Para un pico de
+- El **límite por IP** vive en KV (1.000 escrituras/día). Para un peak de
   tráfico pagado de Instagram puede quedar corto; migrar a Durable Objects
   o al binding nativo de Rate Limiting si el volumen lo pide.
 - La **analítica** (PostHog) está montada como scaffold inerte hasta que se

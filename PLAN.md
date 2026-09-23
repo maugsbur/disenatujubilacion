@@ -461,3 +461,30 @@ de Notion.
       de instrucciones listo para pegar
 - [ ] **Marcel:** pegar ese bloque en las Instrucciones del proyecto y, si se
       puede, conectar Notion al proyecto para que lea las guías en vivo
+
+### Todo pasa a Notion (2026-09-23)
+
+Marcel fijó el principio: **todo se documenta en Notion y se revisa just in
+time**. Notion es la única superficie donde pueden escribir el chat, cowork,
+Claude Code, las skills y el equipo, así que pasa a ser la fuente.
+
+- [x] *✍️ Cómo escribimos* y *🎨 Cómo diseñamos* son ahora la fuente. Se les
+      sumó la postura de escepticismo, la diferencia entre citas públicas y
+      datos de investigación, las ilustraciones SVG, el estado del logo, y
+      las reglas visuales del sitio y de los PDF
+- [x] `specs/voz.md` quedó como copia que Claude Code sincroniza antes de
+      escribir; `specs/diseno.md`, solo con la implementación en CSS
+- [x] Los documentos 00 a 06 de agosto se migraron a *Programa vigente*, con
+      las contradicciones resueltas a favor de lo más nuevo: 3 meses (espina
+      recortada a 12 semanas, pendiente de Nicole), 4 horas en total, Sesión
+      1 en dos encuentros, Cuatro Desgastes, Escenarios Complejos, "a los 95",
+      peak, y **acción** en vez de decisión salvo en la Ficha de Decisiones
+- [x] Catálogo de hábitos como base de datos (36 filas, incluidas las
+      descartadas)
+- [x] El checklist maestro y los pendientes de la memoria, como 55 tareas en
+      *Tareas DTJ*, con una columna nueva *Área*
+- [x] `specs/proyecto-claude.md` y `specs/indice-proyecto-claude.md`: el
+      bloque para las Instrucciones, el texto para la Memoria y el índice
+      para el Contexto del proyecto de claude.ai
+
+**Desde acá, lo pendiente vive en Tareas DTJ**, no en este archivo.

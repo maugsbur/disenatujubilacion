@@ -10,7 +10,7 @@
  * Instagram Ads pone en los enlaces:
  *   origen    ← utm_source    (instagram, un reel puntual, un ad…)
  *   campana   ← utm_campaign  (la campaña pagada)
- *   contenido ← utm_content   (la pieza específica: reel-jinetes, historia-3…)
+ *   contenido ← utm_content   (la pieza específica: reel-desgastes, historia-3…)
  */
 (function () {
   'use strict';

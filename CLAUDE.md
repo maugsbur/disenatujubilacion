@@ -16,10 +16,23 @@ programa, y calificar y armar la llamada de evaluación de Margarita
 |---|---|---|
 | **Nicole** | Terapeuta ocupacional, magíster en Gerontología, docencia e investigación. Conduce sesiones. Punto de contacto para derechos de datos | Viña del Mar, Chile |
 | **Marcel** | Ingeniero y coach, background en ciencias y computación. Metodologías en sector privado, ONGs y la ONU. Lleva lo técnico | Dinamarca |
-| **Margarita** | Edición y ventas. Contactos por Instagram y la llamada de venta. El Calendly es suyo | Dinamarca |
+| **Margarita** | Edición y ventas. Contactos por Instagram y la llamada de evaluación. El Calendly es suyo | Dinamarca |
 
 Dos de tres están en la UE: la pregunta de si aplica GDPR está abierta y
 anotada para el abogado. No la des por resuelta en ninguna dirección.
+
+## Dónde vive cada cosa
+
+**Todo se documenta en Notion y se revisa *just in time*** *(Marcel,
+23/09/2026)*. Notion es la fuente de las reglas de texto (*✍️ Cómo
+escribimos*), las reglas visuales (*🎨 Cómo diseñamos*), el diseño del
+programa (*Programa vigente*) y lo pendiente (*Tareas DTJ*). Este repo guarda
+solo lo pegado al código, más una copia de las reglas de texto. El mapa
+completo, con qué va en Notion, en las Instrucciones, la Memoria y el
+Contexto del proyecto de claude.ai: [`specs/proyecto-claude.md`](specs/proyecto-claude.md).
+
+Lo pendiente del sitio y de las guías también va en **Tareas DTJ**, no en
+`PLAN.md`, que queda como bitácora de lo hecho.
 
 ## Idioma y tono
 
@@ -27,48 +40,42 @@ anotada para el abogado. No la des por resuelta en ninguna dirección.
   y Margarita leen estos documentos y no son desarrolladoras.
 - Principio operativo: *"Con intención y no por inercia."* No decimos qué
   hacer; mostramos dónde está la persona con datos y ella decide.
-- Se señala toda afirmación sin respaldo, incluidas las propias. Si una
-  cifra o un mecanismo no se puede sostener, se dice.
-- Datos que se repiten en todo el material: el programa dura **3 meses**, pide
-  **unas 4 horas por semana** (la cantidad de sesiones se conversa en la
-  llamada), la llamada con Margarita es la **llamada de evaluación** y quienes
-  dan testimonio se firman **"participante del programa piloto"**.
-- **Testimonios: solo citas verificables** en Notion (bases *Entrevistas* y
-  *✂️ Extractos*, o la página *Testimonios*). En Extractos, "Requiere permiso
-  puntual" y "No publicable" son por terceros, salud, precios o críticas: esas
-  no se usan. Las citas de Silvia que circulan en el calendario de Instagram
-  ("toda la vida me dediqué a otros", "el propósito me pegó fuerte") no están
-  en su transcripción; la única verificada es la de Extractos (0:23).
+- Se señala toda afirmación sin respaldo, incluidas las propias.
 
 ### Cómo se escribe el copy
 
-**Las reglas completas están en [`specs/voz.md`](specs/voz.md)**, que es la
-fuente única para PDF, sitio, correos y piezas de Instagram, y se publica en
-Notion como *✍️ Cómo escribimos*. Léelo antes de escribir copy visible. Lo
-esencial, para no equivocarse sin abrirlo:
+**Antes de escribir cualquier texto visible** (guías, sitio, correos): trae
+la página de Notion *✍️ Cómo escribimos*
+(`3d423cb6e7af818f85a6d216c1b6a459`) y compárala con
+[`specs/voz.md`](specs/voz.md). Si difieren, actualiza la copia, anota la
+fecha de sincronización en su encabezado y haz commit. Si Notion no
+responde, escribe con la copia y avísalo. **`specs/voz.md` no se edita a
+mano**: las reglas se escriben en Notion.
+
+Lo esencial, para no equivocarse sin abrirla:
 
 - Se le habla a quien **todavía no jubila**: presente y futuro, nunca pasado.
-- **Ninguna metáfora sin explicar** ("arrastra", "se juega", "ninguno cae
-  solo"), **sin absolutos** ("nunca", "casi todo el mundo") y **sin rayas (—)**.
+- **Ninguna metáfora sin explicar**, **sin absolutos** y **sin rayas (—)**.
 - **Ni tono motivacional ni dramatismo.** Toda pérdida se nombra junto con su
-  salida.
-- **No se dice qué hacer** ("conviene tener", no "hay que tener"), y los
-  testimonios son solo los verificables en Notion.
-- La contraposición ("no era falta de actividad, era falta de dirección") se
-  usa donde de verdad separa dos cosas que se confunden, no como fórmula.
+  salida. No se dice qué hacer.
+- Datos fijos: **3 meses** (nunca "13 semanas", ni interna ni externamente),
+  **unas 4 horas por semana** en total, **llamada de evaluación**, **Cuatro
+  Desgastes**, **acción** para lo que se ejecuta una vez, y quienes dan
+  testimonio son **"participante del programa piloto"**.
+- Testimonios: solo citas verificables en Notion. Las citas de Silvia que
+  circulan en el calendario de Instagram ("toda la vida me dediqué a otros",
+  "el propósito me pegó fuerte") no están en su transcripción; la única
+  verificada es la de Extractos (0:23).
 
-Lo visual, incluidas las placas de Instagram, está en
-[`specs/diseno.md`](specs/diseno.md).
-
-**Cuando llegue una corrección de estilo, la regla se escribe de inmediato**,
-sin esperar a que se repita, y se escribe la intención detrás del cambio, no
+**Cuando llegue una corrección de estilo o de diseño**, la regla se escribe
+de inmediato **en Notion**, desde la intención detrás del cambio y no desde
 el cambio puntual. Si esa intención no es evidente, se pregunta antes: una
-regla mal generalizada se aplica donde no correspondía. Después se publica la
-página de Notion en el mismo commit.
+regla mal generalizada se aplica donde no correspondía. Después se
+sincroniza la copia del repo.
 
-Las cuatro superficies donde vive todo esto (repo, Notion, y las instrucciones
-y la memoria del proyecto de claude.ai) y qué va en cada una:
-[`specs/proyecto-claude.md`](specs/proyecto-claude.md).
+Las reglas visuales están en Notion (*🎨 Cómo diseñamos*,
+`3d523cb6e7af81f9a703eb234cce4a22`). [`specs/diseno.md`](specs/diseno.md)
+guarda solo cómo están implementadas en el CSS.
 
 ## Arquitectura
 

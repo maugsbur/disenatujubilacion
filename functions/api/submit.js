@@ -230,7 +230,7 @@ function validarPayload_(body) {
   if (!GUIAS_VALIDAS.includes(guia)) guia = 'DOMINO';
 
   // Atribución: de dónde vino la persona. NO se fuerza a mayúsculas — los
-  // valores de utm_* son sensibles al caso ("reel-jinetes" ≠ "REEL-JINETES").
+  // valores de utm_* son sensibles al caso ("reel-desgastes" ≠ "REEL-DESGASTES").
   // `origen` es la fuente, distinta de `guia` (qué pidió). Ver
   // specs/contrato-datos.md § Deuda conocida.
   const origen = String(body.origen || 'directo').slice(0, 80);
