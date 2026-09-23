@@ -8,8 +8,15 @@ contradice a Notion, manda Notion.
 
 - **✍️ Cómo escribimos**: todas las reglas de texto, para todo el material
   https://app.notion.com/p/3d423cb6e7af818f85a6d216c1b6a459
-- **🎨 Cómo diseñamos**: paleta, tipografía, placas, guías en PDF y sitio
+- **🎨 Cómo diseñamos**: paleta, tipografía, placas, ilustraciones, video,
+  guías en PDF y sitio
   https://app.notion.com/p/3d523cb6e7af81f9a703eb234cce4a22
+- **🎬 Cómo creamos contenido**: de dónde salen las ideas, niveles de
+  conciencia, filtro antes de producir, grabación y correo
+  https://app.notion.com/p/3e423cb6e7af8115b736d70bf97608c1
+- **🔁 Flujo de contenido con Claude**: el circuito de aprobación y las
+  skills (la ejecución automática está pausada)
+  https://app.notion.com/p/3d123cb6e7af81da9b53ee254469225e
 
 ## El programa
 
@@ -41,7 +48,8 @@ contradice a Notion, manda Notion.
 - ✂️ Extractos: https://app.notion.com/p/af642626993c43818c6b6da43426691d
 - Testimonios: https://app.notion.com/p/b3323cb6e7af836a978281b6f56df324
 - 🔬 Evidencia: https://app.notion.com/p/8f5a11e62f9943fabae71a650e71d3e6
-- 🗳️ Decisiones y notas: https://app.notion.com/p/e58a1be01a7c4de8b91387030426bcd7
+- 🗳️ Decisiones y notas (solo el circuito de Instagram): https://app.notion.com/p/e58a1be01a7c4de8b91387030426bcd7
+- 🗄️ Archivo (nada de ahí es vigente): https://app.notion.com/p/ab823cb6e7af8289b60d0177199e7dca
 - 📓 Bitácora de Claude: https://app.notion.com/p/3d423cb6e7af812e8be5c693db97deb0
 
 ## El sitio

@@ -8,7 +8,7 @@ CLAUDE.md § Cómo se escribe el copy). Existe por dos razones: que Claude Code
 pueda escribir aunque el conector de Notion falle, y que git guarde el
 historial de cómo cambiaron las reglas.
 
-Última sincronización: 2026-09-23.
+Última sincronización: 2026-09-24.
 -->
 
 # Cómo escribimos (copia de Notion)
@@ -27,8 +27,9 @@ amplia, se acota con el caso que la desmintió. Cada regla va en su sección,
 con fecha y con quién la pidió.
 
 Vale para todo lo que lee una persona: las guías en PDF, el sitio, los
-correos y las piezas de Instagram. Lo visual está en *🎨 Cómo diseñamos* y el
-diseño del programa en *Programa vigente*, ambos en Notion.
+correos y las piezas de Instagram. Lo visual está en *🎨 Cómo diseñamos*, el
+proceso para crear contenido en *🎬 Cómo creamos contenido* y el diseño del
+programa en *Programa vigente*, todos en Notion.
 
 ## Para quién escribimos
 
@@ -107,6 +108,8 @@ autoayuda.
 | **peak** | **pico** | En Chile es vulgar *(Marcel, 09/09)* |
 | **@disenatujubilacion** | @diseñatujubilación | El handle real no tiene eñe ni tilde |
 | **escríbeme** | "escribime" | El material de la asesora está en voseo |
+| **acompañar** | "ayudar" | "Ayudar" pone a la persona como necesitada *(del piloto, vigente 23/09)* |
+| **hacerse cargo** (de su salud, su tiempo) | "cuidar", "que la cuiden" | El mensaje es la responsabilidad propia *(ídem)* |
 
 La cantidad de sesiones no se publica: se conversa en la llamada.
 
@@ -118,16 +121,30 @@ La cantidad de sesiones no se publica: se conversa en la llamada.
 - **Testimonios: solo citas verificables** en *Entrevistas*, *✂️ Extractos*
   o *Testimonios*. En Extractos, "Requiere permiso puntual" y "No publicable"
   no se usan.
+- **Sin escasez ni urgencia fabricadas** ("cupos limitados", "solo hoy",
+  descuento por decidir en la llamada). Un límite real se dice con el dato.
+  *(Propuesta de Claude, 23/09, pendiente de validar.)*
 - **Citas públicas y datos de investigación son distintos.** Una cita
   publicada se puede pulir sin cambiar el sentido; un verbatim de
   investigación no se toca nunca. *(Marcel, 23/09)*
 
+## Estructuras de copy que sí usamos
+
+*(Rescatadas del curso Referente Digital, 23/09/2026.)* Especificidad y
+tiempo ("en 3 meses", "unas 4 horas por semana"); objeción y respuesta; para
+quién es y para quién no; dos caminos (prepararse con tiempo o improvisar),
+con el bueno concreto; prueba con nombre, solo con citas verificables.
+
 ## Instagram, en resumen
 
 Retención en los primeros dos segundos (interrupción, tensión, payoff
-rápido, sin amenaza ni juicio); peso del día según cuánto se nota la venta;
+rápido, sin amenaza ni juicio; el gancho también escrito en pantalla, porque
+muchos ven sin sonido); peso del día según cuánto se nota la venta;
 un solo CTA por secuencia; contenido para seguir o comentar, historias para
-handraiser o DM; carrusel de 6 a 8 slides con portada de máximo 8 palabras;
+handraiser o DM; carrusel de 6 a 8 slides con portada de máximo 8 palabras, aprobando
+estructura, luego texto y luego diseño; secuencia de venta en cuatro pasos
+(hoy, lo que quiere, el puente, cómo lo trabajamos) y máximo tres historias
+de venta por semana; nunca un link directo, siempre la palabra por DM;
 palabras de los lead magnets: DOMINÓ y RETIRO (autodiagnóstico), PLAN,
 ENTUSIASMO, HABLAR, y PILARES pendiente. El detalle completo está en la
 página de Notion; esta copia lo resume porque Claude Code no escribe piezas

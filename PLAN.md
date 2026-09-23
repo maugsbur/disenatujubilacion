@@ -488,3 +488,21 @@ Claude Code, las skills y el equipo, así que pasa a ser la fuente.
       para el Contexto del proyecto de claude.ai
 
 **Desde acá, lo pendiente vive en Tareas DTJ**, no en este archivo.
+
+### Limpieza de Notion (2026-09-23 y 24)
+
+Auditoría completa de la página *Diseña tu Jubilación*: 28 acciones en Tareas
+DTJ (área nueva *Orden de Notion*). Marcel aprobó reorganizar y mejorar, sin
+tocar *Curso Referente Digital*; lo de datos sensibles sigue pendiente.
+
+- [x] Página raíz como índice por secciones y un solo *Archivo*, con 17
+      páginas movidas (nada se borró)
+- [x] Página nueva *🎬 Cómo creamos contenido*, con lo rescatado del curso
+      Referente Digital, los tips y Capacitación Marketing; ✍️ y 🎨 sumaron
+      reglas (palabras, secuencia de venta, estructuras de copy, video,
+      ilustraciones). `specs/voz.md` sincronizado
+- [x] Flujo de contenido al día (regla inmediata, ejecución pausada) y
+      frontera entre Tareas DTJ y Decisiones y notas
+- [x] Prompts médicos viejos marcados como obsoletos
+- [ ] Triage del Kanban antiguo: propuesta escrita en su tarea, espera
+      visto bueno
