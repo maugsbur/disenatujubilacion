@@ -481,7 +481,7 @@ Claude Code, las skills y el equipo, así que pasa a ser la fuente.
       peak, y **acción** en vez de decisión salvo en la Ficha de Decisiones
 - [x] Catálogo de hábitos como base de datos (36 filas, incluidas las
       descartadas)
-- [x] El checklist maestro y los pendientes de la memoria, como 55 tareas en
+- [x] El checklist maestro y los pendientes de la memoria, como 53 tareas en
       *Tareas DTJ*, con una columna nueva *Área*
 - [x] `specs/proyecto-claude.md` y `specs/indice-proyecto-claude.md`: el
       bloque para las Instrucciones, el texto para la Memoria y el índice
