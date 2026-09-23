@@ -106,7 +106,10 @@ exista, va como segundo hijo de `.hero-grid` y no hay que tocar CSS.
 ## Placas de Instagram
 
 Vienen de la página de Notion *🎨 Cómo diseñamos*, que se llena con las
-correcciones de Nicole en el visor de cada secuencia.
+correcciones de Nicole en el visor de cada secuencia. Igual que en
+[`voz.md`](voz.md), **una corrección se convierte en regla de inmediato**, y
+lo que se escribe es la intención detrás del cambio, no el cambio puntual. Si
+esa intención no es evidente, se pregunta antes de escribirla.
 
 ### Legibilidad, que manda sobre la estética
 

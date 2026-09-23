@@ -60,6 +60,16 @@ esencial, para no equivocarse sin abrirlo:
 Lo visual, incluidas las placas de Instagram, está en
 [`specs/diseno.md`](specs/diseno.md).
 
+**Cuando llegue una corrección de estilo, la regla se escribe de inmediato**,
+sin esperar a que se repita, y se escribe la intención detrás del cambio, no
+el cambio puntual. Si esa intención no es evidente, se pregunta antes: una
+regla mal generalizada se aplica donde no correspondía. Después se publica la
+página de Notion en el mismo commit.
+
+Las cuatro superficies donde vive todo esto (repo, Notion, y las instrucciones
+y la memoria del proyecto de claude.ai) y qué va en cada una:
+[`specs/proyecto-claude.md`](specs/proyecto-claude.md).
+
 ## Arquitectura
 
 ```

@@ -193,10 +193,35 @@ PDF.
 
 ## 7 · Cómo se cambia esta guía
 
-Una regla entra acá cuando **la misma corrección aparece dos veces**, o cuando
-el equipo la fija explícitamente. Siempre con fecha y con quién la pidió, para
-poder revertirla. Las correcciones sueltas van antes a *🗳️ Decisiones y notas*
-en Notion, como *Nota de estilo*.
+**Una corrección se convierte en regla de inmediato**, no cuando aparece dos
+veces. Esperar la repetición hacía que la misma observación hubiera que darla
+otra vez, y que el material en medio saliera con el error. *(Marcel,
+23/09/2026)*
+
+Lo que sí importa es **subir de la corrección a la intención**. Una regla no
+es "cambiar esta frase por esta otra": es el criterio que hace que la segunda
+sea mejor, escrito de forma que aplique a textos que todavía no existen.
+
+Los cuatro pasos, cada vez que llega una corrección:
+
+1. **Aplicar el cambio puntual** que se pidió.
+2. **Nombrar la intención detrás.** "Se juega" se cambió porque es una
+   metáfora que el público no usa, y de ahí sale la regla general sobre
+   metáforas, que también cubre "arrastra" y "ningún pilar grita".
+3. **Si la intención no es evidente, preguntarla** antes de escribir la regla.
+   Una regla mal generalizada hace más daño que no tenerla: se aplica a
+   lugares donde no correspondía. Ese fue el caso de la contraposición, que se
+   prohibió entera cuando en realidad sobraba solo como fórmula.
+4. **Escribirla acá con su ejemplo y su origen** (quién y cuándo), revisar si
+   alguna regla existente queda contradicha o sobrando, y publicar la página
+   de Notion.
+
+Si una regla resulta demasiado amplia, se acota con el caso que la desmintió,
+como se hizo con la contraposición. Eso es parte del mecanismo, no una falla.
+
+Las correcciones sueltas que todavía no son regla van a *🗳️ Decisiones y
+notas* en Notion, como *Nota de estilo*.
 
 Cada vez que este archivo cambia, se actualiza la página de Notion *✍️ Cómo
-escribimos*, que es lo que leen el equipo y las skills de Instagram.
+escribimos*, que es lo que leen el equipo, las skills de Instagram y el
+proyecto de claude.ai. Ver [`proyecto-claude.md`](proyecto-claude.md).

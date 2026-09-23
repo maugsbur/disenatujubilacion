@@ -447,3 +447,17 @@ Quedó así: **una fuente por tema, con una copia publicada en Notion.**
       contraposición y PILARES incorpora "puede vivirse como una pérdida o
       trabajarse como una reinvención"
 - [ ] Las guías completas siguen con el lenguaje viejo
+
+### Las reglas se escriben de inmediato (2026-09-23)
+
+Marcel pidió no esperar a que una corrección aparezca dos veces: la regla se
+escribe al primer caso, subiendo de la corrección a la intención, y si esa
+intención no está clara se pregunta antes de generalizar. Actualizado en
+`specs/voz.md` § 7, en `specs/diseno.md`, en `CLAUDE.md` y en las dos páginas
+de Notion.
+
+- [x] `specs/proyecto-claude.md`: qué va en el repo, en Notion, en las
+      Instrucciones y en la Memoria del proyecto de claude.ai, con el bloque
+      de instrucciones listo para pegar
+- [ ] **Marcel:** pegar ese bloque en las Instrucciones del proyecto y, si se
+      puede, conectar Notion al proyecto para que lea las guías en vivo
