@@ -504,5 +504,7 @@ tocar *Curso Referente Digital*; lo de datos sensibles sigue pendiente.
 - [x] Flujo de contenido al día (regla inmediata, ejecución pausada) y
       frontera entre Tareas DTJ y Decisiones y notas
 - [x] Prompts médicos viejos marcados como obsoletos
-- [ ] Triage del Kanban antiguo: propuesta escrita en su tarea, espera
-      visto bueno
+- [x] Triage del Kanban antiguo (24/09): 25 tareas nuevas en Tareas DTJ,
+      el resto cerrado en Done, reuniones a Q&A RD, vista quitada de la
+      raíz. Quedan 3 tarjetas para conversar (Destilar el método,
+      Entregables, Prep primeros videos)
