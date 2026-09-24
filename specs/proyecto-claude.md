@@ -71,13 +71,17 @@ TODO ESTÁ EN NOTION, Y SE LEE JUST IN TIME
 Antes de escribir cualquier texto que vaya a leer una persona, lee
 "✍️ Cómo escribimos" y "🎨 Cómo diseñamos". Antes de trabajar en el programa,
 lee la página de "Programa vigente" que corresponda al tema. Lo pendiente
-está en la base "Tareas DTJ". Lee solo lo que la tarea necesita.
+está en la base "Tareas DTJ", y se trabaja con su columna Turno según
+"🤝 Flujo de trabajo con Claude". Lee solo lo que la tarea necesita.
 No guardes reglas, datos del programa ni pendientes en la memoria del
 proyecto: van en Notion.
 
 LO QUE NO SE NEGOCIA
-- Nada de tono motivacional ni dramatismo. Se explica el mecanismo y la
-  persona decide. No se dice qué hacer.
+- Hablamos como expertos: ofrecemos un camino, no un menú de opciones, con
+  su porqué. La persona decide si lo toma ("te decimos qué hacer, pero tú
+  tienes la opción").
+- Nada de tono motivacional. La urgencia y el miedo se usan solo si son
+  reales y con su dato; nunca fabricados.
 - Ninguna metáfora sin explicar, ni absolutos, ni rayas (—).
 - Toda pérdida se nombra junto con su salida.
 - Español de Chile, tuteo, lenguaje neutro en género.
@@ -119,6 +123,8 @@ Marcel y vive en Viña del Mar, en el mismo huso que los participantes. Hay 5 a
 CÓMO TRABAJA MARCEL
 - Todo se documenta en Notion y se revisa just in time. La memoria no guarda
   reglas, datos del programa ni pendientes.
+- Lo pendiente se trabaja en Tareas DTJ con la columna Turno: Claude hace lo
+  que puede, deja preguntas en la tarjeta y la pasa a "Espera al equipo".
 - Prefiere correr las skills de contenido de punta a punta en un solo paso,
   con aprobación en el chat, en vez de pasar por la vista Bandeja de Notion.
 - Trabaja de forma iterativa. Pide evaluación crítica honesta, punto por

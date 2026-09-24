@@ -1,0 +1,219 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300;400;500;600;700&display=swap"><style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Poppins', sans-serif; color: #1A2421; background: #F8F9FA;
+         -webkit-print-color-adjust: exact; }
+  .page { width: 1024px; height: 1448.23px; padding: 97.52px 87.77px; position: relative;
+          page-break-after: always; overflow: hidden; }
+  .page:last-child { page-break-after: auto; }
+
+  .cover { background: #0E3A2F; color: #F8F9FA; padding: 0; width: 1033.75px; height: 1462.86px; }
+  .cover-inner { padding: 185.3px 97.52px; height: 100%; position: relative; }
+  .cover .eyebrow { font-size: 18.06px; letter-spacing: 4.13px; text-transform: uppercase;
+                    color: #E65F2B; font-weight: 500; margin-bottom: 117.03px; }
+  .cover h1 { font-family: 'Lora', serif; font-size: 68.81px; line-height: 1.1;
+              font-weight: 700; color: #F6E7B0; margin-bottom: 43.89px; }
+  .cover .sub { font-size: 22.36px; line-height: 1.6; color: #DCE2E2;
+                max-width: 594.9px; font-weight: 300; }
+  .cover .footer { position: absolute; bottom: 117.03px; left: 97.52px; right: 97.52px;
+                   border-top: 1.29px solid #4F6A53; padding-top: 29.26px;
+                   font-size: 16.34px; letter-spacing: 2.06px; text-transform: uppercase;
+                   color: #BCBC90; }
+  .draft { position: absolute; top: 68.27px; right: 97.52px; background: #E65F2B; color: #F8F9FA;
+           font-size: 13.76px; letter-spacing: 2.58px; text-transform: uppercase; font-weight: 600;
+           padding: 9.75px 19.5px; }
+
+  h2 { font-family: 'Lora', serif; font-size: 43.01px; line-height: 1.2; color: #0E3A2F;
+       font-weight: 700; margin-bottom: 34.13px; }
+  h3 { font-size: 21.5px; font-weight: 600; color: #0E3A2F; margin-bottom: 14.63px; }
+  p { font-size: 19.78px; line-height: 1.65; margin-bottom: 24.38px; font-weight: 300; }
+  p strong { font-weight: 600; }
+  .hl { font-family: 'Lora', serif; font-size: 24.08px; line-height: 1.5; font-weight: 700;
+        color: #0E3A2F; margin: 34.13px 0; padding-left: 29.26px; border-left: 3.22px solid #E65F2B; }
+  .close .hl { color: #F6E7B0; }
+  a { color: inherit; text-decoration: none; }
+  .lead { font-size: 22.36px; line-height: 1.6; font-weight: 300; }
+  .kicker { font-size: 15.48px; letter-spacing: 3.35px; text-transform: uppercase;
+            color: #E65F2B; font-weight: 500; margin-bottom: 19.5px; }
+  .rule { height: 2.58px; background: #E65F2B; width: 126.78px; margin: 0 0 34.13px 0; }
+
+  .bignum { font-family: 'Lora', serif; font-size: 79.13px; font-weight: 700;
+            color: #F6E7B0; line-height: 1; margin-bottom: 9.75px; }
+  .numhead { font-size: 15.48px; letter-spacing: 3.35px; text-transform: uppercase;
+             color: #E65F2B; font-weight: 500; margin-bottom: 14.63px; }
+
+  .field { margin-bottom: 41.45px; }
+  .field .fl { font-size: 14.62px; letter-spacing: 2.58px; text-transform: uppercase;
+               color: #77908A; font-weight: 500; margin-bottom: 12.19px; }
+  .field .fv { font-size: 18.92px; line-height: 1.6; font-weight: 300; }
+
+  .action { background: #F6E7B0; padding: 34.13px 34.13px; margin: 39.01px 0; }
+  .action .al { font-size: 14.62px; letter-spacing: 2.58px; text-transform: uppercase;
+                color: #0E3A2F; font-weight: 600; margin-bottom: 12.19px; }
+  .action .av { font-size: 19.78px; line-height: 1.55; font-weight: 500; color: #1A2421; }
+
+  .done { border: 1.93px solid #0E3A2F; padding: 29.26px; margin-top: 34.13px; }
+  .done .dl { font-size: 14.62px; letter-spacing: 2.58px; text-transform: uppercase;
+              color: #77908A; font-weight: 500; margin-bottom: 9.75px; }
+  .done .dv { font-size: 18.92px; line-height: 1.55; font-weight: 300; }
+  .chk { display: inline-block; width: 29.26px; height: 29.26px; border: 1.93px solid #0E3A2F;
+         margin-right: 14.63px; vertical-align: -4.88px; }
+
+  .note { background: #EFF1F0; border-left: 3.22px solid #0E3A2F; padding: 24.38px 29.26px; margin-top: 29.26px; }
+  .note p { font-size: 18.06px; line-height: 1.55; margin-bottom: 0; font-weight: 300; }
+  .warn { background: #F6E7B0; border-left: 3.22px solid #E65F2B; padding: 24.38px 29.26px; margin: 29.26px 0; }
+  .warn p { font-size: 18.06px; line-height: 1.55; margin-bottom: 0; font-weight: 400; }
+
+  .item { margin-bottom: 34.13px; padding-left: 29.26px; border-left: 3.22px solid #F6E7B0; }
+  .item h3 { font-size: 19.78px; margin-bottom: 9.75px; }
+  .item p { font-size: 18.92px; line-height: 1.58; margin-bottom: 0; }
+  .item .qq { font-family: 'Lora', serif; font-style: italic; font-size: 18.92px;
+              color: #0E3A2F; margin-top: 12.19px; display: block; }
+
+  .rules { counter-reset: r; }
+  .rule-i { margin-bottom: 31.7px; }
+  .rule-i .rn { font-family: 'Lora', serif; font-size: 25.8px; font-weight: 700;
+                color: #E65F2B; display: inline-block; width: 43.89px; }
+  .rule-i .rt { font-size: 19.78px; font-weight: 600; color: #0E3A2F; }
+  .rule-i .rd { font-size: 18.92px; line-height: 1.58; font-weight: 300; margin-top: 9.75px;
+                padding-left: 43.89px; }
+
+  .formula { background: #0E3A2F; color: #F6E7B0; padding: 34.13px; margin: 29.26px 0; text-align: center;
+             font-family: 'Lora', serif; font-size: 22.36px; line-height: 1.7; }
+  .example { border: 1.29px solid #D8DCDA; padding: 24.38px 29.26px; margin-bottom: 21.94px; }
+  .example .el { font-size: 14.62px; letter-spacing: 2.32px; text-transform: uppercase;
+                 color: #E65F2B; font-weight: 500; margin-bottom: 12.19px; }
+  .example p { font-size: 18.06px; line-height: 1.6; margin-bottom: 0; font-style: italic; }
+
+  .blank { border-bottom: 1.29px solid #B9C1BD; height: 43.89px; margin-bottom: 9.75px; }
+  .blank.tall { height: 78.02px; }
+
+  .close { background: #0E3A2F; color: #F8F9FA; width: 1033.75px; height: 1462.86px; }
+  .close h2 { color: #F6E7B0; font-size: 49.89px; }
+  .close p { color: #E1E6E6; }
+  .close .principle { font-family: 'Lora', serif; font-size: 34.4px; line-height: 1.35;
+                      color: #F6E7B0; font-style: italic; margin: 43.89px 0;
+                      padding-left: 34.13px; border-left: 3.22px solid #E65F2B; }
+  .cta { background: #E65F2B; color: #F8F9FA; padding: 34.13px; margin-top: 39.01px; }
+  .cta .ct { font-size: 15.48px; letter-spacing: 3.1px; text-transform: uppercase;
+             font-weight: 600; margin-bottom: 14.63px; }
+  .cta .cb { font-size: 20.64px; font-weight: 400; line-height: 1.55; margin-bottom: 19.5px; }
+  .cta .cw { font-size: 17.2px; font-weight: 400; margin-bottom: 9.75px; color: #F7EDE9; }
+  .cta .cl { font-family: 'Lora', serif; font-size: 22.36px; font-weight: 700; word-break: break-all; }
+  .cta .cl a { color: #F8F9FA; text-decoration: underline; }
+  a { color: #0E3A2F; }
+
+  .pgnum { position: absolute; bottom: 58.51px; right: 87.77px; font-size: 14.62px;
+           color: #A6B6B3; letter-spacing: 1.29px; }
+  .close .pgnum { color: #6B7F63; }
+
+  .top { background: #0E3A2F; color: #F8F9FA; padding: 39.01px 78.02px 29.26px; }
+  .top .eyebrow { font-size: 13.76px; letter-spacing: 3.87px; text-transform: uppercase;
+                  color: #E65F2B; font-weight: 500; margin-bottom: 12.19px; }
+  .top h1 { font-family: 'Lora', serif; font-size: 32.68px; line-height: 1.15;
+            font-weight: 700; color: #F6E7B0; margin-bottom: 14.63px; }
+  .top .sub { font-size: 17.2px; line-height: 1.5; color: #DCE2E2; font-weight: 300; }
+  .body { padding: 24.38px 78.02px 0; }
+  .sheet { padding: 0; }
+
+  .card { border: 1.55px solid #0E3A2F; padding: 14.63px 24.38px 7.31px; margin-bottom: 17.07px; }
+  .card .ch { font-size: 13.76px; letter-spacing: 2.58px; text-transform: uppercase;
+              color: #E65F2B; font-weight: 600; margin-bottom: 7.31px; }
+  /* wkhtmltopdf usa un WebKit viejo sin flexbox: las filas van como tabla. */
+  .row { display: table; width: 100%; table-layout: fixed; }
+  .row .f { display: table-cell; vertical-align: top; }
+  .row .f + .f { padding-left: 29.26px; }
+  .row .f.narrow { width: 146.29px; }
+  .f { margin-bottom: 4.88px; }
+  .fl { font-size: 12.9px; letter-spacing: 2.06px; text-transform: uppercase;
+        color: #3D6058; font-weight: 500; }
+  .ln { border-bottom: 1.29px solid #B9C1BD; height: 29.26px; }
+  .opts { font-size: 15.48px; color: #1A2421; font-weight: 300; padding-top: 7.31px; height: 29.26px;
+          border-bottom: 1.29px solid #B9C1BD; }
+  .opts .chk { width: 17.55px; height: 17.55px; margin: 0 7.31px 0 14.63px; vertical-align: -2.93px; border-width: 1.55px; }
+  .opts .chk:first-child { margin-left: 0; }
+
+  .ex .val { font-family: 'Lora', serif; font-style: italic; font-size: 16.34px; color: #0E3A2F;
+             line-height: 1.4; border-bottom: 1.29px solid #D8DCDA; padding: 4.88px 0 7.31px; }
+  h2.s { font-size: 25.8px; margin: 0 0 14.63px; }
+  .howto p { font-size: 17.2px; line-height: 1.5; margin-bottom: 12.19px; }
+  .tip { font-size: 16.34px; line-height: 1.45; font-weight: 300; margin-bottom: 8.78px;
+         padding-left: 24.38px; border-left: 2.58px solid #F6E7B0; }
+  .tip strong { font-weight: 600; color: #0E3A2F; }
+  table.rev { width: 100%; border-collapse: collapse; margin-top: 9.75px; }
+  table.rev th { font-size: 12.9px; letter-spacing: 2.06px; text-transform: uppercase; color: #3D6058;
+                 font-weight: 500; text-align: left; padding: 7.31px 9.75px; border-bottom: 1.55px solid #0E3A2F; }
+  table.rev td { font-size: 16.34px; font-weight: 300; padding: 10.73px 9.75px; border-bottom: 1.29px solid #D8DCDA;
+                 vertical-align: top; }
+  .foot { position: absolute; bottom: 43.89px; left: 78.02px; right: 78.02px; font-size: 13.76px;
+          color: #77908A; letter-spacing: 1.29px; border-top: 1.29px solid #D8DCDA; padding-top: 12.19px; }
+</style></head><body>
+<div class="page sheet">
+  <div class="top">
+    <div class="eyebrow">Diseña tu Jubilación · Programa de 3 meses</div>
+    <h1>Tu Ficha de Decisiones Intencionales</h1>
+    <div class="sub">Lo que eliges y también lo que dejas fuera, con tu razón. Escríbela tú, el mismo día, en tus palabras.</div>
+  </div>
+  <div class="body">
+    
+  <div class="card">
+    <div class="ch">Decisión 1</div>
+    <div class="row"><div class="f narrow"><div class="fl">Fecha</div><div class="ln"></div></div><div class="f "><div class="fl">Momento: rutas · hábitos · ponerse al día · batallas · escenarios</div><div class="ln"></div></div></div>
+    <div class="row"><div class="f "><div class="fl">Qué elegí</div><div class="ln"></div><div class="ln"></div></div><div class="f "><div class="fl">Qué dejé fuera</div><div class="ln"></div><div class="ln"></div></div></div>
+    <div class="f "><div class="fl">Por qué</div><div class="ln"></div></div>
+    <div class="f"><div class="fl">Cuándo</div><div class="opts"><span class="chk"></span>Ahora<span class="chk"></span>Después: cuando / fecha ______________<span class="chk"></span>No</div></div>
+    <div class="row"><div class="f "><div class="fl">Primer paso (qué y qué día)</div><div class="ln"></div><div class="ln"></div></div><div class="f "><div class="fl">Cómo se ve hecho</div><div class="ln"></div><div class="ln"></div></div></div>
+  </div>
+    
+  <div class="card">
+    <div class="ch">Decisión 2</div>
+    <div class="row"><div class="f narrow"><div class="fl">Fecha</div><div class="ln"></div></div><div class="f "><div class="fl">Momento: rutas · hábitos · ponerse al día · batallas · escenarios</div><div class="ln"></div></div></div>
+    <div class="row"><div class="f "><div class="fl">Qué elegí</div><div class="ln"></div><div class="ln"></div></div><div class="f "><div class="fl">Qué dejé fuera</div><div class="ln"></div><div class="ln"></div></div></div>
+    <div class="f "><div class="fl">Por qué</div><div class="ln"></div></div>
+    <div class="f"><div class="fl">Cuándo</div><div class="opts"><span class="chk"></span>Ahora<span class="chk"></span>Después: cuando / fecha ______________<span class="chk"></span>No</div></div>
+    <div class="row"><div class="f "><div class="fl">Primer paso (qué y qué día)</div><div class="ln"></div><div class="ln"></div></div><div class="f "><div class="fl">Cómo se ve hecho</div><div class="ln"></div><div class="ln"></div></div></div>
+  </div>
+    
+  <div class="card">
+    <div class="ch">Decisión 3</div>
+    <div class="row"><div class="f narrow"><div class="fl">Fecha</div><div class="ln"></div></div><div class="f "><div class="fl">Momento: rutas · hábitos · ponerse al día · batallas · escenarios</div><div class="ln"></div></div></div>
+    <div class="row"><div class="f "><div class="fl">Qué elegí</div><div class="ln"></div><div class="ln"></div></div><div class="f "><div class="fl">Qué dejé fuera</div><div class="ln"></div><div class="ln"></div></div></div>
+    <div class="f "><div class="fl">Por qué</div><div class="ln"></div></div>
+    <div class="f"><div class="fl">Cuándo</div><div class="opts"><span class="chk"></span>Ahora<span class="chk"></span>Después: cuando / fecha ______________<span class="chk"></span>No</div></div>
+    <div class="row"><div class="f "><div class="fl">Primer paso (qué y qué día)</div><div class="ln"></div><div class="ln"></div></div><div class="f "><div class="fl">Cómo se ve hecho</div><div class="ln"></div><div class="ln"></div></div></div>
+  </div>
+  </div>
+</div>
+<div class="page sheet">
+  <div class="body" style="padding-top: 68.27px;">
+    <div class="kicker">Cómo se llena</div>
+    <h2 class="s">Una ficha por decisión</h2>
+    <div class="howto">
+      <p>Durante estos 3 meses vas a elegir varias veces: por dónde empezar, qué hábitos instalar,
+      qué batallas dar y cuáles no. Decidir no hacer algo, o hacerlo más adelante, es tan válido
+      como hacerlo ahora. Lo único que buscamos evitar es decidir por inercia.</p>
+    </div>
+    <div class="tip"><strong>Qué elegí:</strong> una frase concreta. "Instalo sueño y movimiento", no "me voy a cuidar más".</div>
+    <div class="tip"><strong>Qué dejé fuera:</strong> casi siempre hay algo. Pregúntate qué no vas a hacer por hacer esto.</div>
+    <div class="tip"><strong>Después:</strong> necesita un criterio, "cuando pase tal cosa" o una fecha. Sin eso, es inercia con otro nombre.</div>
+    <div class="tip"><strong>Primer paso:</strong> lo que haces esta semana, con día. Si no lo puedes nombrar, la acción todavía es muy grande.</div>
+
+    <div class="card ex" style="margin-top: 24.38px;">
+      <div class="ch">Ejemplo (ficticio)</div>
+      <div class="row"><div class="f narrow"><div class="fl">Fecha</div><div class="val">14/10</div></div><div class="f "><div class="fl">Momento</div><div class="val">Rutas</div></div></div>
+      <div class="row"><div class="f "><div class="fl">Qué elegí</div><div class="val">Empiezo por Vínculos</div></div><div class="f "><div class="fl">Qué dejé fuera</div><div class="val">Cuerpo queda segunda, aunque mi panel la marcaba primero</div></div></div>
+      <div class="f "><div class="fl">Por qué</div><div class="val">Desde que dejé la empresa no veo a nadie entre semana, y eso me pesa más que el colesterol</div></div>
+      <div class="f "><div class="fl">Cuándo</div><div class="val">Ahora</div></div>
+      <div class="row"><div class="f "><div class="fl">Primer paso</div><div class="val">El jueves le escribo a Jorge para almorzar la próxima semana</div></div><div class="f "><div class="fl">Cómo se ve hecho</div><div class="val">Un encuentro presencial a la semana con alguien fuera de mi familia</div></div></div>
+    </div>
+
+    <div class="kicker" style="margin-top: 29.26px;">Dos veces vas a volver a mirarla</div>
+    <p style="font-size: 17.2px; line-height: 1.5; margin-bottom: 4.88px;">La pregunta es siempre la misma: <strong>¿sigue siendo tu decisión?</strong></p>
+    <table class="rev">
+      <tr><th>Revisión</th><th>Qué se revisa</th><th>Respuesta</th><th>Qué sigue</th></tr>
+      <tr><td>Sesión 3</td><td>Rutas y hábitos</td><td>Sí · La cambio · No sé · Ya no aplica</td><td>Una línea</td></tr>
+      <tr><td>Cierre</td><td>Todas</td><td>Sí · La cambio · No sé · Ya no aplica</td><td>Una línea y una fecha</td></tr>
+    </table>
+  </div>
+  <div class="foot">Con intención y no por inercia. · Diseña tu Jubilación</div>
+</div></body></html>

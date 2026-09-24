@@ -38,8 +38,9 @@ Lo pendiente del sitio y de las guías también va en **Tareas DTJ**, no en
 
 - **Todo en español**, incluidos código, comentarios y documentación. Nicole
   y Margarita leen estos documentos y no son desarrolladoras.
-- Principio operativo: *"Con intención y no por inercia."* No decimos qué
-  hacer; mostramos dónde está la persona con datos y ella decide.
+- Principio operativo: *"Con intención y no por inercia."* Hablamos como
+  expertos: le decimos a la persona qué hacer, con su porqué, como un camino
+  y no un menú de opciones. Tomarlo o no es su decisión *(24/09/2026)*.
 - Se señala toda afirmación sin respaldo, incluidas las propias.
 
 ### Cómo se escribe el copy
@@ -56,8 +57,9 @@ Lo esencial, para no equivocarse sin abrirla:
 
 - Se le habla a quien **todavía no jubila**: presente y futuro, nunca pasado.
 - **Ninguna metáfora sin explicar**, **sin absolutos** y **sin rayas (—)**.
-- **Ni tono motivacional ni dramatismo.** Toda pérdida se nombra junto con su
-  salida. No se dice qué hacer.
+- **Ni tono motivacional ni urgencia fabricada.** La urgencia y el miedo se
+  usan solo si son reales, con su dato. Toda pérdida se nombra junto con su
+  salida.
 - Datos fijos: **3 meses** (nunca "13 semanas", ni interna ni externamente),
   **unas 4 horas por semana** en total, **llamada de evaluación**, **Cuatro
   Desgastes**, **acción** para lo que se ejecuta una vez, y quienes dan
