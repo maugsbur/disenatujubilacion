@@ -343,6 +343,7 @@ body.autodiag { padding-bottom: 4.5rem; } /* deja aire bajo la barra de progreso
   margin-bottom: var(--space-4);
 }
 .adg-domino-active h3 { font-size: 1.15rem; margin-bottom: var(--space-2); }
+.adg-domino-item + .adg-domino-item { margin-top: var(--space-4); }
 .adg-domino-active ul { margin: 0; padding-left: 1.1rem; }
 .adg-domino-active li { margin-bottom: var(--space-2); font-size: 0.98rem; }
 .adg-domino-active .arrow { color: var(--dtj-amber); font-weight: 600; }

@@ -229,19 +229,49 @@
     container.innerHTML = html;
   }
 
-  function renderDomino(minKey) {
-    var el = document.getElementById('dominoActive');
-    if (!el) return;
-    var d = DOMINO[minKey];
-    if (!d) return;
-    var items = d.items.map(function (t) { return '<li><span class="arrow">→</span> ' + t + '</li>'; }).join('');
-    el.innerHTML = '<h3>' + d.title + '</h3><ul>' + items + '</ul>';
+  // Todos los pilares en zona de atención, del más bajo al más alto. El más
+  // bajo va siempre primero, esté o no en atención, porque es el que guía el
+  // CTA y el resumen para Margarita.
+  function pillarsToShow(totals, minKey) {
+    var enAtencion = PILLARS
+      .filter(function (p) { return p.key !== minKey && bandFor(totals[p.key]).key === 'atencion'; })
+      .sort(function (a, b) { return totals[a.key] - totals[b.key]; })
+      .map(function (p) { return p.key; });
+    return [minKey].concat(enAtencion);
   }
 
-  function renderLowestLine(minKey, totals) {
+  function renderDomino(keys) {
+    var el = document.getElementById('dominoActive');
+    if (!el) return;
+    var html = '';
+    keys.forEach(function (key, i) {
+      var d = DOMINO[key];
+      if (!d) return;
+      // El primero es el más bajo; los demás no lo son, así que su título
+      // dice que también están en atención en vez de "si tu más bajo es".
+      var title = i === 0 ? d.title : d.title.replace('Si tu más bajo es ', '') + ', también en zona de atención';
+      var items = d.items.map(function (t) { return '<li><span class="arrow">→</span> ' + t + '</li>'; }).join('');
+      html += '<div class="adg-domino-item"><h3>' + title + '</h3><ul>' + items + '</ul></div>';
+    });
+    el.innerHTML = html;
+    var intro = document.getElementById('dominoIntro');
+    if (intro && keys.length > 1) {
+      intro.textContent = 'Por eso es donde una sola acción genera más impacto. Tienes ' + keys.length +
+        ' pilares en zona de atención; estos son, del más bajo al más alto:';
+    }
+  }
+
+  function renderLowestLine(minKey, totals, keys) {
     var el = document.getElementById('lowestLine');
     if (!el) return;
-    el.textContent = 'Tu pilar más bajo es ' + pillarName(minKey) + ', con ' + totals[minKey] + ' de 25.';
+    var text = 'Tu pilar más bajo es ' + pillarName(minKey) + ', con ' + totals[minKey] + ' de 25.';
+    var otros = keys.slice(1).map(function (k) { return pillarName(k) + ' (' + totals[k] + ')'; });
+    if (otros.length === 1) {
+      text += ' También está en zona de atención ' + otros[0] + '.';
+    } else if (otros.length > 1) {
+      text += ' También están en zona de atención ' + otros.slice(0, -1).join(', ') + ' y ' + otros[otros.length - 1] + '.';
+    }
+    el.textContent = text;
   }
 
   // Resumen legible para el correo de reserva de Calendly:
@@ -250,7 +280,12 @@
     var partes = PILLARS.map(function (p) {
       return p.name + ' ' + totals[p.key] + '/25';
     });
-    return partes.join(' · ') + '. Pilar más bajo: ' + pillarName(minKey);
+    var enAtencion = pillarsToShow(totals, minKey)
+      .filter(function (k) { return bandFor(totals[k]).key === 'atencion'; })
+      .map(pillarName);
+    var resumen = partes.join(' · ') + '. Pilar más bajo: ' + pillarName(minKey);
+    if (enAtencion.length > 1) resumen += '. En zona de atención: ' + enAtencion.join(', ');
+    return resumen;
   }
 
   function setCalendlyLink(totals, minKey, email) {
@@ -276,9 +311,10 @@
 
   function renderResult(totals, email) {
     var minKey = lowestPillar(totals);
-    renderLowestLine(minKey, totals);
+    var keys = pillarsToShow(totals, minKey);
+    renderLowestLine(minKey, totals, keys);
     renderBars(totals);
-    renderDomino(minKey);
+    renderDomino(keys);
     renderCtaBody(minKey);
     setCalendlyLink(totals, minKey, email);
   }
