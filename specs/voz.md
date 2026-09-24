@@ -45,6 +45,8 @@ autoayuda.
 - **No hay que convencerlo del problema otra vez.** Ya vio la pieza que lo
   trajo. El material entrega el marco completo rápido y deja clara la
   conversación que sigue.
+- **Espera que le hablen como experto.** Tiene claro su problema y quiere
+  saber qué hacer. *(Marcel, 24/09/2026)*
 - **Castiga el tono motivacional y la exageración.** Nada de "tú puedes",
   "atrévete" ni "es tu momento", ni adjetivos de peso como "tragedia" en
   lugar del dato. Lo que sí lo mueve es ver, con datos, lo que está en
@@ -53,8 +55,12 @@ autoayuda.
 ## Principios
 
 - **Con intención y no por inercia.** Es el principio operativo y cierra el
-  material. No decimos qué hacer: mostramos dónde está la persona y ella
-  decide.
+  material.
+- **La persona define el problema; nosotros decimos qué hacer; ella lo
+  hace.** Hablamos como expertos, con el porqué, y la accountability es de
+  la persona. En salud y previsión, lo que se dice es qué conversar con el
+  médico o el asesor. *(Marcel, 24/09/2026; reemplaza "No decimos qué
+  hacer".)*
 - **El dato antes que el adjetivo.** Frases cortas, una idea por bloque.
 - **Se muestra lo que está en juego, con la realidad.** El miedo y la
   urgencia se usan cuando son reales: un costo documentado, un plazo que
@@ -98,7 +104,8 @@ autoayuda.
 | **Se nombra el mecanismo, no solo el efecto** | Este público compra mecanismos | Marcel, 22/09 |
 | **Siempre acción, no decisión.** Lo que se ejecuta una vez es una acción, y "cómo se ve hecho" es parte del entregable. Excepción: la *Ficha de Decisiones Intencionales* | Decidir sin ejecutar es el modo de fallar de este público | Marcel, 23/09 |
 | **Los adverbios cargan el principio** ("diseñado intencionalmente") | Ata con "con intención y no por inercia" | Marcel, 22/09 |
-| **No se dice qué hacer** ("conviene tener", no "hay que tener") | Quien decide es la persona | Marcel, 22/09 |
+| **Se dice qué hacer, con su porqué, y la acción queda en la persona.** "El primer paso es…"; no se le decide el objetivo ni se la reta | Este público espera criterio de experto | Marcel, 24/09 |
+| **El tono acompaña la emoción de la pieza**; la voz no cambia | Un tono fijo aplana piezas distintas | Experto RD y Marcel, 24/09 |
 | **Lenguaje neutro en género** al hablarle al lector | La mitad del público son mujeres | Equipo |
 
 ## Palabras
