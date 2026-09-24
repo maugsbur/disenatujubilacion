@@ -8,7 +8,7 @@ CLAUDE.md § Cómo se escribe el copy). Existe por dos razones: que Claude Code
 pueda escribir aunque el conector de Notion falle, y que git guarde el
 historial de cómo cambiaron las reglas.
 
-Última sincronización: 2026-09-24.
+Última sincronización: 2026-09-24 (tarde).
 -->
 
 # Cómo escribimos (copia de Notion)
@@ -45,8 +45,10 @@ autoayuda.
 - **No hay que convencerlo del problema otra vez.** Ya vio la pieza que lo
   trajo. El material entrega el marco completo rápido y deja clara la
   conversación que sigue.
-- **Castiga el tono motivacional y el dramatismo.** Nada de "tú puedes",
-  "atrévete" ni "es tu momento", ni palabras de peso como "tragedia".
+- **Castiga el tono motivacional y la exageración.** Nada de "tú puedes",
+  "atrévete" ni "es tu momento", ni adjetivos de peso como "tragedia" en
+  lugar del dato. Lo que sí lo mueve es ver, con datos, lo que está en
+  juego. *(Marcel, 24/09/2026)*
 
 ## Principios
 
@@ -54,11 +56,16 @@ autoayuda.
   material. No decimos qué hacer: mostramos dónde está la persona y ella
   decide.
 - **El dato antes que el adjetivo.** Frases cortas, una idea por bloque.
-- **Sin culpa ni alarmismo.** Se puede nombrar un costo real; no se reta ni
-  se dramatiza. Si un gancho solo funciona asustando, es un atajo.
+- **Se muestra lo que está en juego, con la realidad.** El miedo y la
+  urgencia se usan cuando son reales: un costo documentado, un plazo que
+  existe, lo que les pasó a personas concretas. Es lo que sube el nivel de
+  conciencia. No se inventa ni se infla el riesgo, no se reta a la persona y
+  cada costo tiene su fuente en Evidencia o Extractos. *(Marcel, 24/09/2026;
+  reemplaza a "Sin culpa ni alarmismo".)*
 - **Toda pérdida se nombra junto con su salida.** "Puede vivirse como una
   pérdida o trabajarse como una reinvención, y la diferencia la hace el
-  tiempo con que se prepare". *(Marcel, 22 y 23/09/2026)*
+  tiempo con que se prepare". El miedo sin salida paraliza; la salida puede
+  llegar al final, pero llega. *(Marcel, 22 y 23/09/2026)*
 - **Se señala toda afirmación sin respaldo, incluidas las propias.** Sin
   testimonio, se cuenta como recorrido del programa.
 - **Español de Chile, tuteo.** Nunca voseo.
@@ -121,9 +128,10 @@ La cantidad de sesiones no se publica: se conversa en la llamada.
 - **Testimonios: solo citas verificables** en *Entrevistas*, *✂️ Extractos*
   o *Testimonios*. En Extractos, "Requiere permiso puntual" y "No publicable"
   no se usan.
-- **Sin escasez ni urgencia fabricadas** ("cupos limitados", "solo hoy",
-  descuento por decidir en la llamada). Un límite real se dice con el dato.
-  *(Propuesta de Claude, 23/09, pendiente de validar.)*
+- **Urgencia real sí, fabricada no.** La urgencia que existe se dice con su
+  dato (prepararse toma tiempo, un grupo empieza en una fecha). No se
+  inventan "cupos limitados", "solo hoy" ni descuentos por decidir en la
+  llamada. *(Marcel, 24/09/2026)*
 - **Citas públicas y datos de investigación son distintos.** Una cita
   publicada se puede pulir sin cambiar el sentido; un verbatim de
   investigación no se toca nunca. *(Marcel, 23/09)*
@@ -133,7 +141,11 @@ La cantidad de sesiones no se publica: se conversa en la llamada.
 *(Rescatadas del curso Referente Digital, 23/09/2026.)* Especificidad y
 tiempo ("en 3 meses", "unas 4 horas por semana"); objeción y respuesta; para
 quién es y para quién no; dos caminos (prepararse con tiempo o improvisar),
-con el bueno concreto; prueba con nombre, solo con citas verificables.
+con el bueno concreto; prueba con nombre, solo con citas verificables;
+derribar una creencia (pregunta real, creencia, contracara con su costo,
+revelación rápida, salida); nutrir en cinco pasos (problema, estudio, tres
+acciones, por qué prepararse, CTA "¿te pasó? ¿conoces a alguien?").
+Detalle en Notion.
 
 ## Instagram, en resumen
 

@@ -14,8 +14,11 @@ contradice a Notion, manda Notion.
 - **🎬 Cómo creamos contenido**: de dónde salen las ideas, niveles de
   conciencia, filtro antes de producir, grabación y correo
   https://app.notion.com/p/3e423cb6e7af8115b736d70bf97608c1
-- **🔁 Flujo de contenido con Claude**: el circuito de aprobación y las
-  skills (la ejecución automática está pausada)
+- **🤝 Flujo de trabajo con Claude**: el flujo principal. Todo lo pendiente
+  en Tareas DTJ, con la columna Turno (Claude, Espera al equipo, Equipo)
+  https://app.notion.com/p/3e523cb6e7af81b688daf2553a0f3ed3
+- **🔁 Flujo de contenido con Claude (deprecado)**: referencia del circuito
+  de ideas, mapeo de días y recurrencia temática
   https://app.notion.com/p/3d123cb6e7af81da9b53ee254469225e
 
 ## El programa
@@ -38,7 +41,8 @@ contradice a Notion, manda Notion.
 
 ## Lo pendiente
 
-- **Tareas DTJ**: el kanban de todo lo que falta, filtrable por área
+- **Tareas DTJ**: todo lo que falta; la vista "Turno de Claude" es la cola
+  de Claude
   https://app.notion.com/p/3e423cb6e7af80b98bdac6f7bd4564b0
 
 ## Material y fuentes
