@@ -42,7 +42,7 @@ contradice a Notion, manda Notion.
 ## Lo pendiente
 
 - **Tareas DTJ**: todo lo que falta; la vista "Turno de Claude" es la cola
-  de Claude
+  de Claude, y "Más adelante" guarda lo que no se hará en el corto plazo
   https://app.notion.com/p/3e423cb6e7af80b98bdac6f7bd4564b0
 
 ## Material y fuentes
@@ -52,7 +52,8 @@ contradice a Notion, manda Notion.
 - ✂️ Extractos: https://app.notion.com/p/af642626993c43818c6b6da43426691d
 - Testimonios: https://app.notion.com/p/b3323cb6e7af836a978281b6f56df324
 - 🔬 Evidencia: https://app.notion.com/p/8f5a11e62f9943fabae71a650e71d3e6
-- 🗳️ Decisiones y notas (solo el circuito de Instagram): https://app.notion.com/p/e58a1be01a7c4de8b91387030426bcd7
+- 🗳️ Decisiones y notas (congelada desde el 24/09/2026; solo consulta): https://app.notion.com/p/e58a1be01a7c4de8b91387030426bcd7
+- 🧰 Skills de Claude (las skills de Instagram, como skills de Notion): https://app.notion.com/p/3e523cb6e7af81b78e4ee8f19d686d79
 - 🗄️ Archivo (nada de ahí es vigente): https://app.notion.com/p/ab823cb6e7af8289b60d0177199e7dca
 - 📓 Bitácora de Claude: https://app.notion.com/p/3d423cb6e7af812e8be5c693db97deb0
 
