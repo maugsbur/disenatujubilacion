@@ -1,9 +1,9 @@
 # Plantilla DOMINÓ — resultado del autodiagnóstico
 
 Se envía automáticamente al terminar las 25 preguntas en `/autodiagnostico`.
-Es la única de las cuatro con contenido real y aprobado — las otras tres
-(`PLAN.md`, `HABLAR.md`, `ENTUSIASMO.md` en esta misma carpeta) son
-borradores mínimos, ver la nota en cada una.
+El copy de las cinco plantillas de esta carpeta se revisó con las reglas de
+✍️ Cómo escribimos el 2026-09-24 (sin rayas, "llamada de evaluación",
+títulos iguales a los de las guías breves).
 
 **Sin adjunto.** El resultado completo (efecto dominó, perfiles, gráfico)
 ya lo vio la persona en el sitio; este correo es el respaldo por escrito
@@ -55,13 +55,14 @@ de entorno `BREVO_TEMPLATE_DOMINO` del Worker (ver `brevo/README.md`).
 >
 > Tu pilar más bajo es **{{params.pilarMasBajo}}**. No es un diagnóstico ni
 > un juicio: es el pilar donde, según lo que respondiste, una acción
-> concreta va a rendir más que en cualquier otro lado.
+> concreta puede rendir más. Y como los pilares dependen unos de otros,
+> cuando uno se debilita empuja hacia abajo a los demás.
 >
-> Si quieres que revisemos tu caso juntos, agenda una sesión de
-> diagnóstico gratuita de 45 minutos:
+> Si quieres que revisemos tu caso en conversación, agenda una llamada de
+> evaluación gratuita de 45 minutos con Margarita, que coordina el programa:
 > **[calendly.com/margarita-disenatujubilacion/45min](https://calendly.com/margarita-disenatujubilacion/45min)**
 >
-> — Diseña tu Jubilación
+> Diseña tu Jubilación
 >
 > *Este es un ejercicio de orientación personal, no un instrumento clínico
 > ni un diagnóstico de ningún tipo.*

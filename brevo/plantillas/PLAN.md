@@ -26,19 +26,18 @@ Anota el **Template ID** — va en `BREVO_TEMPLATE_PLAN`.
 >
 > Hola,
 >
-> Adjunta va **Tu jubilación no se resuelve esta semana. Estas cuatro
-> acciones sí.** — un número, una hora médica, una persona y una fecha.
-> Cuatro cosas que se hacen una sola vez y quedan hechas, cada una con un
-> primer paso de menos de cinco minutos.
+> Adjunta va **Cuatro acciones que puedes dejar hechas antes de jubilar**:
+> un número, una hora médica, una persona y una fecha. Cada una se hace una
+> sola vez y queda hecha, y la guía dice cómo se ve cuando lo está.
 >
-> Elige la que te dio más incomodidad al leerla. Casi siempre es la que
-> más falta hace.
+> Elige la que te dio más incomodidad al leerla. Suele ser la que más
+> falta hace.
 >
-> Si quieres que revisemos tu caso juntos, agenda una sesión de
-> diagnóstico gratuita de 45 minutos:
+> Si quieres que revisemos tu caso en conversación, agenda una llamada de
+> evaluación gratuita de 45 minutos con Margarita, que coordina el programa:
 > **[calendly.com/margarita-disenatujubilacion/45min](https://calendly.com/margarita-disenatujubilacion/45min)**
 >
-> — Diseña tu Jubilación
+> Diseña tu Jubilación
 
 ## La versión completa
 

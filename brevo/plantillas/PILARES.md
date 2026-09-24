@@ -30,10 +30,9 @@ Tu guía: los cinco pilares de tu jubilación
 >
 > Hola,
 >
-> Adjunta va **Tu jubilación se juega en cinco pilares. Y ninguno cae
-> solo.** Qué es cada pilar, las señales de que uno está bajo, cómo se
-> arrastran entre sí y un ejercicio de dos minutos para encontrar el tuyo
-> más débil.
+> Adjunta va **Tu bienestar en la jubilación se sostiene sobre cinco
+> pilares interdependientes**: qué vas a necesitar en esa etapa, cómo
+> dependen unos pilares de otros, y por cuál te conviene comenzar.
 >
 > Si quieres el dato completo, el autodiagnóstico online toma doce minutos:
 > **[disenatujubilacion.com/autodiagnostico](https://disenatujubilacion.com/autodiagnostico?utm_source=correo-pilares)**

@@ -27,18 +27,18 @@ Anota el **Template ID** — va en `BREVO_TEMPLATE_ENTUSIASMO`.
 > Adjunto va el caso de Carlos, publicado con su autorización. Jubiló
 > por invalidez, antes de lo que tenía planeado, y esta es la secuencia
 > real de lo que hizo después: en qué orden, y lo que todavía le está
-> costando. No es una historia de motivación — es un método.
+> costando. No es una historia de motivación. Es un método.
 >
 > Lo replicable no es su objetivo, que es suyo. Es el orden: primero una
-> dirección propia, después una auditoría honesta de la agenda, los
-> apoyos que faltan, los hábitos, el dinero, y al final las
-> conversaciones que hacen que todo eso sea sostenible con tu gente.
+> dirección propia, después una revisión honesta de su agenda, los apoyos
+> que le faltaban, los hábitos, el dinero, y al final las conversaciones
+> que hacen que todo eso se sostenga con su gente.
 >
-> Si quieres que revisemos tu caso juntos, agenda una sesión de
-> diagnóstico gratuita de 45 minutos:
+> Si quieres que revisemos tu caso en conversación, agenda una llamada de
+> evaluación gratuita de 45 minutos con Margarita, que coordina el programa:
 > **[calendly.com/margarita-disenatujubilacion/45min](https://calendly.com/margarita-disenatujubilacion/45min)**
 >
-> — Diseña tu Jubilación
+> Diseña tu Jubilación
 
 ## La versión completa
 
