@@ -56,9 +56,10 @@ autoayuda.
 
 - **Con intención y no por inercia.** Es el principio operativo y cierra el
   material.
-- **La persona define el problema; nosotros decimos qué hacer; ella lo
-  hace.** Hablamos como expertos, con el porqué, y la accountability es de
-  la persona. En salud y previsión, lo que se dice es qué conversar con el
+- **Ofrecemos un camino, no un menú de opciones; la persona decide si lo
+  toma.** Hablamos como expertos, con el porqué, y la accountability es de
+  la persona: "te decimos qué hacer, pero tú tienes la opción". "Tú eliges"
+  sigue vigente para mostrar que lo que se elige hoy tiene consecuencias. En salud y previsión, lo que se dice es qué conversar con el
   médico o el asesor. *(Marcel, 24/09/2026; reemplaza "No decimos qué
   hacer".)*
 - **El dato antes que el adjetivo.** Frases cortas, una idea por bloque.
