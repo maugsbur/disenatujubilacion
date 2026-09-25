@@ -19,13 +19,13 @@ Claude **no puede adjuntar archivos a Notion desde este entorno**: la política 
 2. **El conector de Google Drive** (`create_file` con `base64Content`). Funciona, pero la imagen viaja codificada por la conversación y pesa unas cinco veces el archivo. Úsalo solo para una o dos placas sueltas.
 3. **Entrega en la conversación** con `SendUserFile`, diciendo en qué fila hay que arrastrarlas. Es lo que funciona sin configurar nada.
 
-**No cambies el estado a `Para subir`**: eso lo hace quien adjunta, después de la revisión visual. Y por lo mismo esta skill **no corre sola en la revisión de las 4:00**.
+**No cambies el estado a `Para subir`**: eso lo hace quien adjunta, después de la revisión visual.
 
 ## La revisión visual
 
 Las placas se revisan antes de subirse, igual que las ideas. Nicole o Margarita responden si sirven, si hay que cambiar algo, o si no van.
 
-Cuando el comentario sea sobre cómo se ven, regístralo como **Nota de diseño** en 🗳️ Decisiones y notas. Cuando el mismo tipo de corrección aparezca **dos veces**, destílalo como regla en 🎨 Cómo diseñamos citando de dónde salió — el mismo mecanismo que ✍️ Cómo escribimos, pero para lo visual. Una corrección puntual no es una regla, y las Reglas de base no se tocan sin que te lo pidan.
+Cuando el comentario sea sobre cómo se ven, **conviértelo en regla de inmediato** en 🎨 Cómo diseñamos, con fecha y quién la pidió: el mismo mecanismo que ✍️ Cómo escribimos. Se escribe la intención detrás del cambio, no el cambio puntual; si la intención no es evidente, pregunta antes. Si contradice una regla existente, acótala en vez de agregar otra encima.
 
 ## El renderizador
 
@@ -119,7 +119,7 @@ La cuantización a 64 colores al final baja el peso a un tercio sin que se note 
   {"tipo":"cita","fondo":"verde","principal":"La vejez te pilla desprevenido.",
    "autor":"Carlos","rol":"Químico laboratorista en minería · Jubilado"},
   {"tipo":"cta","fondo":"verde","contexto":"Si quieres empezar por algún lado",
-   "principal":"Comenta","palabra":"PLAN","matiz":"y te mando la guía de las cinco áreas."}
+   "principal":"Comenta","palabra":"PLAN","matiz":"y te mando la guía de las cuatro acciones."}
 ]}
 ```
 
@@ -140,7 +140,7 @@ Entrega las placas numeradas en orden, di a qué fila pertenecen y qué falta. S
 
 ## Contexto
 
-- **🔁 Flujo de contenido con Claude** — https://app.notion.com/p/3d123cb6e7af81da9b53ee254469225e
+- **🤝 Flujo de trabajo con Claude** — https://app.notion.com/p/3e523cb6e7af81b688daf2553a0f3ed3 (el avance y las preguntas van a la tarjeta de la tarea en Tareas DTJ)
 - **🎨 Cómo diseñamos** — https://app.notion.com/p/3d523cb6e7af81f9a703eb234cce4a22
 - **✍️ Cómo escribimos** — https://app.notion.com/p/3d423cb6e7af818f85a6d216c1b6a459
 

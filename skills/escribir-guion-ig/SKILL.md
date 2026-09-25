@@ -15,13 +15,15 @@ Mira una o dos piezas ya escritas de la misma categoría para calibrar tono y la
 
 Si la idea depende de material que no existe, escribe igual el guion pero deja la placa que lo usa marcada como pendiente de prueba y déjalo anotado. **No inventes una cita ni un dato para tapar el hueco.** Es el error que más caro sale aquí, porque la credibilidad es lo que vende.
 
-Verifica el consentimiento antes de usar la cita de una persona, y respeta las reglas de material sensible del flujo.
+Verifica el consentimiento antes de usar la cita de una persona, y respeta las reglas de material sensible del flujo. Los datos de salud de una persona no se publican nunca.
+
+**Postura de experto** (✍️, desde el 24/09/2026): se dice qué hacer, con su porqué. Un camino concreto, no un menú de opciones; la persona decide si lo toma. En salud y previsión, qué conversar con el médico o el asesor, nunca qué tratamiento ni qué producto.
 
 ## Los primeros dos segundos
 
 Una pieza que nadie termina de ver no dice nada. Se escribe para **retención, replay y comentarios**, y eso se juega al principio: un **patrón de interrupción en los primeros dos segundos**, tensión inmediata —curiosidad o una verdad incómoda—, y enseguida un **payoff rápido** que muestre que hay salida.
 
-Dejar a alguien en el problema es lo que convierte la tensión en alarmismo, que es justo lo que este público castiga. La diferencia está en de dónde viene la interrupción: **la frase textual de la propia persona interrumpe mejor que cualquier amenaza**, porque se escucha a sí misma. Un dato que no calza o un reencuadre también sirven. El juicio ("no seas un viejo testarudo") y el imperativo motivacional ("deja de hacer esto") enganchan a costa de la confianza. Si un gancho solo funciona asustando, es un atajo, no un gancho.
+**El miedo y la urgencia se usan cuando son reales** (✍️ › Principios, desde el 24/09/2026): el costo de no prepararse, dicho sin rodeos y con su dato en 🔬 Evidencia o ✂️ Extractos, interrumpe bien y sube el nivel de conciencia. Lo que convierte la tensión en alarmismo es inventar o inflar el riesgo, o dejar a alguien en el problema: **toda pérdida llega con su salida**, aunque sea al final. La frase textual de la propia persona interrumpe muy bien, porque se escucha a sí misma; un dato que no calza o un reencuadre también sirven. El juicio ("no seas un viejo testarudo") y el imperativo motivacional ("deja de hacer esto") enganchan a costa de la confianza.
 
 ## El peso, el CTA y quién los decide
 
@@ -41,7 +43,7 @@ Que un día sea **🪨 pesado** o **🪶 liviano** no dice cuántas placas lleva
 
 **El contenido es top of the funnel**: los reels y carruseles le hablan a gente que todavía no sigue la cuenta, así que su CTA pide **seguir o comentar**, no un lead magnet. Los lead magnets son para historias, donde quien mira ya sigue la cuenta.
 
-Las palabras vivas son **DOMINÓ** y **RETIRO** (autodiagnóstico de los 5 pilares), **PLAN** (cuatro acciones), **ENTUSIASMO** (caso de Carlos) y **HABLAR** (cuatro conversaciones). **No inventes una palabra nueva**: si el hilo pide una, eso es una decisión — hay que elegirla *y* producir el recurso que promete — y va a 🗳️ Decisiones y notas.
+Las palabras vivas son **DOMINÓ** y **RETIRO** (autodiagnóstico de los 5 pilares), **PLAN** (cuatro acciones), **ENTUSIASMO** (caso de Carlos) y **HABLAR** (cuatro conversaciones). La guía de los cinco pilares todavía no tiene palabra. **No inventes una palabra nueva**: si el hilo pide una, hay que elegirla *y* producir el recurso que promete, y eso lo decide el equipo; déjalo como pregunta en la tarjeta. La tabla vigente está en ✍️ › Los lead magnets y su palabra.
 
 ## Historias: la estructura de placas
 
@@ -134,15 +136,18 @@ Escribe el guion en el cuerpo sin borrar lo que Nicole ya había puesto: intégr
 
 En tu respuesta, muestra el guion y di en una línea qué falta para grabarlo. Si dependía de una prueba que no existe, ese es el titular del mensaje, no una nota al pie.
 
+Deja en la tarjeta de la tarea qué guionaste y qué falta, con el `Turno` en *Espera al equipo* para la revisión.
+
 Si guionas varias piezas de una vez, revisa que no se repitan entre ellas: tres días seguidos abriendo con una frase entre comillas cansa aunque cada guion por separado esté bien.
 
 ## Antes de nada, lee el flujo
 
-El circuito completo, las reglas de voz y las de uso del material de personas viven en Notion y se mantienen ahí, no en esta skill. Léelas siempre antes de actuar:
+El flujo de trabajo, las reglas de voz y las de uso del material de personas viven en Notion y se mantienen ahí, no en esta skill. Léelas antes de actuar:
 
-- **🔁 Flujo de contenido con Claude** — https://app.notion.com/p/3d123cb6e7af81da9b53ee254469225e
-- **✍️ Cómo escribimos** — https://app.notion.com/p/3d423cb6e7af818f85a6d216c1b6a459 (obligatoria si vas a redactar; ahí están las reglas de retención, CTA, lead magnets y formato en su versión vigente)
-- **📓 Bitácora de Claude** — https://app.notion.com/p/3d423cb6e7af812e8be5c693db97deb0 (las últimas entradas, para saber dónde quedaste)
+- **🤝 Flujo de trabajo con Claude** — https://app.notion.com/p/3e523cb6e7af81b688daf2553a0f3ed3 (el flujo principal: Tareas DTJ y la columna Turno)
+- **✍️ Cómo escribimos** — https://app.notion.com/p/3d423cb6e7af818f85a6d216c1b6a459 (obligatoria si vas a redactar)
+- **🎬 Cómo creamos contenido** — https://app.notion.com/p/3e423cb6e7af8115b736d70bf97608c1 (de dónde salen las ideas, niveles de conciencia, filtro antes de producir)
+- **🔁 Flujo de contenido con Claude** (deprecado) — https://app.notion.com/p/3d123cb6e7af81da9b53ee254469225e. Sirve solo como referencia del circuito de ideas, el mapeo de días, la recurrencia temática y las reglas de material de personas.
 
 Si algo de esta skill contradice esas páginas, ganan ellas. La skill es el procedimiento; Notion es el estado, y cambia.
 
@@ -153,19 +158,22 @@ Bases (el modo SQL está topado en este workspace — usa `rows` o `view`):
 
 | Base | Data source |
 |---|---|
+| ✅ Tareas DTJ | `collection://3e423cb6-e7af-80a9-b248-000ba52f0ba7` |
 | 📸 Calendario de historias | `collection://b2323cb6-e7af-829f-9594-87552d04c5db` |
 | 📸 Calendario de contenido | `collection://df323cb6-e7af-8277-ba21-87bd09a11fd7` |
-| 🗳️ Decisiones y notas | `collection://57e0fe61-5ec6-480c-8cb6-cd8de0899542` |
 | 🔬 Evidencia | `collection://92f7ff97-94e7-49c8-8596-208d634f6587` |
 | ✂️ Extractos | `collection://e7abbe2d-4afe-44ee-bbe8-ee23a4236623` |
+
+🗳️ Decisiones y notas quedó **congelada el 24/09/2026**: se puede leer como registro de lo decidido, pero no se escribe ahí. La 📓 Bitácora de Claude tampoco se usa para trabajo nuevo.
 
 Los nombres de las opciones de `Categoría` en historias llevan espacios dobles y comillas tipográficas; cópialos tal cual o la escritura falla.
 
 ## Dónde va cada salida
 
-Esta skill la puede correr una persona en una conversación, o la revisión automática de las 4:00 de la mañana, donde no hay nadie leyendo y la conversación no queda guardada en ninguna parte. Por eso:
+Esta skill se corre a pedido, en una conversación o dentro de una tarea de Tareas DTJ. No hay revisión automática.
 
-- **Todo lo que deba sobrevivir va a Notion**: el trabajo, a la fila de su pieza; lo que quedó pendiente o necesita una decisión, a 🗳️ Decisiones y notas; y el resumen de la corrida, a 📓 la Bitácora.
-- **Tu respuesta final es solo el resumen de lo que ya quedó escrito.** Nunca dejes ahí algo que no esté también en Notion: si la corrida fue automática, ese texto no lo lee nadie.
+- **El trabajo va a la fila de su pieza**, en el calendario que corresponda.
+- **El avance y lo pendiente van a la tarjeta de la tarea** en Tareas DTJ: una sección **Avance** con qué hiciste y la fecha, y **Preguntas de Claude** numeradas, cada una con lo que harías por defecto. Si quedan preguntas o el resultado necesita visto bueno, el `Turno` pasa a *Espera al equipo*. Si no hay tarjeta, créala.
+- **Tu respuesta final es el resumen de lo que ya quedó escrito** en Notion, no un lugar para dejar cosas que no estén allá.
 
-Cuando arriba diga "dilo" o "repórtalo", significa las dos cosas: dejarlo en Notion donde corresponda, y resumirlo en la respuesta.
+Cuando arriba diga "dilo" o "repórtalo", significa las dos cosas: dejarlo en la tarjeta y resumirlo en la respuesta.

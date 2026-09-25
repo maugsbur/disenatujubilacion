@@ -49,7 +49,7 @@ Deja los hallazgos como propuestas con su enlace en el cuerpo, para que Nicole d
 - **Nada de asesoría previsional o financiera concreta**: está fuera del alcance del programa y se deriva a un aliado.
 - **No conviertas un factor asociado en una causa.** Si el estudio es observacional, la afirmación tiene que sonar como observacional.
 
-Cuando un tema te obligue a elegir entre ser preciso y ser publicable, no elijas tú: registra la evidencia con su matiz y deja la tensión como decisión en 🗳️ Decisiones y notas.
+Cuando un tema te obligue a elegir entre ser preciso y ser publicable, no elijas tú: registra la evidencia con su matiz y deja la tensión como pregunta para el equipo en la tarjeta de la tarea.
 
 ## Al terminar
 
@@ -57,11 +57,12 @@ Deja en la respuesta: qué afirmaciones entraron y con qué nivel de certeza, qu
 
 ## Antes de nada, lee el flujo
 
-El circuito completo, las reglas de voz y las de uso del material de personas viven en Notion y se mantienen ahí, no en esta skill. Léelas siempre antes de actuar:
+El flujo de trabajo, las reglas de voz y las de uso del material de personas viven en Notion y se mantienen ahí, no en esta skill. Léelas antes de actuar:
 
-- **🔁 Flujo de contenido con Claude** — https://app.notion.com/p/3d123cb6e7af81da9b53ee254469225e
+- **🤝 Flujo de trabajo con Claude** — https://app.notion.com/p/3e523cb6e7af81b688daf2553a0f3ed3 (el flujo principal: Tareas DTJ y la columna Turno)
 - **✍️ Cómo escribimos** — https://app.notion.com/p/3d423cb6e7af818f85a6d216c1b6a459 (obligatoria si vas a redactar)
-- **📓 Bitácora de Claude** — https://app.notion.com/p/3d423cb6e7af812e8be5c693db97deb0 (las últimas entradas, para saber dónde quedaste)
+- **🎬 Cómo creamos contenido** — https://app.notion.com/p/3e423cb6e7af8115b736d70bf97608c1 (de dónde salen las ideas, niveles de conciencia, filtro antes de producir)
+- **🔁 Flujo de contenido con Claude** (deprecado) — https://app.notion.com/p/3d123cb6e7af81da9b53ee254469225e. Sirve solo como referencia del circuito de ideas, el mapeo de días, la recurrencia temática y las reglas de material de personas.
 
 Si algo de esta skill contradice esas páginas, ganan ellas. La skill es el procedimiento; Notion es el estado, y cambia.
 
@@ -72,19 +73,22 @@ Bases (el modo SQL está topado en este workspace — usa `rows` o `view`):
 
 | Base | Data source |
 |---|---|
+| ✅ Tareas DTJ | `collection://3e423cb6-e7af-80a9-b248-000ba52f0ba7` |
 | 📸 Calendario de historias | `collection://b2323cb6-e7af-829f-9594-87552d04c5db` |
 | 📸 Calendario de contenido | `collection://df323cb6-e7af-8277-ba21-87bd09a11fd7` |
-| 🗳️ Decisiones y notas | `collection://57e0fe61-5ec6-480c-8cb6-cd8de0899542` |
 | 🔬 Evidencia | `collection://92f7ff97-94e7-49c8-8596-208d634f6587` |
 | ✂️ Extractos | `collection://e7abbe2d-4afe-44ee-bbe8-ee23a4236623` |
+
+🗳️ Decisiones y notas quedó **congelada el 24/09/2026**: se puede leer como registro de lo decidido, pero no se escribe ahí. La 📓 Bitácora de Claude tampoco se usa para trabajo nuevo.
 
 Los nombres de las opciones de `Categoría` en historias llevan espacios dobles y comillas tipográficas; cópialos tal cual o la escritura falla.
 
 ## Dónde va cada salida
 
-Esta skill la puede correr una persona en una conversación, o la revisión automática de las 4:00 de la mañana, donde no hay nadie leyendo y la conversación no queda guardada en ninguna parte. Por eso:
+Esta skill se corre a pedido, en una conversación o dentro de una tarea de Tareas DTJ. No hay revisión automática.
 
-- **Todo lo que deba sobrevivir va a Notion**: el trabajo, a la fila de su pieza; lo que quedó pendiente o necesita una decisión, a 🗳️ Decisiones y notas; y el resumen de la corrida, a 📓 la Bitácora.
-- **Tu respuesta final es solo el resumen de lo que ya quedó escrito.** Nunca dejes ahí algo que no esté también en Notion: si la corrida fue automática, ese texto no lo lee nadie.
+- **El trabajo va a la fila de su pieza**, en el calendario que corresponda.
+- **El avance y lo pendiente van a la tarjeta de la tarea** en Tareas DTJ: una sección **Avance** con qué hiciste y la fecha, y **Preguntas de Claude** numeradas, cada una con lo que harías por defecto. Si quedan preguntas o el resultado necesita visto bueno, el `Turno` pasa a *Espera al equipo*. Si no hay tarjeta, créala.
+- **Tu respuesta final es el resumen de lo que ya quedó escrito** en Notion, no un lugar para dejar cosas que no estén allá.
 
-Cuando arriba diga "dilo" o "repórtalo", significa las dos cosas: dejarlo en Notion donde corresponda, y resumirlo en la respuesta.
+Cuando arriba diga "dilo" o "repórtalo", significa las dos cosas: dejarlo en la tarjeta y resumirlo en la respuesta.
