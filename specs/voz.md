@@ -8,7 +8,7 @@ CLAUDE.md § Cómo se escribe el copy). Existe por dos razones: que Claude Code
 pueda escribir aunque el conector de Notion falle, y que git guarde el
 historial de cómo cambiaron las reglas.
 
-Última sincronización: 2026-09-24 (tarde).
+Última sincronización: 2026-09-28.
 -->
 
 # Cómo escribimos (copia de Notion)
@@ -37,7 +37,25 @@ Profesional o líder de **55 a 60 años**, con la identidad muy pegada a su
 trabajo, **próximo a jubilar** (no jubilado). Planificó su carrera con rigor
 durante décadas y casi no ha mirado lo que viene después. Llega desde
 Instagram, con poco tiempo y bastante escepticismo hacia todo lo que suene a
-autoayuda.
+autoayuda. A veces el rango se extiende hasta los 70, cuando se apunta a quien
+está postergando la jubilación.
+
+**Precisión del 28/09/2026 (Marcel):** el público es más claramente un **líder
+o profesional exitoso, con la plata resuelta y trabajólico, que está evitando
+la jubilación o incluso pensar en ella**. Le hablamos a quien puede pagar el
+programa: si el contenido atrae a quien está preocupado por si le alcanza la
+plata, atrae también a quien no va a estar dispuesto a pagar.
+
+- **Se le habla desde un dolor real y concreto, no desde una carencia
+  abstracta.** El dolor no es "no tener un plan". Es el miedo a dejar de
+  trabajar y envejecer 10 años en 6 meses, como le pasó a alguien que conoce;
+  a dejar de ser relevante o necesario; a pasar el día encerrado en la casa con
+  una pareja con la que no sabe convivir tanto tiempo *(Marcel, 28/09/2026)*.
+- **La plata no es el gancho.** Usarla como puerta de entrada atrae a quien no
+  puede pagar y a gente más joven que solo busca finanzas. Si una pieza toca el
+  dinero, es desde el lado de quien ya lo tiene resuelto ("¿y si ya tienes
+  suficiente y sigues por inercia?"), nunca desde "¿me va a alcanzar?"
+  *(Marcel, 28/09/2026)*.
 
 - **Se le habla en presente y futuro.** "El trabajo te entrega un rol, metas
   y horarios", "al jubilar eso desaparece". El pasado ("el trabajo te daba")

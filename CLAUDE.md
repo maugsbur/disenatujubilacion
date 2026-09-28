@@ -1,8 +1,9 @@
 # Diseña tu Jubilación — contexto del proyecto
 
 Sitio de captación para un programa de acompañamiento de 3 meses en la
-transición al retiro. Público: profesionales y líderes próximos a jubilar
-cuya identidad está anclada al trabajo. Chile y Latinoamérica, ticket
+transición al retiro. Público: líderes y profesionales exitosos, con la plata
+resuelta y trabajólicos, próximos a jubilar y evitando pensar en eso, cuya
+identidad está anclada al trabajo. Chile y Latinoamérica, ticket
 USD 1.000, ingreso continuo sin cohortes.
 
 **El sitio no es el funnel — Instagram lo es.** El sitio cumple tres
@@ -33,6 +34,13 @@ Contexto del proyecto de claude.ai: [`specs/proyecto-claude.md`](specs/proyecto-
 
 Lo pendiente del sitio y de las guías también va en **Tareas DTJ**, no en
 `PLAN.md`, que queda como bitácora de lo hecho.
+
+**Siempre, en cualquier sesión** *(Marcel, 28/09/2026)*: todo lo que sirva a
+futuro (decisiones, criterios, aprendizajes y su porqué) se documenta en su
+página de Notion en la misma sesión, sin esperar a que lo pidan; toda tarea que
+aparezca, de Claude o del equipo, se crea en Tareas DTJ con su Turno (revisando
+antes que no exista); y al cerrar se dice qué quedó documentado y qué tareas se
+crearon. El detalle está en *🤝 Flujo de trabajo con Claude*.
 
 ## Idioma y tono
 
