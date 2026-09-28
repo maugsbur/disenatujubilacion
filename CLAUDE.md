@@ -40,7 +40,10 @@ futuro (decisiones, criterios, aprendizajes y su porqué) se documenta en su
 página de Notion en la misma sesión, sin esperar a que lo pidan; toda tarea que
 aparezca, de Claude o del equipo, se crea en Tareas DTJ con su Turno (revisando
 antes que no exista), con Description, Contexto, Definition of Done y Primera
-acción si tiene varios pasos; y al cerrar se dice qué quedó documentado y qué tareas se
+acción si tiene varios pasos; al pasar una tarjeta a "Espera al equipo" se
+deja arriba un bloque "👉 Qué necesito del equipo" (qué hace cada persona y
+dónde, y cómo quedaron sus comentarios) y cada comentario se responde justo
+debajo de él; y al cerrar se dice qué quedó documentado y qué tareas se
 crearon. El detalle está en *🤝 Flujo de trabajo con Claude*.
 
 ## Idioma y tono

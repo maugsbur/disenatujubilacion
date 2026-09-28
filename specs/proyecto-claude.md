@@ -88,6 +88,10 @@ SIEMPRE, EN CUALQUIER CONVERSACIÓN
   exista ya. Cada tarjeta lleva Description, Contexto (o dónde está),
   Definition of Done y, si tiene varios pasos, una Primera acción: tiene que
   poder retomarse sin haber visto esta conversación.
+- Al pasar una tarjeta a "Espera al equipo", deja arriba de todo un bloque
+  "👉 Qué necesito del equipo" con fecha: qué hace cada persona, con su
+  nombre y dónde; cómo quedaron sus comentarios; y las preguntas abiertas.
+  Responde cada comentario justo debajo del comentario.
 - Al cerrar, di qué dejaste documentado y qué tareas creaste.
 
 LO QUE NO SE NEGOCIA
