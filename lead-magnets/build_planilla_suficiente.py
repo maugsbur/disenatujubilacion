@@ -10,7 +10,8 @@ Encuadre aprobado por Marcel el 28/09/2026: le habla a quien ya tiene la
 plata resuelta y sigue trabajando por inercia, no a "¿me va a alcanzar?".
 Criterios en Notion, 🎬 Cómo creamos contenido › 10b Lead magnets.
 
-Límite: es aritmética simple en pesos de hoy. No es asesoría financiera ni
+Límite: es aritmética simple, en términos reales (la rentabilidad se anota
+sobre la inflación). No es asesoría financiera ni
 previsional, y la planilla lo dice.
 """
 from pathlib import Path
@@ -108,10 +109,12 @@ def build():
     ws.merge_cells(f"B{r}:E{r}")
     celda(f"B{r}", "1 · Tu mes hoy", F_PASO)
     ws.merge_cells(f"B{r+1}:E{r+1}")
+    ws.row_dimensions[r+1].height = 28
     celda(f"B{r+1}", "Primer paso: abre la aplicación de tu banco y mira el último mes cerrado. "
-                     "Un número redondo basta.", F_AYUDA)
+                     "Un número redondo basta. Si no tienes algún número a mano, parte con una "
+                     "aproximación y reemplázala más adelante.", F_AYUDA)
     r += 2
-    for col, txt in zip("BCDE", ("Gasto", "Al mes", "Al año", "Mensual")):
+    for col, txt in zip("BCDE", ("Gasto", "Mensual", "Anual", "Promedio mensual")):
         celda(f"{col}{r}", txt, F_HEAD, FILL_VERDE, borde=True)
     primera = r + 1
     for nombre, ayuda in GASTOS:
@@ -167,17 +170,22 @@ def build():
         ("ahorro", "Ahorro e inversiones disponibles\n(sin la casa donde vives)", PESOS, 36),
         ("pension", "Pensión mensual estimada\n(la que te informa tu AFP o tu cartola)", PESOS, 36),
         ("otros", "Otros ingresos mensuales que seguirían\n(arriendos, rentas)", PESOS, 36),
-        ("anios", "¿Cuántos años quieres financiar?\n(por ejemplo, hasta los 90)", "0", 36),
+        ("rent", "Rentabilidad anual de tu ahorro sobre la inflación, en %\n(por ejemplo, 3; si no sabes, deja 0)", "0.0", 36),
+        ("edad", "Tu edad cuando dejes de trabajar", "0", 24),
     ):
         r += 1
         celda(f"B{r}", texto, borde=True)
         celda(f"E{r}", None, F_TXT, FILL_INPUT, fmt, borde=True)
         filas[clave] = r
         ws.row_dimensions[r].height = h
-    dv = DataValidation(type="whole", operator="between", formula1="1", formula2="50",
-                        showErrorMessage=True, error="Un número de años entre 1 y 50.")
+    dv = DataValidation(type="decimal", operator="between", formula1="0", formula2="15",
+                        showErrorMessage=True, error="Un porcentaje entre 0 y 15. Escribe 3 para un 3%.")
     ws.add_data_validation(dv)
-    dv.add(f"E{filas['anios']}")
+    dv.add(f"E{filas['rent']}")
+    dv2 = DataValidation(type="whole", operator="between", formula1="30", formula2="100",
+                         showErrorMessage=True, error="Una edad entre 30 y 100.")
+    ws.add_data_validation(dv2)
+    dv2.add(f"E{filas['edad']}")
 
     # Paso 4
     r += 2
@@ -192,9 +200,20 @@ def build():
     r += 1
     celda(f"B{r}", "Años de esa vida que ya tienes cubiertos", F_LABEL, borde=True)
     celda(f"E{r}",
-          f'=IF(E{fila_mes_sin}=0,"",IF(E{fila_brecha}=0,"Todos",N(E{filas["ahorro"]})/E{fila_brecha}/12))',
+          f'=IF(E{fila_mes_sin}=0,"",IF(E{fila_brecha}=0,"Todos",'
+          f'IF(N(E{filas["rent"]})/100*N(E{filas["ahorro"]})>=E{fila_brecha}*12,"Todos",'
+          f'IF(N(E{filas["rent"]})=0,N(E{filas["ahorro"]})/(E{fila_brecha}*12),'
+          f'-LN(1-N(E{filas["rent"]})/100*N(E{filas["ahorro"]})/(E{fila_brecha}*12))/LN(1+N(E{filas["rent"]})/100)))))',
           F_BIG, FILL_OUT, "0.0", borde=True)
     fila_cubre = r
+    ws.row_dimensions[r].height = 26
+    r += 1
+    celda(f"B{r}", "Tienes cubierta tu vida hasta los", F_LABEL, borde=True)
+    celda(f"E{r}",
+          f'=IF(OR(E{fila_cubre}="",N(E{filas["edad"]})=0),"",IF(E{fila_cubre}="Todos","Siempre",'
+          f'ROUNDDOWN(E{filas["edad"]}+E{fila_cubre},0)))',
+          F_BIG, FILL_OUT, '0" años"', borde=True)
+    fila_hasta = r
     ws.row_dimensions[r].height = 26
     r += 2
     ws.merge_cells(f"B{r}:E{r}")
@@ -202,9 +221,10 @@ def build():
         f'=IF(E{fila_mes_sin}=0,"Completa los pasos 1 a 3 y aquí aparece tu resultado.",'
         f'IF(AND(N(E{filas["ahorro"]})=0,N(E{filas["pension"]})=0,N(E{filas["otros"]})=0),"Completa el paso 3 con lo que ya tienes y aquí aparece tu resultado.",'
         f'IF(E{fila_brecha}=0,"Tu pensión y tus otros ingresos ya cubren tu mes. La plata no es lo que te retiene.",'
-        f'IF(N(E{filas["anios"]})=0,"Tu ahorro cubre "&ROUND(E{fila_cubre},1)&" años de tu vida sin trabajar. Anota cuántos años quieres financiar para compararlo.",'
-        f'IF(E{fila_cubre}>=E{filas["anios"]},"Ya tienes suficiente para los "&E{filas["anios"]}&" años que quieres financiar. Si sigues trabajando, no es por la plata.",'
-        f'"Tu ahorro cubre "&ROUND(E{fila_cubre},1)&" de los "&E{filas["anios"]}&" años que quieres financiar.")))))'
+        f'IF(E{fila_cubre}="Todos","La rentabilidad de tu ahorro ya cubre lo que te falta cada mes, sin tocar el capital. La plata no es lo que te retiene.",'
+        f'IF(N(E{filas["edad"]})=0,"Tu ahorro cubre "&ROUND(E{fila_cubre},1)&" años de tu vida sin trabajar. Anota tu edad para ver hasta cuándo.",'
+        f'IF(E{fila_hasta}>=90,"Tienes cubierta tu vida hasta los "&E{fila_hasta}&" años. Si sigues trabajando, no es por la plata.",'
+        f'"Tienes cubierta tu vida hasta los "&E{fila_hasta}&" años."))))))'
     )
     celda(f"B{r}", frase, F_FRASE)
     ws.row_dimensions[r].height = 48
@@ -212,15 +232,16 @@ def build():
     # Cierre
     r += 2
     ws.merge_cells(f"B{r}:E{r}")
-    celda(f"B{r}", "El número responde cuánto. No responde para qué: qué vida vas a financiar con "
-                   "él, y quién vas a ser cuando el trabajo ya no ordene tu semana. Postergarlo un "
-                   "año más también es una elección, y se paga con años de salud y energía.",
+    celda(f"B{r}", "Este número responde cuánto. No responde para qué: qué vida quieres financiar, "
+                   "y quién quieres ser cuando el trabajo ya no ordene tu vida. Postergarlo un año "
+                   "más también es una elección, y se paga con años de salud, energía y "
+                   "oportunidades que no vuelven.",
           F_TXT)
     ws.row_dimensions[r].height = 58
     r += 1
     ws.merge_cells(f"B{r}:E{r}")
-    c = celda(f"B{r}", "Si quieres mirar tu caso, agenda una llamada de evaluación gratuita de 45 minutos "
-                       "con Margarita, que coordina el programa.", F_LABEL)
+    c = celda(f"B{r}", "Si quieres que revisemos tu caso en conjunto, te invitamos a agendar una llamada "
+                       "de evaluación de cortesía de 45 minutos con Margarita, la coordinadora del programa.", F_LABEL)
     ws.row_dimensions[r].height = 32
     r += 1
     ws.merge_cells(f"B{r}:E{r}")
@@ -228,9 +249,9 @@ def build():
     c.hyperlink = cal_url("planilla-suficiente")
     r += 2
     ws.merge_cells(f"B{r}:E{r}")
-    celda(f"B{r}", "Cálculo simple, en pesos de hoy: no considera inflación, rentabilidad ni impuestos. "
-                   "Es orientación personal, no asesoría financiera ni previsional. Para decidir cuándo "
-                   "y cómo jubilar, conversa con un asesor previsional. · Diseña tu Jubilación",
+    celda(f"B{r}", "Cálculo simple: usa la rentabilidad sobre la inflación que anotes y no considera "
+                   "impuestos. Es orientación personal, no asesoría financiera ni previsional · "
+                   "Diseña tu Jubilación",
           F_NOTA)
     ws.row_dimensions[r].height = 36
 
