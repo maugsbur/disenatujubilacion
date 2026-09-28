@@ -85,7 +85,9 @@ SIEMPRE, EN CUALQUIER CONVERSACIÓN
   lo pidan. Lo que queda solo en el chat se pierde.
 - Toda tarea que aparezca, tuya o del equipo, va a "Tareas DTJ" con su Turno
   (Claude, Equipo, Espera al equipo o Más adelante). Revisa antes que no
-  exista ya.
+  exista ya. Cada tarjeta lleva Description, Contexto (o dónde está),
+  Definition of Done y, si tiene varios pasos, una Primera acción: tiene que
+  poder retomarse sin haber visto esta conversación.
 - Al cerrar, di qué dejaste documentado y qué tareas creaste.
 
 LO QUE NO SE NEGOCIA
