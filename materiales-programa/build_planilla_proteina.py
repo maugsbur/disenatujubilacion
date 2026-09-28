@@ -55,10 +55,11 @@ ALIMENTOS = [
     ("Salmón, cocido", 120, "1 filete", 25, 0, 12, 0, 206),
     ("Merluza, cocida", 120, "1 filete", 20, 0, 1.5, 0, 95),
     ("Atún en agua, escurrido", 80, "1 lata chica", 25, 0, 1, 0, 116),
-    ("Jurel en lata, escurrido *", 80, "1/2 lata", 21, 0, 8, 0, 160),
+    ("Jurel en lata al natural, escurrido", 80, "1/2 lata", 23.8, 0, 6.5, 0.3, 161),
+    ("Jurel en lata en aceite, escurrido", 80, "1/2 lata", 22.0, 0, 21.0, 0.7, 286),
     ("Jamón de pavo", 30, "2 láminas", 17, 0, 2, 2, 100),
-    ("Queso fresco *", 30, "1 rebanada", 17, 0, 13, 3, 200),
-    ("Quesillo *", 50, "1 rebanada gruesa", 11, 0, 8, 3, 130),
+    ("Queso fresco o ricota", 30, "1 rebanada", 11, 0, 10, 4, 150),
+    ("Quesillo", 50, "1 rebanada gruesa", 16.4, 0, 3.3, 3.1, 109),
     ("Queso mantecoso o gauda", 20, "1 lámina", 25, 0, 27, 2, 356),
     ("Queso cottage", 100, "1/2 taza", 11, 0, 4.3, 3.4, 98),
     ("Yogur natural", 150, "1 pote", 3.5, 0, 3.3, 4.7, 61),
@@ -68,7 +69,7 @@ ALIMENTOS = [
     ("Proteína de suero en polvo", 30, "1 medida", 78, 0, 5, 8, 380),
     ("Lentejas, cocidas", 150, "3/4 taza", 9, 7.9, 0.4, 20, 116),
     ("Porotos negros, cocidos", 150, "3/4 taza", 8.9, 8.7, 0.5, 23.7, 132),
-    ("Porotos bayos o coscorrón, cocidos *", 150, "3/4 taza", 9, 9, 0.7, 26, 143),
+    ("Porotos (fréjoles) cocidos", 150, "3/4 taza", 9.7, 9, 0.7, 23.6, 135),
     ("Garbanzos, cocidos", 150, "3/4 taza", 8.9, 7.6, 2.6, 27, 164),
     ("Arvejas, cocidas", 100, "1/2 taza", 5.4, 5.5, 0.2, 15.6, 84),
     ("Tofu firme", 100, "1 trozo", 17, 2, 9, 3, 144),
@@ -79,7 +80,8 @@ ALIMENTOS = [
     ("Arroz integral, cocido", 150, "3/4 taza", 2.6, 1.8, 0.9, 23, 112),
     ("Fideos, cocidos", 150, "1 taza", 5.8, 1.8, 0.9, 31, 158),
     ("Fideos integrales, cocidos", 150, "1 taza", 5.8, 4.5, 0.9, 30, 149),
-    ("Pan blanco (marraqueta o hallulla) *", 100, "1 unidad", 9, 2.7, 3.2, 49, 265),
+    ("Marraqueta", 100, "1 unidad", 6.4, 2.7, 0.7, 60.0, 279),
+    ("Hallulla", 90, "1 unidad", 8.2, 2.7, 4.0, 61.6, 321),
     ("Pan integral", 60, "2 rebanadas", 13, 7, 3.4, 41, 247),
     ("Avena", 40, "4 cucharadas", 13, 10, 7, 66, 389),
     ("Papa, cocida", 150, "1 mediana", 1.9, 1.8, 0.1, 20, 87),
@@ -108,6 +110,8 @@ ALIMENTOS = [
 
 COMIDAS = ["Desayuno", "Colación", "Almuerzo", "Once", "Cena"]
 FILAS_POR_COMIDA = 5
+# Filas amarillas en Alimentos para agregar alimentos propios (Marcel pidió 100 o más).
+FILAS_LIBRES = 150
 
 
 def encabezado(ws, fila, valores, anchos=None):
@@ -126,8 +130,8 @@ def hoja_alimentos(wb):
     ws = wb.create_sheet("Alimentos")
     ws["A1"] = "Alimentos"
     ws["A1"].font = F_TITULO
-    ws["A2"] = ("Valores por 100 g de alimento listo para comer. Los marcados con * son "
-                "estimaciones para alimentos chilenos. Puedes agregar los tuyos en las filas vacías.")
+    ws["A2"] = ("Valores por 100 g de alimento listo para comer. Agrega los tuyos en las filas "
+                "amarillas: aparecen solos en la lista de Mi día.")
     ws["A2"].font = F_SUB
     encabezado(ws, 4, ["Alimento", "Porción (g)", "Porción habitual", "Proteína", "Fibra",
                        "Grasa", "Carbohidratos", "kcal"],
@@ -137,7 +141,7 @@ def hoja_alimentos(wb):
             cell = ws.cell(row=r, column=c, value=v)
             cell.font = F_TXT
             cell.border = BORDE
-    ultima = 4 + len(ALIMENTOS) + 20  # 20 filas libres para alimentos propios
+    ultima = 4 + len(ALIMENTOS) + FILAS_LIBRES  # filas libres para alimentos propios
     for r in range(5 + len(ALIMENTOS), ultima + 1):
         for c in range(1, 9):
             cell = ws.cell(row=r, column=c)
@@ -181,8 +185,8 @@ def hoja_objetivo(wb):
     ws.merge_cells("B10:D10")
 
     dv_sexo = DataValidation(type="list", formula1='"Mujer,Hombre"', allow_blank=False)
-    dv_act = DataValidation(type="list", formula1="=Listas!$A$2:$A$5", allow_blank=False)
-    dv_perfil = DataValidation(type="list", formula1="=Listas!$C$2:$C$6", allow_blank=False)
+    dv_act = DataValidation(type="list", formula1="Listas!$A$2:$A$5", allow_blank=False)
+    dv_perfil = DataValidation(type="list", formula1="Listas!$C$2:$C$6", allow_blank=False)
     for dv, ref in ((dv_sexo, "B5"), (dv_act, "B9"), (dv_perfil, "B10")):
         ws.add_data_validation(dv)
         dv.add(ref)
@@ -285,7 +289,7 @@ def hoja_dia(wb, ultima_alimento):
     encabezado(ws, 4, ["Comida", "Alimento", "Gramos", "Proteína", "Fibra", "Grasa",
                        "Carbohidratos", "kcal", "Porción"], anchos)
     rango = f"Alimentos!$A$5:$H${ultima_alimento}"
-    dv = DataValidation(type="list", formula1=f"=Alimentos!$A$5:$A${ultima_alimento}", allow_blank=True)
+    dv = DataValidation(type="list", formula1=f"Alimentos!$A$5:$A${ultima_alimento}", allow_blank=True)
     ws.add_data_validation(dv)
 
     fila = 5
@@ -380,13 +384,28 @@ def hoja_fuentes(wb):
         ("Mifflin MD, St Jeor ST y col. A new predictive equation for resting energy expenditure in healthy individuals. Am J Clin Nutr. 1990.", F_TXT),
         ("", F_TXT),
         ("Alimentos", F_LABEL),
-        ("USDA FoodData Central (valores aproximados, redondeados). Los marcados con * son estimaciones para alimentos chilenos: verificar con la tabla de composición de alimentos chilena antes de entregar.", F_TXT),
+        ("USDA FoodData Central (valores aproximados, redondeados). Jurel, quesillo, porotos, marraqueta y hallulla: Tabla de composición química de alimentos chilenos (Schmidt-Hebbel y otros, Universidad de Chile, 8.ª edición); su fibra sale de USDA, porque esa tabla informa fibra cruda, que subestima la fibra dietética. Queso fresco o ricota: Foodbook, Universidad de Chile (valor medio del rango).", F_TXT),
     ]
     for i, (t, f) in enumerate(lineas, start=1):
         c = ws.cell(row=i, column=1, value=t)
         c.font = f
         c.alignment = WRAP
     return ws
+
+
+def franjas_de_titulo(wb):
+    """Identidad de 🎨 en cada hoja visible: título en crema sobre una franja
+    verde, igual que las guías, y sin la cuadrícula de fondo."""
+    for ws in wb.worksheets:
+        if ws.sheet_state == "hidden":
+            continue
+        ws.sheet_view.showGridLines = False
+        ultima_col = max(ws.max_column, 4)
+        for col in range(1, ultima_col + 1):
+            ws.cell(row=1, column=col).fill = FILL_HEAD
+        ws["A1"].font = Font(name="Lora", size=18, bold=True, color=CREMA)
+        ws.row_dimensions[1].height = 34
+        ws["A1"].alignment = Alignment(vertical="center")
 
 
 def main():
@@ -396,6 +415,7 @@ def main():
     hoja_dia(wb, ultima)
     hoja_fuentes(wb)
     hoja_listas(wb)
+    franjas_de_titulo(wb)
     wb.active = 0
     wb.save(OUT)
     print(OUT)
