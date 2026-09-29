@@ -38,7 +38,7 @@ Tu guía: los cinco pilares de tu jubilación
 > **[disenatujubilacion.com/autodiagnostico](https://disenatujubilacion.com/autodiagnostico?utm_source=correo-pilares)**
 >
 > Y si prefieres revisarlo en conversación, agenda una llamada de
-> evaluación gratuita de 45 minutos con Margarita, que coordina el programa:
+> evaluación de cortesía de 45 minutos con Margarita, que coordina el programa:
 > **[calendly.com/margarita-disenatujubilacion/45min](https://calendly.com/margarita-disenatujubilacion/45min?utm_source=correo-pilares)**
 >
 > Diseña tu Jubilación
