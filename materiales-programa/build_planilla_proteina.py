@@ -171,7 +171,7 @@ def hoja_objetivo(wb):
         ("Edad (años)", 60),
         ("Peso (kg)", 70),
         ("Estatura (cm)", 165),
-        ("Actividad física", "Moderada (3 a 5 días a la semana)"),
+        ("Ejercicio", "Moderada (ejercicio moderado 3 a 5 veces por semana)"),
         ("Perfil de proteína", "Mayor de 60, activo o entrenando fuerza (1,2 g/kg)"),
     ]
     encabezado(ws, 4, ["Tus datos", "", "", ""])
@@ -255,10 +255,10 @@ def hoja_listas(wb):
     ws = wb.create_sheet("Listas")
     ws["A1"], ws["B1"] = "Actividad", "Factor"
     actividades = [
-        ("Sedentaria (casi nada de ejercicio)", 1.2),
-        ("Liviana (1 a 3 días a la semana)", 1.375),
-        ("Moderada (3 a 5 días a la semana)", 1.55),
-        ("Alta (6 a 7 días a la semana)", 1.725),
+        ("Sedentaria (poco o nada de ejercicio)", 1.2),
+        ("Liviana (ejercicio liviano 1 a 3 veces por semana)", 1.375),
+        ("Moderada (ejercicio moderado 3 a 5 veces por semana)", 1.55),
+        ("Alta (ejercicio intenso 6 a 7 veces por semana)", 1.725),
     ]
     for i, (a, f) in enumerate(actividades, start=2):
         ws.cell(row=i, column=1, value=a)
