@@ -8,7 +8,7 @@ CLAUDE.md § Cómo se escribe el copy). Existe por dos razones: que Claude Code
 pueda escribir aunque el conector de Notion falle, y que git guarde el
 historial de cómo cambiaron las reglas.
 
-Última sincronización: 2026-09-28.
+Última sincronización: 2026-09-29.
 -->
 
 # Cómo escribimos (copia de Notion)
@@ -133,7 +133,7 @@ plata, atrae también a quien no va a estar dispuesto a pagar.
 |---|---|---|
 | **3 meses** | "13 semanas", "90 días", ni interna ni externamente | La espina interna también está en 12 semanas *(Marcel, 23/09)* |
 | **unas 4 horas por semana** | "3 horas", o separar sesiones de material | Es el total, incluido todo *(Marcel, 23/09)* |
-| **llamada de evaluación** | "sesión de diagnóstico" | Choca con "autodiagnóstico". Botón: "Agendar evaluación gratuita" |
+| **llamada de evaluación** | "sesión de diagnóstico" | Choca con "autodiagnóstico". La llamada es "de cortesía", no "gratuita" ni "gratis" (Marcel, 29/09/2026). Botón: "Agendar evaluación de cortesía". Que el material sea gratis se sigue diciendo así |
 | **Cuatro Desgastes** | "Cuatro Jinetes" | Nombre vigente del marco *(Marcel, 23/09)* |
 | **"El objetivo es morir joven… a los 95"** | "…lo más tarde posible" | Versión vigente *(Marcel, 23/09)* |
 | **acción** | "decisión", salvo en la Ficha de Decisiones | Ver "Siempre acción" |
