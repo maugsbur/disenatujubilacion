@@ -172,6 +172,7 @@ def build():
         ("otros", "Otros ingresos mensuales que seguirían\n(arriendos, rentas)", PESOS, 36),
         ("rent", "Rentabilidad anual de tu ahorro sobre la inflación, en %\n(por ejemplo, 3; si no sabes, deja 0)", "0.0", 36),
         ("edad", "Tu edad cuando dejes de trabajar", "0", 24),
+        ("meta", "¿Hasta qué edad quieres tenerlo cubierto?\n(si lo dejas vacío, usamos 90)", "0", 36),
     ):
         r += 1
         celda(f"B{r}", texto, borde=True)
@@ -186,6 +187,7 @@ def build():
                          showErrorMessage=True, error="Una edad entre 30 y 100.")
     ws.add_data_validation(dv2)
     dv2.add(f"E{filas['edad']}")
+    dv2.add(f"E{filas['meta']}")
 
     # Paso 4
     r += 2
@@ -202,16 +204,16 @@ def build():
     celda(f"E{r}",
           f'=IF(E{fila_mes_sin}=0,"",IF(E{fila_brecha}=0,"Todos",'
           f'IF(N(E{filas["rent"]})/100*N(E{filas["ahorro"]})>=E{fila_brecha}*12,"Todos",'
-          f'IF(N(E{filas["rent"]})=0,N(E{filas["ahorro"]})/(E{fila_brecha}*12),'
-          f'-LN(1-N(E{filas["rent"]})/100*N(E{filas["ahorro"]})/(E{fila_brecha}*12))/LN(1+N(E{filas["rent"]})/100)))))',
-          F_BIG, FILL_OUT, "0.0", borde=True)
+          f'ROUNDDOWN(IF(N(E{filas["rent"]})=0,N(E{filas["ahorro"]})/(E{fila_brecha}*12),'
+          f'-LN(1-N(E{filas["rent"]})/100*N(E{filas["ahorro"]})/(E{fila_brecha}*12))/LN(1+N(E{filas["rent"]})/100)),0))))',
+          F_BIG, FILL_OUT, '0" años"', borde=True)
     fila_cubre = r
     ws.row_dimensions[r].height = 26
     r += 1
     celda(f"B{r}", "Tienes cubierta tu vida hasta los", F_LABEL, borde=True)
     celda(f"E{r}",
           f'=IF(OR(E{fila_cubre}="",N(E{filas["edad"]})=0),"",IF(E{fila_cubre}="Todos","Siempre",'
-          f'ROUNDDOWN(E{filas["edad"]}+E{fila_cubre},0)))',
+          f'E{filas["edad"]}+E{fila_cubre}))',
           F_BIG, FILL_OUT, '0" años"', borde=True)
     fila_hasta = r
     ws.row_dimensions[r].height = 26
@@ -222,9 +224,9 @@ def build():
         f'IF(AND(N(E{filas["ahorro"]})=0,N(E{filas["pension"]})=0,N(E{filas["otros"]})=0),"Completa el paso 3 con lo que ya tienes y aquí aparece tu resultado.",'
         f'IF(E{fila_brecha}=0,"Tu pensión y tus otros ingresos ya cubren tu mes. La plata no es lo que te retiene.",'
         f'IF(E{fila_cubre}="Todos","La rentabilidad de tu ahorro ya cubre lo que te falta cada mes, sin tocar el capital. La plata no es lo que te retiene.",'
-        f'IF(N(E{filas["edad"]})=0,"Tu ahorro cubre "&ROUND(E{fila_cubre},1)&" años de tu vida sin trabajar. Anota tu edad para ver hasta cuándo.",'
-        f'IF(E{fila_hasta}>=90,"Tienes cubierta tu vida hasta los "&E{fila_hasta}&" años. Si sigues trabajando, no es por la plata.",'
-        f'"Tienes cubierta tu vida hasta los "&E{fila_hasta}&" años."))))))'
+        f'IF(N(E{filas["edad"]})=0,"Tu ahorro cubre "&E{fila_cubre}&" años de tu vida sin trabajar. Anota tu edad para ver hasta cuándo.",'
+        f'IF(E{fila_hasta}>=IF(N(E{filas["meta"]})=0,90,E{filas["meta"]}),"Tienes cubierta tu vida hasta los "&E{fila_hasta}&" años, más allá de los "&IF(N(E{filas["meta"]})=0,90,E{filas["meta"]})&" que quieres. Si sigues trabajando, no es por la plata.",'
+        f'"Tienes cubierta tu vida hasta los "&E{fila_hasta}&" años. Para llegar a los "&IF(N(E{filas["meta"]})=0,90,E{filas["meta"]})&" te faltan "&(IF(N(E{filas["meta"]})=0,90,E{filas["meta"]})-E{fila_hasta})&" años."))))))'
     )
     celda(f"B{r}", frase, F_FRASE)
     ws.row_dimensions[r].height = 48
