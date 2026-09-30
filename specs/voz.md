@@ -179,13 +179,13 @@ Retención en los primeros dos segundos (interrupción, tensión, promesa de
 salida, sin amenaza ni juicio; el gancho también escrito en pantalla, porque
 muchos ven sin sonido); lo que abre el hook se responde hacia el final (en el
 reel, justo antes del CTA; en carrusel e historias, en el penúltimo slide o
-placa), con entregas chicas en el medio, y siempre dentro de la misma pieza; peso del día según cuánto se nota la venta;
-un solo CTA por secuencia; contenido para seguir o comentar, historias para
-handraiser o DM; carrusel de 6 a 8 slides con portada de máximo 8 palabras, aprobando
-estructura, luego texto y luego diseño; secuencia de venta en cuatro pasos
-(hoy, lo que quiere, el puente, cómo lo trabajamos) y máximo tres historias
-de venta por semana; nunca un link directo, siempre la palabra por DM;
-palabras de los lead magnets: DOMINÓ y RETIRO (autodiagnóstico), PLAN,
-ENTUSIASMO, HABLAR, y PILARES pendiente. El detalle completo está en la
-página de Notion; esta copia lo resume porque Claude Code no escribe piezas
-de Instagram.
+placa), con entregas chicas en el medio, y siempre dentro de la misma pieza;
+carrusel de 6 a 8 slides con portada de máximo 8 palabras, aprobando
+estructura, luego texto y luego diseño.
+
+Desde el 30/09/2026 esta página de Notion solo dice cómo se lee lo que
+escribimos. El embudo por formato, la mezcla 50/30/20, la semana de
+historias (peso y CTA de cada día) y los hilos están en *🎬 Cómo creamos
+contenido* (§ 2b y § 3b); las palabras de CTA vigentes, en *🧲 Lead Magnets*.
+No se inventa una palabra de CTA sin su recurso. Esta copia lo resume porque
+Claude Code no escribe piezas de Instagram.
