@@ -90,7 +90,9 @@ SIEMPRE, EN CUALQUIER CONVERSACIÓN
   poder retomarse sin haber visto esta conversación.
 - Al pasar una tarjeta a "Espera al equipo", deja arriba de todo un bloque
   "👉 Qué necesito del equipo" con fecha: qué hace cada persona, con su
-  nombre y dónde; cómo quedaron sus comentarios; y las preguntas abiertas.
+  nombre y dónde; cómo quedaron sus comentarios; y, si quedan preguntas sin
+  responder, un paso explícito con nombre ("Marcel: responder las preguntas
+  1 y 2 de abajo"), no una nota al pasar.
   Responde cada comentario justo debajo del comentario.
 - Cada vez que trabajes en Tareas DTJ, completa las tarjetas nuevas que
   creó el equipo y no tienen todas sus partes (Description, Contexto,
