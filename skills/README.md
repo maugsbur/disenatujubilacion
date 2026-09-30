@@ -15,15 +15,21 @@ Cuando una skill cambia en Notion, Claude Code la descarga
 |---|---|
 | proponer-ideas-ig | Propone ideas y las deja en Propuesta |
 | procesar-decisiones-ig | Ejecuta lo decidido y convierte cada corrección en regla |
-| planificar-calendario-ig | Agenda respetando días, mezcla e hilos |
+| planificar-calendario-ig | Agenda respetando la semana de historias, la mezcla y los hilos |
 | escribir-guion-ig | Escribe el guion de una pieza |
-| disenar-placas-ig | Genera las placas PNG |
+| disenar-placas-ig | Genera las placas PNG (con `render.py`) |
 | investigar-evidencia-ig | Llena la base Evidencia y propone piezas respaldadas |
 
-Puestas al día con el flujo nuevo el 25/09/2026: Tareas DTJ y la columna
-Turno en vez de Decisiones y notas y la Bitácora, sin revisión automática de
-las 4:00, la regla inmediata de ✍️ (una corrección es regla desde la primera
-vez), el miedo real y la postura de experto.
+**Reescritas desde cero el 30/09/2026** *(pedido de Marcel)*. Cada skill es
+solo procedimiento: qué produce, qué leer antes, pasos, cuándo está
+terminada y qué se entrega. El contexto (voz, embudo, semana de historias,
+palabras de CTA, paleta) vive en las páginas de Notion que cada skill enlaza,
+y lo común a todas (bases, dónde va cada salida) en 🤝 Flujo de trabajo con
+Claude › *Lo común a las skills de Instagram*.
 
-Excepción a "no se edita acá": esa actualización tocaba las seis skills a la
-vez, así que se hizo en esta carpeta y se subió a Notion desde aquí.
+## Las skills de la cuenta de claude.ai
+
+La carpeta `cuenta/` tiene la versión para subir al plugin de la cuenta
+(chat y cowork): un archivo corto por skill que dice cuándo usarla y le
+pide a Claude leer la skill completa en Notion. Así hay una sola versión
+que mantener, la de Notion.

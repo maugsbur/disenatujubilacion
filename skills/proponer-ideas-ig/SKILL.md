@@ -1,45 +1,32 @@
 ---
 name: proponer-ideas-ig
-description: "Propone ideas de historias y reels para @disenatujubilacion y las deja en estado Propuesta en la Bandeja de Notion. Úsala cuando pidan ideas, temas o ángulos, digan que el banco está vacío, o quieran alimentar una categoría o un hilo temático."
+description: "Propone ideas de historias, reels y carruseles para @disenatujubilacion y las deja en estado Propuesta en los calendarios de Notion. Úsala cuando pidan ideas, temas o ángulos, digan que el banco está vacío, o quieran alimentar una categoría o un hilo temático."
 ---
 
 # Proponer ideas
 
-Esta skill llena la Bandeja: filas en `Estado` = `Propuesta`, sin fecha, esperando que el equipo marque Aceptar, Modificar o Descartar. No agenda y no guiona.
+**Produce** filas en `Estado` = `Propuesta` en el Calendario de historias o de contenido, sin fecha, esperando que el equipo marque Aceptar, Modificar o Descartar. **No** agenda ni guiona.
 
-Una idea no es un tema. "Hablar del propósito" no es una idea; "Si me preparé tanto para mi profesión, ¿cómo no me voy a preparar para esto?", dicho por una participante del piloto, sí lo es, porque ya tiene una escena, una voz y un punto de vista, y por eso alguien puede grabarla mañana. Si lo que estás por escribir podría publicarlo cualquier cuenta de coaching, no es una idea de esta cuenta.
+Una idea no es un tema. "Hablar del propósito" es un tema; "Si me preparé tanto para mi profesión, ¿cómo no me voy a preparar para esto?", dicho por una participante del piloto, es una idea: tiene escena, voz y punto de vista, y alguien puede grabarla mañana. Si la podría publicar cualquier cuenta de coaching, no es de esta cuenta.
 
-## Antes de proponer, mira qué falta
+## Antes de empezar, lee
 
-No propongas a ciegas. Tres consultas, en este orden:
+- 🤝 [Flujo de trabajo con Claude](https://app.notion.com/p/3e523cb6e7af81b688daf2553a0f3ed3) › *Lo común a las skills de Instagram* (bases, dónde va cada salida).
+- ✍️ [Cómo escribimos](https://app.notion.com/p/3d423cb6e7af818f85a6d216c1b6a459) › *Para quién escribimos* y *Principios*.
+- 🎬 [Cómo creamos contenido](https://app.notion.com/p/3e423cb6e7af8115b736d70bf97608c1) › § 1 (de dónde salen las ideas), § 2 y 2b (nivel de conciencia, embudo y mezcla), § 3b (hilos y escalera de ángulos), § 5 (el filtro) y § 5b (material de personas y fuentes).
+- 🩹 [Dolores reales del público](https://app.notion.com/p/3e923cb6e7af8119b61fc04a5d2e4b75) y [Objeciones y secuencias de historias](https://app.notion.com/p/3e623cb6e7af8199b944cc966cc5b29c).
 
-1. **La Bandeja**: qué hay ya en `Propuesta` esperando decisión. Si hay más de diez, no agregues más — dilo y ofrece ayudar a despacharlas.
-2. **Lo descartado**: filas en `Descartada` y su `Comentario`. Eso es lo que ya dijeron que no. Reproponerlo con otro título es el peor error de esta skill.
-3. **Los hilos vivos**: qué `Tema` está en curso, qué `Ángulo` de la escalera le falta a cada uno, y qué hilo quedó a medias. Un hilo introducido y nunca retomado vale más que un tema nuevo.
+## Pasos
 
-## De dónde salen las ideas buenas
-
-Por orden de rendimiento. Agota los primeros antes de bajar.
-
-1. **Material real que ya existe y nadie usó.** Las 11 transcripciones de Entrevistas (~74.000 palabras), la base ✂️ Extractos, la página Testimonios, el material del programa en Sesiones, las Retros. Casi siempre hay más sin publicar de lo que ellos recuerdan.
-2. **Objeciones y frases textuales.** Están reunidas, con su respaldo y una secuencia de historias cada una, en 🎬 › *Objeciones y secuencias de historias* (https://app.notion.com/p/3e623cb6e7af8199b944cc966cc5b29c). Otras documentadas: "sigo con energía, todavía no lo necesito", "ya lo resolveré cuando llegue", "esto no es para mí, me cuesta hablar en grupo", "qué se creen estos cabros chicos". Una objeción literal es el mejor gancho de esta cuenta, porque la persona se escucha a sí misma.
-3. **Los mecanismos del método**, para explicar — nunca para arengar.
-4. **La base 🔬 Evidencia**, cuando el hilo pide el ángulo de evidencia.
-5. **Momentos de la dupla**, para los días livianos.
-
-Si inventas desde cero es porque los cinco pozos están secos, y entonces dilo.
-
-## Cuántas
-
-Si no te dicen otra cosa, propón **seis a ocho**. Menos no vale una sesión de revisión; más se vuelve difícil de despachar de una sentada y termina atascando la Bandeja, que es peor que no tener ideas.
-
-Reparte según lo que falte, no en partes iguales: mira qué categoría está flaca y qué ángulo le falta a cada hilo vivo.
-
-## Qué lleva cada propuesta
-
-Propiedades: `Estado` = `Propuesta`, `Origen` = `Claude`, **sin fecha**, `Categoría` siempre, y `Tema` + `Ángulo` cuando la idea pertenece a un hilo. Si no sabes qué ángulo es, probablemente la idea todavía no está lista.
-
-Cuerpo, tres secciones y nada más:
+1. **Mira qué falta, en este orden.**
+   - La Bandeja (`Propuesta`): si hay más de diez esperando, no agregues; dilo y ofrece ayudar a despacharlas.
+   - Lo descartado (`Descartada` y su `Comentario`): no se vuelve a proponer nada equivalente con otro título.
+   - Los hilos vivos: qué `Tema` está en curso, qué `Ángulo` le falta a cada uno y qué hilo quedó a medias. Un hilo a medias vale más que un tema nuevo.
+   - La mezcla de las últimas ~10 piezas de reels y carruseles (🎬 § 2b): qué categoría está bajo su cuota.
+2. **Busca material real** en las fuentes de 🎬 § 5b, por orden de valor. Si terminas inventando desde cero, dilo: significa que las fuentes se agotaron.
+3. **Pasa cada idea por el filtro** de 🎬 § 5. La que falla, se corrige o se descarta antes de proponerla.
+4. **Cuántas:** seis a ocho si no te dicen otra cosa, repartidas según lo que falta (paso 1), no en partes iguales.
+5. **Crea cada fila:** `Estado` = `Propuesta`, `Origen` = `Claude`, sin fecha, `Categoría` siempre, y `Tema` + `Ángulo` si pertenece a un hilo (si no sabes el ángulo, la idea no está lista). Cuerpo, tres secciones:
 
 ```
 ### Objetivo
@@ -49,56 +36,17 @@ Cuerpo, tres secciones y nada más:
 [Dos o tres líneas: por dónde entra, qué frase textual usa, qué se ve.]
 
 ### Necesita
-[Qué material hace falta para poder grabarla. Si no necesita nada,
-escribe "nada, se graba a cámara".]
+[Qué material hace falta para grabarla. Si nada: "nada, se graba a cámara".]
 ```
 
-Ese campo **Necesita** es lo que hace útil el banco. Una idea preciosa que depende de un video que nadie ha pedido es una idea bloqueada, y conviene que se vea desde el principio en vez de descubrirlo el día de grabar.
+**Necesita dice la verdad sobre la prueba.** Puedes proponer ideas que dependan de material que no existe (empuja a pedirlo), pero dilo sin rodeos: "testimonio de X en video; hoy no existe, hay que pedírselo". Nunca escribas la idea como si la prueba ya estuviera, ni inventes una cita. Si el material es sensible, márcalo como "requiere permiso puntual" y déjalo como pregunta en la tarjeta.
 
-## La honestidad sobre la prueba
+## Terminada cuando
 
-Puedes proponer ideas que dependan de material que no existe —conviene, porque es lo que empuja a pedirlo— pero **Necesita** tiene que decirlo sin rodeos: "testimonio de X en video; hoy no existe, hay que pedírselo". Nunca escribas la idea como si la prueba ya estuviera, y nunca inventes una cita para tapar el hueco. La credibilidad es lo que vende aquí.
+- [ ] Las filas están en `Propuesta`, con Categoría, Origen y (si corresponde) Tema y Ángulo.
+- [ ] Ninguna repite algo descartado ni repite ángulo dentro de su hilo.
+- [ ] Cada una tiene Objetivo, Ángulo y Necesita.
 
-Verifica el consentimiento antes de proponer una pieza sobre una persona, y respeta las reglas de material sensible del flujo. Si una idea es buena pero el material es sensible, propónla marcando en **Necesita** que requiere permiso puntual, y déjalo además como pregunta en la tarjeta de la tarea. Los datos de salud de una persona no se publican nunca.
+## Entrega
 
-## Al terminar
-
-En tu respuesta, muestra la lista con su categoría, su hilo y su "Necesita", y señala cuáles quedaron bloqueadas. Si una categoría no se puede alimentar más sin material nuevo, dilo: eso es una decisión de Nicole, no un problema que se resuelva escribiendo más ideas.
-
-## Antes de nada, lee el flujo
-
-El flujo de trabajo, las reglas de voz y las de uso del material de personas viven en Notion y se mantienen ahí, no en esta skill. Léelas antes de actuar:
-
-- **🤝 Flujo de trabajo con Claude** — https://app.notion.com/p/3e523cb6e7af81b688daf2553a0f3ed3 (el flujo principal: Tareas DTJ y la columna Turno)
-- **✍️ Cómo escribimos** — https://app.notion.com/p/3d423cb6e7af818f85a6d216c1b6a459 (obligatoria si vas a redactar)
-- **🎬 Cómo creamos contenido** — https://app.notion.com/p/3e423cb6e7af8115b736d70bf97608c1 (de dónde salen las ideas, niveles de conciencia, filtro antes de producir)
-- **🔁 Flujo de contenido con Claude** (deprecado) — https://app.notion.com/p/3d123cb6e7af81da9b53ee254469225e. Sirve solo como referencia del circuito de ideas, el mapeo de días, la recurrencia temática y las reglas de material de personas.
-
-Si algo de esta skill contradice esas páginas, ganan ellas. La skill es el procedimiento; Notion es el estado, y cambia.
-
-Carga las herramientas primero:
-`ToolSearch` con `select:mcp__Notion__notion-search,mcp__Notion__notion-fetch,mcp__Notion__notion-query-data-sources,mcp__Notion__notion-update-page,mcp__Notion__notion-create-pages`
-
-Bases (el modo SQL está topado en este workspace — usa `rows` o `view`):
-
-| Base | Data source |
-|---|---|
-| ✅ Tareas DTJ | `collection://3e423cb6-e7af-80a9-b248-000ba52f0ba7` |
-| 📸 Calendario de historias | `collection://b2323cb6-e7af-829f-9594-87552d04c5db` |
-| 📸 Calendario de contenido | `collection://df323cb6-e7af-8277-ba21-87bd09a11fd7` |
-| 🔬 Evidencia | `collection://92f7ff97-94e7-49c8-8596-208d634f6587` |
-| ✂️ Extractos | `collection://e7abbe2d-4afe-44ee-bbe8-ee23a4236623` |
-
-🗳️ Decisiones y notas quedó **congelada el 24/09/2026**: se puede leer como registro de lo decidido, pero no se escribe ahí. La 📓 Bitácora de Claude tampoco se usa para trabajo nuevo.
-
-Los nombres de las opciones de `Categoría` en historias llevan espacios dobles y comillas tipográficas; cópialos tal cual o la escritura falla.
-
-## Dónde va cada salida
-
-Esta skill se corre a pedido, en una conversación o dentro de una tarea de Tareas DTJ. No hay revisión automática.
-
-- **El trabajo va a la fila de su pieza**, en el calendario que corresponda.
-- **El avance y lo pendiente van a la tarjeta de la tarea** en Tareas DTJ: una sección **Avance** con qué hiciste y la fecha, y **Preguntas de Claude** numeradas, cada una con lo que harías por defecto. Si quedan preguntas o el resultado necesita visto bueno, el `Turno` pasa a *Espera al equipo*. Si no hay tarjeta, créala.
-- **Tu respuesta final es el resumen de lo que ya quedó escrito** en Notion, no un lugar para dejar cosas que no estén allá.
-
-Cuando arriba diga "dilo" o "repórtalo", significa las dos cosas: dejarlo en la tarjeta y resumirlo en la respuesta.
+En la tarjeta y en tu respuesta: la lista con su categoría, su hilo y su Necesita; cuáles quedaron bloqueadas por falta de material; y si alguna categoría no se puede alimentar más sin material nuevo (eso lo decide el equipo, no se resuelve escribiendo más ideas).
