@@ -43,7 +43,9 @@ antes que no exista), con Description, Contexto, Definition of Done y Primera
 acción si tiene varios pasos; al pasar una tarjeta a "Espera al equipo" se
 deja arriba un bloque "👉 Qué necesito del equipo" (qué hace cada persona y
 dónde, y cómo quedaron sus comentarios) y cada comentario se responde justo
-debajo de él; y al cerrar se dice qué quedó documentado y qué tareas se
+debajo de él; las tarjetas nuevas que crea el equipo sin todas sus partes
+se completan con lo que se sepa, dejando en Preguntas lo que no *(Marcel,
+30/09/2026)*; y al cerrar se dice qué quedó documentado y qué tareas se
 crearon. El detalle está en *🤝 Flujo de trabajo con Claude*.
 
 ## Idioma y tono

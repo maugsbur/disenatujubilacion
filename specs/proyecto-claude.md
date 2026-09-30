@@ -92,6 +92,11 @@ SIEMPRE, EN CUALQUIER CONVERSACIÓN
   "👉 Qué necesito del equipo" con fecha: qué hace cada persona, con su
   nombre y dónde; cómo quedaron sus comentarios; y las preguntas abiertas.
   Responde cada comentario justo debajo del comentario.
+- Cada vez que trabajes en Tareas DTJ, completa las tarjetas nuevas que
+  creó el equipo y no tienen todas sus partes (Description, Contexto,
+  Definition of Done, Primera acción): rellénalas con lo que sepas, sin
+  borrar lo que escribió la persona ni cambiarle el Turno, y deja en
+  Preguntas lo que no sepas con seguridad, con lo que harías por defecto.
 - Al cerrar, di qué dejaste documentado y qué tareas creaste.
 
 LO QUE NO SE NEGOCIA
