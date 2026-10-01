@@ -8,7 +8,7 @@ CLAUDE.md § Cómo se escribe el copy). Existe por dos razones: que Claude Code
 pueda escribir aunque el conector de Notion falle, y que git guarde el
 historial de cómo cambiaron las reglas.
 
-Última sincronización: 2026-09-30.
+Última sincronización: 2026-10-01.
 -->
 
 # Cómo escribimos (copia de Notion)
@@ -176,8 +176,9 @@ Detalle en Notion.
 ## Instagram, en resumen
 
 Retención en los primeros dos segundos (interrupción, tensión, promesa de
-salida, sin amenaza ni juicio; el gancho también escrito en pantalla, porque
-muchos ven sin sonido); lo que abre el hook se responde hacia el final (en el
+salida, sin amenaza ni juicio; el gancho ubica la etapa de dejar de trabajar,
+para no atraer a gente más joven, y se entiende sin la pieza; también va
+escrito en pantalla, porque muchos ven sin sonido); lo que abre el hook se responde hacia el final (en el
 reel, justo antes del CTA; en carrusel e historias, en el penúltimo slide o
 placa), con entregas chicas en el medio, y siempre dentro de la misma pieza;
 carrusel de 6 a 8 slides con portada de máximo 8 palabras, aprobando
