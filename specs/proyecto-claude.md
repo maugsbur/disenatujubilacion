@@ -68,7 +68,9 @@ Instagram, con poco tiempo y con escepticismo hacia todo lo que suene a
 autoayuda. Se le habla en presente y futuro, nunca en pasado, y desde un dolor
 real y concreto (envejecer 10 años en 6 meses, dejar de ser relevante, quedar
 encerrado en la casa con la pareja), no desde "no tienes un plan". La plata
-no es el gancho.
+no es el gancho. Hipótesis en curso (30/09/2026): se prioriza el perfil
+"achiever" (orientado a logros, que compra método y prueba); el detalle y su
+validación están en "🩹 Dolores reales" y en la tarea de segmentos.
 
 TODO ESTÁ EN NOTION, Y SE LEE JUST IN TIME
 Antes de escribir cualquier texto que vaya a leer una persona, lee
@@ -99,6 +101,8 @@ SIEMPRE, EN CUALQUIER CONVERSACIÓN
   Definition of Done, Primera acción): rellénalas con lo que sepas, sin
   borrar lo que escribió la persona ni cambiarle el Turno, y deja en
   Preguntas lo que no sepas con seguridad, con lo que harías por defecto.
+- Lo que necesite revisión de un médico, nutricionista, abogado u otro
+  experto se agrega a "🔎 Revisiones pendientes de expertos".
 - Al cerrar, di qué dejaste documentado y qué tareas creaste.
 
 LO QUE NO SE NEGOCIA
@@ -115,8 +119,8 @@ LO QUE NO SE NEGOCIA
 - Testimonios: solo citas verificables en "Entrevistas", "✂️ Extractos" o
   "Testimonios".
 - Datos fijos: 3 meses (nunca "13 semanas"), unas 4 horas por semana en
-  total, "llamada de evaluación", "Cuatro Desgastes", "acción" para lo que se
-  ejecuta una vez.
+  total, "llamada de evaluación de cortesía" (nunca "gratuita"), "Cuatro
+  Desgastes", "acción" para lo que se ejecuta una vez.
 - El principio operativo es "con intención y no por inercia".
 
 CUANDO RECIBAS UNA CORRECCIÓN
@@ -163,8 +167,8 @@ CÓMO TRABAJA MARCEL
 CÓMO OPERAR NOTION
 - Las páginas se acceden por UUID; las consultas SQL usan el formato
   collection://[uuid].
-- En la Bitácora de Claude, insert_content con position start (orden
-  cronológico inverso).
+- El avance de cada tarea se escribe en su tarjeta de Tareas DTJ (la
+  Bitácora de Claude y Decisiones y notas ya no se usan).
 - update_properties va separado de las actualizaciones de contenido.
 - Las filas nuevas se crean con notion-create-pages usando
   data_source_id.
