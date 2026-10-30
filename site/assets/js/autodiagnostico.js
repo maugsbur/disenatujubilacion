@@ -270,7 +270,7 @@
     if (!el) return;
     el.innerHTML = 'Si quieres que revisemos tu caso juntos, partiendo por tu pilar de <strong>' +
       pillarName(minKey) + '</strong>, que es donde hoy tienes más espacio para actuar, te invitamos ' +
-      'a agendar una llamada de evaluación <strong>gratuita</strong> de 45 minutos con Margarita, que coordina el programa. Sirve ' +
+      'a agendar una llamada de evaluación <strong>de cortesía</strong> de 45 minutos con Margarita, que coordina el programa. Sirve ' +
       'para mirar tu caso en particular y ver si tiene sentido que trabajemos juntos.';
   }
 

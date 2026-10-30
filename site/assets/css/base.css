@@ -239,7 +239,7 @@ button, input, textarea, select { font-family: inherit; font-size: 1rem; }
   .logo-mark { width: 48px; height: 48px; }
   .site-header .btn { min-height: 3rem; padding: 0.7em 1.6em; font-size: 1rem; box-shadow: 0 8px 20px rgba(230, 95, 43, 0.25); }
 }
-/* "Agendar evaluación gratuita" es largo: en teléfonos se compacta todo el
+/* "Agendar evaluación de cortesía" es largo: en teléfonos se compacta todo el
    header y bajo 360px queda solo el anillo del logo, o el botón se sale. */
 @media (max-width: 400px) {
   .site-header .header-row { padding: 0 var(--space-3); gap: var(--space-1); }
