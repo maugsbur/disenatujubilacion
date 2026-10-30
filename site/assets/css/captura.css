@@ -42,6 +42,8 @@
 .cap-hero .cta-row { margin-top: var(--space-2); }
 .hero-media {
   width: 100%;
+  height: auto;
+  align-self: center;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }

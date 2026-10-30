@@ -19,13 +19,13 @@ Anota el **Template ID** — va en `BREVO_TEMPLATE_HABLAR`.
 
 ## Copy
 
-Igual al de Brevo al 30/10/2026 (lo cambió el equipo directo en Brevo; Brevo manda si difieren). El asunto y el título no cambiaron.
+Versión del 30/10/2026: la del equipo en Brevo, ajustada por Claude para que calce con la guía breve que va adjunta (título y lo que promete). Hay que copiarla en Brevo; si difieren, manda Brevo. El asunto y el título no cambiaron.
 
 > **Aquí tienes tu guía**
 >
 > Hola,
 >
-> Adjunta va Las cuatro conversaciones que hay que tener antes de jubilar: cuidados, dónde y cómo vivir, dinero, y qué pasa con tus bienes. Con una estructura para plantear cada una sin que suene a reproche ni a anuncio, ejemplos reales, y una hoja de preparación para llenar antes de proponerla.
+> Adjunta va Las cuatro conversaciones que conviene tener antes de jubilar: cuidados, dónde y cómo vivir, dinero, y qué pasa con tus bienes. Para cada una, la pregunta que debería dejar respondida, y una estructura para proponerla sin que suene a reproche ni a anuncio, con un ejemplo.
 >
 > Empieza por una sola. La que menos ganas te dé tener suele ser la más importante.
 >

@@ -120,13 +120,15 @@ por uuid.
 ## 5 · Navegador → Calendly (la llamada de Margarita)
 
 El botón *Agendar evaluación de cortesía* del resultado (`#ctaCalendly`) es un
-enlace fijo a Calendly con un solo parámetro: `utm_source=autodiagnostico`,
-para atribuir qué trae llamadas agendadas, igual que `pdf-<guia>` en los PDF.
-No lleva el correo ni el resultado de la persona.
+enlace fijo a Calendly, sin parámetros: no lleva el correo, el resultado ni
+`utm_source` *(Nicole, 30/10/2026)*. Lo que se pierde es saber, desde
+Calendly, cuántas llamadas vienen del autodiagnóstico; el evento
+`cta_calendly` de la analítica (`analitica.js`) sigue registrando el clic
+con la página de origen.
 
 **Decisión de Marcel (30/10/2026):** antes el botón precargaba `email` y `a1`
 (los cinco puntajes y el pilar más bajo, para una pregunta de Calendly que
-nunca se creó). Se sacaron: Calendly ya pide el correo al reservar, y con ese
+nunca se creó). Se sacaron, y el 30/10 también `utm_source`: Calendly ya pide el correo al reservar, y con ese
 correo Margarita busca el resultado en la planilla de Personas. Así el
 resultado no viaja en la URL ni queda en Calendly.
 
@@ -159,10 +161,10 @@ Y una historia suelta, sin campaña, que enlaza directo a la guía PLAN:
 https://disenatujubilacion.com/plan?utm_source=historia&utm_content=historia-3
 ```
 
-Estos tres son distintos de `utm_source=autodiagnostico` (§ 5) y
-`utm_source=pdf-<guia>` (§ *Deuda saldada*): esos los pone el sitio solo,
-en el enlace de Calendly, para saber qué trae llamadas agendadas — no se
-escriben a mano.
+Estos tres son distintos de `utm_source=pdf-<guia>` (§ *Deuda saldada*):
+ese lo ponen los PDF solos, en el enlace de Calendly, para saber qué trae
+llamadas agendadas; no se escribe a mano. (Hasta el 30/10/2026 el
+autodiagnóstico ponía `utm_source=autodiagnostico`; ver § 5.)
 
 ## Deuda saldada en la Fase 0
 

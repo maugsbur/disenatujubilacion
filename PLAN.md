@@ -215,7 +215,7 @@ venta. El dato ya está guardado, falta ponérselo enfrente.
 - [x] Pasar el correo a Calendly por parámetro de URL — `?email=…` en el
       mismo enlace, para unir la reserva con la fila de `personas`
 - [x] **Revertido (Marcel, 30/10/2026):** el botón ya no precarga `email` ni
-      `a1`; queda solo `utm_source=autodiagnostico`. Calendly pide el correo al
+      `a1`, y tampoco `utm_source`: el enlace queda fijo. Calendly pide el correo al
       reservar y con él Margarita busca el resultado en la planilla de
       Personas. La pregunta de Calendly ya no hace falta. Ver
       `specs/contrato-datos.md` § 5.

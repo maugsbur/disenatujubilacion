@@ -22,13 +22,13 @@ Anota el **Template ID** — va en `BREVO_TEMPLATE_PLAN`.
 
 ## Copy
 
-Igual al de Brevo al 30/10/2026 (lo cambió el equipo directo en Brevo; Brevo manda si difieren). El asunto y el título no cambiaron.
+Versión del 30/10/2026: la del equipo en Brevo, ajustada por Claude para que calce con la guía breve que va adjunta (título y lo que promete). Hay que copiarla en Brevo; si difieren, manda Brevo. El asunto y el título no cambiaron.
 
 > **Aquí tienes tu guía**
 >
 > Hola,
 >
-> Adjunta va Tu jubilación no se resuelve esta semana. Estas cuatro acciones sí. Un número, una hora médica, una persona y una fecha. Cuatro cosas que se hacen una sola vez y quedan hechas, cada una con un primer paso de menos de cinco minutos.
+> Adjunta va Cuatro acciones que puedes dejar hechas antes de jubilar: un número, una hora médica, una persona y una fecha. Cuatro cosas que se hacen una sola vez y quedan hechas, cada una con su primer paso y con cómo se ve cuando está lista.
 >
 > Elige la que te dio más incomodidad al leerla. Casi siempre es la que más falta hace.
 >
