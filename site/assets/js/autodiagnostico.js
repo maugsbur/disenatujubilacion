@@ -8,14 +8,6 @@
   var TOTAL_QUESTIONS = 25;
   var STORAGE_KEY = 'dtj_autodiagnostico_resultado_v1';
   var SUBMIT_ENDPOINT = '/api/submit';
-  // Enlace de la llamada de Margarita. Al mostrar el resultado le precargamos
-  // el correo y un resumen del autodiagnóstico (los cinco puntajes + el pilar
-  // más bajo). Así el correo de confirmación de cada reserva ya trae con quién
-  // va a hablar y por dónde. El resumen viaja en a1: la respuesta a la primera
-  // pregunta personalizada del tipo de evento en Calendly — si Margarita aún
-  // no la creó, Calendly ignora el parámetro sin romper nada. Ver
-  // specs/contrato-datos.md § "La llamada de Margarita".
-  var CALENDLY_BASE = 'https://calendly.com/margarita-disenatujubilacion/45min';
   var RESULT_PATH = '/autodiagnostico/resultado';
   var QUESTIONS_PATH = '/autodiagnostico';
 
@@ -274,29 +266,6 @@
     el.textContent = text;
   }
 
-  // Resumen legible para el correo de reserva de Calendly:
-  // "Propósito 12/25 · Físico 18/25 · … — pilar más bajo: Social"
-  function resumenParaMargarita(totals, minKey) {
-    var partes = PILLARS.map(function (p) {
-      return p.name + ' ' + totals[p.key] + '/25';
-    });
-    var enAtencion = pillarsToShow(totals, minKey)
-      .filter(function (k) { return bandFor(totals[k]).key === 'atencion'; })
-      .map(pillarName);
-    var resumen = partes.join(' · ') + '. Pilar más bajo: ' + pillarName(minKey);
-    if (enAtencion.length > 1) resumen += '. En zona de atención: ' + enAtencion.join(', ');
-    return resumen;
-  }
-
-  function setCalendlyLink(totals, minKey, email) {
-    var cta = document.getElementById('ctaCalendly');
-    if (!cta) return;
-    var q = ['utm_source=autodiagnostico'];
-    q.push('a1=' + encodeURIComponent(resumenParaMargarita(totals, minKey)));
-    if (email) q.push('email=' + encodeURIComponent(email));
-    cta.href = CALENDLY_BASE + '?' + q.join('&');
-  }
-
   // El CTA de cierre es el momento de mayor intención de todo el funnel
   // (Fase 3): personalizarlo al pilar más bajo en vez de repetir el mismo
   // texto para todos. Ver PLAN.md § Fase 3.
@@ -309,21 +278,20 @@
       'para mirar tu caso en particular y ver si tiene sentido que trabajemos juntos.';
   }
 
-  function renderResult(totals, email) {
+  function renderResult(totals) {
     var minKey = lowestPillar(totals);
     var keys = pillarsToShow(totals, minKey);
     renderLowestLine(minKey, totals, keys);
     renderBars(totals);
     renderDomino(keys);
     renderCtaBody(minKey);
-    setCalendlyLink(totals, minKey, email);
   }
 
   // ---------------------------------------------------------------
   // Cambiar de vista
   // ---------------------------------------------------------------
-  function showResultView(totals, email) {
-    renderResult(totals, email);
+  function showResultView(totals) {
+    renderResult(totals);
     viewQuestions.hidden = true;
     viewResult.hidden = false;
     if (progressBar) progressBar.hidden = true;
@@ -440,7 +408,7 @@
     if (window.dtjEvento) window.dtjEvento('autodiagnostico_enviado', { pilarMasBajo: minKey });
 
     // Mostrar el resultado ya, en paralelo con el envío — nunca al revés.
-    showResultView(totals, email);
+    showResultView(totals);
     sendResult(payload);
 
     try {

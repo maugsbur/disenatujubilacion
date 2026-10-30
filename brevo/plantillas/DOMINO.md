@@ -38,12 +38,13 @@ de entorno `BREVO_TEMPLATE_DOMINO` del Worker (ver `brevo/README.md`).
 
 ## Copy sugerido
 
+Igual al de Brevo al 30/10/2026 (lo cambió el equipo directo en Brevo; Brevo manda si difieren). El asunto y el título no cambiaron.
+
 > **Tu resultado: los 5 pilares de tu jubilación**
 >
 > Hola,
 >
-> Este es el resultado de tu autodiagnóstico, para que lo tengas por
-> escrito.
+> Este es el resultado de tu autodiagnóstico, para que lo tengas por escrito.
 >
 > | Pilar | Tu puntaje |
 > |---|---|
@@ -53,19 +54,15 @@ de entorno `BREVO_TEMPLATE_DOMINO` del Worker (ver `brevo/README.md`).
 > | Social | {{params.social}} / 25 |
 > | Finanzas | {{params.finanzas}} / 25 |
 >
-> Tu pilar más bajo es **{{params.pilarMasBajo}}**. No es un diagnóstico ni
-> un juicio: es el pilar donde, según lo que respondiste, una acción
-> concreta puede rendir más. Y como los pilares dependen unos de otros,
-> cuando uno se debilita empuja hacia abajo a los demás.
+> Tu pilar más bajo es {{params.pilarMasBajo}}. No es un diagnóstico ni un juicio: es el pilar donde, según lo que respondiste, una acción concreta va a rendir más que en cualquier otro lado.
 >
-> Si quieres que revisemos tu caso en conversación, agenda una llamada de
-> evaluación de cortesía de 45 minutos con Margarita, que coordina el programa:
-> **[calendly.com/margarita-disenatujubilacion/45min](https://calendly.com/margarita-disenatujubilacion/45min)**
+> Si quieres que revisemos tu caso juntos, agenda una llamada de evaluación de cortesía de 45 minutos con Margarita, quien coordina el programa:
+> https://calendly.com/margarita-disenatujubilacion/45min
 >
+> --
 > Diseña tu Jubilación
 >
-> *Este es un ejercicio de orientación personal, no un instrumento clínico
-> ni un diagnóstico de ningún tipo.*
+> *Este es un ejercicio de orientación personal, no un instrumento clínico ni un diagnóstico de ningún tipo.*
 
 ## Nota de cumplimiento
 

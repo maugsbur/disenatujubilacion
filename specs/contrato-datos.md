@@ -119,25 +119,16 @@ por uuid.
 
 ## 5 · Navegador → Calendly (la llamada de Margarita)
 
-No pasa por el Worker. Cuando la vista de resultado se muestra,
-`autodiagnostico.js` reescribe el `href` del botón *Agendar evaluación gratuita*
-(`#ctaCalendly`) con estos parámetros:
+El botón *Agendar evaluación de cortesía* del resultado (`#ctaCalendly`) es un
+enlace fijo a Calendly con un solo parámetro: `utm_source=autodiagnostico`,
+para atribuir qué trae llamadas agendadas, igual que `pdf-<guia>` en los PDF.
+No lleva el correo ni el resultado de la persona.
 
-| Parámetro | Contenido | Nota |
-|---|---|---|
-| `utm_source` | `autodiagnostico` | Fijo. Atribuye qué trae llamadas agendadas, igual que `pdf-<guia>` en los PDF |
-| `email` | el correo que la persona ya escribió | Solo en el envío fresco. En un refresco de `/resultado` no está (no se guarda PII en `sessionStorage`); Calendly igual pide el correo al reservar |
-| `a1` | `Propósito 12/25 · Físico 18/25 · … Pilar más bajo: Social` | Respuesta a la **primera pregunta personalizada** del tipo de evento en Calendly. Si Margarita no la creó, Calendly ignora el parámetro sin romper nada |
-
-Para qué: que el correo de confirmación de cada reserva ya traiga con quién
-va a hablar Margarita y por dónde entrar, sin que ella tenga que cruzar
-nada a mano. El `email` permite además unir la reserva con la fila de
-`personas`.
-
-**Paso manual, una vez (Margarita):** en Calendly → el evento de 45 min →
-*Invitee Questions* → agregar una pregunta de texto (p. ej. "Resultado del
-autodiagnóstico — no editar"). Debe quedar **primera** para que `a1` caiga
-ahí. Funciona en el plan gratis.
+**Decisión de Marcel (30/10/2026):** antes el botón precargaba `email` y `a1`
+(los cinco puntajes y el pilar más bajo, para una pregunta de Calendly que
+nunca se creó). Se sacaron: Calendly ya pide el correo al reservar, y con ese
+correo Margarita busca el resultado en la planilla de Personas. Así el
+resultado no viaja en la URL ni queda en Calendly.
 
 ## 6 · Convención de UTM para Instagram (Fase 3)
 

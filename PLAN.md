@@ -214,10 +214,11 @@ venta. El dato ya está guardado, falta ponérselo enfrente.
       la reserva (`autodiagnostico.js` → `#ctaCalendly`)
 - [x] Pasar el correo a Calendly por parámetro de URL — `?email=…` en el
       mismo enlace, para unir la reserva con la fila de `personas`
-- [ ] **Paso manual de Margarita:** en Calendly → evento de 45 min →
-      *Invitee Questions* → agregar una pregunta de texto y dejarla primera,
-      para que `a1` caiga ahí. Ver `specs/contrato-datos.md` § 5. Hasta que
-      lo haga, el correo prellenado funciona y el resultado no
+- [x] **Revertido (Marcel, 30/10/2026):** el botón ya no precarga `email` ni
+      `a1`; queda solo `utm_source=autodiagnostico`. Calendly pide el correo al
+      reservar y con él Margarita busca el resultado en la planilla de
+      Personas. La pregunta de Calendly ya no hace falta. Ver
+      `specs/contrato-datos.md` § 5.
 
 ## Fase 2 — Credibilidad (implementada 2026-09-11)
 

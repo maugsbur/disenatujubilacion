@@ -19,22 +19,20 @@ Anota el **Template ID** — va en `BREVO_TEMPLATE_HABLAR`.
 
 ## Copy
 
+Igual al de Brevo al 30/10/2026 (lo cambió el equipo directo en Brevo; Brevo manda si difieren). El asunto y el título no cambiaron.
+
 > **Aquí tienes tu guía**
 >
 > Hola,
 >
-> Adjunta va **Las cuatro conversaciones que conviene tener antes de
-> jubilar**: cuidados, dónde y cómo vivir, dinero, y qué pasa con tus
-> bienes. Para cada una, la pregunta que debería dejar respondida y una
-> forma de proponerla que no termina en discusión.
+> Adjunta va Las cuatro conversaciones que hay que tener antes de jubilar: cuidados, dónde y cómo vivir, dinero, y qué pasa con tus bienes. Con una estructura para plantear cada una sin que suene a reproche ni a anuncio, ejemplos reales, y una hoja de preparación para llenar antes de proponerla.
 >
-> Empieza por una sola. La que menos ganas te da tener suele ser la más
-> importante.
+> Empieza por una sola. La que menos ganas te dé tener suele ser la más importante.
 >
-> Si quieres que revisemos tu caso en conversación, agenda una llamada de
-> evaluación de cortesía de 45 minutos con Margarita, que coordina el programa:
-> **[calendly.com/margarita-disenatujubilacion/45min](https://calendly.com/margarita-disenatujubilacion/45min)**
+> Si quieres que revisemos tu caso juntos, agenda una llamada de evaluación de cortesía de 45 minutos con Margarita, quien coordina el programa:
+> https://calendly.com/margarita-disenatujubilacion/45min
 >
+> --
 > Diseña tu Jubilación
 
 ## La versión completa
