@@ -23,7 +23,7 @@
   var PILLARS = [
     { key: 'proposito', name: 'Propósito' },
     { key: 'fisico', name: 'Físico' },
-    { key: 'mental', name: 'Mental' },
+    { key: 'mental', name: 'Mental y Cognitivo' },
     { key: 'social', name: 'Social' },
     { key: 'finanzas', name: 'Finanzas' }
   ];
@@ -62,7 +62,7 @@
     social: {
       title: 'Si tu más bajo es Social',
       items: [
-        'Arrastra <strong>Mental y Físico</strong> a la vez: en la literatura de longevidad, la soledad crónica se comporta como un factor de riesgo, no como un tema emocional.',
+        'Arrastra <strong>Mental y Cognitivo</strong> y <strong>Físico</strong> a la vez: en la literatura de longevidad, la soledad crónica se comporta como un factor de riesgo, no como un tema emocional.',
         'Arrastra <strong>Propósito</strong>: sostener un propósito necesita gente alrededor, que celebre contigo lo que logras y te acompañe cuando algo se cae.'
       ]
     },
@@ -70,7 +70,7 @@
       title: 'Si tu más bajo es Finanzas',
       items: [
         'Arrastra <strong>Social</strong>: cuando la plata aprieta, lo primero que se recorta son las salidas, los viajes y los regalos. Restarse de las instancias sociales es barato hoy y caro después.',
-        'Arrastra <strong>Mental</strong>: la incertidumbre financiera es un impuesto cognitivo que se paga todos los días.',
+        'Arrastra <strong>Mental y Cognitivo</strong>: la incertidumbre financiera es un impuesto cognitivo que se paga todos los días.',
         'Arrastra <strong>Propósito</strong>: si no sabes si te alcanza, no exploras lo que te gustaría hacer. La falta de números termina limitando lo que te permites imaginar.'
       ]
     }

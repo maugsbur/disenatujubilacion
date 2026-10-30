@@ -145,7 +145,7 @@ body += pillar(4, 2, "Salud Física",
   "Hago entrenamiento de fuerza al menos dos veces por semana.",
   "Camino, pedaleo, nado o hago otra actividad física a ritmo sostenido varias horas a la semana.",
   "Sé cuáles son mis necesidades nutricionales y me alimento y suplemento acorde a ellas, en tipos y en cantidades.",
-  "Tengo bajo control el alcohol, el azúcar, el tabaco y otras cosas que sé que me hacen daño.",
+  "No consumo tabaco, alcohol, embutidos ni comida chatarra y consumo productos con azúcar en bajas cantidades.",
   "Me he hecho todos mis exámenes preventivos en los últimos doce meses."],
   "Físico")
 
@@ -183,7 +183,7 @@ body += f"""
   <div class="rule"></div>
   <p style="margin-bottom:7mm;">Anota el total de cada pilar y marca ese número en su fila. El color te dice en qué zona caíste, y la forma del conjunto dice más que los números sueltos.</p>
   <table class="scoregrid">
-    {row("Propósito")}{row("Físico")}{row("Mental")}{row("Social")}{row("Finanzas")}
+    {row("Propósito")}{row("Físico")}{row("Mental y Cognitivo")}{row("Social")}{row("Finanzas")}
   </table>
   <table class="zonekey"><tr>
     <td style="width:30mm"></td><td style="width:41mm">Atención (5–11)</td>
@@ -218,11 +218,11 @@ body += f"""
   "Arrastra <strong>Social</strong>: cuando aparece deterioro cognitivo, seguir una conversación cuesta más, y la reacción natural es retirarse.",
   "Arrastra <strong>Propósito</strong>: perder capacidades cognitivas es lo que más preocupa a la gente en esta etapa, y sin cabeza no hay plan que se sostenga.",
 ]) + drag("Si tu más bajo es Social", [
-  "Arrastra <strong>Mental y Físico</strong> a la vez: en la literatura de longevidad, la soledad crónica se comporta como un factor de riesgo, no como un tema emocional.",
+  "Arrastra <strong>Mental y Cognitivo</strong> y <strong>Físico</strong> a la vez: en la literatura de longevidad, la soledad crónica se comporta como un factor de riesgo, no como un tema emocional.",
   "Arrastra <strong>Propósito</strong>: sostener un propósito necesita gente alrededor, que celebre contigo lo que logras y te acompañe cuando algo se cae.",
 ]) + drag("Si tu más bajo es Finanzas", [
   "Arrastra <strong>Social</strong>: cuando la plata aprieta, lo primero que se recorta son las salidas, los viajes y los regalos. Restarse de las instancias sociales es barato hoy y caro después.",
-  "Arrastra <strong>Mental</strong>: la incertidumbre financiera es un impuesto cognitivo que se paga todos los días.",
+  "Arrastra <strong>Mental y Cognitivo</strong>: la incertidumbre financiera es un impuesto cognitivo que se paga todos los días.",
   "Arrastra <strong>Propósito</strong>: si no sabes si te alcanza, no exploras lo que te gustaría hacer. La falta de números termina limitando lo que te permites imaginar.",
 ]) + """
   <div class="pgnum">9</div>
